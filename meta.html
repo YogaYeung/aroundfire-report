@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta 投放诊断 · AroundFire 调研报告</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <a class="home" href="index.html">◂ AROUNDFIRE 报告中心</a><span class="sep">|</span>
+  <a href="summary.html">摘要</a><a href="category.html">品类</a><a href="competitors.html">竞争</a><a href="voc.html">VOC</a><a href="ads.html">广告</a><a href="social.html">社媒</a><a href="trends.html">趋势</a><a href="seo.html">SEO</a><a href="optimization.html">网站优化</a><a href="pricing.html">定价</a><a href="influencers.html">达人</a>
+</div></div>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="eyebrow">11 · Meta Account Diagnosis</div>
+    <h1>Meta 投放诊断</h1>
+    <p class="sub">甲方导出的账户数据（1,641 行，含 年龄×性别 拆分），报告周期 2026-01-01 ~ 2026-07-20。</p>
+    <p class="fine">全部数字来自甲方 CSV 实际聚合，未做估算。样本量小的地方已就地标注「不可作为结论，只能作为值得放量测试的信号」。</p>
+    <div class="meta"><span>📅 分析 2026-07-20</span><span>📈 457 单 / ROAS 5.69</span><span>⚠️ 小样本已标注</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section id="总盘">
+    <div class="sec-head"><h2><span class="num">一</span>账户总盘</h2></div>
+    <div class="stats">
+      <div class="stat"><div class="k g">5.69</div><div class="l">ROAS（Website purchases 有效口径）</div></div>
+      <div class="stat"><div class="k i">$24,657</div><div class="l">花费 → 收入 $140,198</div></div>
+      <div class="stat"><div class="k i">457</div><div class="l">订单数</div></div>
+      <div class="stat"><div class="k e">$307</div><div class="l">AOV（高于主产品单价 $189/$239）</div></div>
+      <div class="stat"><div class="k">27%</div><div class="l">花费（$9,187）<b>无任何归因结果</b></div></div>
+    </div>
+    <table>
+      <thead><tr><th>口径</th><th>花费</th><th>收入</th><th>单量</th><th>ROAS</th><th>AOV</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>Website purchases（有效口径）</b></td><td data-l="花费">$24,657</td><td data-l="收入">$140,198</td><td data-l="单量">457</td><td data-l="ROAS"><b>5.69</b></td><td data-l="AOV"><b>$307</b></td></tr>
+        <tr><td data-l="">全量（含无结果行）</td><td data-l="花费">$34,024</td><td data-l="收入">$154,506</td><td data-l="单量">—</td><td data-l="ROAS">4.54</td><td data-l="AOV">—</td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li><b>27% 花费（$9,187）无任何归因结果</b>，这部分产生了 <b>515 次加购但 0 归因收入</b>，主要落在「自定义受众 1%-3% 类似受众」$1,016、「30天加购」$850、「兴趣人群-family-camping」$822、「禁火令期间通投」$598</li>
+      <li>AOV $307 高于主产品单价（$189 / $239）→ <b>配件加购有效</b>，客单结构健康。<span style="color:var(--ink3)">（但<a href="pricing.html#attach">定价报告 §1.2</a> 反推出：这笔钱主要来自 PDP 变体阶梯，不是配件合集页）</span></li>
+    </ul>
+  </section>
+
+  <section id="funnel">
+    <div class="sec-head"><h2><span class="num">二</span>漏斗</h2></div>
+    <table>
+      <thead><tr><th>环节</th><th>数量</th><th>转化率</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">加购</td><td data-l="数量">2,641</td><td data-l="转化率">—</td></tr>
+        <tr><td data-l="">发起结账</td><td data-l="数量">1,380</td><td data-l="转化率">52.3%</td></tr>
+        <tr><td data-l="">购买</td><td data-l="数量">457</td><td data-l="转化率"><b>33.1%</b></td></tr>
+      </tbody>
+    </table>
+    <div class="callout danger"><b>结账→购买流失 67%，是全链路最大瓶颈。</b>与 Kickstarter VOC 里 backer 集中投诉「运费二次收取 $45-50 未提前告知」「Stripe 付款报错」形成证据链——结账页的运费露出方式与支付方式需要单独排查。<br><b>本次已做结账全流程实勘</b>，结论：$24.90 在填完 9 个字段后的第 4 个区块才露出，全站零免邮门槛、零 BNPL、结账页零信任元素。<a href="optimization.html#checkout">→ 查看结账实勘全文与 23 张截图</a></div>
+  </section>
+
+  <section id="audience">
+    <div class="sec-head"><h2><span class="num">三</span>人群（年龄 × 性别，纯购买口径）</h2></div>
+    <table>
+      <thead><tr><th>年龄</th><th>性别</th><th>花费</th><th>单量</th><th>ROAS</th><th>CPA</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">35-44</td><td data-l="性别">male</td><td data-l="花费">$6,384</td><td data-l="单量">145</td><td data-l="ROAS">4.88</td><td data-l="CPA">$44</td></tr>
+        <tr><td data-l="">45-54</td><td data-l="性别">male</td><td data-l="花费">$6,209</td><td data-l="单量">108</td><td data-l="ROAS">4.20</td><td data-l="CPA">$57</td></tr>
+        <tr><td data-l="">35-44</td><td data-l="性别">female</td><td data-l="花费">$4,541</td><td data-l="单量">82</td><td data-l="ROAS">4.51</td><td data-l="CPA">$55</td></tr>
+        <tr><td data-l="">45-54</td><td data-l="性别">female</td><td data-l="花费">$4,177</td><td data-l="单量">80</td><td data-l="ROAS">4.50</td><td data-l="CPA">$52</td></tr>
+        <tr><td data-l="">55-64</td><td data-l="性别">male</td><td data-l="花费">$3,979</td><td data-l="单量">85</td><td data-l="ROAS">3.99</td><td data-l="CPA">$47</td></tr>
+        <tr><td data-l=""><b>55-64</b></td><td data-l="性别"><b>female</b></td><td data-l="花费">$2,429</td><td data-l="单量">82</td><td data-l="ROAS"><b>7.35</b></td><td data-l="CPA"><b>$30</b></td></tr>
+        <tr><td data-l="">25-34</td><td data-l="性别">male</td><td data-l="花费">$1,845</td><td data-l="单量">57</td><td data-l="ROAS">3.56</td><td data-l="CPA">$32</td></tr>
+        <tr><td data-l="">65+</td><td data-l="性别">male</td><td data-l="花费">$1,593</td><td data-l="单量">40</td><td data-l="ROAS">3.87</td><td data-l="CPA">$40</td></tr>
+        <tr><td data-l="">25-34</td><td data-l="性别">female</td><td data-l="花费">$1,326</td><td data-l="单量">28</td><td data-l="ROAS">3.39</td><td data-l="CPA">$47</td></tr>
+        <tr><td data-l=""><b>65+</b></td><td data-l="性别"><b>female</b></td><td data-l="花费">$1,056</td><td data-l="单量">39</td><td data-l="ROAS"><b>4.76</b></td><td data-l="CPA"><b>$27</b></td></tr>
+      </tbody>
+    </table>
+    <div class="cards c2">
+      <div class="card"><h4 style="margin-top:0">主力预算压在 35-54（63% 花费），效率中等</h4><p>35-44 male 单量最高（145 单）、CPA $44；45-54 male 花费第二但 ROAS 只有 4.20。</p></div>
+      <div class="card" style="border:2px solid var(--green)"><h4 style="margin-top:0">55-64 女性是全账户效率最高的人群</h4><p><b>ROAS 7.35 / CPA $30，预算占比仅 10%</b>。65+ 女性 <b>CPA $27 为全账户最低</b>。<br><b>这两个人群对"多一次点击才能买"最不耐受</b>——移动端吸底条无加购按钮这条修复，最直接受益的就是她们。</p></div>
+      <div class="card" style="border-left:5px solid var(--red)"><h4 style="margin-top:0">25-34 是最差人群</h4><p style="margin-bottom:0"><b>ROAS 3.4–3.6，年轻人不是买家。</b>这条同时否掉了「年轻硬核 overlanding / 4×4 越野」这个达人方向。</p></div>
+    </div>
+  </section>
+
+  <section id="creative">
+    <div class="sec-head"><h2><span class="num">四</span>素材主题</h2></div>
+    <table>
+      <thead><tr><th>主题</th><th>花费</th><th>占比</th><th>单量</th><th>ROAS</th><th>CPA</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">汽车露营 / overland</td><td data-l="花费">$9,390</td><td data-l="占比">38%</td><td data-l="单量">156</td><td data-l="ROAS">5.0</td><td data-l="CPA">$60</td></tr>
+        <tr><td data-l="">露营 / camping table</td><td data-l="花费">$8,640</td><td data-l="占比">35%</td><td data-l="单量">161</td><td data-l="ROAS">6.0</td><td data-l="CPA">$54</td></tr>
+        <tr><td data-l="">其他 / 未分类</td><td data-l="花费">$3,396</td><td data-l="占比">14%</td><td data-l="单量">54</td><td data-l="ROAS">5.0</td><td data-l="CPA">$63</td></tr>
+        <tr><td data-l=""><b>INS 帖子 / UGC</b></td><td data-l="花费">$3,020</td><td data-l="占比">12%</td><td data-l="单量">74</td><td data-l="ROAS"><b>8.0</b></td><td data-l="CPA"><b>$41</b></td></tr>
+        <tr><td data-l="">家庭 / 后院</td><td data-l="花费">$211</td><td data-l="占比">1%</td><td data-l="单量">12</td><td data-l="ROAS">16.0</td><td data-l="CPA">$18</td></tr>
+      </tbody>
+    </table>
+    <div class="callout danger">⚠️ <b>「家庭/后院」样本量极小（$211），ROAS 16 不可作为结论</b>，只能作为「<b>值得放量测试</b>」的信号。</div>
+
+    <h3>单素材 TOP（花费 &gt; $400）</h3>
+    <table>
+      <thead><tr><th>素材</th><th>花费</th><th>单量</th><th>ROAS</th><th>CPA</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>evcinshome</b></td><td data-l="花费">$1,146</td><td data-l="单量">23</td><td data-l="ROAS"><b>7.00</b></td><td data-l="CPA">$50</td></tr>
+        <tr><td data-l=""><b>cait 沙滩</b></td><td data-l="花费">$2,702</td><td data-l="单量">55</td><td data-l="ROAS"><b>6.31</b></td><td data-l="CPA">$49</td></tr>
+        <tr><td data-l=""><b>vanadvantures 简短口播</b></td><td data-l="花费">$465</td><td data-l="单量">9</td><td data-l="ROAS"><b>5.81</b></td><td data-l="CPA">$52</td></tr>
+        <tr><td data-l=""><b>ins帖子-Paige 桌子解说和展示-2</b></td><td data-l="花费">$641</td><td data-l="单量">10</td><td data-l="ROAS"><b>5.31</b></td><td data-l="CPA">$64</td></tr>
+        <tr><td data-l="">evicnshome - 2</td><td data-l="花费">$1,649</td><td data-l="单量">30</td><td data-l="ROAS">5.08</td><td data-l="CPA">$55</td></tr>
+        <tr><td data-l="">混剪型方向-汽车露营 - 广告副本</td><td data-l="花费">$3,069</td><td data-l="单量">51</td><td data-l="ROAS">4.75</td><td data-l="CPA">$60</td></tr>
+        <tr><td data-l=""><b>betweenus 口播</b></td><td data-l="花费">$1,118</td><td data-l="单量">17</td><td data-l="ROAS">4.67</td><td data-l="CPA">$66</td></tr>
+        <tr><td data-l="">camping table 混剪口播</td><td data-l="花费">$4,508</td><td data-l="单量">63</td><td data-l="ROAS">4.32</td><td data-l="CPA">$72</td></tr>
+        <tr><td data-l=""><b>混剪-汽车露营（花费最高）</b></td><td data-l="花费"><b>$5,577</b></td><td data-l="单量">72</td><td data-l="ROAS"><b>4.00</b></td><td data-l="CPA">$77</td></tr>
+        <tr><td data-l="">camping table</td><td data-l="花费">$1,011</td><td data-l="单量">11</td><td data-l="ROAS">2.91</td><td data-l="CPA">$92</td></tr>
+        <tr><td data-l="">功能型方向-camping kitchen</td><td data-l="花费">$1,005</td><td data-l="单量">9</td><td data-l="ROAS">2.89</td><td data-l="CPA">$112</td></tr>
+      </tbody>
+    </table>
+    <div class="callout danger"><b>规律</b>：<b>达人 / UGC 真人素材（evcinshome、cait、Paige、vanadvantures、betweenus）全面跑赢自制混剪。花费最高的「混剪-汽车露营」$5,577 ROAS 只有 4.00，是预算错配。</b><br><br>
+    这条与社媒盘点、网站诊断三方共振：<b>38 条社媒爆款里找不到一条白底产品图</b>；PDP 首图却是一袋零件。<b>「广告用一群人围着桌子吃饭把人带进来，落地页第一眼给一袋零件」是投放与落地页之间最直接的断档。</b></div>
+  </section>
+
+  <section id="adset">
+    <div class="sec-head"><h2><span class="num">五</span>广告组</h2></div>
+    <table>
+      <thead><tr><th>广告组</th><th>花费</th><th>占比</th><th>单量</th><th>ROAS</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">自定义受众 1%-3% 类似受众</td><td data-l="花费">$8,980</td><td data-l="占比">26%</td><td data-l="单量">128</td><td data-l="ROAS">4.3</td></tr>
+        <tr><td data-l="">核心兴趣词</td><td data-l="花费">$5,394</td><td data-l="占比">16%</td><td data-l="单量">87</td><td data-l="ROAS">5.2</td></tr>
+        <tr><td data-l="">30天加购</td><td data-l="花费">$3,471</td><td data-l="占比">10%</td><td data-l="单量">47</td><td data-l="ROAS">4.4</td></tr>
+        <tr><td data-l="">overlanding &amp; bbq/grill</td><td data-l="花费">$1,707</td><td data-l="占比">5%</td><td data-l="单量">22</td><td data-l="ROAS">4.3</td></tr>
+        <tr><td data-l="">测素材-evcinshome-2</td><td data-l="花费">$1,581</td><td data-l="占比">5%</td><td data-l="单量">30</td><td data-l="ROAS">5.3</td></tr>
+        <tr><td data-l="">兴趣人群-family-camping</td><td data-l="花费">$1,467</td><td data-l="占比">4%</td><td data-l="单量">15</td><td data-l="ROAS">3.1</td></tr>
+        <tr><td data-l=""><b>测素材-cait沙滩-camping</b></td><td data-l="花费">$1,040</td><td data-l="占比">3%</td><td data-l="单量">30</td><td data-l="ROAS"><b>8.8</b></td></tr>
+        <tr><td data-l=""><b>US-通投-禁火令期间</b></td><td data-l="花费">$1,227</td><td data-l="占比">4%</td><td data-l="单量">9</td><td data-l="ROAS"><b>2.2</b></td></tr>
+        <tr><td data-l=""><b>社媒180天互动+网站60天访问+视频75%观看</b></td><td data-l="花费">$394</td><td data-l="占比">1%</td><td data-l="单量">7</td><td data-l="ROAS"><b>5.6</b></td></tr>
+      </tbody>
+    </table>
+    <div class="cards c2">
+      <div class="card" style="border-left:5px solid var(--red)"><h4 style="margin-top:0">「禁火令期间」通投是效率最低的方向之一</h4><p>两组合计 $1,227 / <b>ROAS 2.2</b>。<br><b>根因不是投放优化问题，是合规问题。</b>BLM 官方条文把「木柴/炭火盆」定义为 campfire，Stage 1 起即违法——<b>你在向一群刚被官方通知「不许生火」的人卖火</b>。<a href="trends.html#fireban">→ 禁火令法条与逐州时间轴</a></p></div>
+      <div class="card" style="border-left:5px solid var(--green)"><h4 style="margin-top:0">再营销池严重投喂不足</h4><p style="margin-bottom:0">「社媒互动 + 网站访问 + 视频75%」再营销池 <b>ROAS 5.6，但只花了 $394（占 1%）</b>。这是账户里性价比被低估最明显的一组。</p></div>
+    </div>
+  </section>
+
+  <section id="gap">
+    <div class="sec-head"><h2><span class="num">六</span>未测试的空白</h2></div>
+    <div class="cards c2">
+      <div class="card" style="border:2px solid var(--red)"><h4 style="margin-top:0">🚨 KBBQ 方向零素材、零广告组</h4>
+        <p>而这个方向的证据是全案最交叉的：关键词侧 32 个词 / <b>21,650 搜索量 / 平均 KD 13.7</b>（八个簇里最软）；趋势侧 <code>foldable korean bbq table</code> <b>+1,300%</b>、<code>foldable kbbq table</code> <b>Breakout</b>、全年无淡季；广告侧 KBBQ Bros 已跑出 <b>159 天长青素材</b>验证赛道能跑；产品侧 <b>甲方已有 KBBQ Style Grill Grate（$37）</b>。</p>
+        <p style="margin-bottom:0"><span style="font-size:12.5px;color:var(--ink3)">⚠️ 口径修正：账户分析原稿写的「KBBQ 43,300 搜索量」经关键词表重新核算为 <b>21,650</b>（43,300 恰为其两倍，疑为重复计数）。<b>不影响结论方向。</b></span></p>
+      </div>
+      <div class="card" style="border:2px solid var(--ember)"><h4 style="margin-top:0">⚠️ 后院 / backyard 家庭聚会仅测了 $211</h4>
+        <p style="margin-bottom:0">而 <code>fire pit table</code> <b>96,440</b> 是关键词库里最大的搜索池；广告侧竞品把重兵压在后院（Breeo 87%、KBBQ Bros 80%、Solo Stove 47%），<b>AroundFire 后院只占 27%</b>；地域数据也显示 <code>fire pit table</code> 的高关注度州（PA / DE / NH 东北部有房有院人群）与 <code>portable fire pit</code>（山地西部）是<b>两个完全不同的盘子</b>，应该分开建组。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="action">
+    <div class="sec-head"><h2><span class="num">七</span>基于账户数据的行动建议</h2></div>
+    <table>
+      <thead><tr><th>优先级</th><th>动作</th><th>依据</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>P0</b></td><td data-l="动作"><b>预算从「自制混剪」搬到「达人真人口播」</b></td><td data-l="依据">UGC 主题 ROAS 8.0 / CPA $41 只吃 12% 预算；花费最高的混剪 $5,577 ROAS 只有 4.00</td></tr>
+        <tr><td data-l=""><b>P0</b></td><td data-l="动作"><b>向甲方索取 evcinshome / cait / vanadvantures / Paige / betweenus 五位创作者的联系方式，建立复购</b></td><td data-l="依据">这 5 条素材合计花费 $7,021、ROAS 均值 &gt; 5.5，<b>是已被账户验证过的确定性资产</b>；而<b>它们的创作者一个都不在 695 人的达人库和 33 条外联台账里</b>，来源没被记录也就无法复制。<a href="influencers.html#winner">→ 达人库诊断 §6.2</a></td></tr>
+        <tr><td data-l=""><b>P0</b></td><td data-l="动作"><b>先修结账页，再加预算</b></td><td data-l="依据">结账→购买流失 67%。在这个漏斗结构下加预算，等于按比例放大漏损</td></tr>
+        <tr><td data-l=""><b>P1</b></td><td data-l="动作"><b>给再营销池加量</b></td><td data-l="依据">ROAS 5.6 却只花 $394（1%）</td></tr>
+        <tr><td data-l=""><b>P1</b></td><td data-l="动作"><b>把 55-64 / 65+ 女性单独建组并加预算</b></td><td data-l="依据">ROAS 7.35 / CPA $30 与 CPA $27（全账户最低），预算占比仅 10%</td></tr>
+        <tr><td data-l=""><b>P1</b></td><td data-l="动作"><b>降低 25-34 人群预算</b></td><td data-l="依据">ROAS 3.4–3.6，全账户最差</td></tr>
+        <tr><td data-l=""><b>P1</b></td><td data-l="动作"><b>开 KBBQ 素材组 + 落地页</b>（与网站侧 <a href="optimization.html#ba08">08 导航重构</a> 同步）</td><td data-l="依据">零素材零广告组，而四条独立证据全部指向这个方向</td></tr>
+        <tr><td data-l=""><b>P1</b></td><td data-l="动作"><b>把「家庭/后院」从 $211 放量到可判断的样本量</b></td><td data-l="依据">现在只是信号，不是结论。放量测试才能验证</td></tr>
+        <tr><td data-l=""><b>P2</b></td><td data-l="动作"><b>6–8 月停投美西木柴款转化广告，改推燃气线</b></td><td data-l="依据">「禁火令期间」ROAS 2.2 是合规问题不是优化问题。<b>⚠️ 燃气线主推需先解决关税结构（直发下关税占售价 55.7%）</b></td></tr>
+        <tr><td data-l=""><b>P2</b></td><td data-l="动作"><b>东北/中西部打「后院聚会」，山地西部/太平洋西北打「露营越野」，账户结构上分开</b></td><td data-l="依据">地域数据显示是两个完全不同的人群盘子</td></tr>
+        <tr><td data-l=""><b>P2</b></td><td data-l="动作"><b>补静态图素材</b></td><td data-l="依据">AroundFire 11 条在投广告 100% 是视频、零静态图；竞品都是图视混投。<b>静态图是低成本抢量和承接促销信息的弹药</b></td></tr>
+        <tr><td data-l=""><b>P2</b></td><td data-l="动作"><b>排查 27% 无归因花费</b></td><td data-l="依据">$9,187 产生 515 次加购但 0 归因收入。需查像素配置 / 归因窗口 / 广告组设置</td></tr>
+      </tbody>
+    </table>
+    <div class="disclaimer">
+      <span class="ttl">给达人的 brief（从跑赢素材反推）</span>
+      跑赢的 5 条素材全是<b>真人出镜 + 口播/解说 + 单场景</b>，不是精致混剪：<code>vanadvantures</code> 是「<b>简短</b>口播」，$465 小预算跑出 5.81；<code>Paige</code> 是「桌子<b>解说和展示</b>」——就是把产品讲清楚；<code>betweenus</code> 是「口播」。<br>
+      → brief 应该是：<b>一镜到底的真人口播 + 产品展示 + 真实场景，不要求电影感、不要求航拍。</b>这也直接降低了达人的制作成本，提高置换成功率。<br><br>
+      <b>反过来看台账里被优先联系的人</b>：<code>chase.in.point</code>（"画面精美，优质航拍，摄影师"）、<code>keegjasper</code>（"视频风格绝美"）、<code>connography_</code>（"电影感创作者"）—— <b>甲方在按「谁拍得好看」选人，但账户数据说买家买的是「谁讲得清楚」。这是选人标准上的方向性错误。</b>
+    </div>
+  </section>
+
+  <div class="pagenav">
+    <a href="pricing.html"><div class="d">◂ 上一份</div><div class="t">定价与商业模型</div></a>
+    <a class="nx" href="influencers.html"><div class="d">下一份 ▸</div><div class="t">达人库诊断</div></a>
+  </div>
+
+</div>
+
+<div class="foot">AroundFire 全链路品牌调研 · Meta 投放诊断 · 数据周期 2026-01-01 ~ 2026-07-20</div>
+</body>
+</html>

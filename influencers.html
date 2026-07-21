@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>达人库诊断 · AroundFire 调研报告</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <a class="home" href="index.html">◂ AROUNDFIRE 报告中心</a><span class="sep">|</span>
+  <a href="summary.html">摘要</a><a href="category.html">品类</a><a href="competitors.html">竞争</a><a href="voc.html">VOC</a><a href="ads.html">广告</a><a href="social.html">社媒</a><a href="trends.html">趋势</a><a href="seo.html">SEO</a><a href="optimization.html">网站优化</a><a href="pricing.html">定价</a><a href="meta.html">投放</a>
+</div></div>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="eyebrow">12 · Influencer Program Diagnosis</div>
+    <h1>达人库诊断：712 条 → 695 人</h1>
+    <p class="sub">INS 搜索库 + 外联台账 + 其他达人三张表合并去重（并查集 Union-Find），再结合 Meta 账户数据反推「该联系谁」。</p>
+    <p class="fine">处理脚本：Python 3 / pandas 2.3.3 / openpyxl 3.1.5（PYTHONUTF8=1）。产出 <code>influencer_master.xlsx</code>（695 行 × 19 列，一行一人）。<b>所有数字均由脚本实际处理原始 xlsx 得出。</b></p>
+    <div class="meta"><span>📅 2026-07-21</span><span>🔗 695 人总库</span><span>⚠️ 口径与任务书不一致处已声明</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section id="caliber">
+    <div class="sec-head"><h2><span class="num">〇</span>先说数据口径修正（与任务书给的行数不一致）</h2></div>
+    <div class="disclaimer">
+      <span class="ttl">全部以实际读取值为准</span>
+      <table style="margin-top:.6rem">
+        <thead><tr><th>项目</th><th>任务书描述</th><th>实际读取</th></tr></thead>
+        <tbody>
+          <tr><td data-l=""><code>INS达人搜索</code> sheet 行数</td><td data-l="任务书描述">1220 行</td><td data-l="实际读取"><b>396 行</b>（含 1 行表头，395 数据行 × 3 列）</td></tr>
+          <tr><td data-l="">INS 库 Instagram 链接数</td><td data-l="任务书描述">约 674 个</td><td data-l="实际读取"><b>674 个</b>（其中 672 个可解析为达人主页，<b>✅ 与描述一致</b>）</td></tr>
+          <tr><td data-l=""><code>达人台账</code> 行数</td><td data-l="任务书描述">约 998 行</td><td data-l="实际读取"><b>33 行</b>（有效数据行）</td></tr>
+          <tr><td data-l=""><code>其他达人</code> 行数</td><td data-l="任务书描述">未给</td><td data-l="实际读取"><b>7 行</b></td></tr>
+          <tr><td data-l="">日期批次</td><td data-l="任务书描述">18 个（2026-01-04 ~ 07-07）</td><td data-l="实际读取"><b>18 个</b>（<b>✅ 一致</b>）</td></tr>
+        </tbody>
+      </table>
+      <p style="margin:.6rem 0 0"><b>推测</b>：998 / 1220 可能是 Excel 里带格式的空行数或另一个版本的文件。源文件体积 2.5MB 但只有 33 行数据，<b>主要体积来自嵌入对象/格式，不是数据行</b>。<b>如果甲方手上有更完整的台账版本，需要重新提供</b>——目前这份台账只有 33 条外联记录。</p>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="sec-head"><h2><span class="num">一</span>处理方法</h2></div>
+    <div class="cards c2">
+      <div class="card"><h4 style="margin-top:0">URL 归一化</h4>
+        <ul style="font-size:13.5px">
+          <li>剥离追踪参数：<code>fbclid</code>、<code>_t</code>、<code>_r</code>、<code>shop_region</code>、<code>igsh</code>、<code>utm_*</code>、<code>is_from_webapp</code>、<code>si</code>、<code>feature</code> 等</li>
+          <li>剥离锚点与尾部斜杠</li>
+          <li>平台识别：<code>instagram.com/xxx</code> → <code>IG:xxx</code>；<code>tiktok.com/@xxx</code> → <code>TT:xxx</code>；<code>youtube.com/@xxx</code>·<code>/c/</code>·<code>/user/</code>·<code>/channel/</code> → <code>YT:xxx</code></li>
+          <li>排除非主页路径（<code>/p/</code>、<code>/reel/</code>、<code>/explore/</code>、<code>/video/</code>）</li>
+        </ul>
+        <p style="font-size:13px;margin-bottom:0"><b>解析失败 2 条</b>（占 674 的 0.3%）：两条是<b>帖子链接不是主页链接</b>，无法反推达人 handle，<b>已剔除并单独记录</b>。</p>
+      </div>
+      <div class="card"><h4 style="margin-top:0">跨表去重（并查集 Union-Find）</h4>
+        <p style="font-size:13.5px">每条记录生成两类键：<b>强键</b> <code>平台:handle</code>（精确匹配）；<b>弱键</b> <code>~handle</code>（跨平台同名）。</p>
+        <p style="font-size:13.5px;margin-bottom:0"><b>弱键是必要的</b>——台账里一个人常常只填了 TikTok 链接，而 ID 字段就是他的 IG handle；不用弱键就会漏合并。<b>弱键的误合风险在本数据集里可接受</b>（这批 handle 都足够独特，<b>未发现同名不同人的情况</b>）。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dedup">
+    <div class="sec-head"><h2><span class="num">二</span>去重统计</h2></div>
+    <div class="stats">
+      <div class="stat"><div class="k i">712</div><div class="l">原始条目（INS库 672 + 台账 33 + 其他 7）</div></div>
+      <div class="stat"><div class="k i">695</div><div class="l">合并后总人数</div></div>
+      <div class="stat"><div class="k e">17</div><div class="l">去重合并掉</div></div>
+      <div class="stat"><div class="k">仅 3 组</div><div class="l">跨表重合（INS库 ↔ 台账/其他达人），<b>涉及 2 人进入过外联</b></div></div>
+    </div>
+    <table>
+      <thead><tr><th>来源</th><th>人数</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">仅 INS 搜索库</td><td data-l="人数"><b>657</b></td></tr>
+        <tr><td data-l="">仅台账</td><td data-l="人数">30</td></tr>
+        <tr><td data-l="">仅其他达人</td><td data-l="人数">5</td></tr>
+        <tr><td data-l="">INS库 + 台账</td><td data-l="人数">1（<code>connography_</code>）</td></tr>
+        <tr><td data-l="">INS库 + 其他达人 + 台账</td><td data-l="人数">1（<code>travelinthoms</code>）</td></tr>
+        <tr><td data-l="">其他达人 + 台账</td><td data-l="人数">1</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote"><b>INS 库内部重复收录的 13 人</b>（说明搜索时没有做去重）：<code>miss.rover</code>、<code>rtmadani</code>、<code>robbyclark_t4r</code>、<code>backcountry.mom</code>、<code>mcnutt_bbq</code>、<code>_aswewander</code>、<code>elnick.adventures</code>、<code>meat.therapy</code>、<code>lifebehindthe79</code>、<code>theflyinghens</code>、<code>nomad.nesters</code>、<code>the_renegade_ramblers</code>、<code>redwhiteandbbq</code>。另有 8 人同时出现在 2 个分类栏。</p>
+    <div class="callout danger">
+      <span class="ttl">⚠️ 第一个关键发现：搜索库和外联流程是两套完全脱节的系统</span>
+      <b>657 / 659 个 INS 搜索出来的达人（99.7%）从未进入外联台账。</b>反过来，33 条外联记录里<b>只有 2 条来自 INS 搜索库</b>，其余 31 个是台账端独立找的。<br><br>
+      这意味着：<b>花了 18 个批次、7 个月搜集的 674 个链接，几乎没有产生任何一次实际建联。这不是达人库质量问题，是执行断层。</b>
+    </div>
+  </section>
+
+  <section id="cats">
+    <div class="sec-head"><h2><span class="num">三</span>分类分布</h2></div>
+    <table>
+      <thead><tr><th>分类</th><th>人数</th><th>占比</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">家庭户外 Family（含跨分类）</td><td data-l="人数"><b>264</b></td><td data-l="占比">38.0%</td></tr>
+        <tr><td data-l="">Overlanding / Camping（含跨分类）</td><td data-l="人数"><b>237</b></td><td data-l="占比">34.1%</td></tr>
+        <tr><td data-l="">BBQ / 户外烹饪（含跨分类）</td><td data-l="人数"><b>166</b></td><td data-l="占比">23.9%</td></tr>
+        <tr><td data-l="">无分类（台账/其他达人独有）</td><td data-l="人数">36</td><td data-l="占比">5.2%</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">纯单分类：Family 259 / Overlanding 229 / BBQ 163；跨分类 8 人。</p>
+
+    <h3>按批次 × 分类（672 条 INS 库条目）</h3>
+    <table>
+      <thead><tr><th>批次</th><th>BBQ</th><th>Family</th><th>Overland</th><th>合计</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">2026-01-04</td><td data-l="BBQ">10</td><td data-l="Family">16</td><td data-l="Overland">11</td><td data-l="合计">37</td></tr>
+        <tr><td data-l="">2026-01-05</td><td data-l="BBQ">18</td><td data-l="Family">15</td><td data-l="Overland">17</td><td data-l="合计">50</td></tr>
+        <tr><td data-l="">2026-01-06</td><td data-l="BBQ">14</td><td data-l="Family">18</td><td data-l="Overland">23</td><td data-l="合计">55</td></tr>
+        <tr><td data-l="">2026-01-07</td><td data-l="BBQ">0</td><td data-l="Family">5</td><td data-l="Overland">8</td><td data-l="合计">13</td></tr>
+        <tr><td data-l="">2026-01-12</td><td data-l="BBQ">10</td><td data-l="Family">10</td><td data-l="Overland">10</td><td data-l="合计">30</td></tr>
+        <tr><td data-l="">2026-01-15</td><td data-l="BBQ">10</td><td data-l="Family">10</td><td data-l="Overland">10</td><td data-l="合计">30</td></tr>
+        <tr><td data-l="">2026-01-16</td><td data-l="BBQ">10</td><td data-l="Family">19</td><td data-l="Overland">22</td><td data-l="合计">51</td></tr>
+        <tr><td data-l="">2026-01-17</td><td data-l="BBQ">20</td><td data-l="Family">20</td><td data-l="Overland">20</td><td data-l="合计">60</td></tr>
+        <tr><td data-l="">2026-01-19</td><td data-l="BBQ">10</td><td data-l="Family">10</td><td data-l="Overland">10</td><td data-l="合计">30</td></tr>
+        <tr><td data-l="">2026-01-20</td><td data-l="BBQ">20</td><td data-l="Family">20</td><td data-l="Overland">20</td><td data-l="合计">60</td></tr>
+        <tr><td data-l="">2026-01-21</td><td data-l="BBQ">10</td><td data-l="Family">10</td><td data-l="Overland">10</td><td data-l="合计">30</td></tr>
+        <tr><td data-l="">2026-01-22</td><td data-l="BBQ">10</td><td data-l="Family">10</td><td data-l="Overland">10</td><td data-l="合计">30</td></tr>
+        <tr><td data-l="">2026-01-23</td><td data-l="BBQ">22</td><td data-l="Family">36</td><td data-l="Overland">40</td><td data-l="合计">98</td></tr>
+        <tr><td data-l=""><b>2026-06-18</b></td><td data-l="BBQ"><b>0</b></td><td data-l="Family">31</td><td data-l="Overland">5</td><td data-l="合计">36</td></tr>
+        <tr><td data-l=""><b>2026-06-30</b></td><td data-l="BBQ"><b>0</b></td><td data-l="Family">8</td><td data-l="Overland">0</td><td data-l="合计">8</td></tr>
+        <tr><td data-l=""><b>2026-07-01</b></td><td data-l="BBQ"><b>0</b></td><td data-l="Family">6</td><td data-l="Overland">11</td><td data-l="合计">17</td></tr>
+        <tr><td data-l="">2026-07-06</td><td data-l="BBQ">2</td><td data-l="Family">7</td><td data-l="Overland">11</td><td data-l="合计">20</td></tr>
+        <tr><td data-l=""><b>2026-07-07</b></td><td data-l="BBQ"><b>0</b></td><td data-l="Family">16</td><td data-l="Overland">1</td><td data-l="合计">17</td></tr>
+        <tr><td data-l=""><b>合计</b></td><td data-l="BBQ"><b>166</b></td><td data-l="Family"><b>267</b></td><td data-l="Overland"><b>239</b></td><td data-l="合计"><b>672</b></td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><b>发现</b>：2026-01-23 之后<b>停了 5 个月</b>；6–7 月重启的 5 个批次里 <b>BBQ 方向几乎完全停搜（98 条里只有 2 条）</b>，重心转向 Family。<b>这个转向方向是对的</b>（见第六节），但 <b>BBQ 停搜的时点和 Meta 端「KBBQ 零素材零广告组」的空白是重合的——BBQ 这条线在搜索端和投放端同时被放弃了。</b></div>
+  </section>
+
+  <section id="funnel">
+    <div class="sec-head"><h2><span class="num">四</span>外联漏斗（台账 33 人 — 真实转化）</h2></div>
+    <table>
+      <thead><tr><th>环节</th><th>人数</th><th>相对上一环</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">库内总人数</td><td data-l="人数">695</td><td data-l="相对上一环">—</td></tr>
+        <tr><td data-l=""><b>已触达（发出建联）</b></td><td data-l="人数"><b>33</b></td><td data-l="相对上一环"><b>4.7%</b>（相对总库）</td></tr>
+        <tr><td data-l="">收到回复（含 1 个回复后断联）</td><td data-l="人数"><b>5</b></td><td data-l="相对上一环"><b>15.2%</b></td></tr>
+        <tr><td data-l="">— 愿意免费置换</td><td data-l="人数">1</td><td data-l="相对上一环">3.0%</td></tr>
+        <tr><td data-l="">— 要求付费/报价过高</td><td data-l="人数">3</td><td data-l="相对上一环">9.1%</td></tr>
+        <tr><td data-l="">— 沟通中断（要求发多视频后不回）</td><td data-l="人数">1</td><td data-l="相对上一环">3.0%</td></tr>
+        <tr><td data-l=""><b>推进到寄样（等待发货）</b></td><td data-l="人数"><b>1</b></td><td data-l="相对上一环">3.0%</td></tr>
+        <tr><td data-l=""><b>已完成合作出片</b></td><td data-l="人数"><b>0</b></td><td data-l="相对上一环"><b>0%</b></td></tr>
+        <tr><td data-l=""><b>重复合作</b></td><td data-l="人数"><b>0</b>（33 人「重复合作」字段全部为「否」）</td><td data-l="相对上一环">0%</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote"><b>触达渠道</b>（有重叠，按状态字面统计）：邮件触达 14 人 / IG 私信 8 人 / TikTok 站内 7 人。</p>
+    <div class="disclaimer"><span class="ttl">⚠️ 数据缺陷</span>一旦达人回复，状态字段就被「收到回复，XXX」<b>覆盖</b>，<b>原触达渠道信息丢失，因此无法计算各渠道的回复率</b>。建议台账拆成「触达渠道」和「当前状态」两个独立字段。<br>另：台账「时间」字段只有 <code>2025.9</code>（20 人）和 <code>2025.1</code>（13 人）两个值，格式为「年.月」，与 INS 库的 2026 年批次日期口径不一致，<b>无法据此计算触达到回复的时间周期</b>。</div>
+
+    <h3>漏斗诊断</h3>
+    <ul>
+      <li><b>免费置换成功率 1/33 = 3%</b>，且这唯一一个（<code>chaoey.ride</code>，泰国）<b>不在英语区</b>，与 Meta 投放的 US 主战场不匹配</li>
+      <li>4 个收到回复的里 <b>3 个直接要钱</b> → <b>「纯置换换内容」这条路在本品类基本走不通</b>，样品价值（$189–239）不足以覆盖创作者机会成本</li>
+      <li>33 条外联里 <b>0 完成合作、0 重复合作</b> → <b>目前没有任何一条达人内容是通过这个台账流程产出的</b></li>
+    </ul>
+  </section>
+
+  <section id="price">
+    <div class="sec-head"><h2><span class="num">五</span>报价 / 量级 / 带货能力</h2></div>
+
+    <h3>5.1 报价记录（仅 2 条，样本极小）</h3>
+    <table>
+      <thead><tr><th>达人</th><th>量级</th><th>粉丝</th><th>报价</th><th>状态</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><code>beerving_america</code></td><td data-l="量级">500K+</td><td data-l="粉丝">538K</td><td data-l="报价">IG Reel <b>$6,000</b> / TikTok <b>$4,000</b> / Reel+TT转发 <b>$8,000</b> / IG Story(3帧) <b>$1,500</b></td><td data-l="状态">收到回复，价格太贵</td></tr>
+        <tr><td data-l=""><code>travelinthoms</code></td><td data-l="量级">50-100K</td><td data-l="粉丝">73K</td><td data-l="报价">1 Reel + 1 Story <b>$3,500</b></td><td data-l="状态">收到回复，要求付费</td></tr>
+      </tbody>
+    </table>
+    <p><b>报价区间：$1,500 ~ $8,000 / 单次交付。</b>换算单粉成本：<code>beerving_america</code> IG Reel ≈ <b>$11.2 / 千粉</b>；<code>travelinthoms</code> ≈ <b>$47.9 / 千粉</b>（<b>Mid 层反而更贵，因为 Macro 有议价空间</b>）。</p>
+    <div class="disclaimer">⚠️ <b>n=2，不足以作为定价基准。</b>第 3 位 <code>happy_no_mads</code> 状态标注「收到回复，带报价」但<b>佣金字段是空的——报价没被记录下来</b>，这是台账的数据丢失。</div>
+
+    <h3>5.2 量级分布（仅台账 33 人有此数据）</h3>
+    <table>
+      <thead><tr><th>层级</th><th>实际触达人数</th><th>实际占比</th><th>甲方《达人计划》投入占比</th><th>偏差</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">Nano（1k–10k）</td><td data-l="实际触达人数">8</td><td data-l="实际占比">24%</td><td data-l="甲方《达人计划》投入占比"><b>40%</b></td><td data-l="偏差">不足</td></tr>
+        <tr><td data-l="">Micro（10k–100k）</td><td data-l="实际触达人数">17</td><td data-l="实际占比">52%</td><td data-l="甲方《达人计划》投入占比"><b>30%</b></td><td data-l="偏差">超配</td></tr>
+        <tr><td data-l="">Mid（100k–500k）</td><td data-l="实际触达人数">3</td><td data-l="实际占比">9%</td><td data-l="甲方《达人计划》投入占比"><b>20%</b></td><td data-l="偏差">不足</td></tr>
+        <tr><td data-l=""><b>Macro（500k+）</b></td><td data-l="实际触达人数">5</td><td data-l="实际占比"><b>15%</b></td><td data-l="甲方《达人计划》投入占比"><b>10%</b></td><td data-l="偏差"><b>超配</b></td></tr>
+      </tbody>
+    </table>
+    <p><b>Macro 超配是失败的直接原因之一</b>——5 个 Macro 里唯一回复的 <code>beerving_america</code> 报价 $6,000-8,000，<b>直接判死</b>。</p>
+    <p class="tnote">⚠️ <b><code>derickthecamper</code> 数据矛盾</b>：量级标 <code>50-100K</code> 但最高粉丝数只有 <code>9.3K</code>，两个字段对不上，<b>已在总库中原样保留，需甲方核对</b>。</p>
+
+    <h3>5.3 带货能力</h3>
+    <ul>
+      <li><b>明确标注 TikTok Shop 带货：3 人</b> —— <code>beerving_america</code>（500K+，价格太贵）、<code>keegjasper</code>（500K+，TT已发未回）、<code>connography_</code>（20-50K，已发邮件未回）</li>
+      <li><b>有带货落地页/link-in-bio：17 人</b>（linktr.ee / beacons.ai / 独立站 collections 页）</li>
+      <li><b>备注中明确写「有爆款/客单价高」的</b>：<code>resellergrowth</code>（20-50K，「后院用品带货，有烧烤箱爆款，客单价高」）—— <b>这是全台账最匹配 AroundFire 品类的带货型达人，目前状态只是「TT已发」未回复</b></li>
+    </ul>
+    <div class="disclaimer">⚠️ 「带货情况」字段被<b>混用</b>了：既填「TikTok Shop」这种能力标签，也填 linktr.ee 这种链接，还有的填品牌合作页。<b>没有一条记录了实际带货 GMV 或出单数，所以无法回答「哪些达人实际出过单」——库里没有这个数据。</b>目前能给出的最强证据只到「有 TikTok Shop 挂车能力」这一层。</div>
+
+    <h3>5.4 数据完整度（全库 695 人）</h3>
+    <table>
+      <thead><tr><th>字段</th><th>有值人数</th><th>覆盖率</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">平台 handle</td><td data-l="有值人数">695</td><td data-l="覆盖率">100%</td></tr>
+        <tr><td data-l="">分类</td><td data-l="有值人数">659</td><td data-l="覆盖率">94.8%</td></tr>
+        <tr><td data-l="">量级 / 粉丝数</td><td data-l="有值人数"><b>33</b></td><td data-l="覆盖率"><b>4.7%</b></td></tr>
+        <tr><td data-l="">状态</td><td data-l="有值人数"><b>33</b></td><td data-l="覆盖率"><b>4.7%</b></td></tr>
+        <tr><td data-l="">联系方式</td><td data-l="有值人数"><b>22</b></td><td data-l="覆盖率"><b>3.2%</b></td></tr>
+        <tr><td data-l="">备注</td><td data-l="有值人数">35</td><td data-l="覆盖率">5.0%</td></tr>
+        <tr><td data-l="">报价</td><td data-l="有值人数"><b>2</b></td><td data-l="覆盖率"><b>0.3%</b></td></tr>
+      </tbody>
+    </table>
+    <div class="callout danger"><b>658 人（94.7%）只有一条 Instagram 链接，没有粉丝数、没有邮箱、没有画像、没有任何标签。这是当前达人库最大的问题——它不是一个「库」，是一份未加工的链接清单。</b></div>
+  </section>
+
+  <section id="winner">
+    <div class="sec-head"><h2><span class="num">六</span>结合 Meta 投放数据的反推</h2></div>
+
+    <h3>6.1 跑赢的素材有什么共同特征</h3>
+    <table>
+      <thead><tr><th>素材</th><th>花费</th><th>ROAS</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">evcinshome</td><td data-l="花费">$1,146</td><td data-l="ROAS"><b>7.00</b></td></tr>
+        <tr><td data-l="">cait 沙滩</td><td data-l="花费">$2,702</td><td data-l="ROAS"><b>6.31</b></td></tr>
+        <tr><td data-l="">vanadvantures 简短口播</td><td data-l="花费">$465</td><td data-l="ROAS"><b>5.81</b></td></tr>
+        <tr><td data-l="">ins帖子-Paige 桌子解说和展示-2</td><td data-l="花费">$641</td><td data-l="ROAS"><b>5.31</b></td></tr>
+        <tr><td data-l="">evicnshome-2</td><td data-l="花费">$1,649</td><td data-l="ROAS">5.08</td></tr>
+        <tr><td data-l="">betweenus 口播</td><td data-l="花费">$1,118</td><td data-l="ROAS">4.67</td></tr>
+        <tr><td data-l="">混剪-汽车露营（花费最高）</td><td data-l="花费"><b>$5,577</b></td><td data-l="ROAS"><b>4.00</b></td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li><b>「INS帖子/UGC」主题整体 ROAS 8.0、CPA $41，但只吃了 12% 预算</b>；自制混剪 ROAS 4.0–4.3，<b>吃掉最大预算</b></li>
+      <li>最赚钱人群：<b>55-64 女性 ROAS 7.35 / CPA $30</b>、<b>65+ 女性 CPA $27</b>（全账户最低）；35-44 男性单量最高（145 单）</li>
+      <li><b>25-34 是最差人群（ROAS 3.4–3.6）</b></li>
+      <li>「家庭/后院」主题只测了 $211（<b>信号，非结论</b>）；<b>KBBQ 方向零素材零广告组</b></li>
+    </ul>
+
+    <div class="card" style="border:2px solid var(--red)">
+      <h3 style="margin-top:0">⚠️ 第二个关键发现：跑赢的达人一个都不在库里</h3>
+      <p>用 <code>evcins</code> / <code>cait</code> / <code>vanadv</code> / <code>paige</code> / <code>betweenus</code> 五个关键词在 <b>695 人总库</b>（含 IG / TikTok / YouTube handle 和台账 ID）里做匹配：</p>
+      <table>
+        <thead><tr><th>广告素材名</th><th>库内匹配</th></tr></thead>
+        <tbody>
+          <tr><td data-l="">evcinshome</td><td data-l="库内匹配"><b>0 条</b></td></tr>
+          <tr><td data-l="">cait 沙滩</td><td data-l="库内匹配"><b>0 条</b></td></tr>
+          <tr><td data-l="">vanadvantures</td><td data-l="库内匹配">0 条精确匹配（仅有形近的 <code>caravanadventureaus</code>，<b>不能认定是同一人</b>）</td></tr>
+          <tr><td data-l="">Paige</td><td data-l="库内匹配"><b>0 条</b></td></tr>
+          <tr><td data-l="">betweenus</td><td data-l="库内匹配">0 条精确匹配（库内有 <code>lifebetweensummits</code>、<code>somewhere_in_between__</code>，<b>均非同一人</b>）</td></tr>
+        </tbody>
+      </table>
+      <p><b>账户里 ROAS 最高的那批真人素材，全部不在这个达人库、也不在外联台账里。</b>这批素材要么来自 Kickstarter backer、要么来自客户自己零散拿到的 UGC、要么是买断的素材库——<b>总之它的来源没有被记录，也就无法复制。</b></p>
+      <div class="callout danger" style="margin-bottom:0"><b>这是整个项目最需要立刻补的动作</b>：<b>回去问甲方这 5 个素材的创作者是谁、怎么拿到的、单价多少、能不能续约。</b>ROAS 7.00 的 <code>evcinshome</code> 只花了 $1,146，<b>如果能复购 10 条同类内容，比继续搜 674 个陌生链接的性价比高一个数量级。</b><br><span style="font-size:12.5px">（<b>素材命名是甲方的内部标签，理论上存在缩写/化名可能，需甲方确认后才能下最终结论。</b>）</span></div>
+    </div>
+
+    <h3>6.3 现有库到底偏没偏？—— 分层看，结论不同</h3>
+    <div class="cards c2">
+      <div class="card" style="border-left:5px solid var(--green)"><h4 style="margin-top:0">❌「库过度偏年轻 overlanding 男性」这个假设，在总库层面不成立</h4><p style="margin-bottom:0">按分类计数，<b>Family 264 人（38%）反而是最大的一档</b>，Overlanding 237（34%），BBQ 166（24%）。搜索端的品类配比是均衡的，而且 6–7 月的最新批次明确往 Family 倾斜（98 条里 68 条是 Family）——<b>搜索方向的直觉是对的</b>。</p></div>
+      <div class="card" style="border-left:5px solid var(--red)"><h4 style="margin-top:0">✅ 但「实际触达的那 33 个人严重偏 overlanding / 装备男」，这个成立</h4>
+        <table style="margin-top:.4rem"><thead><tr><th>备注标签（一人可多标签，n=33）</th><th>人数</th></tr></thead><tbody>
+        <tr><td data-l="">露营</td><td data-l="人数">16</td></tr><tr><td data-l="">测评 / 带货</td><td data-l="人数">9</td></tr><tr><td data-l="">越野 / Overland / 4WD / 皮卡</td><td data-l="人数">8</td></tr><tr><td data-l="">家庭 / 情侣 / 有孩子</td><td data-l="人数">6</td></tr><tr><td data-l="">Van / RV / 房车</td><td data-l="人数">6</td></tr><tr><td data-l="">烹饪 / BBQ / 咖啡</td><td data-l="人数">6</td></tr><tr><td data-l="">钓鱼 / 狩猎</td><td data-l="人数">4</td></tr><tr><td data-l=""><b>女性主导</b></td><td data-l="人数"><b>3</b></td></tr><tr><td data-l="">后院</td><td data-l="人数">2</td></tr>
+        </tbody></table></div>
+    </div>
+    <ul>
+      <li><b>33 人里只有 3 个备注明确是女性创作者</b>，且全是年轻女性人设</li>
+      <li><b>0 个中年/银发女性创作者，0 个祖辈-家庭三代同框场景，0 个明确的「后院家庭聚会」主理人</b></li>
+      <li>而 Meta 端 <b>55-64 女性 ROAS 7.35（全账户第一）、65+ 女性 CPA $27（全账户最低）</b> —— <b>这个最赚钱的人群，在达人侧完全没有对应的内容供给方</b></li>
+      <li>「后院」只有 2 人，其中 <code>resellergrowth</code> 还是带货号不是场景号；而 Meta 端「家庭/后院」主题虽只测了 $211 但表现最好</li>
+      <li><b>BBQ 库存 166 人，实际触达的 BBQ/烹饪向达人只有 6 个，且没有一个是纯 BBQ 号</b>（都是「露营+顺带烹饪」）。Meta 端 KBBQ 零测试。<b>166 个 BBQ 达人 = 100% 未动用的库存</b></li>
+    </ul>
+    <div class="callout danger"><b>结论：偏的不是库，是执行。</b>搜索端建了一个均衡且方向正确的库（Family 最多、BBQ 166 人），但外联端只按「露营/越野/装备测评」这一个惯性方向去打，<b>把库里最匹配高 ROAS 人群的两块（中年女性家庭 + BBQ/后院）完全晾着</b>。</div>
+  </section>
+
+  <section id="priority">
+    <div class="sec-head"><h2><span class="num">七</span>该优先联系哪一批（按优先级排序）</h2></div>
+
+    <div class="card" style="border:2px solid var(--red)">
+      <h4 style="margin-top:0">P0 — 先回收已有的赢家，别再从零搜</h4>
+      <ol>
+        <li>向甲方索取 <code>evcinshome</code>、<code>cait</code>、<code>vanadvantures</code>、<code>Paige</code>、<code>betweenus</code> 五位创作者的联系方式与合作条件，<b>建立复购</b>。这 5 个素材合计花费 $7,021、ROAS 均值 &gt; 5.5，<b>是已被账户验证过的确定性资产</b></li>
+        <li>把这 5 人补录进达人总库，<b>标记为「已验证赢家」</b></li>
+      </ol>
+    </div>
+
+    <h4>P1 — 库内立刻可动、最匹配高 ROAS 人群的三类（从 657 个未触达的 INS 库里筛）</h4>
+    <table>
+      <thead><tr><th>优先级</th><th>画像</th><th>对应的 Meta 证据</th><th>库存</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">P1-a</td><td data-l="画像"><b>35-60 岁女性主理的家庭/后院聚会号</b>（多代同堂、招待朋友、节日聚餐场景）</td><td data-l="对应的 Meta 证据">55-64 女性 ROAS 7.35 / CPA $30；65+ 女性 CPA $27；「家庭/后院」主题 ROAS 最高</td><td data-l="库存">Family 分类 <b>264 人待筛</b>（handle 里带 mom/mama/nana/gran 等信号的仅 12 人，<b>需人工过一遍主页</b>）</td></tr>
+        <tr><td data-l="">P1-b</td><td data-l="画像"><b>BBQ / 后院烧烤 / KBBQ 内容号</b></td><td data-l="对应的 Meta 证据">KBBQ 词群搜索量 + 甲方已有 KBBQ Style Grill Grate 配件，但 Meta 端<b>零素材零广告组</b></td><td data-l="库存">BBQ 分类 <b>166 人，100% 未触达</b></td></tr>
+        <tr><td data-l="">P1-c</td><td data-l="画像"><b>Fire pit table / 后院社交场景号</b></td><td data-l="对应的 Meta 证据"><code>fire pit table</code> 96,440 是最大搜索池；后院主题 CPA $18（<b>样本小但方向明确</b>）</td><td data-l="库存">库内「后院」标签仅 2 人，<b>需补搜</b></td></tr>
+      </tbody>
+    </table>
+
+    <h4>P2 — 已触达但没跟进到位的，做二次跟进（成本最低）</h4>
+    <ul>
+      <li><code>resellergrowth</code>（20-50K，后院用品带货、有烧烤箱爆款、客单价高）—— <b>品类匹配度全台账最高，状态停在「TT已发」</b></li>
+      <li><code>yarnandthyme</code>（50-100K，户外烹饪/厨艺/农场）—— <b>女性 + 烹饪 + 农场生活，是最接近 55-64 女性受众的现有人选</b>，状态停在「TT已发」</li>
+      <li><code>camp_and_coffee_outdoors</code>（0-5K，甲方自己备注「很合适！」）—— Nano 层置换成本最低，双渠道已发未回，<b>值得第三次跟进</b></li>
+      <li><code>remnantoutdoorco</code>（50-100K，等待发货）—— <b>唯一进入寄样环节的，必须盯到出片</b></li>
+    </ul>
+
+    <h4>P3 — 明确降级 / 不再投入</h4>
+    <ul>
+      <li><b>Macro（500K+）整批降级</b>：5 人触达，唯一回复的开价 $6,000-8,000，<b>ROI 完全不成立</b>。达人计划里 Macro 只给 10% 预算是对的，实际却占了 15% 触达量</li>
+      <li><b>年轻硬核 overlanding / 4×4 / 越野方向降级</b>：Meta 端 25-34 人群 ROAS 3.4–3.6 是全账户最差，且「汽车露营/overland」主题吃掉 38% 预算 ROAS 只有 5.0（<b>低于 camping table 的 6.0</b>）。<b>库里 Overlanding 237 人不必再扩，够用了</b></li>
+      <li><b>非英语区达人</b>（如 <code>chaoey.ride</code>，泰国）——虽然是唯一愿意置换的，但受众与 US 投放盘不匹配，<b>只能做低成本素材源，不能作为种草主力</b></li>
+    </ul>
+
+    <div class="callout ok">
+      <span class="ttl">内容形态建议（从跑赢素材反推给达人的 brief）</span>
+      跑赢的 5 条素材<b>全是真人出镜 + 口播/解说 + 单场景</b>，不是精致混剪：<code>vanadvantures</code> 是「<b>简短</b>口播」，$465 小预算跑出 5.81；<code>Paige</code> 是「桌子<b>解说和展示</b>」；<code>betweenus</code> 是「口播」。花费最高的自制「混剪-汽车露营」$5,577 只跑出 4.00。<br><br>
+      → 给达人的 brief 应该是：<b>一镜到底的真人口播 + 产品展示 + 真实场景，不要求电影感、不要求航拍。</b>这也直接降低了达人的制作成本，<b>提高置换成功率</b>。<br><br>
+      <b>反过来看台账里被优先联系的人</b>：<code>chase.in.point</code>（"画面精美，优质航拍，摄影师"）、<code>keegjasper</code>（"视频风格绝美"）、<code>connography_</code>（"电影感创作者"）—— <b>甲方在按「谁拍得好看」选人，但账户数据说买家买的是「谁讲得清楚」。这是选人标准上的方向性错误。</b>
+    </div>
+  </section>
+
+  <section id="todo">
+    <div class="sec-head"><h2><span class="num">八</span>需要甲方补数据 + 建议的库改造动作</h2></div>
+    <div class="cards c2">
+      <div class="card"><h4 style="margin-top:0">需要甲方补的数据</h4>
+        <ol>
+          <li><b>完整版达人台账</b>（当前只有 33 行，任务书描述为 998 行）</li>
+          <li><b>5 个高 ROAS 素材的创作者身份与联系方式</b>（evcinshome / cait / vanadvantures / Paige / betweenus）—— <b>最高优先级</b></li>
+          <li><code>happy_no_mads</code> 的报价（状态写「带报价」但佣金字段为空）</li>
+          <li><code>derickthecamper</code> 的量级矛盾（标 50-100K，粉丝数 9.3K）</li>
+          <li>台账「时间」字段口径（<code>2025.9</code> / <code>2025.1</code> 是年月还是别的）</li>
+          <li>是否有任何达人合作产生过<b>实际订单/GMV 记录</b>（当前「带货情况」字段无出单数据）</li>
+        </ol>
+      </div>
+      <div class="card"><h4 style="margin-top:0">建议的库改造动作</h4>
+        <ol>
+          <li><b>拆字段</b>：「状态」拆成「触达渠道」+「当前进度」+「触达日期」三列，<b>否则永远算不出渠道回复率</b></li>
+          <li><b>补画像</b>：658 个只有链接的达人必须做一次批量 enrichment（粉丝数、互动率、受众年龄性别、邮箱）。<b>没有粉丝数和受众画像，第七节的优先级排序只能靠 handle 关键词粗筛，精度有限</b>——<b>这是本次分析最大的方法论局限，必须诚实标注</b></li>
+          <li><b>加标签</b>：按「主理人性别/年龄段」「是否有孩子」「场景（后院/营地/车/RV）」「是否真人出镜口播」四个维度打标，直接对应 Meta 端可验证的人群与素材特征</li>
+          <li><b>建搜索-外联的强制流转</b>：搜索库每周固定往外联队列推 N 人，<b>避免再出现「搜了 674 个、只联系了 2 个」</b></li>
+        </ol>
+      </div>
+    </div>
+    <div class="disclaimer"><b>方法论局限（诚实声明）</b>：达人性别/年龄类判断<b>在无画像数据时仅基于 handle 关键词与台账中文备注推断</b>，已在文中逐处标注。总库 695 人中 <b>94.7% 只有一条链接</b>，因此第七节 P1 的三类画像只能给出「筛选方向 + 库存量」，<b>不能给出具体人名清单</b>。</div>
+  </section>
+
+  <div class="pagenav">
+    <a href="meta.html"><div class="d">◂ 上一份</div><div class="t">Meta 投放诊断</div></a>
+    <a class="nx" href="index.html"><div class="d">回到 ▸</div><div class="t">报告中心</div></a>
+  </div>
+
+</div>
+
+<div class="foot">AroundFire 全链路品牌调研 · 达人库诊断 · 2026-07-21</div>
+</body>
+</html>

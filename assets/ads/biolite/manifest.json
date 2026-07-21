@@ -1,0 +1,658 @@
+{
+ "brand": "BioLite",
+ "page_id": "224566557578217",
+ "page_name": "BioLite",
+ "results_text": "~22 results",
+ "total_cards_scraped": 18,
+ "fetched_at": "2026-07-21",
+ "ads": [
+  {
+   "seq": 1,
+   "library_id": "1458520589299475",
+   "media_type": "image",
+   "page_name": "BioLite",
+   "start_date": "Apr 23, 2026",
+   "start_iso": "2026-04-23",
+   "days_running": 89,
+   "variants": 1,
+   "primary_text": "✅ Efficient: Burns wood or charcoal without smoke\n✅ Portable: smaller than a homer bucket\n✅ Popular: Over 1000+ 5-star reviews on Amazon\nMeet The EcoZoom Versa Stove\nFREE Shipping When You Buy Today",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1458520589299475",
+   "files": [
+    {
+     "path": "01_1458520589299475.jpg",
+     "kind": "image",
+     "size_kb": 56
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营",
+     "后院"
+    ],
+    "people": [
+     "单人男性"
+    ],
+    "hooks": [
+     "用户证言/UGC",
+     "便携"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "EcoZoom Versa portable rocket stove",
+    "one_line": "展示单手拿着铸铁平底锅在EcoZoom便携式火箭柴火炉上烹饪的场景，画面配有用户好评"
+   }
+  },
+  {
+   "seq": 2,
+   "library_id": "1004480795332764",
+   "media_type": "video",
+   "page_name": "BioLite",
+   "start_date": "Jun 3, 2026",
+   "start_iso": "2026-06-03",
+   "days_running": 48,
+   "variants": 2,
+   "primary_text": "Don't wait for the sunrise.\nWe designed our Range Headlamps to keep up with all your outdoor adventures, so you can traverse through the dark and start your day earlier.",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1004480795332764",
+   "files": [
+    {
+     "path": "02_1004480795332764.mp4",
+     "kind": "video",
+     "size_kb": 517
+    },
+    {
+     "path": "02_1004480795332764_poster.jpg",
+     "kind": "poster",
+     "size_kb": 13
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营"
+    ],
+    "people": [
+     "单人男性"
+    ],
+    "hooks": [
+     "便携",
+     "氛围感"
+    ],
+    "n_people_on_screen": 1,
+    "group_cooking": false,
+    "product_shown": "BioLite Range Headlamp",
+    "one_line": "展示了一名男子清晨在帐篷里醒来，使用头灯准备开始露营活动。"
+   }
+  },
+  {
+   "seq": 3,
+   "library_id": "2423488934800835",
+   "media_type": "video",
+   "page_name": "BioLite",
+   "start_date": "Jun 3, 2026",
+   "start_iso": "2026-06-03",
+   "days_running": 48,
+   "variants": 2,
+   "primary_text": "Shorter days don't need to bring your adventures to a close.",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=2423488934800835",
+   "files": [
+    {
+     "path": "03_2423488934800835.mp4",
+     "kind": "video",
+     "size_kb": 575
+    },
+    {
+     "path": "03_2423488934800835_poster.jpg",
+     "kind": "poster",
+     "size_kb": 161
+    }
+   ],
+   "headline": "Go farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "纯产品展示"
+    ],
+    "people": [
+     "单人男性",
+     "单人女性"
+    ],
+    "hooks": [
+     "新品上市",
+     "耐用材质"
+    ],
+    "n_people_on_screen": 1,
+    "group_cooking": false,
+    "product_shown": "BioLite Range Headlamps",
+    "one_line": "多位模特在纯白背景下展示不同款色和亮度的BioLite新系列头灯。"
+   }
+  },
+  {
+   "seq": 4,
+   "library_id": "27113342451648567",
+   "media_type": "image",
+   "page_name": "BioLite",
+   "start_date": "Jun 3, 2026",
+   "start_iso": "2026-06-03",
+   "days_running": 48,
+   "variants": 2,
+   "primary_text": "Shorter days don't need to bring your adventures to a close.\nGo farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.\nNEW Range Headlamps\nBright, Fast, Waterproof",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=27113342451648567",
+   "files": [
+    {
+     "path": "04_27113342451648567.jpg",
+     "kind": "image",
+     "size_kb": 24
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营"
+    ],
+    "people": [
+     "单人男性"
+    ],
+    "hooks": [
+     "新品上市",
+     "耐用材质"
+    ],
+    "n_people_on_screen": 1,
+    "group_cooking": false,
+    "product_shown": "headlamp",
+    "one_line": "一名戴着橙色亮起头灯的年轻男子在纯色背景前微笑"
+   }
+  },
+  {
+   "seq": 5,
+   "library_id": "848397151198612",
+   "media_type": "image",
+   "page_name": "BioLite",
+   "start_date": "Jun 3, 2026",
+   "start_iso": "2026-06-03",
+   "days_running": 48,
+   "variants": 1,
+   "primary_text": "Go farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.\nWaterproof & Fast Charging",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=848397151198612",
+   "files": [
+    {
+     "path": "05_848397151198612.jpg",
+     "kind": "image",
+     "size_kb": 25
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营"
+    ],
+    "people": [
+     "单人女性"
+    ],
+    "hooks": [
+     "便携",
+     "氛围感"
+    ],
+    "n_people_on_screen": 1,
+    "group_cooking": false,
+    "product_shown": "BioLite headlamp",
+    "one_line": "一位戴着BioLite发光头灯的女性在林间微笑仰望。"
+   }
+  },
+  {
+   "seq": 6,
+   "library_id": "1337769945156122",
+   "media_type": "video",
+   "page_name": "BioLite",
+   "start_date": "Jun 27, 2026",
+   "start_iso": "2026-06-27",
+   "days_running": 24,
+   "variants": 1,
+   "primary_text": "Brew a morning coffee and charge your phone with just a handful of twigs.\nCook With What You Find\nPlus Free Shipping",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1337769945156122",
+   "files": [
+    {
+     "path": "06_1337769945156122.mp4",
+     "kind": "video",
+     "size_kb": 1497
+    },
+    {
+     "path": "06_1337769945156122_poster.jpg",
+     "kind": "poster",
+     "size_kb": 75
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营",
+     "烹饪特写"
+    ],
+    "people": [
+     "单人女性"
+    ],
+    "hooks": [
+     "一物多用",
+     "便携"
+    ],
+    "n_people_on_screen": 1,
+    "group_cooking": false,
+    "product_shown": "BioLite CampStove and Kettle",
+    "one_line": "单人女性在户外露营时使用BioLite便携柴炉和咖啡壶烧水制作咖啡。"
+   }
+  },
+  {
+   "seq": 7,
+   "library_id": "1346349784134160",
+   "media_type": "video",
+   "page_name": "BioLite",
+   "start_date": "Jun 27, 2026",
+   "start_iso": "2026-06-27",
+   "days_running": 24,
+   "variants": 2,
+   "primary_text": "Brew a morning coffee and charge your phone with just a handful of twigs.\nCook With What You Find\nPlus Free Shipping",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1346349784134160",
+   "files": [
+    {
+     "path": "07_1346349784134160.mp4",
+     "kind": "video",
+     "size_kb": 1997
+    },
+    {
+     "path": "07_1346349784134160_poster.jpg",
+     "kind": "poster",
+     "size_kb": 165
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营",
+     "烹饪特写"
+    ],
+    "people": [
+     "单人男性"
+    ],
+    "hooks": [
+     "一物多用",
+     "便携",
+     "用户证言/UGC"
+    ],
+    "n_people_on_screen": 1,
+    "group_cooking": false,
+    "product_shown": "BioLite CampStove 2",
+    "one_line": "博主通过UGC视频展示了如何利用BioLite便携营地炉燃烧树枝来为手机充电和烹饪。"
+   }
+  },
+  {
+   "seq": 8,
+   "library_id": "1654036472344088",
+   "media_type": "video",
+   "page_name": "BioLite",
+   "start_date": "Jun 27, 2026",
+   "start_iso": "2026-06-27",
+   "days_running": 24,
+   "variants": 1,
+   "primary_text": "Don't wait for the sunrise.\nWe designed our Range Headlamps to keep up with all your outdoor adventures, so you can traverse through the dark and start your day earlier.",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1654036472344088",
+   "files": [
+    {
+     "path": "08_1654036472344088.mp4",
+     "kind": "video",
+     "size_kb": 517
+    },
+    {
+     "path": "08_1654036472344088_poster.jpg",
+     "kind": "poster",
+     "size_kb": 13
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营"
+    ],
+    "people": [
+     "单人男性"
+    ],
+    "hooks": [
+     "便携",
+     "氛围感"
+    ],
+    "n_people_on_screen": 1,
+    "group_cooking": false,
+    "product_shown": "BioLite Range Headlamp",
+    "one_line": "一名男子在清晨戴着头灯走出露营帐篷并准备炉具。"
+   }
+  },
+  {
+   "seq": 9,
+   "library_id": "2232893214152008",
+   "media_type": "image",
+   "page_name": "BioLite",
+   "start_date": "Jun 27, 2026",
+   "start_iso": "2026-06-27",
+   "days_running": 24,
+   "variants": 1,
+   "primary_text": "Shorter days don't need to bring your adventures to a close.\nGo farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.\nNEW Range Headlamps",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=2232893214152008",
+   "files": [
+    {
+     "path": "09_2232893214152008.jpg",
+     "kind": "image",
+     "size_kb": 43
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营",
+     "overlanding越野"
+    ],
+    "people": [
+     "朋友聚会"
+    ],
+    "hooks": [
+     "新品上市",
+     "便携"
+    ],
+    "n_people_on_screen": 2,
+    "group_cooking": false,
+    "product_shown": "Range Headlamp",
+    "one_line": "展示两人在夜间森林徒步时佩戴BioLite头灯"
+   }
+  },
+  {
+   "seq": 10,
+   "library_id": "2286597195498822",
+   "media_type": "image",
+   "page_name": "BioLite",
+   "start_date": "Jun 27, 2026",
+   "start_iso": "2026-06-27",
+   "days_running": 24,
+   "variants": 1,
+   "primary_text": "Shorter days don't need to bring your adventures to a close.\nGo farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.\nNEW Range Headlamps",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=2286597195498822",
+   "files": [
+    {
+     "path": "10_2286597195498822.jpg",
+     "kind": "image",
+     "size_kb": 27
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "室内"
+    ],
+    "people": [
+     "单人男性"
+    ],
+    "hooks": [
+     "新品上市",
+     "便携"
+    ],
+    "n_people_on_screen": 1,
+    "group_cooking": false,
+    "product_shown": "BioLite Range Headlamp",
+    "one_line": "一名戴着发光橙色BioLite头灯的黑人男子在纯白背景前微笑"
+   }
+  },
+  {
+   "seq": 11,
+   "library_id": "995801936687764",
+   "media_type": "video",
+   "page_name": "BioLite",
+   "start_date": "Jun 27, 2026",
+   "start_iso": "2026-06-27",
+   "days_running": 24,
+   "variants": 1,
+   "primary_text": "Brew a morning coffee and charge your phone with just a handful of twigs.\nCook With What You Find\nPlus Free Shipping",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=995801936687764",
+   "files": [
+    {
+     "path": "11_995801936687764.mp4",
+     "kind": "video",
+     "size_kb": 2874
+    },
+    {
+     "path": "11_995801936687764_poster.jpg",
+     "kind": "poster",
+     "size_kb": 108
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营",
+     "后院",
+     "烹饪特写"
+    ],
+    "people": [
+     "单人女性",
+     "家庭带娃"
+    ],
+    "hooks": [
+     "一物多用",
+     "无烟技术",
+     "用户证言/UGC"
+    ],
+    "n_people_on_screen": 3,
+    "group_cooking": false,
+    "product_shown": "BioLite CampStove with Grill and Kettle",
+    "one_line": "一名女性通过UGC视频展示并测评了BioLite多功能无烟露营炉的便携煮食和发电充电功能。"
+   }
+  },
+  {
+   "seq": 12,
+   "library_id": "1306154418243948",
+   "media_type": "image",
+   "page_name": "BioLite",
+   "start_date": "Jun 28, 2026",
+   "start_iso": "2026-06-28",
+   "days_running": 23,
+   "variants": 1,
+   "primary_text": "The nightfall doesn't stop explorers.\nWe designed our Range Headlamps to keep up with all your outdoor adventures, so can keep traversing through dark and extend your outdoor pursuit.\nWaterproof & Fast Charging",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1306154418243948",
+   "files": [
+    {
+     "path": "12_1306154418243948.jpg",
+     "kind": "image",
+     "size_kb": 24
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营"
+    ],
+    "people": [
+     "情侣"
+    ],
+    "hooks": [
+     "便携",
+     "氛围感"
+    ],
+    "n_people_on_screen": 2,
+    "group_cooking": false,
+    "product_shown": "BioLite Range Headlamps",
+    "one_line": "一对情侣戴着亮起的头灯在夜色中凝望远方。"
+   }
+  },
+  {
+   "seq": 13,
+   "library_id": "823505647362749",
+   "media_type": "video",
+   "page_name": "BioLite",
+   "start_date": "Jun 28, 2026",
+   "start_iso": "2026-06-28",
+   "days_running": 23,
+   "variants": 1,
+   "primary_text": "Go farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.\nNEW Range Headlamps",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=823505647362749",
+   "files": [
+    {
+     "path": "13_823505647362749.mp4",
+     "kind": "video",
+     "size_kb": 444
+    },
+    {
+     "path": "13_823505647362749_poster.jpg",
+     "kind": "poster",
+     "size_kb": 65
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营"
+    ],
+    "people": [
+     "单人男性"
+    ],
+    "hooks": [
+     "新品上市",
+     "耐用材质"
+    ],
+    "n_people_on_screen": 2,
+    "group_cooking": false,
+    "product_shown": "BioLite Range Headlamp",
+    "one_line": "展示了BioLite新款头灯在户外溪流和暴雨中的防水性能与使用场景。"
+   }
+  },
+  {
+   "seq": 14,
+   "library_id": "997488362890136",
+   "media_type": "video",
+   "page_name": "BioLite",
+   "start_date": "Jun 28, 2026",
+   "start_iso": "2026-06-28",
+   "days_running": 23,
+   "variants": 1,
+   "primary_text": "Shorter days don't need to bring your adventures to a close.\nGo farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.\nNEW Range Headlamps\nBright, Fast, Waterproof",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=997488362890136",
+   "files": [
+    {
+     "path": "14_997488362890136.mp4",
+     "kind": "video",
+     "size_kb": 541
+    },
+    {
+     "path": "14_997488362890136_poster.jpg",
+     "kind": "poster",
+     "size_kb": 35
+    }
+   ],
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "tags": {
+    "scene": [
+     "露营",
+     "overlanding越野",
+     "纯产品展示"
+    ],
+    "people": [
+     "情侣",
+     "单人男性"
+    ],
+    "hooks": [
+     "新品上市",
+     "便携",
+     "耐用材质"
+    ],
+    "n_people_on_screen": 2,
+    "group_cooking": false,
+    "product_shown": "Range Headlamps",
+    "one_line": "展示了BioLite新款Range头灯在夜间越野和雨中徒步时的防水、强光与快充性能。"
+   }
+  },
+  {
+   "seq": 15,
+   "library_id": "1023441520642823",
+   "media_type": "video",
+   "page_name": "BioLite",
+   "start_date": "Jul 2, 2026",
+   "start_iso": "2026-07-02",
+   "days_running": 19,
+   "variants": 1,
+   "primary_text": "✅ Efficient: Burns wood or charcoal without smoke\n✅ Portable: smaller than a homer bucket\n✅ Popular: Over 1000+ 5-star reviews on Amazon",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1023441520642823",
+   "files": [
+    {
+     "path": "15_1023441520642823.mp4",
+     "kind": "video",
+     "size_kb": 1356
+    },
+    {
+     "path": "15_1023441520642823_poster.jpg",
+     "kind": "poster",
+     "size_kb": 54
+    }
+   ],
+   "headline": "Meet The EcoZoom Versa Stove",
+   "description": "",
+   "display_link": "WWW.BIOLITEENERGY.COM",
+   "cta": "Shop now",
+   "tags": {
+    "scene": [
+     "后院",
+     "烹饪特写",
+     "纯产品展示"
+    ],
+    "people": [
+     "单人女性",
+     "美食特写无人"
+    ],
+    "hooks": [
+     "耐用材质",
+     "便携",
+     "一物多用"
+    ],
+    "n_people_on_screen": 1,
+    "group_cooking": false,
+    "product_shown": "EcoZoom Versa portable rocket stove",
+    "one_line": "展示了EcoZoom Versa火箭炉在后院的卓越耐用性、多种烹饪功能以及便携收纳过程。"
+   }
+  }
+ ]
+}

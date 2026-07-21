@@ -1,0 +1,625 @@
+{
+ "brand": "Breeo",
+ "page_id": "366513596821393",
+ "page_name": "Breeo",
+ "results_text": "~100 results",
+ "total_cards_scraped": 41,
+ "total_variants": 49,
+ "fetched_at": "2026-07-21",
+ "ads": [
+  {
+   "seq": 1,
+   "library_id": "2039664620098788",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Mar 12, 2026",
+   "start_iso": "2026-03-12",
+   "days_running": 131,
+   "variants": 1,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.\nMade in the USA, Built to Last",
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=2039664620098788",
+   "files": [
+    {
+     "path": "01_2039664620098788.jpg",
+     "kind": "image",
+     "size_kb": 42
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "用户证言/UGC",
+     "对比竞品",
+     "氛围感"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Breeo X24 fire pit with heat deflector",
+    "one_line": "在后院场景中展示了安装有热导流罩且燃着旺火的Breeo X24无烟火盆。"
+   }
+  },
+  {
+   "seq": 2,
+   "library_id": "789668604211720",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Mar 18, 2026",
+   "start_iso": "2026-03-18",
+   "days_running": 125,
+   "variants": 1,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.\nBring Your Backyard Vision to Life",
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=789668604211720",
+   "files": [
+    {
+     "path": "02_789668604211720.jpg",
+     "kind": "image",
+     "size_kb": 42
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "聚会派对"
+    ],
+    "people": [
+     "朋友聚会"
+    ],
+    "hooks": [
+     "氛围感",
+     "社交聚会",
+     "无烟技术"
+    ],
+    "n_people_on_screen": 4,
+    "group_cooking": false,
+    "product_shown": "Breeo X24 smokeless fire pit",
+    "one_line": "朋友们在木屋后院围坐在Breeo无烟篝火炉旁，享受温馨惬意的聚会时光。"
+   }
+  },
+  {
+   "seq": 3,
+   "library_id": "2078184826091519",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 10, 2026",
+   "start_iso": "2026-04-10",
+   "days_running": 102,
+   "variants": 1,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.\nMade in the USA, Built to Last",
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=2078184826091519",
+   "files": [
+    {
+     "path": "03_2078184826091519.jpg",
+     "kind": "image",
+     "size_kb": 42
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "用户证言/UGC",
+     "对比竞品",
+     "氛围感"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Breeo X24 fire pit with grill attachment",
+    "one_line": "展示了后院露台上一台正在燃烧、并配有烧烤架配件的Breeo无烟火盆。"
+   }
+  },
+  {
+   "seq": 4,
+   "library_id": "2774718736216042",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 12, 2026",
+   "start_iso": "2026-04-12",
+   "days_running": 100,
+   "variants": 3,
+   "primary_text": "\"We almost bought a Solo Stove, but so glad we saw our neighbor's Breeo. We absolutely love it and wouldn't change a thing.\" - Frank N.",
+   "headline": "",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=2774718736216042",
+   "files": [
+    {
+     "path": "04_2774718736216042.jpg",
+     "kind": "image",
+     "size_kb": 75
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "对比竞品",
+     "用户证言/UGC",
+     "氛围感"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Breeo fire pit with grill attachment",
+    "one_line": "展示了后院铺石露台上正在燃烧的Breeo无烟火炉，两旁摆放着舒适的户外座椅。"
+   }
+  },
+  {
+   "seq": 5,
+   "library_id": "925337993650582",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 13, 2026",
+   "start_iso": "2026-04-13",
+   "days_running": 99,
+   "variants": 1,
+   "primary_text": "\"We almost bought a Solo Stove, but so glad we saw our neighbor's Breeo. We absolutely love it and wouldn't change a thing.\" - Frank N.",
+   "headline": "Bring Your Backyard Vision to Life",
+   "description": "The best smokeless fire pits in the world, 100% made in the USA. Perfect for backyard campfires and live-fire cooking, bringing outdoor adventures to you every day.",
+   "display_link": "BREEO.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=925337993650582",
+   "files": [
+    {
+     "path": "05_925337993650582.jpg",
+     "kind": "image",
+     "size_kb": 68
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "聚会派对"
+    ],
+    "people": [
+     "家庭带娃",
+     "朋友聚会"
+    ],
+    "hooks": [
+     "对比竞品",
+     "用户证言/UGC",
+     "氛围感"
+    ],
+    "n_people_on_screen": 4,
+    "group_cooking": false,
+    "product_shown": "Breeo smokeless fire pit",
+    "one_line": "人们在后院围着Breeo无烟篝火炉享受温馨的聚会时光"
+   }
+  },
+  {
+   "seq": 6,
+   "library_id": "993319193223849",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 14, 2026",
+   "start_iso": "2026-04-14",
+   "days_running": 98,
+   "variants": 1,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.",
+   "headline": "Smokeless Fire Pits, Handcrafted in the USA",
+   "description": "Shop the Breeo X Series smokeless fire pit: the ultimate dual-function fire pit. Incredible over the fire cooking capability and Breeo's signature smoke-reducing reburn system.",
+   "display_link": "BREEO.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=993319193223849",
+   "files": [
+    {
+     "path": "06_993319193223849.jpg",
+     "kind": "image",
+     "size_kb": 75
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "用户证言/UGC",
+     "对比竞品",
+     "氛围感"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Breeo X24 smokeless fire pit with Outpost grill attachment",
+    "one_line": "后院露台庭院中，一个装有烧烤架配件的Breeo无烟火盆正燃着熊熊烈火"
+   }
+  },
+  {
+   "seq": 7,
+   "library_id": "1968032327168943",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 15, 2026",
+   "start_iso": "2026-04-15",
+   "days_running": 97,
+   "variants": 1,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.",
+   "headline": "Smokeless Fire Pits, Handcrafted in the USA",
+   "description": "Shop the Breeo X Series smokeless fire pit: the ultimate dual-function fire pit. Incredible over the fire cooking capability and Breeo's signature smoke-reducing reburn system.",
+   "display_link": "BREEO.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1968032327168943",
+   "files": [
+    {
+     "path": "07_1968032327168943.jpg",
+     "kind": "image",
+     "size_kb": 64
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "用户证言/UGC",
+     "对比竞品",
+     "无烟技术"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Breeo smokeless fire pit insert",
+    "one_line": "后院石砌火炉中正在燃烧的Breeo无烟篝火盆，配有用户证言和竞品对比文案。"
+   }
+  },
+  {
+   "seq": 8,
+   "library_id": "2522724484831660",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 15, 2026",
+   "start_iso": "2026-04-15",
+   "days_running": 97,
+   "variants": 1,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.",
+   "headline": "Smokeless Fire Pits, Handcrafted in the USA",
+   "description": "Shop the Breeo X Series smokeless fire pit: the ultimate dual-function fire pit. Incredible over the fire cooking capability and Breeo's signature smoke-reducing reburn system.",
+   "display_link": "BREEO.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=2522724484831660",
+   "files": [
+    {
+     "path": "08_2522724484831660.jpg",
+     "kind": "image",
+     "size_kb": 38
+    }
+   ],
+   "tags": {
+    "scene": [
+     "纯产品展示"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "无烟技术",
+     "用户证言/UGC",
+     "对比竞品"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Breeo Zentro smokeless fire pit insert",
+    "one_line": "展示了Breeo Zentro无烟火炉内胆轻松嵌入现有砖石火炉的效果。"
+   }
+  },
+  {
+   "seq": 9,
+   "library_id": "940332265373461",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 16, 2026",
+   "start_iso": "2026-04-16",
+   "days_running": 96,
+   "variants": 1,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.",
+   "headline": "Smokeless Fire Pits, Handcrafted in the USA",
+   "description": "Shop the Breeo X Series smokeless fire pit: the ultimate dual-function fire pit. Incredible over the fire cooking capability and Breeo's signature smoke-reducing reburn system.",
+   "display_link": "BREEO.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=940332265373461",
+   "files": [
+    {
+     "path": "09_940332265373461.jpg",
+     "kind": "image",
+     "size_kb": 72
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "用户证言/UGC",
+     "无烟技术",
+     "对比竞品"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Breeo smokeless fire pit insert",
+    "one_line": "一张展示安装在后院石墙火炉中的Breeo无烟不锈钢嵌件的产品宣传图。"
+   }
+  },
+  {
+   "seq": 10,
+   "library_id": "1444162010273943",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 20, 2026",
+   "start_iso": "2026-04-20",
+   "days_running": 92,
+   "variants": 1,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.",
+   "headline": "Smokeless Fire Pits, Handcrafted in the USA",
+   "description": "Shop the Breeo X Series smokeless fire pit: the ultimate dual-function fire pit. Incredible over the fire cooking capability and Breeo's signature smoke-reducing reburn system.",
+   "display_link": "BREEO.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1444162010273943",
+   "files": [
+    {
+     "path": "10_1444162010273943.jpg",
+     "kind": "image",
+     "size_kb": 72
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "纯产品展示"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "无烟技术",
+     "用户证言/UGC",
+     "对比竞品"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "smokeless fire pit insert",
+    "one_line": "展示了安装在石砌火塘中的Breeo无烟火炉内胆，并附带产品卖点标签和对比竞品的用户证言。"
+   }
+  },
+  {
+   "seq": 11,
+   "library_id": "1477285663904638",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 20, 2026",
+   "start_iso": "2026-04-20",
+   "days_running": 92,
+   "variants": 1,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.",
+   "headline": "Smokeless Fire Pits, Handcrafted in the USA",
+   "description": "Shop the Breeo X Series smokeless fire pit: the ultimate dual-function fire pit. Incredible over the fire cooking capability and Breeo's signature smoke-reducing reburn system.",
+   "display_link": "BREEO.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1477285663904638",
+   "files": [
+    {
+     "path": "11_1477285663904638.jpg",
+     "kind": "image",
+     "size_kb": 71
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "烹饪特写"
+    ],
+    "people": [
+     "单人女性"
+    ],
+    "hooks": [
+     "一物多用",
+     "用户证言/UGC",
+     "对比竞品"
+    ],
+    "n_people_on_screen": 1,
+    "group_cooking": false,
+    "product_shown": "Breeo fire pit with pizza oven attachment",
+    "one_line": "展示了Breeo无烟火盆通过配件多功能切换为烤披萨炉的过程。"
+   }
+  },
+  {
+   "seq": 12,
+   "library_id": "1712919636555206",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 21, 2026",
+   "start_iso": "2026-04-21",
+   "days_running": 91,
+   "variants": 1,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.",
+   "headline": "Smokeless Fire Pits, Handcrafted in the USA",
+   "description": "Shop the Breeo X Series smokeless fire pit: the ultimate dual-function fire pit. Incredible over the fire cooking capability and Breeo's signature smoke-reducing reburn system.",
+   "display_link": "BREEO.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1712919636555206",
+   "files": [
+    {
+     "path": "12_1712919636555206.jpg",
+     "kind": "image",
+     "size_kb": 39
+    }
+   ],
+   "tags": {
+    "scene": [
+     "纯产品展示"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "对比竞品",
+     "用户证言/UGC",
+     "耐用材质"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Breeo X24 smokeless fire pit",
+    "one_line": "展示Breeo无烟火盆与竞品在品质、耐用性及产地等维度的对比图表"
+   }
+  },
+  {
+   "seq": 13,
+   "library_id": "1736997440777581",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 27, 2026",
+   "start_iso": "2026-04-27",
+   "days_running": 85,
+   "variants": 2,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.",
+   "headline": "",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1736997440777581",
+   "files": [
+    {
+     "path": "13_1736997440777581.jpg",
+     "kind": "image",
+     "size_kb": 68
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "聚会派对"
+    ],
+    "people": [
+     "家庭带娃",
+     "朋友聚会"
+    ],
+    "hooks": [
+     "氛围感",
+     "社交聚会",
+     "无烟技术"
+    ],
+    "n_people_on_screen": 4,
+    "group_cooking": false,
+    "product_shown": "Breeo smokeless fire pit",
+    "one_line": "人们在木屋后院围着Breeo无烟火炉聚会，享受温馨的篝火时光。"
+   }
+  },
+  {
+   "seq": 14,
+   "library_id": "4511128815781837",
+   "media_type": "image",
+   "page_name": "Breeo",
+   "start_date": "Apr 29, 2026",
+   "start_iso": "2026-04-29",
+   "days_running": 83,
+   "variants": 1,
+   "primary_text": "\"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.\" - Jason W.",
+   "headline": "Smokeless Fire Pits, Handcrafted in the USA",
+   "description": "Shop Now",
+   "display_link": "BREEO.COM",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=4511128815781837",
+   "files": [
+    {
+     "path": "14_4511128815781837.jpg",
+     "kind": "image",
+     "size_kb": 75
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "对比竞品",
+     "用户证言/UGC",
+     "氛围感"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Breeo smokeless fire pit with outpost grill accessory",
+    "one_line": "后院露台上摆放着正在熊熊燃烧的Breeo无烟火盆，上方配有悬挂式烧烤架。"
+   }
+  },
+  {
+   "seq": 15,
+   "library_id": "1298275658379277",
+   "media_type": "video",
+   "page_name": "Breeo",
+   "start_date": "May 6, 2026",
+   "start_iso": "2026-05-06",
+   "days_running": 76,
+   "variants": 1,
+   "primary_text": "Enjoy high-quality performance, smokeless fires and American craftsmanship at its best. Because when it comes to fireside moments, only the best will do.\nExperience fire like never before",
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1298275658379277",
+   "files": [
+    {
+     "path": "15_1298275658379277.mp4",
+     "kind": "video",
+     "size_kb": 659
+    },
+    {
+     "path": "15_1298275658379277_poster.jpg",
+     "kind": "poster",
+     "size_kb": 142
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "烹饪特写",
+     "工厂/制造"
+    ],
+    "people": [
+     "情侣"
+    ],
+    "hooks": [
+     "氛围感",
+     "无烟技术",
+     "耐用材质"
+    ],
+    "n_people_on_screen": 2,
+    "group_cooking": false,
+    "product_shown": "Breeo smokeless fire pit with grilling accessories",
+    "one_line": "视频展示了Breeo无烟火盆的美国本土制造过程、户外烹饪及情侣在后院围炉的温馨画面。"
+   }
+  }
+ ]
+}

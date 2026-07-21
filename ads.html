@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广告情报 · 竞品素材墙 · AroundFire 调研报告</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <a class="home" href="index.html">◂ AROUNDFIRE 报告中心</a><span class="sep">|</span>
+  <a href="summary.html">摘要</a><a href="category.html">品类</a><a href="competitors.html">竞争</a><a href="voc.html">VOC</a><a href="social.html">社媒</a><a href="trends.html">趋势</a><a href="seo.html">SEO</a><a href="optimization.html">网站优化</a><a href="pricing.html">定价</a><a href="meta.html">投放</a><a href="influencers.html">达人</a>
+</div></div>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="eyebrow">05 · Ad Intelligence</div>
+    <h1>广告情报：Meta Ad Library 竞品素材墙</h1>
+    <p class="sub">6 家品牌 <b>77 条在投素材</b>全部本地化收录——图片直接内嵌，<b>40 条视频点击即播</b>。每条附投放天数、场景/人群/钩子标签、广告文案原文、Headline / CTA 与 Ad Library 原链。</p>
+    <p class="fine">抓取方式：typeahead 定位广告主 <code>view_all_page_id</code> → 精确主页模式抓取 → DOM 直取素材直链下载。77 条素材逐条喂 Gemini 看真实图/视频画面 + 广告文案打标（场景 / 人群 / 钩子 / 是否多人共烤）。全部数字来自 2026-07-21 实际抓取的页面，<b>未做任何估算</b>。</p>
+    <div class="meta"><span>📅 2026-07-21</span><span>🎬 40 条视频 + 77 张图</span><span>⚠️ 覆盖度已逐家声明</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section id="cover">
+    <div class="sec-head"><h2><span class="num">0</span>采样覆盖度声明（先看这个）</h2></div>
+    <div class="disclaimer">Ad Library 的主页视图对渲染条数有上限，滚到底也不会再加载。下表说明每个品牌<b>抓到的比例</b>。「创意卡组」= Ad Library 把同一套创意+文案的多条广告折叠成一张卡；「变体」= 卡上标注的 <code>N ads use this creative and text</code> 之和。</div>
+    <table>
+      <thead><tr><th>品牌</th><th>页面显示在投数</th><th>实抓创意卡组</th><th>实抓广告变体</th><th>覆盖度</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">AroundFire</td><td data-l="页面显示在投数">~11</td><td data-l="实抓创意卡组">11</td><td data-l="实抓广告变体">11</td><td data-l="覆盖度"><b>100%</b></td><td data-l="说明">完整</td></tr>
+        <tr><td data-l="">Solo Stove</td><td data-l="页面显示在投数">~56</td><td data-l="实抓创意卡组">20</td><td data-l="实抓广告变体">29</td><td data-l="覆盖度"><b>~52%</b></td><td data-l="说明"><b>页面渲染上限，代表性采样</b>，已用 media_type 分流补采</td></tr>
+        <tr><td data-l="">Breeo</td><td data-l="页面显示在投数">~100</td><td data-l="实抓创意卡组">41</td><td data-l="实抓广告变体">49</td><td data-l="覆盖度"><b>~49%</b></td><td data-l="说明">同上，<b>代表性采样</b></td></tr>
+        <tr><td data-l="">NOMAD Grills</td><td data-l="页面显示在投数">~11</td><td data-l="实抓创意卡组">11</td><td data-l="实抓广告变体">11</td><td data-l="覆盖度"><b>100%</b></td><td data-l="说明">完整</td></tr>
+        <tr><td data-l="">Gather Grills</td><td data-l="页面显示在投数"><b>0</b></td><td data-l="实抓创意卡组">0</td><td data-l="实抓广告变体">0</td><td data-l="覆盖度">—</td><td data-l="说明"><b>Ad Library 无在投记录</b>：页面返回 "No ads match your search criteria"</td></tr>
+        <tr><td data-l="">BioLite</td><td data-l="页面显示在投数">~22</td><td data-l="实抓创意卡组">18</td><td data-l="实抓广告变体">22</td><td data-l="覆盖度"><b>100%</b></td><td data-l="说明">完整</td></tr>
+        <tr><td data-l="">KBBQ Bros</td><td data-l="页面显示在投数">~12</td><td data-l="实抓创意卡组">10</td><td data-l="实抓广告变体">12</td><td data-l="覆盖度"><b>100%</b></td><td data-l="说明">完整</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">四个品牌的变体合计与页面显示数完全相等（11=11、11=11、22=22、12=12），可确认为全量。<b>Solo Stove / Breeo 为代表性采样，其比例结论适用于样本，不宜外推成全账户精确占比。</b></p>
+  </section>
+
+  <section id="conclusion">
+    <div class="sec-head"><h2><span class="num">1</span>一页结论</h2></div>
+    <table>
+      <thead><tr><th>品牌</th><th>在投</th><th>最长在投</th><th>90天+ 长青</th><th>主场景</th><th>主人群</th><th>第一钩子</th><th>多人共烤</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>AroundFire</b></td><td data-l="在投">~11</td><td data-l="最长在投"><b>5 天</b></td><td data-l="90天+ 长青"><b>0 组</b></td><td data-l="主场景">露营 100%</td><td data-l="主人群">家庭带娃 64%</td><td data-l="第一钩子">一物多用 100%</td><td data-l="多人共烤"><b>8/11</b></td></tr>
+        <tr><td data-l="">Solo Stove</td><td data-l="在投">~56</td><td data-l="最长在投">90 天</td><td data-l="90天+ 长青">1 组</td><td data-l="主场景">聚会派对 53% / 后院 47%</td><td data-l="主人群">朋友聚会 47%</td><td data-l="第一钩子">价格促销 47%</td><td data-l="多人共烤">1/15</td></tr>
+        <tr><td data-l="">Breeo</td><td data-l="在投">~100</td><td data-l="最长在投"><b>131 天</b></td><td data-l="90天+ 长青"><b>12 组</b></td><td data-l="主场景">后院 87%</td><td data-l="主人群">无人纯产品 67%</td><td data-l="第一钩子">用户证言 80% / 对比竞品 80%</td><td data-l="多人共烤">0/15</td></tr>
+        <tr><td data-l="">NOMAD Grills</td><td data-l="在投">~11</td><td data-l="最长在投">82 天</td><td data-l="90天+ 长青">0 组</td><td data-l="主场景">纯产品 55% / 越野 45%</td><td data-l="主人群">无人纯产品 73%</td><td data-l="第一钩子">便携 82% / 耐用 82%</td><td data-l="多人共烤">0/11</td></tr>
+        <tr><td data-l="">Gather Grills</td><td data-l="在投"><b>0</b></td><td data-l="最长在投">—</td><td data-l="90天+ 长青">—</td><td data-l="主场景">—</td><td data-l="主人群">—</td><td data-l="第一钩子">—</td><td data-l="多人共烤">—</td></tr>
+        <tr><td data-l="">BioLite</td><td data-l="在投">~22</td><td data-l="最长在投">89 天</td><td data-l="90天+ 长青">0 组</td><td data-l="主场景">露营 80%</td><td data-l="主人群">单人男性 60%</td><td data-l="第一钩子">便携 73%</td><td data-l="多人共烤">0/15</td></tr>
+        <tr><td data-l="">KBBQ Bros</td><td data-l="在投">~12</td><td data-l="最长在投"><b>159 天</b></td><td data-l="90天+ 长青">2 组</td><td data-l="主场景">后院 80%</td><td data-l="主人群">朋友聚会 40%</td><td data-l="第一钩子">氛围感 80%</td><td data-l="多人共烤">2/10</td></tr>
+      </tbody>
+    </table>
+
+    <div class="cards c2">
+      <div class="card"><h4 style="margin-top:0">① AroundFire 是一个刚起步的广告账户</h4><p>11 条在投广告<b>全部在 5 天内起投</b>（最早 2026-07-16），<b>没有任何一条经过市场验证的长青广告</b>。而 Breeo 有 12 组跑过 90 天、最长 131 天。<b>现在拿 AroundFire 的素材表现和竞品比是不对等的</b>，它还没进入「哪条能跑」的验证阶段。</p></div>
+      <div class="card" style="border:2px solid var(--red)"><h4 style="margin-top:0">② "多人一起烤"实质上只有 AroundFire 在讲</h4><p>AroundFire <b>8/11 = 73%</b>；Breeo 0/15、NOMAD 0/11、BioLite 0/15、Solo Stove 1/15、KBBQ Bros 2/10。竞品大量出现「围着火坐」，但真正<b>两人以上同时在同一台设备上动手烹饪</b>的镜头几乎为零。</p></div>
+      <div class="card"><h4 style="margin-top:0">③ KBBQ 赛道有人在投，而且是长青</h4><p>KBBQ Bros 12 条在投，<b>最长 159 天</b>（2026-02-12 起投）、次长 144 天，两条都是「把后院变成韩式烤肉店」的叙事。<b>这条赛道已被验证能跑</b>，且打法与 AroundFire 的「桌+烤+火」形态高度重叠。</p></div>
+      <div class="card"><h4 style="margin-top:0">④ 主战场是后院，不是露营</h4><p>Breeo 87%、KBBQ Bros 80%、Solo Stove 47% 的素材在后院；<b>AroundFire 后院只占 27%，露营 100%</b>。竞品把预算压在后院场景，AroundFire 押在露营/越野。</p></div>
+    </div>
+  </section>
+
+  <section id="cross">
+    <div class="sec-head"><h2><span class="num">2</span>跨品牌对比表</h2></div>
+
+    <h3>2.1 场景分布（占该品牌已打标素材的比例）</h3>
+    <table>
+      <thead><tr><th>品牌</th><th>后院</th><th>露营</th><th>聚会派对</th><th>烹饪特写</th><th>纯产品展示</th><th>overlanding 越野</th><th>海滩/湖边</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>AroundFire</b></td><td data-l="后院">27%</td><td data-l="露营"><b>100%</b></td><td data-l="聚会派对">55%</td><td data-l="烹饪特写">27%</td><td data-l="纯产品展示">0%</td><td data-l="overlanding 越野">36%</td><td data-l="海滩/湖边">55%</td></tr>
+        <tr><td data-l="">Solo Stove</td><td data-l="后院">47%</td><td data-l="露营">0%</td><td data-l="聚会派对">53%</td><td data-l="烹饪特写">20%</td><td data-l="纯产品展示">33%</td><td data-l="overlanding 越野">0%</td><td data-l="海滩/湖边">7%</td></tr>
+        <tr><td data-l="">Breeo</td><td data-l="后院"><b>87%</b></td><td data-l="露营">0%</td><td data-l="聚会派对">20%</td><td data-l="烹饪特写">13%</td><td data-l="纯产品展示">20%</td><td data-l="overlanding 越野">0%</td><td data-l="海滩/湖边">0%</td></tr>
+        <tr><td data-l="">NOMAD Grills</td><td data-l="后院">18%</td><td data-l="露营">45%</td><td data-l="聚会派对">9%</td><td data-l="烹饪特写">27%</td><td data-l="纯产品展示"><b>55%</b></td><td data-l="overlanding 越野">45%</td><td data-l="海滩/湖边">0%</td></tr>
+        <tr><td data-l="">BioLite</td><td data-l="后院">20%</td><td data-l="露营"><b>80%</b></td><td data-l="聚会派对">0%</td><td data-l="烹饪特写">27%</td><td data-l="纯产品展示">20%</td><td data-l="overlanding 越野">13%</td><td data-l="海滩/湖边">0%</td></tr>
+        <tr><td data-l="">KBBQ Bros</td><td data-l="后院"><b>80%</b></td><td data-l="露营">20%</td><td data-l="聚会派对">60%</td><td data-l="烹饪特写">60%</td><td data-l="纯产品展示">10%</td><td data-l="overlanding 越野">0%</td><td data-l="海滩/湖边">0%</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote"><b>读法</b>：市场被切成两半——<b>后院派</b>（Breeo / KBBQ Bros / Solo Stove）和<b>户外派</b>（BioLite / NOMAD / AroundFire）。AroundFire 是唯一一个把露营拉到 100% 的品牌，同时又用 55% 的海滩/湖边镜头，<b>场景铺得最散</b>。</p>
+
+    <h3>2.2 人群分布</h3>
+    <table>
+      <thead><tr><th>品牌</th><th>无人纯产品</th><th>朋友聚会</th><th>家庭带娃</th><th>单人男性</th><th>单人女性</th><th>情侣</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>AroundFire</b></td><td data-l="无人纯产品"><b>0%</b></td><td data-l="朋友聚会">55%</td><td data-l="家庭带娃"><b>64%</b></td><td data-l="单人男性">0%</td><td data-l="单人女性">9%</td><td data-l="情侣">18%</td></tr>
+        <tr><td data-l="">Solo Stove</td><td data-l="无人纯产品">33%</td><td data-l="朋友聚会">47%</td><td data-l="家庭带娃">20%</td><td data-l="单人男性">13%</td><td data-l="单人女性">0%</td><td data-l="情侣">0%</td></tr>
+        <tr><td data-l="">Breeo</td><td data-l="无人纯产品"><b>67%</b></td><td data-l="朋友聚会">20%</td><td data-l="家庭带娃">13%</td><td data-l="单人男性">0%</td><td data-l="单人女性">7%</td><td data-l="情侣">7%</td></tr>
+        <tr><td data-l="">NOMAD Grills</td><td data-l="无人纯产品"><b>73%</b></td><td data-l="朋友聚会">9%</td><td data-l="家庭带娃">0%</td><td data-l="单人男性">18%</td><td data-l="单人女性">0%</td><td data-l="情侣">0%</td></tr>
+        <tr><td data-l="">BioLite</td><td data-l="无人纯产品">0%</td><td data-l="朋友聚会">7%</td><td data-l="家庭带娃">7%</td><td data-l="单人男性"><b>60%</b></td><td data-l="单人女性">33%</td><td data-l="情侣">13%</td></tr>
+        <tr><td data-l="">KBBQ Bros</td><td data-l="无人纯产品">40%</td><td data-l="朋友聚会">40%</td><td data-l="家庭带娃">20%</td><td data-l="单人男性">0%</td><td data-l="单人女性">0%</td><td data-l="情侣">10%</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote"><b>读法</b>：三种人群策略清楚分开——<b>无人化产品叙事</b>（Breeo 67% / NOMAD 73%，画面里几乎不放人，靠产品本身 + 文案说服）；<b>单人探险者</b>（BioLite 60% 单人男性 + 33% 单人女性，讲的是「一个人也能走得更远」）；<b>家庭 / 朋友</b>（AroundFire 家庭带娃 64% 是全场最高，Solo Stove 朋友聚会 47%）。<b>AroundFire 是唯一一个 0% 无人纯产品的品牌</b>——每条素材都有人。这是它和 Breeo/NOMAD 最大的路线分歧。</p>
+
+    <h3>2.3 钩子类型分布</h3>
+    <table>
+      <thead><tr><th>品牌</th><th>便携</th><th>一物多用</th><th>氛围感</th><th>社交聚会</th><th>用户证言/UGC</th><th>对比竞品</th><th>价格促销</th><th>耐用材质</th><th>无烟技术</th><th>新品上市</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>AroundFire</b></td><td data-l="便携">91%</td><td data-l="一物多用"><b>100%</b></td><td data-l="氛围感">27%</td><td data-l="社交聚会">55%</td><td data-l="用户证言/UGC">27%</td><td data-l="对比竞品"><b>0%</b></td><td data-l="价格促销"><b>0%</b></td><td data-l="耐用材质"><b>0%</b></td><td data-l="无烟技术"><b>0%</b></td><td data-l="新品上市"><b>0%</b></td></tr>
+        <tr><td data-l="">Solo Stove</td><td data-l="便携">7%</td><td data-l="一物多用">7%</td><td data-l="氛围感">40%</td><td data-l="社交聚会">27%</td><td data-l="用户证言/UGC">33%</td><td data-l="对比竞品">0%</td><td data-l="价格促销"><b>47%</b></td><td data-l="耐用材质">0%</td><td data-l="无烟技术">13%</td><td data-l="新品上市">40%</td></tr>
+        <tr><td data-l="">Breeo</td><td data-l="便携">0%</td><td data-l="一物多用">7%</td><td data-l="氛围感">60%</td><td data-l="社交聚会">13%</td><td data-l="用户证言/UGC"><b>80%</b></td><td data-l="对比竞品"><b>80%</b></td><td data-l="价格促销">0%</td><td data-l="耐用材质">13%</td><td data-l="无烟技术">47%</td><td data-l="新品上市">0%</td></tr>
+        <tr><td data-l="">NOMAD Grills</td><td data-l="便携">82%</td><td data-l="一物多用">0%</td><td data-l="氛围感">18%</td><td data-l="社交聚会">0%</td><td data-l="用户证言/UGC">18%</td><td data-l="对比竞品">9%</td><td data-l="价格促销">18%</td><td data-l="耐用材质"><b>82%</b></td><td data-l="无烟技术">0%</td><td data-l="新品上市">27%</td></tr>
+        <tr><td data-l="">BioLite</td><td data-l="便携">73%</td><td data-l="一物多用">27%</td><td data-l="氛围感">27%</td><td data-l="社交聚会">0%</td><td data-l="用户证言/UGC">20%</td><td data-l="对比竞品">0%</td><td data-l="价格促销">0%</td><td data-l="耐用材质">33%</td><td data-l="无烟技术">7%</td><td data-l="新品上市">40%</td></tr>
+        <tr><td data-l="">KBBQ Bros</td><td data-l="便携">40%</td><td data-l="一物多用">30%</td><td data-l="氛围感"><b>80%</b></td><td data-l="社交聚会">60%</td><td data-l="用户证言/UGC">10%</td><td data-l="对比竞品">10%</td><td data-l="价格促销">0%</td><td data-l="耐用材质">0%</td><td data-l="无烟技术">0%</td><td data-l="新品上市">0%</td></tr>
+      </tbody>
+    </table>
+    <div class="callout danger"><b>AroundFire 的钩子高度单一</b>：一物多用 100% + 便携 91%，两个功能型钩子几乎覆盖全部素材。<b>促销、对比、耐用、无烟、新品全部为 0</b>——缺少转化型和信任型钩子。<br>对照：Breeo 用 80% 的素材反复讲用户证言、Solo Stove 用 47% 讲折扣、KBBQ Bros 靠氛围（80%）+ 社交（60%）几乎不谈参数。</div>
+  </section>
+
+  <section id="q">
+    <div class="sec-head"><h2><span class="num">3</span>重点问题回答</h2></div>
+
+    <h3>Q1｜竞品在打哪个人群和场景？</h3>
+    <ol>
+      <li><b>Breeo → 有院子的房主 · 后院升级</b>（后院 87%，最长 131 天，12 组 90 天+）。核心不是「买个火盆」，而是「把你的后院升级成一个值得待的地方」。Headline 长期挂着 <code>Bring Your Backyard Vision to Life</code>、<code>Smokeless Fire Pits, Handcrafted in the USA</code>。画面 67% 不出现人，只有火 + 石板露台 + 户外座椅。</li>
+      <li><b>Solo Stove → 后院社交 + 促销捡漏</b>（聚会 53%，价格促销 47%）。文案是清一色的美元数字：<code>$260 off the Summit 27 + Torch X-Pack Bundle</code>、<code>Up to 32% off Pizza Ovens</code>。人群是朋友聚会（47%），但<b>画面里通常只有一个人在做饭，其他人在旁边坐着</b>。</li>
+      <li><b>NOMAD Grills → 硬核烧烤玩家 · 便携+耐用</b>（纯产品 55%，便携 82%，耐用 82%）。参数密集叙事，<code>$399 · Made in USA · 500+ sq in · 26 lbs</code>，用 <code>Texas Monthly Top 50 pitmaster APPROVED</code> 做权威背书。73% 无人。</li>
+      <li><b>BioLite → 单人户外探险者</b>（露营 80%，单人男性 60%）。<code>Go farther, stay later</code>。注意：BioLite 本次在投的 22 条里<b>大量是头灯（Range Headlamps）和 EcoZoom 炉具，不是火桌</b>，与 AroundFire 的正面重叠度最低。</li>
+      <li><b>KBBQ Bros → 想在家复刻韩式烤肉店的人</b>（后院 80%，氛围感 80%）。<code>Turn Your Backyard into a KBBQ Restaurant</code>、<code>No wait times. No restaurant bills.</code>、<code>Turning our backyard into Seoul at night</code>。</li>
+    </ol>
+    <div class="callout"><b>没有任何一个竞品在打「露营 + 家庭带娃」这个组合</b>——那正是 AroundFire 目前 100% 露营 / 64% 家庭带娃的位置。<b>这是空位，但也是无人验证的空位。</b></div>
+
+    <h3>Q2｜有没有人在讲"多人一起烤"？</h3>
+    <p class="lead"><b>基本没有。这是 AroundFire 目前唯一独占的叙事。</b>判定口径是严格的：<b>必须有两人以上同时在同一台设备上动手烹饪</b>，只是围坐烤火/聊天不算。</p>
+    <table>
+      <thead><tr><th>品牌</th><th>多人共烤素材</th><th>占比</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>AroundFire</b></td><td data-l="多人共烤素材"><b>8/11</b></td><td data-l="占比"><b>73%</b></td></tr>
+        <tr><td data-l="">KBBQ Bros</td><td data-l="多人共烤素材">2/10</td><td data-l="占比">20%</td></tr>
+        <tr><td data-l="">Solo Stove</td><td data-l="多人共烤素材">1/15</td><td data-l="占比">7%</td></tr>
+        <tr><td data-l="">Breeo</td><td data-l="多人共烤素材">0/15</td><td data-l="占比">0%</td></tr>
+        <tr><td data-l="">NOMAD Grills</td><td data-l="多人共烤素材">0/11</td><td data-l="占比">0%</td></tr>
+        <tr><td data-l="">BioLite</td><td data-l="多人共烤素材">0/15</td><td data-l="占比">0%</td></tr>
+      </tbody>
+    </table>
+    <p><b>对照组</b>：Breeo 15 条素材里，人物出现时全部是<b>坐着</b>的；Solo Stove 唯一一条是海滩上弹琴烤棉花糖，不是共同做饭；KBBQ Bros 的 2 条属于「同桌各烤各的」，与 AroundFire 的「围一台设备协作出餐」形态不同。</p>
+    <div class="cards c2">
+      <div class="card" style="border-left:5px solid var(--green)"><h4 style="margin-top:0">正面看</h4><p>「多人一起动手」是 AroundFire 的产品形态（大台面 + 多分区 + 火/炭/气切换）天然支持、而竞品的圆形火盆<b>物理上做不到</b>的差异点，竞争对手无法快速跟进。</p></div>
+      <div class="card" style="border-left:5px solid var(--ember)"><h4 style="margin-top:0">谨慎看</h4><p>竞品不是没想到，而是<b>目前没有任何一条长青广告验证过这个角度能带来转化</b>。全行业跑最久的素材（Breeo 131 天、KBBQ 159 天、Solo Stove 90 天）<b>没有一条是多人共烤</b>。这个角度目前只有 AroundFire 自己 3–5 天的数据，<b>还不足以判断</b>。</p></div>
+    </div>
+
+    <h3 id="kbbq">Q3｜KBBQ 赛道有没有人投？</h3>
+    <p class="lead"><b>有，而且是本次全部品牌里跑得最久的素材。</b>KBBQ Bros Page ID <code>294188663778909</code>，~12 条在投（全量抓到），<b>最长 159 天</b>、次长 144 天，90 天+ 长青 2 组，中位在投 48 天。落地 <code>WWW.KBBQBROS.COM</code>。</p>
+    <div class="quotes">
+      <blockquote><b>[159 天]</b> Set it up in the middle of the desert view 🌵🔥 / Our table is foldable, so you can take it anywhere — camping, Airbnb stays, or even the park. 🏕️✨ / Charcoal or gas? ✅ Both work. / BBQ, hotpot, steak, ramen… whatever you crave, it handles it all. 🍖🍲🥢 / We ship nationwide 🚚✈️</blockquote>
+      <blockquote><b>[144 天]</b> Turning our backyard into Seoul at night 🇰🇷✨ / Warm lights. / Smoke in the air. / Food on the grill. / Friends around the table. / Backyard nights just hit different. / Sometimes you don't need a ticket to Korea… just a table and good people. 🍢🔥</blockquote>
+    </div>
+    <div class="callout danger">
+      <span class="ttl">这对 AroundFire 意味着什么</span>
+      ① 跑了 159 天的那条，卖点是 <b>可折叠 + 走到哪带到哪（露营/Airbnb/公园）+ 炭气两用 + 一桌通吃 BBQ/火锅/牛排/拉面</b>——这几乎就是 AroundFire 现在主打的「一物多用 + 便携」，<b>说明这个角度在市场上已被验证能长跑</b>。<br>
+      ② 跑 144 天的那条走的是<b>纯氛围/情绪</b>路线，完全不谈参数。这是 AroundFire 目前 27% 氛围感钩子明显偏低的地方。<br>
+      ③ KBBQ Bros 的素材制作水准并不高（大量手机直拍、画面抖动、构图随意），却能跑 5 个月——<b>说明这条赛道吃内容真实感，不吃制作精度</b>。
+    </div>
+
+    <h3>Q4｜AroundFire 自己的素材和竞品差在哪？</h3>
+    <div class="disclaimer"><b>先说清楚前提</b>：AroundFire 的 11 条广告全部在 5 天内起投（2026-07-16 至 2026-07-19），<b>账户处于冷启动期，没有任何长青数据</b>。以下是<b>结构性差距，不是效果评价</b>。</div>
+    <div class="cards c2">
+      <div class="card"><h4 style="margin-top:0">差距 1 · 素材形式 100% 视频，零静态图</h4><p>AroundFire 11 条全是竖版视频。竞品都是图视混投：Breeo 图 27 / 视 14，NOMAD 图 9 / 视 2，Solo Stove 图 7 / 视 13。<b>静态图在 Meta 上的作用是低成本抢量和承接促销信息，AroundFire 目前完全没有这块弹药。</b></p></div>
+      <div class="card"><h4 style="margin-top:0">差距 2 · 钩子只有功能，没有转化型和信任型</h4><p>把全部筹码押在「它能干很多事 + 它很好带」，但<b>没有一条素材回答「凭什么信你」和「为什么现在买」</b>。Breeo 用 80% 的素材反复讲用户证言，Solo Stove 用 47% 讲折扣，AroundFire 两样都是 0。</p></div>
+      <div class="card"><h4 style="margin-top:0">差距 3 · 主战场选在露营，避开了竞品重兵的后院</h4><p>AroundFire 露营 100% / 后院 27%，而 Breeo 后院 87%、KBBQ Bros 后院 80%。<b>后院用户是有院子的房主，客单价承受力和复购场景都更强，且不受季节性出行影响。</b>AroundFire 目前几乎放弃了这块。</p></div>
+      <div class="card"><h4 style="margin-top:0">差距 4 · 场景铺得太散，没有形成记忆点</h4><p>11 条素材里露营 100%、海滩/湖边 55%、聚会派对 55%、越野 36%、后院 27%——<b>平均每条素材要覆盖 2.7 个场景</b>。对照 Breeo：87% 素材只讲一件事（后院）。<b>冷启动期同时讲太多场景，会稀释算法对受众的收敛。</b></p></div>
+      <div class="card"><h4 style="margin-top:0">差距 5 · 广告结构性字段没管好</h4><p>素材 [1] 的 Headline 位填的是 <code>Joyfoodlv</code>（红人的折扣码名），不是卖点文案；11 条里 1 条 Headline 为空。对照 NOMAD 11 条 headline 全部规范且反复只用两句；Breeo 长期只轮换三句。<b>竞品在用 headline 做品牌记忆的重复灌输，AroundFire 还没有一句固定的品牌句。</b></p></div>
+      <div class="card"><h4 style="margin-top:0">差距 6 · 没有对手在攻击 AroundFire，但 AroundFire 也没攻击任何人</h4><p>Breeo 有 12 条素材（80%）的 primary text <b>直接点名 Solo Stove</b>：<i>"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since…"</i>、<i>"We almost bought a Solo Stove, but so glad we saw our neighbor's Breeo."</i><br>这套「老用户从 Solo Stove 换过来」的证言，Breeo 跑了 131 天、125 天、102 天……<b>是它最稳的长青结构，也是一个可以直接借鉴的框架</b>：用真实用户口吻，把品类第一名当参照物。</p></div>
+    </div>
+  </section>
+
+  <section id="wall">
+    <div class="sec-head"><h2><span class="num">4</span>素材墙 · 77 条（按投放天数降序）</h2></div>
+    <p class="lead">图片直接内嵌；<b>视频点击播放键即播</b>（<code>&lt;video controls poster&gt;</code>，首屏不预加载以免拖慢页面）。每条附投放天数、Gemini 逐条打标（场景 / 人群 / 钩子 / 画面人数 / 是否多人共烤）、广告文案原文（卡片内可滚动）、Headline / CTA 与 Ad Library 原链。</p>
+    <div class="callout info">Gather Grills <b>Ad Library 无在投记录</b>（Page ID <code>107385617843509</code>，页面返回 "No ads match your search criteria"，在投广告数 = 0），<b>无素材可下载</b>，故不出现在下方素材墙中。</div>
+  </section>
+
+<section id="aroundfire">
+  <div class="brandbar">
+    <h3>AroundFire（甲方）</h3>
+    <span class="b hi">在投 ~11 results</span>
+    <span class="b">最长在投 5 天（Jul 16, 2026 起投）</span>
+    <span class="b">90 天+ 长青 0 组</span>
+    <span class="b">多人共烤 8/11</span>
+    <span class="b">采样覆盖度 100%</span>
+  </div>
+  <table>
+    <thead><tr><th>指标</th><th>数值</th></tr></thead>
+    <tbody>
+      <tr><td data-l="">Facebook Page ID</td><td data-l="数值"><code>115427851652379</code></td></tr>
+      <tr><td data-l="">抓到的创意卡组 / 广告变体</td><td data-l="数值">11 组 / 11 条</td></tr>
+      <tr><td data-l="">素材形式</td><td data-l="数值">视频 11 · 图片 0</td></tr>
+      <tr><td data-l="">投放天数中位</td><td data-l="数值">3 天</td></tr>
+      <tr><td data-l="">场景 TOP</td><td data-l="数值">露营×11, 海滩/湖边×6, 聚会派对×6</td></tr>
+      <tr><td data-l="">人群 TOP</td><td data-l="数值">家庭带娃×7, 朋友聚会×6, 情侣×2</td></tr>
+      <tr><td data-l="">钩子 TOP</td><td data-l="数值">一物多用×11, 便携×10, 社交聚会×6</td></tr>
+      <tr><td data-l="">本页展示素材</td><td data-l="数值"><b>11 条</b>（图片内嵌 · 视频点击即播）</td></tr>
+    </tbody>
+  </table>
+  <div class="adwall">
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/aroundfire/01_2218600035566608_poster.jpg" src="assets/ads/aroundfire/01_2218600035566608.mp4"></video>
+<div class="am">
+  <span class="days new">在投 5 天 · video</span>
+  <div>展示了一群朋友在湖边露营，使用多功能折叠篝火烧烤网桌进行多样化烹饪与社交娱乐的场景</div>
+  <div class="tg">场景 <b>露营/海滩/湖边/聚会派对</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>用户证言/UGC/一物多用/便携</b> ｜ 画面人数 <b>5</b> ｜ <b style="color:#2E7D52">多人共烤 ✅</b></div>
+  <div class="cp">This outdoor setup @aroundfire_official became the spot everyone wanted to be Good food, great company, and memories made around the fire.
+Use code JOYFOODLV at checkout for 12% off! 🔥
+#CampingLife #OutdoorCooking #CampingEssentials #FoodieAdventures #OutdoorLiving</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Joyfoodlv</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2218600035566608" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/aroundfire/02_1040560512239017_poster.jpg" src="assets/ads/aroundfire/02_1040560512239017.mp4"></video>
+<div class="am">
+  <span class="days new">在投 3 天 · video</span>
+  <div>一个家庭在溪流边露营，使用多功能便携折叠火炉桌共同烹饪和享受温馨的烤火时光。</div>
+  <div class="tg">场景 <b>露营/海滩/湖边/烹饪特写</b> ｜ 人群 <b>家庭带娃</b> ｜ 钩子 <b>用户证言/UGC/一物多用/便携</b> ｜ 画面人数 <b>6</b> ｜ <b style="color:#2E7D52">多人共烤 ✅</b></div>
+  <div class="cp">Camping with kids usually means bringing more gear, more setup… and somehow one person always ends up cooking alone.
+That’s why we loved hearing how @chasing.the.journey family completely changed the way they camp with AroundFire. 🔥
+Instead of crowding around a tiny stove, everyone gets to cook together, eat together, and stay around the fire long after dinner is over.
+The kids roast their own treats.
+Meals stay hot.
+The fire keeps going.
+And camp somehow feels easier, cozier, and a lot more fun.
+From grilling dinner to quick propane cooking, to simply sitting around the fire together — this table was designed to bring people closer outside effortlessly.
+Huge thanks to @chasing.the.journey for sharing such a beautiful glimpse into their camping life with us. ❤️
+Because honestly…
+the best camping memories usually happen around the fire.
+#campinggear #campcooking #familycamping #campingfood #campingwithkids</div>
+  <div class="tg" style="margin-top:5px">CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1040560512239017" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/aroundfire/03_1071911461833194_poster.jpg" src="assets/ads/aroundfire/03_1071911461833194.mp4"></video>
+<div class="am">
+  <span class="days new">在投 3 天 · video</span>
+  <div>展示了一款多功能折叠露营桌在露营、后院和越野等场景下集烧烤、煮食及篝火于一体的多种用途。</div>
+  <div class="tg">场景 <b>露营/后院/聚会派对</b> ｜ 人群 <b>朋友聚会/家庭带娃</b> ｜ 钩子 <b>一物多用/便携/社交聚会</b> ｜ 画面人数 <b>8</b> ｜ <b style="color:#2E7D52">多人共烤 ✅</b></div>
+  <div class="cp">Camping just got easier — and way more fun. 🔥
+This is the AroundFire All-in-One Outdoor Table.
+It folds small, sets up in seconds, and turns any campsite or backyard into a full cooking station.
+Grill together, switch to a cozy fire pit, or use the gas stove for quick meals — all at one table.
+Less setup, less mess, more time enjoying real moments with the people you love.
+From camping trips to backyard nights, this table upgrades how you cook, gather, and relax outdoors.
+👉 Two sizes available, upgrade your outdoor cooking today.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Ultimate 4-in-1 Outdoor Table</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1071911461833194" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/aroundfire/04_1400507952127537_poster.jpg" src="assets/ads/aroundfire/04_1400507952127537.mp4"></video>
+<div class="am">
+  <span class="days new">在投 3 天 · video</span>
+  <div>展示一名女性在溪流瀑布旁组装并使用便携式多功能露营桌烤炉烹饪食物。</div>
+  <div class="tg">场景 <b>露营/海滩/湖边/烹饪特写</b> ｜ 人群 <b>单人女性</b> ｜ 钩子 <b>便携/一物多用/用户证言/UGC</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">Gather Around the Around Fire Grande Table for your next camping trip 🏕️ 🔥
+Compact, easy to setup and great for a bigger groups 😊
+I loved cooking over the fire right in front of me and the ease of having space to prepare my food right there as well is what I really love ♥️
+Add this table to your next camping trip 🔥
+Use my code “PAIGE” for 12% off at check out
+Link in bio 🔗
+Can you guess what I have cooking?
+(Recipe reel coming super soon 😉 )
+Happy Camping
+@theexplorepaige_ 🫶🏻
+#camping #campcooking #aroundfiretable #campinggear
+Low impression count</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Theexplorepaige</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1400507952127537" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/aroundfire/05_2027087324845693_poster.jpg" src="assets/ads/aroundfire/05_2027087324845693.mp4"></video>
+<div class="am">
+  <span class="days new">在投 3 天 · video</span>
+  <div>展示一款集桌子、烤架、炉灶和篝火盆于一体的多功能露营桌，方便家庭户外烹饪与聚会。</div>
+  <div class="tg">场景 <b>露营/overlanding越野/海滩/湖边</b> ｜ 人群 <b>家庭带娃</b> ｜ 钩子 <b>一物多用/便携/社交聚会</b> ｜ 画面人数 <b>6</b> ｜ <b style="color:#2E7D52">多人共烤 ✅</b></div>
+  <div class="cp">Tired of messy, stressful camp cooking?
+This is the AroundFire Camp Kitchen Table — the heart of your campsite.
+One setup gives you a full camp kitchen, a grill, and even a fire pit in one place.
+It packs small, sets up fast, and makes cooking together easy and fun.
+Kids gather, meals come together faster, and nights end around a warm fire.
+It’s not just a table — it’s a complete camp kitchen setup that changes how you enjoy camping.
+👉 Simplify your camp cooking.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Ultimate 4-in-1 Outdoor Table</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2027087324845693" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/aroundfire/06_2256720451731349_poster.jpg" src="assets/ads/aroundfire/06_2256720451731349.mp4"></video>
+<div class="am">
+  <span class="days new">在投 3 天 · video</span>
+  <div>视频展示了AroundFire多合一露营折叠桌在各种越野、露营和多人聚会场景中的烧烤与篝火体验。</div>
+  <div class="tg">场景 <b>露营/overlanding越野/聚会派对</b> ｜ 人群 <b>情侣/朋友聚会</b> ｜ 钩子 <b>一物多用/便携/社交聚会</b> ｜ 画面人数 <b>8</b> ｜ <b style="color:#2E7D52">多人共烤 ✅</b></div>
+  <div class="cp">Camping just got easier — and way more fun. 🔥
+This is the AroundFire All-in-One Outdoor Table.
+It folds small, sets up in seconds, and turns any campsite or backyard into a full cooking station.
+Grill together, switch to a cozy fire pit, or use the gas stove for quick meals — all at one table.
+Less setup, less mess, more time enjoying real moments with the people you love.
+From camping trips to backyard nights, this table upgrades how you cook, gather, and relax outdoors.
+👉 Upgrade your outdoor cooking today.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Ultimate 4-in-1 Outdoor Table</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2256720451731349" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/aroundfire/07_3338148203038659_poster.jpg" src="assets/ads/aroundfire/07_3338148203038659.mp4"></video>
+<div class="am">
+  <span class="days new">在投 3 天 · video</span>
+  <div>展示了一家人在湖畔使用多功能折叠烧烤桌进行野外烹饪与篝火聚会的温馨场景</div>
+  <div class="tg">场景 <b>海滩/湖边/露营/烹饪特写</b> ｜ 人群 <b>家庭带娃</b> ｜ 钩子 <b>氛围感/一物多用/社交聚会</b> ｜ 画面人数 <b>5</b> ｜ <b style="color:#2E7D52">多人共烤 ✅</b></div>
+  <div class="cp">Camping just got easier — and way more fun. 🔥
+This is the AroundFire All-in-One Outdoor Table.
+It folds small, sets up in seconds, and turns any campsite or backyard into a full cooking station.
+Grill together, switch to a cozy fire pit, or use the gas stove for quick meals — all at one table.
+Less setup, less mess, more time enjoying real moments with the people you love.
+From camping trips to backyard nights, this table upgrades how you cook, gather, and relax outdoors.
+👉 Upgrade your outdoor cooking today.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Ultimate 4-in-1 Outdoor Table</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=3338148203038659" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/aroundfire/08_3727700800706266_poster.jpg" src="assets/ads/aroundfire/08_3727700800706266.mp4"></video>
+<div class="am">
+  <span class="days new">在投 3 天 · video</span>
+  <div>展示了AroundFire多功能露营烧烤桌在各种户外越野、家庭露营以及朋友聚会中的多样化烹饪与篝火体验。</div>
+  <div class="tg">场景 <b>露营/overlanding越野/聚会派对</b> ｜ 人群 <b>家庭带娃/朋友聚会</b> ｜ 钩子 <b>一物多用/便携/氛围感</b> ｜ 画面人数 <b>7</b></div>
+  <div class="cp">Car camping just got a whole lot tastier! 🚗
+Say goodbye to cold food and tiny stoves. With the AroundFire All-In-One Outdoor Table, you can grill over charcoal, enjoy a campfire, cook over open flame, or switch to gas for quick meals.
+Everything packs into one compact bag &amp; sets up in 30 seconds!
+Turn your trunk into a camp kitchen 👉 and level up your car camping adventures with ease! From weekend getaways to epic trips, make every moment more memorable.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Grill, Cook, and Camp in Style</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=3727700800706266" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/aroundfire/09_4175712222726495_poster.jpg" src="assets/ads/aroundfire/09_4175712222726495.mp4"></video>
+<div class="am">
+  <span class="days new">在投 3 天 · video</span>
+  <div>视频展示了AroundFire多功能户外折叠桌在露营、后院聚会中作为烤炉、篝火盆和烹饪台的多用途场景。</div>
+  <div class="tg">场景 <b>露营/后院/聚会派对</b> ｜ 人群 <b>朋友聚会/家庭带娃</b> ｜ 钩子 <b>一物多用/便携/社交聚会</b> ｜ 画面人数 <b>7</b> ｜ <b style="color:#2E7D52">多人共烤 ✅</b></div>
+  <div class="cp">Meet the AroundFire ultimate outdoor table. 🏕️🔥
+It’s lightweight, portable, and sets up in minutes. Whether you’re camping deep in the woods or hanging out in your own backyard, this all-in-one table brings everyone together.
+The center transforms into a fire pit, a grill, or a gas stove—perfect for any day. Use it as a charcoal grill for a real BBQ at the campsite, or a gas stove for quick family meals at home.
+No more lonely cooking. Just more fun and better moments with family and friends. 🥘✨
+Low impression count</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Gather &#x27;Round, Fire Up</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=4175712222726495" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/aroundfire/10_886575277839068_poster.jpg" src="assets/ads/aroundfire/10_886575277839068.mp4"></video>
+<div class="am">
+  <span class="days new">在投 3 天 · video</span>
+  <div>视频展示了一款集烧烤架、篝火盆和燃气灶于一体的多功能便携折叠露营桌。</div>
+  <div class="tg">场景 <b>露营/overlanding越野/海滩/湖边</b> ｜ 人群 <b>情侣</b> ｜ 钩子 <b>一物多用/便携/氛围感</b> ｜ 画面人数 <b>2</b></div>
+  <div class="cp">Camping just got a whole lot greener! 🌿
+Say goodbye to bulky gear and hello to the ultimate eco-friendly outdoor table. 🔥 It&#x27;s lightweight, compact, and sets up in seconds.
+Gather &#x27;round for interactive grilling, cozy campfires, or quick meals on the gas stove - all at one sustainable station.
+Less waste, less hassle, more time connecting with nature and loved ones.
+Perfect for camping trips, backyard nights, or any outdoor adventure, this innovative table makes cooking, gathering, and relaxing outdoors easier than ever.
+👉 Upgrade your outdoor experience today and join the minimalist movement towards a more environmentally friendly way of exploring the great outdoors! #EcoFriendly #MinimalWaste</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Upgrade Your Outdoor Cooking Game</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=886575277839068" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/aroundfire/11_1327730772807662_poster.jpg" src="assets/ads/aroundfire/11_1327730772807662.mp4"></video>
+<div class="am">
+  <span class="days new">在投 2 天 · video</span>
+  <div>展示了多功能折叠烧烤篝火桌在家庭后院和户外露营中的多场景应用。</div>
+  <div class="tg">场景 <b>后院/露营/聚会派对</b> ｜ 人群 <b>家庭带娃/朋友聚会</b> ｜ 钩子 <b>一物多用/便携/社交聚会</b> ｜ 画面人数 <b>8</b> ｜ <b style="color:#2E7D52">多人共烤 ✅</b></div>
+  <div class="cp">Gather &#x27;round! 🔥 Backyard dinners, camping weekends &amp; s&#x27;mores with the kids just got a whole lot easier!
+This isn&#x27;t just another grill - it&#x27;s an all-in-one foldable table that brings everyone together. Cook, stay warm and make quick meals with ease.
+No giant setup or lonely cooking here!
+Just effortless entertaining for outdoor families who love spending time together.
+Fold it away when the night&#x27;s over and get ready for your next adventure!
+Easier outdoor time with the people you love - what are you waiting for? 🎉
+Low impression count</div>
+  <div class="tg" style="margin-top:5px">Headline <code>One Table. Grill, Fire Pit &amp; Outdoor Kitchen.</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1327730772807662" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+  </div>
+</section>
+
+<section id="breeo">
+  <div class="brandbar">
+    <h3>Breeo</h3>
+    <span class="b">在投 ~100 results</span>
+    <span class="b">最长在投 131 天</span>
+    <span class="b">90 天+ 长青 12 组</span>
+    <span class="b">多人共烤 0/15</span>
+    <span class="b">采样覆盖度 ~49%（代表性采样）</span>
+  </div>
+  <table>
+    <thead><tr><th>指标</th><th>数值</th></tr></thead>
+    <tbody>
+      <tr><td data-l="">Facebook Page ID</td><td data-l="数值"><code>366513596821393</code></td></tr>
+      <tr><td data-l="">抓到的创意卡组 / 广告变体</td><td data-l="数值">41 组 / 49 条</td></tr>
+      <tr><td data-l="">素材形式</td><td data-l="数值">图片 27 · 视频 14</td></tr>
+      <tr><td data-l="">投放天数中位</td><td data-l="数值">—</td></tr>
+      <tr><td data-l="">场景 TOP</td><td data-l="数值">后院 87%</td></tr>
+      <tr><td data-l="">人群 TOP</td><td data-l="数值">无人纯产品 67%</td></tr>
+      <tr><td data-l="">钩子 TOP</td><td data-l="数值">用户证言 80% / 对比竞品 80% / 无烟技术 47%</td></tr>
+      <tr><td data-l="">本页展示素材</td><td data-l="数值"><b>15 条</b>（图片内嵌 · 视频点击即播）</td></tr>
+    </tbody>
+  </table>
+  <div class="adwall">
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/01_2039664620098788.jpg" alt="Breeo 广告素材：在后院场景中展示了安装有热导流罩且燃着旺火的Breeo X24无烟火盆。">
+<div class="am">
+  <span class="days long">在投 131 天 · image</span>
+  <div>在后院场景中展示了安装有热导流罩且燃着旺火的Breeo X24无烟火盆。</div>
+  <div class="tg">场景 <b>后院</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>用户证言/UGC/对比竞品/氛围感</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.
+Made in the USA, Built to Last</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2039664620098788" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/02_789668604211720.jpg" alt="Breeo 广告素材：朋友们在木屋后院围坐在Breeo无烟篝火炉旁，享受温馨惬意的聚会时光。">
+<div class="am">
+  <span class="days long">在投 125 天 · image</span>
+  <div>朋友们在木屋后院围坐在Breeo无烟篝火炉旁，享受温馨惬意的聚会时光。</div>
+  <div class="tg">场景 <b>后院/聚会派对</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>氛围感/社交聚会/无烟技术</b> ｜ 画面人数 <b>4</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.
+Bring Your Backyard Vision to Life</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=789668604211720" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/03_2078184826091519.jpg" alt="Breeo 广告素材：展示了后院露台上一台正在燃烧、并配有烧烤架配件的Breeo无烟火盆。">
+<div class="am">
+  <span class="days long">在投 102 天 · image</span>
+  <div>展示了后院露台上一台正在燃烧、并配有烧烤架配件的Breeo无烟火盆。</div>
+  <div class="tg">场景 <b>后院</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>用户证言/UGC/对比竞品/氛围感</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.
+Made in the USA, Built to Last</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2078184826091519" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/04_2774718736216042.jpg" alt="Breeo 广告素材：展示了后院铺石露台上正在燃烧的Breeo无烟火炉，两旁摆放着舒适的户外座椅。">
+<div class="am">
+  <span class="days long">在投 100 天 · image</span>
+  <div>展示了后院铺石露台上正在燃烧的Breeo无烟火炉，两旁摆放着舒适的户外座椅。</div>
+  <div class="tg">场景 <b>后院</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>对比竞品/用户证言/UGC/氛围感</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">&quot;We almost bought a Solo Stove, but so glad we saw our neighbor&#x27;s Breeo. We absolutely love it and wouldn&#x27;t change a thing.&quot; - Frank N.</div>
+  
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2774718736216042" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/05_925337993650582.jpg" alt="Breeo 广告素材：人们在后院围着Breeo无烟篝火炉享受温馨的聚会时光">
+<div class="am">
+  <span class="days long">在投 99 天 · image</span>
+  <div>人们在后院围着Breeo无烟篝火炉享受温馨的聚会时光</div>
+  <div class="tg">场景 <b>后院/聚会派对</b> ｜ 人群 <b>家庭带娃/朋友聚会</b> ｜ 钩子 <b>对比竞品/用户证言/UGC/氛围感</b> ｜ 画面人数 <b>4</b></div>
+  <div class="cp">&quot;We almost bought a Solo Stove, but so glad we saw our neighbor&#x27;s Breeo. We absolutely love it and wouldn&#x27;t change a thing.&quot; - Frank N.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Bring Your Backyard Vision to Life</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=925337993650582" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/06_993319193223849.jpg" alt="Breeo 广告素材：后院露台庭院中，一个装有烧烤架配件的Breeo无烟火盆正燃着熊熊烈火">
+<div class="am">
+  <span class="days long">在投 98 天 · image</span>
+  <div>后院露台庭院中，一个装有烧烤架配件的Breeo无烟火盆正燃着熊熊烈火</div>
+  <div class="tg">场景 <b>后院</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>用户证言/UGC/对比竞品/氛围感</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Smokeless Fire Pits, Handcrafted in the USA</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=993319193223849" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/07_1968032327168943.jpg" alt="Breeo 广告素材：后院石砌火炉中正在燃烧的Breeo无烟篝火盆，配有用户证言和竞品对比文案。">
+<div class="am">
+  <span class="days long">在投 97 天 · image</span>
+  <div>后院石砌火炉中正在燃烧的Breeo无烟篝火盆，配有用户证言和竞品对比文案。</div>
+  <div class="tg">场景 <b>后院</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>用户证言/UGC/对比竞品/无烟技术</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Smokeless Fire Pits, Handcrafted in the USA</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1968032327168943" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/08_2522724484831660.jpg" alt="Breeo 广告素材：展示了Breeo Zentro无烟火炉内胆轻松嵌入现有砖石火炉的效果。">
+<div class="am">
+  <span class="days long">在投 97 天 · image</span>
+  <div>展示了Breeo Zentro无烟火炉内胆轻松嵌入现有砖石火炉的效果。</div>
+  <div class="tg">场景 <b>纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>无烟技术/用户证言/UGC/对比竞品</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Smokeless Fire Pits, Handcrafted in the USA</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2522724484831660" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/09_940332265373461.jpg" alt="Breeo 广告素材：一张展示安装在后院石墙火炉中的Breeo无烟不锈钢嵌件的产品宣传图。">
+<div class="am">
+  <span class="days long">在投 96 天 · image</span>
+  <div>一张展示安装在后院石墙火炉中的Breeo无烟不锈钢嵌件的产品宣传图。</div>
+  <div class="tg">场景 <b>后院</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>用户证言/UGC/无烟技术/对比竞品</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Smokeless Fire Pits, Handcrafted in the USA</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=940332265373461" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/10_1444162010273943.jpg" alt="Breeo 广告素材：展示了安装在石砌火塘中的Breeo无烟火炉内胆，并附带产品卖点标签和对比竞品的用户证言。">
+<div class="am">
+  <span class="days long">在投 92 天 · image</span>
+  <div>展示了安装在石砌火塘中的Breeo无烟火炉内胆，并附带产品卖点标签和对比竞品的用户证言。</div>
+  <div class="tg">场景 <b>后院/纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>无烟技术/用户证言/UGC/对比竞品</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Smokeless Fire Pits, Handcrafted in the USA</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1444162010273943" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/11_1477285663904638.jpg" alt="Breeo 广告素材：展示了Breeo无烟火盆通过配件多功能切换为烤披萨炉的过程。">
+<div class="am">
+  <span class="days long">在投 92 天 · image</span>
+  <div>展示了Breeo无烟火盆通过配件多功能切换为烤披萨炉的过程。</div>
+  <div class="tg">场景 <b>后院/烹饪特写</b> ｜ 人群 <b>单人女性</b> ｜ 钩子 <b>一物多用/用户证言/UGC/对比竞品</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Smokeless Fire Pits, Handcrafted in the USA</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1477285663904638" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/12_1712919636555206.jpg" alt="Breeo 广告素材：展示Breeo无烟火盆与竞品在品质、耐用性及产地等维度的对比图表">
+<div class="am">
+  <span class="days long">在投 91 天 · image</span>
+  <div>展示Breeo无烟火盆与竞品在品质、耐用性及产地等维度的对比图表</div>
+  <div class="tg">场景 <b>纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>对比竞品/用户证言/UGC/耐用材质</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Smokeless Fire Pits, Handcrafted in the USA</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1712919636555206" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/13_1736997440777581.jpg" alt="Breeo 广告素材：人们在木屋后院围着Breeo无烟火炉聚会，享受温馨的篝火时光。">
+<div class="am">
+  <span class="days ">在投 85 天 · image</span>
+  <div>人们在木屋后院围着Breeo无烟火炉聚会，享受温馨的篝火时光。</div>
+  <div class="tg">场景 <b>后院/聚会派对</b> ｜ 人群 <b>家庭带娃/朋友聚会</b> ｜ 钩子 <b>氛围感/社交聚会/无烟技术</b> ｜ 画面人数 <b>4</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.</div>
+  
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1736997440777581" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/breeo/14_4511128815781837.jpg" alt="Breeo 广告素材：后院露台上摆放着正在熊熊燃烧的Breeo无烟火盆，上方配有悬挂式烧烤架。">
+<div class="am">
+  <span class="days ">在投 83 天 · image</span>
+  <div>后院露台上摆放着正在熊熊燃烧的Breeo无烟火盆，上方配有悬挂式烧烤架。</div>
+  <div class="tg">场景 <b>后院</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>对比竞品/用户证言/UGC/氛围感</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">&quot;We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since. The Breeo X24 just puts out an amazing amount of heat, and you can watch the fire dance for hours.&quot; - Jason W.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Smokeless Fire Pits, Handcrafted in the USA</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=4511128815781837" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/breeo/15_1298275658379277_poster.jpg" src="assets/ads/breeo/15_1298275658379277.mp4"></video>
+<div class="am">
+  <span class="days ">在投 76 天 · video</span>
+  <div>视频展示了Breeo无烟火盆的美国本土制造过程、户外烹饪及情侣在后院围炉的温馨画面。</div>
+  <div class="tg">场景 <b>后院/烹饪特写/工厂/制造</b> ｜ 人群 <b>情侣</b> ｜ 钩子 <b>氛围感/无烟技术/耐用材质</b> ｜ 画面人数 <b>2</b></div>
+  <div class="cp">Enjoy high-quality performance, smokeless fires and American craftsmanship at its best. Because when it comes to fireside moments, only the best will do.
+Experience fire like never before</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1298275658379277" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+  </div>
+</section>
+
+<section id="kbbqbros">
+  <div class="brandbar">
+    <h3>KBBQ Bros</h3>
+    <span class="b">在投 ~12 results</span>
+    <span class="b">最长在投 159 天（2026-02-12 起投）</span>
+    <span class="b">90 天+ 长青 2 组</span>
+    <span class="b">多人共烤 2/10</span>
+    <span class="b">采样覆盖度 100%</span>
+  </div>
+  <table>
+    <thead><tr><th>指标</th><th>数值</th></tr></thead>
+    <tbody>
+      <tr><td data-l="">Facebook Page ID</td><td data-l="数值"><code>294188663778909</code></td></tr>
+      <tr><td data-l="">抓到的创意卡组 / 广告变体</td><td data-l="数值">10 组 / 12 条</td></tr>
+      <tr><td data-l="">素材形式</td><td data-l="数值">视频 7 · 图片 3</td></tr>
+      <tr><td data-l="">投放天数中位</td><td data-l="数值">48 天</td></tr>
+      <tr><td data-l="">场景 TOP</td><td data-l="数值">后院 80%, 聚会派对 60%, 烹饪特写 60%</td></tr>
+      <tr><td data-l="">人群 TOP</td><td data-l="数值">朋友聚会 40%, 无人纯产品 40%</td></tr>
+      <tr><td data-l="">钩子 TOP</td><td data-l="数值">氛围感 80% / 社交聚会 60% / 便携 40%</td></tr>
+      <tr><td data-l="">本页展示素材</td><td data-l="数值"><b>10 条</b>（图片内嵌 · 视频点击即播）</td></tr>
+    </tbody>
+  </table>
+  <div class="adwall">
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/kbbqbros/01_934579802442425_poster.jpg" src="assets/ads/kbbqbros/01_934579802442425.mp4"></video>
+<div class="am">
+  <span class="days long">在投 159 天 · video</span>
+  <div>定格动画生动展示了便携折叠户外烧烤桌椅的快速组装和配件切换过程。</div>
+  <div class="tg">场景 <b>后院/纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>便携/一物多用/社交聚会</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">Set it up in the middle of the desert view 🌵🔥
+Our table is foldable, so you can take it anywhere — camping, Airbnb stays, or even the park. 🏕️✨
+Charcoal or gas? ✅ Both work.
+BBQ, hotpot, steak, ramen… whatever you crave, it handles it all. 🍖🍲🥢
+We ship nationwide 🚚✈️
+Or come visit us in Cerritos, CA 👇
+📍16727 Parkside Ave, Cerritos, CA 90703
+Mon–Fri 9:30–4:30 | Sat 9:30–1:30
+👉 More details in our bio — don’t miss it.
+Where would you set it up first? 👀
+#KBBQBros #GrillAnywhere #FoldableTable #DesertVibes #BackyardBBQ</div>
+  <div class="tg" style="margin-top:5px">CTA <code>Learn more</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=934579802442425" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/kbbqbros/02_1250177180513838_poster.jpg" src="assets/ads/kbbqbros/02_1250177180513838.mp4"></video>
+<div class="am">
+  <span class="days long">在投 144 天 · video</span>
+  <div>视频展示了在后院快速搭建韩式烤肉帐篷与专用烤肉桌的夜间氛围场景</div>
+  <div class="tg">场景 <b>后院/聚会派对/烹饪特写</b> ｜ 人群 <b>无人纯产品/美食特写无人</b> ｜ 钩子 <b>氛围感/社交聚会</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">Turning our backyard into Seoul at night 🇰🇷✨
+Warm lights.
+Smoke in the air.
+Food on the grill.
+Friends around the table.
+Backyard nights just hit different.
+Sometimes you don’t need a ticket to Korea…
+just a table and good people. 🍢🔥
+Should we host a pop-up next? 👀
+Comment “pocha”
+and we’ll send you a special discount code.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>www.kbbqbros.com 🔥</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1250177180513838" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/kbbqbros/03_1823512185299058_poster.jpg" src="assets/ads/kbbqbros/03_1823512185299058.mp4"></video>
+<div class="am">
+  <span class="days ">在投 53 天 · video</span>
+  <div>视频对比了去韩式烤肉店的高昂消费与排队痛点，宣传了自家便携、气炭两用的户外烤肉桌。</div>
+  <div class="tg">场景 <b>后院/露营/阳台/小空间</b> ｜ 人群 <b>家庭带娃/朋友聚会</b> ｜ 钩子 <b>对比竞品/便携/一物多用</b> ｜ 画面人数 <b>7</b></div>
+  <div class="cp">Turn Your Backyard into a KBBQ Restaurant 🍜
+Ditch the takeout and fire up an authentic, restaurant-quality Korean BBQ experience in your own space!
+With our game-changing grill + table combo, you&#x27;re just one sizzle away from becoming the ultimate K-Food master. 🔥
+Get ready to level up your gatherings and satisfy those cravings for bulgogi &amp; bibimbap at home!
+Transform Your Yard into a BBQ Haven
+www.kbbqbros.com</div>
+  <div class="tg" style="margin-top:5px">Headline <code>See Details</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1823512185299058" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/kbbqbros/04_2061904511398208.jpg" alt="KBBQ BROS 广告素材：展示了布置在后院露台上的韩式烤肉桌椅组合，营造出家庭版烤肉店的聚会氛围。">
+<div class="am">
+  <span class="days ">在投 53 天 · image</span>
+  <div>展示了布置在后院露台上的韩式烤肉桌椅组合，营造出家庭版烤肉店的聚会氛围。</div>
+  <div class="tg">场景 <b>后院/聚会派对</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>氛围感/社交聚会</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">Turn your backyard into a KBBQ restaurant.
+Become the BBQ Master of Your Backyard!
+No wait times. No restaurant bills. Just real KBBQ, done your way.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>See Details</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2061904511398208" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/kbbqbros/05_3526018014214244_poster.jpg" src="assets/ads/kbbqbros/05_3526018014214244.mp4"></video>
+<div class="am">
+  <span class="days ">在投 52 天 · video</span>
+  <div>视频展示了一群朋友在后院使用韩式烤肉桌举行烤肉聚餐的欢乐场景。</div>
+  <div class="tg">场景 <b>后院/聚会派对/烹饪特写</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>社交聚会/氛围感/便携</b> ｜ 画面人数 <b>6</b> ｜ <b style="color:#2E7D52">多人共烤 ✅</b></div>
+  <div class="cp">Why go out when you can KBBQ at home?</div>
+  <div class="tg" style="margin-top:5px">Headline <code>No wait times. No restaurant bills. Just real KBBQ, done your way.</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=3526018014214244" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/kbbqbros/06_1369972931712459_poster.jpg" src="assets/ads/kbbqbros/06_1369972931712459.mp4"></video>
+<div class="am">
+  <span class="days ">在投 44 天 · video</span>
+  <div>展示家庭在后院使用韩国烤肉桌聚餐的温馨场景，营造出浓厚的家庭社交氛围。</div>
+  <div class="tg">场景 <b>后院/聚会派对/烹饪特写</b> ｜ 人群 <b>家庭带娃/朋友聚会</b> ｜ 钩子 <b>氛围感/社交聚会</b> ｜ 画面人数 <b>7</b></div>
+  <div class="cp">The days are long. The years are short. 🤍</div>
+  
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1369972931712459" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/kbbqbros/07_3999131860385416.jpg" alt="KBBQ BROS 广告素材：展示了后院露天平台上布置的韩式烤肉桌椅与灯光氛围。">
+<div class="am">
+  <span class="days ">在投 35 天 · image</span>
+  <div>展示了后院露天平台上布置的韩式烤肉桌椅与灯光氛围。</div>
+  <div class="tg">场景 <b>后院/聚会派对</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>社交聚会/氛围感</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">Why go out when you can KBBQ at home?</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Outdoor Korean BBQ Grill Tables for Home | KBBQ Bros</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=3999131860385416" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/kbbqbros/08_1009467355202615.jpg" alt="KBBQ BROS 广告素材：展示了桌面烤炉上正在炙烤、冒着热气的美味烤肉特写。">
+<div class="am">
+  <span class="days ">在投 18 天 · image</span>
+  <div>展示了桌面烤炉上正在炙烤、冒着热气的美味烤肉特写。</div>
+  <div class="tg">场景 <b>烹饪特写/室内</b> ｜ 人群 <b>美食特写无人</b> ｜ 钩子 <b>氛围感</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">Home &amp; Garden
+490 people like this</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Like Page</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1009467355202615" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/kbbqbros/09_1089035436779485_poster.jpg" src="assets/ads/kbbqbros/09_1089035436779485.mp4"></video>
+<div class="am">
+  <span class="days ">在投 8 天 · video</span>
+  <div>展示在优胜美地露营时使用KBBQBros多功能烧烤桌烹饪各种美食并与好友聚会的场景。</div>
+  <div class="tg">场景 <b>露营/烹饪特写/聚会派对</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>便携/一物多用/氛围感</b> ｜ 画面人数 <b>5</b></div>
+  <div class="cp">🏕️ 3 days in Yosemite. $0 spent eating out.
+Instead of waiting in long lines or paying park prices, we brought our own setup.
+🌭 Hot dogs
+🍜 Ramen &amp; beer
+☕ Freshly brewed coffee
+🥓 Bacon, eggs &amp; toast
+🥩 Charcoal-grilled ribeye steak
+✨ Dinner under the stars
+Every meal tasted better with Yosemite as our backyard.
+Safe to say… our KBBQBros table was 100% worth it. 🔥
+Would you do a 3-day trip without eating at a single restaurant?
+#Yosemite #YosemiteNationalPark #Camping #CampCooking #OutdoorCook</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Visit Instagram profile</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1089035436779485" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/kbbqbros/10_889272730396777_poster.jpg" src="assets/ads/kbbqbros/10_889272730396777.mp4"></video>
+<div class="am">
+  <span class="days ">在投 8 天 · video</span>
+  <div>通过模拟夫妻短信对话引入，展示在后院使用韩式烤肉盘进行户外烧烤的场景。</div>
+  <div class="tg">场景 <b>后院/烹饪特写</b> ｜ 人群 <b>情侣</b> ｜ 钩子 <b>用户证言/UGC/氛围感</b> ｜ 画面人数 <b>2</b> ｜ <b style="color:#2E7D52">多人共烤 ✅</b></div>
+  <div class="cp">“What should we have for dinner?”
+After 20 minutes of debating... we somehow always end up with Korean BBQ. 🥩🔥
+No waiting.
+No reservations.
+No overpriced restaurant bill.
+Just good food, good company, and dinner ready in minutes.
+Who else always ends up grilling at home? 👇</div>
+  <div class="tg" style="margin-top:5px">CTA <code>Learn more</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=889272730396777" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+  </div>
+</section>
+
+<section id="solostove">
+  <div class="brandbar">
+    <h3>Solo Stove</h3>
+    <span class="b">在投 ~56 results</span>
+    <span class="b">最长在投 90 天</span>
+    <span class="b">90 天+ 长青 1 组</span>
+    <span class="b">多人共烤 1/15</span>
+    <span class="b">采样覆盖度 ~52%（代表性采样）</span>
+  </div>
+  <table>
+    <thead><tr><th>指标</th><th>数值</th></tr></thead>
+    <tbody>
+      <tr><td data-l="">Facebook Page ID</td><td data-l="数值"><code>339253916108162</code></td></tr>
+      <tr><td data-l="">抓到的创意卡组 / 广告变体</td><td data-l="数值">20 组 / 29 条</td></tr>
+      <tr><td data-l="">素材形式</td><td data-l="数值">图片 7 · 视频 13</td></tr>
+      <tr><td data-l="">投放天数中位</td><td data-l="数值">—</td></tr>
+      <tr><td data-l="">场景 TOP</td><td data-l="数值">聚会派对 53% / 后院 47%</td></tr>
+      <tr><td data-l="">人群 TOP</td><td data-l="数值">无人纯产品 33% / 朋友聚会 47%</td></tr>
+      <tr><td data-l="">钩子 TOP</td><td data-l="数值">价格促销 47% / 氛围感 40% / 新品上市 40%</td></tr>
+      <tr><td data-l="">本页展示素材</td><td data-l="数值"><b>15 条</b>（图片内嵌 · 视频点击即播）</td></tr>
+    </tbody>
+  </table>
+  <div class="adwall">
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/solostove/01_1314370250626932_poster.jpg" src="assets/ads/solostove/01_1314370250626932.mp4"></video>
+<div class="am">
+  <span class="days long">在投 90 天 · video</span>
+  <div>展示了人们在后院围绕Solo Stove Yukon 27寸无烟火炉聚会、唱歌、烹饪、享受温馨氛围的场景。</div>
+  <div class="tg">场景 <b>后院/聚会派对/烹饪特写</b> ｜ 人群 <b>家庭带娃/朋友聚会</b> ｜ 钩子 <b>氛围感/社交聚会/一物多用</b> ｜ 画面人数 <b>3</b></div>
+  <div class="cp">🔥 Turn your garden into THE place to gather with the world&#x27;s most popular Smokeless Fire Pits. 🔥</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Solo Stove Fire Pits</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1314370250626932" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/solostove/02_1761976941434103_poster.jpg" src="assets/ads/solostove/02_1761976941434103.mp4"></video>
+<div class="am">
+  <span class="days ">在投 46 天 · video</span>
+  <div>朋友们在海滩上围着新品Summit 27无烟火炉聚会弹琴并烤棉花糖。</div>
+  <div class="tg">场景 <b>海滩/湖边/聚会派对</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>新品上市/氛围感/用户证言/UGC</b> ｜ 画面人数 <b>4</b> ｜ <b style="color:#2E7D52">多人共烤 ✅</b></div>
+  <div class="cp">🔥 Meet the All-new Summit 27&quot; Smokeless Fire Pit. Featuring our tallest, brightest, most mesmerizing flame. Seats 6+. 🔥</div>
+  <div class="tg" style="margin-top:5px">Headline <code>ALL-NEW Summit Series</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1761976941434103" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/solostove/03_3237907739930648.jpg" alt="Solo Stove 广告素材：男子在户外露台聚会中切比萨，画面突出展示Solo Stove比萨烤炉及夏日促销折扣。">
+<div class="am">
+  <span class="days ">在投 28 天 · image</span>
+  <div>男子在户外露台聚会中切比萨，画面突出展示Solo Stove比萨烤炉及夏日促销折扣。</div>
+  <div class="tg">场景 <b>阳台/小空间/聚会派对</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>价格促销/社交聚会</b> ｜ 画面人数 <b>5</b></div>
+  <div class="cp">☀️ Summer Sale: Up to 32% off Pizza Ovens. Artisan-quality pies in as little as 90 seconds. Bon Appetit! 🍕</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Solo Stove Summer Sale</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=3237907739930648" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/solostove/04_1015166204330688.jpg" alt="Solo Stove 广告素材：展示Solo Stove Summit无烟火盆与Steelfire不锈钢烤盘套装的促销渲染图">
+<div class="am">
+  <span class="days ">在投 26 天 · image</span>
+  <div>展示Solo Stove Summit无烟火盆与Steelfire不锈钢烤盘套装的促销渲染图</div>
+  <div class="tg">场景 <b>纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>价格促销/新品上市/无烟技术</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">☀️ Summer Sale: $100 off Summit + Steelfire Bundle! Two bestselling innovations, now in one epic bundle. 🔥🍔</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Solo Stove Summer Sale</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1015166204330688" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/solostove/05_1032724096372826_poster.jpg" src="assets/ads/solostove/05_1032724096372826.mp4"></video>
+<div class="am">
+  <span class="days ">在投 25 天 · video</span>
+  <div>视频展示了在卡车后挡板上使用Solo Stove便携烤盘制作美味汉堡塔可及轻松清洗的过程。</div>
+  <div class="tg">场景 <b>烹饪特写/聚会派对</b> ｜ 人群 <b>单人男性/家庭带娃</b> ｜ 钩子 <b>便携/清洁便利/用户证言/UGC</b> ｜ 画面人数 <b>2</b></div>
+  <div class="cp">Tailgate setup ✅🔥 Take the Steelfire Stainless Griddle with your team to dish out the flavor. Zero to sear in just 7 minutes.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Solo Steelfire 22 Griddle</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1032724096372826" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/solostove/06_1394025255924578_poster.jpg" src="assets/ads/solostove/06_1394025255924578.mp4"></video>
+<div class="am">
+  <span class="days ">在投 25 天 · video</span>
+  <div>展示了Solo Stove Summit 27和火把套装的夏季促销优惠信息。</div>
+  <div class="tg">场景 <b>纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>价格促销/限时紧迫</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">🔥 HOT, LIMITED-TIME DEALS: $260 off the Summit 27 + Torch X-Pack Bundle 🔥 Gear up for a great summer.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Solo Stove Summer Sale</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1394025255924578" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/solostove/07_1702436697573581.jpg" alt="Solo Stove 广告素材：一张宣传Solo Stove Summit 27无烟火盆与火把套装夏日促销优惠260美金的纯产品海报。">
+<div class="am">
+  <span class="days ">在投 25 天 · image</span>
+  <div>一张宣传Solo Stove Summit 27无烟火盆与火把套装夏日促销优惠260美金的纯产品海报。</div>
+  <div class="tg">场景 <b>纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>价格促销/限时紧迫</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">🔥 HOT, LIMITED-TIME DEALS: $260 off the Summit 27 + Torch X-Pack Bundle 🔥 Gear up for a great summer.</div>
+  
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1702436697573581" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/solostove/08_2087585355157422_poster.jpg" src="assets/ads/solostove/08_2087585355157422.mp4"></video>
+<div class="am">
+  <span class="days ">在投 18 天 · video</span>
+  <div>视频以带火焰特效的静态画面展示了Solo Stove篝火炉与火炬的夏季促销套装优惠信息。</div>
+  <div class="tg">场景 <b>纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>价格促销/限时紧迫</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">🔥 HOT, LIMITED-TIME DEALS: $260 off the Summit 27 + Torch X-Pack Bundle 🔥 Gear up for a great summer.</div>
+  
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2087585355157422" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/solostove/09_1029717626448340_poster.jpg" src="assets/ads/solostove/09_1029717626448340.mp4"></video>
+<div class="am">
+  <span class="days ">在投 13 天 · video</span>
+  <div>展示Solo Stove首款丙烷篝火炉新品在后院聚会中营造的温馨氛围。</div>
+  <div class="tg">场景 <b>后院/聚会派对</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>新品上市/氛围感/社交聚会</b> ｜ 画面人数 <b>3</b></div>
+  <div class="cp">Meet our First-Ever Propane Fire Pit. No sparks, ash, or cleanup. Just worry-free, ambient flame made for endless nights. 🔥</div>
+  <div class="tg" style="margin-top:5px">Headline <code>ALL-NEW Propane Fire Pit</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1029717626448340" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/solostove/10_2120844285509677_poster.jpg" src="assets/ads/solostove/10_2120844285509677.mp4"></video>
+<div class="am">
+  <span class="days ">在投 12 天 · video</span>
+  <div>视频展示了Solo Stove全新发布的Summit系列无烟火炉的外观与不同尺寸。</div>
+  <div class="tg">场景 <b>纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>新品上市/无烟技术</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">The ALL-NEW Summit Series 🔥 Our most advanced fire pit &amp; our tallest, brightest, most mesmerizing flame 🔥 Lifetime warranty.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>ALL-NEW Summit Series</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2120844285509677" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/solostove/11_2881268988879912.jpg" alt="Solo Stove 广告素材：后院聚会场景下展示Solo Stove Summit 27无烟篝火炉，并配以醒目的10%限时折扣促销文案。">
+<div class="am">
+  <span class="days ">在投 12 天 · image</span>
+  <div>后院聚会场景下展示Solo Stove Summit 27无烟篝火炉，并配以醒目的10%限时折扣促销文案。</div>
+  <div class="tg">场景 <b>后院/聚会派对</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>价格促销/社交聚会/限时紧迫</b> ｜ 画面人数 <b>4</b></div>
+  <div class="cp">🔥 Keep your summer fired up with 10% off the Summit 27 🔥 Our most advanced Smokeless Fire Pits yet 🔥</div>
+  
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2881268988879912" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/solostove/12_3356583727846360_poster.jpg" src="assets/ads/solostove/12_3356583727846360.mp4"></video>
+<div class="am">
+  <span class="days ">在投 12 天 · video</span>
+  <div>父亲分享Solo Stove Summit无烟火炉的简单易用性，并与孩子们在后院享受温馨的篝火时光。</div>
+  <div class="tg">场景 <b>后院</b> ｜ 人群 <b>家庭带娃</b> ｜ 钩子 <b>新品上市/用户证言/UGC/氛围感</b> ｜ 画面人数 <b>3</b></div>
+  <div class="cp">The ALL-NEW Summit Series 🔥 Our most advanced fire pit &amp; our tallest, brightest, most mesmerizing flame 🔥 Lifetime warranty.
+ALL-NEW Summit Series
+Available in 3 sizes</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=3356583727846360" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/solostove/13_1032684119256870_poster.jpg" src="assets/ads/solostove/13_1032684119256870.mp4"></video>
+<div class="am">
+  <span class="days ">在投 10 天 · video</span>
+  <div>单人男性在后院使用Solo Stove披萨烤箱制作并享用法式面包热蜂蜜披萨。</div>
+  <div class="tg">场景 <b>后院/烹饪特写</b> ｜ 人群 <b>单人男性</b> ｜ 钩子 <b>用户证言/UGC</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">Build your own at-home pizzeria with the Solo Stove Pizza Oven. Artisan-quality pies in as little as 90 seconds. Yes, chef! 👨‍🍳🍕�</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Solo Stove Pizza Oven</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1032684119256870" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/solostove/14_1520711306520819_poster.jpg" src="assets/ads/solostove/14_1520711306520819.mp4"></video>
+<div class="am">
+  <span class="days ">在投 10 天 · video</span>
+  <div>通过用户真实证言展示了全新Solo Stove Summit无烟火炉在后院聚会中的温暖氛围与高颜值设计。</div>
+  <div class="tg">场景 <b>后院/聚会派对</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>用户证言/UGC/新品上市/氛围感</b> ｜ 画面人数 <b>3</b></div>
+  <div class="cp">🔥Summit Smokeless Fire Pits 🔥 Most advanced 🔥 Our tallest, brightest, most mesmerizing flame 🔥 Lifetime warranty 🔥
+ALL-NEW Summit Series
+Available in 3 sizes</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1520711306520819" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/solostove/15_1339388711103741.jpg" alt="Solo Stove 广告素材：展示了人们围坐在后院的Solo Stove无烟火炉旁享受篝火，并配有10%限时折扣的促销信息。">
+<div class="am">
+  <span class="days new">在投 7 天 · image</span>
+  <div>展示了人们围坐在后院的Solo Stove无烟火炉旁享受篝火，并配有10%限时折扣的促销信息。</div>
+  <div class="tg">场景 <b>后院/聚会派对</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>价格促销/限时紧迫/氛围感</b> ｜ 画面人数 <b>4</b></div>
+  <div class="cp">🔥 Keep your summer fired up with 10% off the Summit 27 🔥 Our most advanced Smokeless Fire Pits yet 🔥</div>
+  
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1339388711103741" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+  </div>
+</section>
+
+<section id="nomadgrills">
+  <div class="brandbar">
+    <h3>NOMAD Grills</h3>
+    <span class="b">在投 ~11 results</span>
+    <span class="b">最长在投 82 天</span>
+    <span class="b">90 天+ 长青 0 组</span>
+    <span class="b">多人共烤 0/11</span>
+    <span class="b">采样覆盖度 100%</span>
+  </div>
+  <table>
+    <thead><tr><th>指标</th><th>数值</th></tr></thead>
+    <tbody>
+      <tr><td data-l="">Facebook Page ID</td><td data-l="数值"><code>167255037132978</code></td></tr>
+      <tr><td data-l="">抓到的创意卡组 / 广告变体</td><td data-l="数值">11 组 / 11 条</td></tr>
+      <tr><td data-l="">素材形式</td><td data-l="数值">图片 9 · 视频 2</td></tr>
+      <tr><td data-l="">投放天数中位</td><td data-l="数值">—</td></tr>
+      <tr><td data-l="">场景 TOP</td><td data-l="数值">纯产品 55% / overlanding 45% / 露营 45%</td></tr>
+      <tr><td data-l="">人群 TOP</td><td data-l="数值">无人纯产品 73%</td></tr>
+      <tr><td data-l="">钩子 TOP</td><td data-l="数值">便携 82% / 耐用材质 82%</td></tr>
+      <tr><td data-l="">本页展示素材</td><td data-l="数值"><b>11 条</b>（图片内嵌 · 视频点击即播）</td></tr>
+    </tbody>
+  </table>
+  <div class="adwall">
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/nomadgrills/01_1786834556055777_poster.jpg" src="assets/ads/nomadgrills/01_1786834556055777.mp4"></video>
+<div class="am">
+  <span class="days ">在投 82 天 · video</span>
+  <div>单人男性在后院使用便携烤炉烤肉，随后通过产品旋转展示与文字排版介绍其新品多功能特性。</div>
+  <div class="tg">场景 <b>后院/纯产品展示/烹饪特写</b> ｜ 人群 <b>单人男性/无人纯产品</b> ｜ 钩子 <b>新品上市/便携/耐用材质</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">NOMAD Rodeo Grill &amp; Smoker. $399. Made in USA. 500+ sq in. 26 lbs. Built for Serious Charcoal Cooking.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Visit Instagram profile</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1786834556055777" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/nomadgrills/02_3482940371874621.jpg" alt="NOMAD Grills 广告素材：该图展示了箱式便携烤炉的产品特写，并配有德州知名烧烤大师的推荐语及团队合影。">
+<div class="am">
+  <span class="days ">在投 76 天 · image</span>
+  <div>该图展示了箱式便携烤炉的产品特写，并配有德州知名烧烤大师的推荐语及团队合影。</div>
+  <div class="tg">场景 <b>纯产品展示/聚会派对</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>用户证言/UGC/便携/耐用材质</b> ｜ 画面人数 <b>6</b></div>
+  <div class="cp">Texas Monthly Top 50 pitmaster APPROVED. NOMAD Rodeo Grill &amp; Smoker. $399. Made in USA.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Top 50 Pitmaster Approved.</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=3482940371874621" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/nomadgrills/03_946590688242605_poster.jpg" src="assets/ads/nomadgrills/03_946590688242605.mp4"></video>
+<div class="am">
+  <span class="days ">在投 76 天 · video</span>
+  <div>在户外岩石地面上，展示闭合的提箱式便携烤炉以及一旁正在燃烧的引火桶。</div>
+  <div class="tg">场景 <b>overlanding越野/露营/纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>便携/氛围感</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">NOMAD Rodeo Grill &amp; Smoker. $399. Made in USA. 500+ sq in of cooking space in a 26 lb package. Built for serious charcoal cooking.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>NOMAD Rodeo │ $399</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=946590688242605" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/nomadgrills/04_741122822357381.jpg" alt="NOMAD Grills 广告素材：一位身穿围裙的男子在户外使用便携式手提烤炉烤肉。">
+<div class="am">
+  <span class="days ">在投 75 天 · image</span>
+  <div>一位身穿围裙的男子在户外使用便携式手提烤炉烤肉。</div>
+  <div class="tg">场景 <b>后院/烹饪特写</b> ｜ 人群 <b>单人男性</b> ｜ 钩子 <b>新品上市/便携/耐用材质</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">Introducing the all-new RODEO Grill &amp; Smoker. Made in the USA 🇺🇸. Built for serious charcoal cooking. Available for preorder now.
+🔥 die-cast aluminum
+👯 dual-sided cooking
+🐘 500+ sq in of cooking space
+💨 maximum airflow controls
+🦾 heavy-gauge wire grates
+⚛️ extreme temp finish
+🇺🇸 made in USA</div>
+  <div class="tg" style="margin-top:5px">Headline <code>NOMAD Rodeo Grill &amp; Smoker</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=741122822357381" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/nomadgrills/05_1338076138183777.jpg" alt="NOMAD Grills 广告素材：该广告展示了NOMAD便携折叠式烤肉熏制炉，并结合了德州名厨的用户好评与质量证言。">
+<div class="am">
+  <span class="days ">在投 62 天 · image</span>
+  <div>该广告展示了NOMAD便携折叠式烤肉熏制炉，并结合了德州名厨的用户好评与质量证言。</div>
+  <div class="tg">场景 <b>纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>用户证言/UGC/耐用材质/便携</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">Texas Monthly Top 50 pitmaster APPROVED. NOMAD Rodeo Grill &amp; Smoker. $399. Made in USA.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Top 50 Pitmaster Approved.</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1338076138183777" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/nomadgrills/06_27465440239779305.jpg" alt="NOMAD Grills 广告素材：在户外岩石荒野地面上展示的NOMAD便携式木炭烤炉与专用木炭袋">
+<div class="am">
+  <span class="days ">在投 22 天 · image</span>
+  <div>在户外岩石荒野地面上展示的NOMAD便携式木炭烤炉与专用木炭袋</div>
+  <div class="tg">场景 <b>overlanding越野/露营</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>便携/耐用材质/新品上市</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">NOMAD Rodeo Grill &amp; Smoker. $399. Made in USA. 500+ sq in of cooking space in a 26 lb package. Built for serious charcoal cooking.
+NOMAD Rodeo │ $399
+Cast aluminum grill &amp; smoker. 500+ sq in. 26 lbs. Made in USA. Pre-order now.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=27465440239779305" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/nomadgrills/07_875850398914070.jpg" alt="NOMAD Grills 广告素材：在荒野岩石背景下展示的便携式手提箱烧烤炉和木炭包">
+<div class="am">
+  <span class="days ">在投 22 天 · image</span>
+  <div>在荒野岩石背景下展示的便携式手提箱烧烤炉和木炭包</div>
+  <div class="tg">场景 <b>露营/overlanding越野</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>便携/耐用材质</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">NOMAD Rodeo Grill &amp; Smoker. $399. Made in USA. 500+ sq in of cooking space in a 26 lb package. Built for serious charcoal cooking.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>500+ Sq In. Heavy Duty Cast Aluminum.</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=875850398914070" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/nomadgrills/08_1020041270488419.jpg" alt="NOMAD Grills 广告素材：在黑色木炭背景上展示的美国制造便携式手提箱烤肉炉">
+<div class="am">
+  <span class="days ">在投 21 天 · image</span>
+  <div>在黑色木炭背景上展示的美国制造便携式手提箱烤肉炉</div>
+  <div class="tg">场景 <b>纯产品展示</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>耐用材质/价格促销</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">Rodeo Grill &amp; Smoker. No pellets. No electricity.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Cast Aluminum. Made in USA. $399</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1020041270488419" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/nomadgrills/09_2132059420989157.jpg" alt="NOMAD Grills 广告素材：在岩石荒原中的便携式手提箱烤炉与木炭。">
+<div class="am">
+  <span class="days ">在投 21 天 · image</span>
+  <div>在岩石荒原中的便携式手提箱烤炉与木炭。</div>
+  <div class="tg">场景 <b>overlanding越野/露营</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>便携/耐用材质/氛围感</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">NOMAD Rodeo Grill &amp; Smoker. $399. Made in USA. 500+ sq in of cooking space in a 26 lb package. Built for serious charcoal cooking.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>500+ Sq In. Heavy Duty Cast Aluminum.</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2132059420989157" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/nomadgrills/10_2400761737086492.jpg" alt="NOMAD Grills 广告素材：展示了一款在黑色木炭背景上正冒烟烤肉的便携式箱体木炭烤炉。">
+<div class="am">
+  <span class="days ">在投 21 天 · image</span>
+  <div>展示了一款在黑色木炭背景上正冒烟烤肉的便携式箱体木炭烤炉。</div>
+  <div class="tg">场景 <b>烹饪特写/纯产品展示</b> ｜ 人群 <b>美食特写无人</b> ｜ 钩子 <b>对比竞品/价格促销</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">No pellets. No electricity.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>No Pellets. No Electricity. $399.</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2400761737086492" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/nomadgrills/11_1787043918931196.jpg" alt="NOMAD Grills 广告素材：在户外荒野岩石背景下展示的NOMAD便携式烤炉与木炭包。">
+<div class="am">
+  <span class="days new">在投 2 天 · image</span>
+  <div>在户外荒野岩石背景下展示的NOMAD便携式烤炉与木炭包。</div>
+  <div class="tg">场景 <b>露营/overlanding越野</b> ｜ 人群 <b>无人纯产品</b> ｜ 钩子 <b>耐用材质/便携</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">NOMAD Rodeo Grill &amp; Smoker. $399. Made in USA. 500+ sq in of cooking space in a 26 lb package. Built for serious charcoal cooking.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>500+ Sq In. Heavy Duty Cast Aluminum.</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1787043918931196" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+  </div>
+</section>
+
+<section id="biolite">
+  <div class="brandbar">
+    <h3>BioLite</h3>
+    <span class="b">在投 ~22 results</span>
+    <span class="b">最长在投 89 天（Apr 23, 2026 起投）</span>
+    <span class="b">90 天+ 长青 0 组</span>
+    <span class="b">多人共烤 0/15</span>
+    <span class="b">采样覆盖度 100%</span>
+  </div>
+  <table>
+    <thead><tr><th>指标</th><th>数值</th></tr></thead>
+    <tbody>
+      <tr><td data-l="">Facebook Page ID</td><td data-l="数值"><code>224566557578217</code></td></tr>
+      <tr><td data-l="">抓到的创意卡组 / 广告变体</td><td data-l="数值">18 组 / 22 条</td></tr>
+      <tr><td data-l="">素材形式</td><td data-l="数值">视频 12 · 图片 6</td></tr>
+      <tr><td data-l="">投放天数中位</td><td data-l="数值">24 天</td></tr>
+      <tr><td data-l="">场景 TOP</td><td data-l="数值">露营 80% / 烹饪特写 27%</td></tr>
+      <tr><td data-l="">人群 TOP</td><td data-l="数值">单人男性 60% / 单人女性 33%</td></tr>
+      <tr><td data-l="">钩子 TOP</td><td data-l="数值">便携 73% / 新品上市 40% / 耐用材质 33%</td></tr>
+      <tr><td data-l="">本页展示素材</td><td data-l="数值"><b>15 条</b>（图片内嵌 · 视频点击即播）</td></tr>
+    </tbody>
+  </table>
+  <div class="adwall">
+<div class="adcard">
+<img loading="lazy" src="assets/ads/biolite/01_1458520589299475.jpg" alt="BioLite 广告素材：展示单手拿着铸铁平底锅在EcoZoom便携式火箭柴火炉上烹饪的场景，画面配有用户好评">
+<div class="am">
+  <span class="days ">在投 89 天 · image</span>
+  <div>展示单手拿着铸铁平底锅在EcoZoom便携式火箭柴火炉上烹饪的场景，画面配有用户好评</div>
+  <div class="tg">场景 <b>露营/后院</b> ｜ 人群 <b>单人男性</b> ｜ 钩子 <b>用户证言/UGC/便携</b> ｜ 画面人数 <b>0</b></div>
+  <div class="cp">✅ Efficient: Burns wood or charcoal without smoke
+✅ Portable: smaller than a homer bucket
+✅ Popular: Over 1000+ 5-star reviews on Amazon
+Meet The EcoZoom Versa Stove
+FREE Shipping When You Buy Today</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1458520589299475" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/biolite/02_1004480795332764_poster.jpg" src="assets/ads/biolite/02_1004480795332764.mp4"></video>
+<div class="am">
+  <span class="days ">在投 48 天 · video</span>
+  <div>展示了一名男子清晨在帐篷里醒来，使用头灯准备开始露营活动。</div>
+  <div class="tg">场景 <b>露营</b> ｜ 人群 <b>单人男性</b> ｜ 钩子 <b>便携/氛围感</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">Don&#x27;t wait for the sunrise.
+We designed our Range Headlamps to keep up with all your outdoor adventures, so you can traverse through the dark and start your day earlier.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1004480795332764" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/biolite/03_2423488934800835_poster.jpg" src="assets/ads/biolite/03_2423488934800835.mp4"></video>
+<div class="am">
+  <span class="days ">在投 48 天 · video</span>
+  <div>多位模特在纯白背景下展示不同款色和亮度的BioLite新系列头灯。</div>
+  <div class="tg">场景 <b>纯产品展示</b> ｜ 人群 <b>单人男性/单人女性</b> ｜ 钩子 <b>新品上市/耐用材质</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">Shorter days don&#x27;t need to bring your adventures to a close.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Go farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2423488934800835" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/biolite/04_27113342451648567.jpg" alt="BioLite 广告素材：一名戴着橙色亮起头灯的年轻男子在纯色背景前微笑">
+<div class="am">
+  <span class="days ">在投 48 天 · image</span>
+  <div>一名戴着橙色亮起头灯的年轻男子在纯色背景前微笑</div>
+  <div class="tg">场景 <b>露营</b> ｜ 人群 <b>单人男性</b> ｜ 钩子 <b>新品上市/耐用材质</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">Shorter days don&#x27;t need to bring your adventures to a close.
+Go farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.
+NEW Range Headlamps
+Bright, Fast, Waterproof</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=27113342451648567" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/biolite/05_848397151198612.jpg" alt="BioLite 广告素材：一位戴着BioLite发光头灯的女性在林间微笑仰望。">
+<div class="am">
+  <span class="days ">在投 48 天 · image</span>
+  <div>一位戴着BioLite发光头灯的女性在林间微笑仰望。</div>
+  <div class="tg">场景 <b>露营</b> ｜ 人群 <b>单人女性</b> ｜ 钩子 <b>便携/氛围感</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">Go farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.
+Waterproof &amp; Fast Charging</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=848397151198612" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/biolite/06_1337769945156122_poster.jpg" src="assets/ads/biolite/06_1337769945156122.mp4"></video>
+<div class="am">
+  <span class="days ">在投 24 天 · video</span>
+  <div>单人女性在户外露营时使用BioLite便携柴炉和咖啡壶烧水制作咖啡。</div>
+  <div class="tg">场景 <b>露营/烹饪特写</b> ｜ 人群 <b>单人女性</b> ｜ 钩子 <b>一物多用/便携</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">Brew a morning coffee and charge your phone with just a handful of twigs.
+Cook With What You Find
+Plus Free Shipping</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1337769945156122" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/biolite/07_1346349784134160_poster.jpg" src="assets/ads/biolite/07_1346349784134160.mp4"></video>
+<div class="am">
+  <span class="days ">在投 24 天 · video</span>
+  <div>博主通过UGC视频展示了如何利用BioLite便携营地炉燃烧树枝来为手机充电和烹饪。</div>
+  <div class="tg">场景 <b>露营/烹饪特写</b> ｜ 人群 <b>单人男性</b> ｜ 钩子 <b>一物多用/便携/用户证言/UGC</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">Brew a morning coffee and charge your phone with just a handful of twigs.
+Cook With What You Find
+Plus Free Shipping</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1346349784134160" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/biolite/08_1654036472344088_poster.jpg" src="assets/ads/biolite/08_1654036472344088.mp4"></video>
+<div class="am">
+  <span class="days ">在投 24 天 · video</span>
+  <div>一名男子在清晨戴着头灯走出露营帐篷并准备炉具。</div>
+  <div class="tg">场景 <b>露营</b> ｜ 人群 <b>单人男性</b> ｜ 钩子 <b>便携/氛围感</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">Don&#x27;t wait for the sunrise.
+We designed our Range Headlamps to keep up with all your outdoor adventures, so you can traverse through the dark and start your day earlier.</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1654036472344088" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/biolite/09_2232893214152008.jpg" alt="BioLite 广告素材：展示两人在夜间森林徒步时佩戴BioLite头灯">
+<div class="am">
+  <span class="days ">在投 24 天 · image</span>
+  <div>展示两人在夜间森林徒步时佩戴BioLite头灯</div>
+  <div class="tg">场景 <b>露营/overlanding越野</b> ｜ 人群 <b>朋友聚会</b> ｜ 钩子 <b>新品上市/便携</b> ｜ 画面人数 <b>2</b></div>
+  <div class="cp">Shorter days don&#x27;t need to bring your adventures to a close.
+Go farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.
+NEW Range Headlamps</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2232893214152008" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/biolite/10_2286597195498822.jpg" alt="BioLite 广告素材：一名戴着发光橙色BioLite头灯的黑人男子在纯白背景前微笑">
+<div class="am">
+  <span class="days ">在投 24 天 · image</span>
+  <div>一名戴着发光橙色BioLite头灯的黑人男子在纯白背景前微笑</div>
+  <div class="tg">场景 <b>室内</b> ｜ 人群 <b>单人男性</b> ｜ 钩子 <b>新品上市/便携</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">Shorter days don&#x27;t need to bring your adventures to a close.
+Go farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.
+NEW Range Headlamps</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=2286597195498822" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/biolite/11_995801936687764_poster.jpg" src="assets/ads/biolite/11_995801936687764.mp4"></video>
+<div class="am">
+  <span class="days ">在投 24 天 · video</span>
+  <div>一名女性通过UGC视频展示并测评了BioLite多功能无烟露营炉的便携煮食和发电充电功能。</div>
+  <div class="tg">场景 <b>露营/后院/烹饪特写</b> ｜ 人群 <b>单人女性/家庭带娃</b> ｜ 钩子 <b>一物多用/无烟技术/用户证言/UGC</b> ｜ 画面人数 <b>3</b></div>
+  <div class="cp">Brew a morning coffee and charge your phone with just a handful of twigs.
+Cook With What You Find
+Plus Free Shipping</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=995801936687764" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<img loading="lazy" src="assets/ads/biolite/12_1306154418243948.jpg" alt="BioLite 广告素材：一对情侣戴着亮起的头灯在夜色中凝望远方。">
+<div class="am">
+  <span class="days ">在投 23 天 · image</span>
+  <div>一对情侣戴着亮起的头灯在夜色中凝望远方。</div>
+  <div class="tg">场景 <b>露营</b> ｜ 人群 <b>情侣</b> ｜ 钩子 <b>便携/氛围感</b> ｜ 画面人数 <b>2</b></div>
+  <div class="cp">The nightfall doesn&#x27;t stop explorers.
+We designed our Range Headlamps to keep up with all your outdoor adventures, so can keep traversing through dark and extend your outdoor pursuit.
+Waterproof &amp; Fast Charging</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1306154418243948" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/biolite/13_823505647362749_poster.jpg" src="assets/ads/biolite/13_823505647362749.mp4"></video>
+<div class="am">
+  <span class="days ">在投 23 天 · video</span>
+  <div>展示了BioLite新款头灯在户外溪流和暴雨中的防水性能与使用场景。</div>
+  <div class="tg">场景 <b>露营</b> ｜ 人群 <b>单人男性</b> ｜ 钩子 <b>新品上市/耐用材质</b> ｜ 画面人数 <b>2</b></div>
+  <div class="cp">Go farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.
+NEW Range Headlamps</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=823505647362749" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/biolite/14_997488362890136_poster.jpg" src="assets/ads/biolite/14_997488362890136.mp4"></video>
+<div class="am">
+  <span class="days ">在投 23 天 · video</span>
+  <div>展示了BioLite新款Range头灯在夜间越野和雨中徒步时的防水、强光与快充性能。</div>
+  <div class="tg">场景 <b>露营/overlanding越野/纯产品展示</b> ｜ 人群 <b>情侣/单人男性</b> ｜ 钩子 <b>新品上市/便携/耐用材质</b> ｜ 画面人数 <b>2</b></div>
+  <div class="cp">Shorter days don&#x27;t need to bring your adventures to a close.
+Go farther, stay later,  and have more fun with fast charging, waterproof Range headlamps built to keep up with your adventures.
+NEW Range Headlamps
+Bright, Fast, Waterproof</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Shop Now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=997488362890136" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+<div class="adcard">
+<video controls preload="none" playsinline poster="assets/ads/biolite/15_1023441520642823_poster.jpg" src="assets/ads/biolite/15_1023441520642823.mp4"></video>
+<div class="am">
+  <span class="days ">在投 19 天 · video</span>
+  <div>展示了EcoZoom Versa火箭炉在后院的卓越耐用性、多种烹饪功能以及便携收纳过程。</div>
+  <div class="tg">场景 <b>后院/烹饪特写/纯产品展示</b> ｜ 人群 <b>单人女性/美食特写无人</b> ｜ 钩子 <b>耐用材质/便携/一物多用</b> ｜ 画面人数 <b>1</b></div>
+  <div class="cp">✅ Efficient: Burns wood or charcoal without smoke
+✅ Portable: smaller than a homer bucket
+✅ Popular: Over 1000+ 5-star reviews on Amazon</div>
+  <div class="tg" style="margin-top:5px">Headline <code>Meet The EcoZoom Versa Stove</code> · CTA <code>Shop now</code></div>
+  <div class="lk"><a href="https://www.facebook.com/ads/library/?id=1023441520642823" target="_blank" rel="noopener">Ad Library 原链 ↗</a></div>
+</div>
+</div>
+  </div>
+</section>
+  <div class="pagenav">
+    <a href="voc.html"><div class="d">◂ 上一份</div><div class="t">用户洞察 VOC</div></a>
+    <a class="nx" href="social.html"><div class="d">下一份 ▸</div><div class="t">社媒生态</div></a>
+  </div>
+
+</div>
+
+<div class="foot">AroundFire 全链路品牌调研 · 广告情报 · Meta Ad Library 实抓 2026-07-21 · 77 条素材本地化收录</div>
+</body>
+</html>

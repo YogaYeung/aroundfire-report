@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社媒生态 · AroundFire 调研报告</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <a class="home" href="index.html">◂ AROUNDFIRE 报告中心</a><span class="sep">|</span>
+  <a href="summary.html">摘要</a><a href="category.html">品类</a><a href="competitors.html">竞争</a><a href="voc.html">VOC</a><a href="ads.html">广告</a><a href="trends.html">趋势</a><a href="seo.html">SEO</a><a href="optimization.html">网站优化</a><a href="pricing.html">定价</a><a href="meta.html">投放</a><a href="influencers.html">达人</a>
+</div></div>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="eyebrow">06 · Social Ecosystem</div>
+    <h1>社媒生态：9 品牌 × 3 平台</h1>
+    <p class="sub">Instagram 180 条帖 · TikTok 134 条视频 · YouTube 113 条视频，全部 Apify 官方 Actor 实抓 + Playwright 真实浏览器截图。</p>
+    <p class="fine"><b>账号验证方式</b>：全部 9 个品牌的社媒 handle 均<b>从各自官网页脚 HTML 中提取</b>（非搜索结果推测），再用 Apify 拉到真实主页数据二次确认（粉丝数 / 认证状态 / 官网外链）。</p>
+    <div class="meta"><span>📅 2026-07-21</span><span>📱 21 张主页截图</span><span>⚠️ IG 限流缺 3 张已声明</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="toc">
+    <div class="ttl">目录</div>
+    <ol>
+      <li><a href="#verify">账号验证结果</a></li>
+      <li><a href="#panorama">全景数据表</a></li>
+      <li><a href="#types">内容类型分布对比</a></li>
+      <li><a href="#brands">逐账号拆解</a></li>
+      <li><a href="#answers">品类套路 / 爆款共性 / 围坐心智</a></li>
+      <li><a href="#gap">AroundFire 和头部差在哪</a></li>
+      <li><a href="#todo">可直接执行的建议</a></li>
+    </ol>
+  </div>
+
+  <section id="verify">
+    <div class="sec-head"><h2><span class="num">0</span>账号验证结果（先看这个）</h2></div>
+    <table>
+      <thead><tr><th>品牌</th><th>Instagram</th><th>TikTok</th><th>YouTube</th><th>页脚来源</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>AroundFire</b></td><td data-l="Instagram"><code>@aroundfire_official</code> ✅</td><td data-l="TikTok"><code>@aroundfireoffical</code> ✅（<b>官方 handle 少一个 i，是笔误但已在用</b>）</td><td data-l="YouTube"><code>@AroundFire</code> ✅</td><td data-l="页脚来源">aroundfire.co</td></tr>
+        <tr><td data-l="">Solo Stove</td><td data-l="Instagram"><code>@solostove</code> ✅</td><td data-l="TikTok"><code>@solostove</code> ✅</td><td data-l="YouTube"><code>@solostove</code> ✅</td><td data-l="页脚来源">solostove.com（403，用 scrapling 破）</td></tr>
+        <tr><td data-l="">Breeo</td><td data-l="Instagram"><code>@breeo</code> ✅</td><td data-l="TikTok">❌ <b>无官方 TikTok</b>（<code>@breeo</code> 抓取返回 "Profile is private"）</td><td data-l="YouTube"><code>@breeofirepits</code> ✅</td><td data-l="页脚来源">breeo.co</td></tr>
+        <tr><td data-l="">BioLite</td><td data-l="Instagram"><code>@biolite</code> ✅</td><td data-l="TikTok"><code>@biolite</code> ✅</td><td data-l="YouTube"><code>BioLiteChannel</code> ✅</td><td data-l="页脚来源">bioliteenergy.com</td></tr>
+        <tr><td data-l="">Nomad Grills</td><td data-l="Instagram"><code>@nomadgrills</code> ✅</td><td data-l="TikTok"><code>@nomadgrills</code> ✅</td><td data-l="YouTube"><code>NOMADGrillsVideo</code> ✅</td><td data-l="页脚来源">nomadgrills.com</td></tr>
+        <tr><td data-l="">Gather Grills</td><td data-l="Instagram"><code>@gathergrills</code> ✅</td><td data-l="TikTok"><code>@gathergrills</code> ✅</td><td data-l="YouTube"><code>@gathergrills5433</code> ✅</td><td data-l="页脚来源">gathergrills.com</td></tr>
+        <tr><td data-l="">Snow Peak</td><td data-l="Instagram"><code>@snowpeakusa</code> ✅</td><td data-l="TikTok"><code>@snowpeakusa</code> ✅</td><td data-l="YouTube">⚠️ <b>官网页脚未挂 YouTube</b>；<code>youtube.com/@snowpeakusa</code> 实抓证实是一个 66 粉、1 条 2010 年视频的<b>同名个人号（Jet111111）</b>，<b>不是官方号</b></td><td data-l="页脚来源">snowpeak.com</td></tr>
+        <tr><td data-l="">KBBQ Bros</td><td data-l="Instagram"><code>@kbbqbros</code> ✅</td><td data-l="TikTok"><code>@kbbqbros</code> ✅</td><td data-l="YouTube"><code>@KBBQBROS</code> ✅</td><td data-l="页脚来源">kbbqbros.com</td></tr>
+        <tr><td data-l="">Overland Expo</td><td data-l="Instagram"><code>@overlandexpo</code> ✅</td><td data-l="TikTok"><code>@overlandexpo</code>（<b>已停更，末条 2022-06</b>）</td><td data-l="YouTube"><code>@OverlandExpo</code> ✅</td><td data-l="页脚来源">overlandexpo.com</td></tr>
+      </tbody>
+    </table>
+    <div class="disclaimer">
+      <span class="ttl">抓不到 / 不存在的，如实列出</span>
+      <ul>
+        <li><b>Breeo 官方 TikTok</b> —— 不存在公开官方号</li>
+        <li><b>Snow Peak 官方 YouTube</b> —— 官网未挂，且 <code>@snowpeakusa</code> 是同名个人号，<b>不能当官方号用</b></li>
+        <li><b>Instagram 主页网格截图仅 6/9</b>：IG 对本机 IP 有强限流，普通 Chromium 与 scrapling StealthyFetcher（camoufox 指纹伪装）各重试 4–5 次仍返回 "Something went wrong"（Breeo / NOMAD Grills / Snow Peak 三家）。<b>这 3 家的全部数据来自 Apify 实抓，不受截图缺失影响。</b></li>
+        <li><b>爆款视频文件未本地归档</b>：IG / TikTok 视频直链带时效签名。<b>所有爆款均在报告中给出可点击原链接，随时可复看。</b></li>
+        <li><b>TikTok 主页缩略图未加载</b>：TikTok 对未登录访问弹滑块验证码，主页截图能拿到粉丝数 / 获赞数 / 简介（已用于交叉验证 Apify 数据）。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="panorama">
+    <div class="sec-head"><h2><span class="num">1</span>全景数据表（均来自实抓）</h2></div>
+
+    <div class="disclaimer">
+      <span class="ttl">口径说明（重要，看数前必读）</span>
+      ① Apify 的 20 条采样<b>对小号会回溯到很久以前</b>（如 Gather Grills 回溯到 2024-08、AroundFire 回溯到 2025-03），平均值被 1–2 条历史爆款拉爆，<b>中位数才是常态水平</b>。AroundFire、KBBQ Bros、Gather Grills 三家的"平均赞"和 ER 因此失真，本页一律用中位数判断日常表现（表中以 ※ 标出）。<br>
+      ② <b>AroundFire 的多数帖子是与达人的 collab 合拍帖，这类帖 Apify 返回的 likesCount 恒为 3（接口限制），不是真实点赞数</b>——所以 AroundFire 的日常互动应看 <b>videoPlayCount（播放量）</b>，日常在 500–5,000 区间。<br>
+      ③ 「内容类型分布」表是<b>按 caption 逐条人工归类</b>的结果，非算法标注，边界条目（如"达人带折扣码"算 UGC 还是促销）按主导意图归入一类。
+    </div>
+
+    <h3>Instagram（每个账号取最近 20 条帖）</h3>
+    <table>
+      <thead><tr><th>账号</th><th>粉丝</th><th>累计发帖</th><th>认证</th><th>采样发帖频率</th><th>平均赞</th><th>中位赞</th><th>平均评论</th><th>ER(赞/粉)</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>@aroundfire_official</b></td><td data-l="粉丝"><b>1,656</b></td><td data-l="累计发帖">113</td><td data-l="认证">❌</td><td data-l="采样发帖频率"><b>0.29/周</b></td><td data-l="平均赞">579※</td><td data-l="中位赞">26</td><td data-l="平均评论">29.4</td><td data-l="ER(赞/粉)">— ※</td></tr>
+        <tr><td data-l="">@solostove</td><td data-l="粉丝">456,328</td><td data-l="累计发帖">2,998</td><td data-l="认证">✅</td><td data-l="采样发帖频率">0.35/周</td><td data-l="平均赞">526</td><td data-l="中位赞">106</td><td data-l="平均评论">149.5</td><td data-l="ER(赞/粉)">0.12%</td></tr>
+        <tr><td data-l="">@nomadgrills</td><td data-l="粉丝">350,400</td><td data-l="累计发帖">1,582</td><td data-l="认证">✅</td><td data-l="采样发帖频率">0.51/周</td><td data-l="平均赞">379</td><td data-l="中位赞">264</td><td data-l="平均评论">21.4</td><td data-l="ER(赞/粉)">0.11%</td></tr>
+        <tr><td data-l="">@overlandexpo</td><td data-l="粉丝">228,340</td><td data-l="累计发帖">4,209</td><td data-l="认证">❌</td><td data-l="采样发帖频率"><b>6.36/周</b></td><td data-l="平均赞">174</td><td data-l="中位赞">132</td><td data-l="平均评论">13.7</td><td data-l="ER(赞/粉)">0.08%</td></tr>
+        <tr><td data-l="">@breeo</td><td data-l="粉丝">211,950</td><td data-l="累计发帖">2,399</td><td data-l="认证">✅</td><td data-l="采样发帖频率"><b>1.69/周</b></td><td data-l="平均赞">492</td><td data-l="中位赞">99</td><td data-l="平均评论">12.8</td><td data-l="ER(赞/粉)">0.23%</td></tr>
+        <tr><td data-l="">@snowpeakusa</td><td data-l="粉丝">179,434</td><td data-l="累计发帖">4,418</td><td data-l="认证">✅</td><td data-l="采样发帖频率"><b>6.36/周</b></td><td data-l="平均赞">1,075</td><td data-l="中位赞">204</td><td data-l="平均评论">12.9</td><td data-l="ER(赞/粉)"><b>0.60%</b></td></tr>
+        <tr><td data-l="">@biolite</td><td data-l="粉丝">130,191</td><td data-l="累计发帖">2,289</td><td data-l="认证">✅</td><td data-l="采样发帖频率">0.19/周</td><td data-l="平均赞">86</td><td data-l="中位赞">53</td><td data-l="平均评论">23.1</td><td data-l="ER(赞/粉)"><b>0.07%</b></td></tr>
+        <tr><td data-l="">@kbbqbros</td><td data-l="粉丝">32,841</td><td data-l="累计发帖">148</td><td data-l="认证">✅</td><td data-l="采样发帖频率">0.25/周</td><td data-l="平均赞">5,572※</td><td data-l="中位赞">134</td><td data-l="平均评论">28.9</td><td data-l="ER(赞/粉)">— ※</td></tr>
+        <tr><td data-l="">@gathergrills</td><td data-l="粉丝">16,992</td><td data-l="累计发帖">442</td><td data-l="认证">❌</td><td data-l="采样发帖频率">0.20/周</td><td data-l="平均赞">8,054※</td><td data-l="中位赞">60</td><td data-l="平均评论">66.5</td><td data-l="ER(赞/粉)">— ※</td></tr>
+      </tbody>
+    </table>
+
+    <h3>TikTok（每个账号取最近 18 条视频）</h3>
+    <table>
+      <thead><tr><th>账号</th><th>粉丝</th><th>累计视频</th><th>累计获赞</th><th>采样频率</th><th>平均播放</th><th>中位播放</th><th>平均赞</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">@solostove</td><td data-l="粉丝"><b>697,600</b></td><td data-l="累计视频">549</td><td data-l="累计获赞">3.1M</td><td data-l="采样频率">0.83/周</td><td data-l="平均播放">965</td><td data-l="中位播放">922</td><td data-l="平均赞">17</td></tr>
+        <tr><td data-l="">@nomadgrills</td><td data-l="粉丝">8,636</td><td data-l="累计视频">207</td><td data-l="累计获赞">45.4K</td><td data-l="采样频率">0.07/周</td><td data-l="平均播放">113,195※</td><td data-l="中位播放">1,936</td><td data-l="平均赞">2,098</td></tr>
+        <tr><td data-l="">@snowpeakusa</td><td data-l="粉丝">3,422</td><td data-l="累计视频">128</td><td data-l="累计获赞">6,162</td><td data-l="采样频率">0.68/周</td><td data-l="平均播放">447</td><td data-l="中位播放">432</td><td data-l="平均赞">9</td></tr>
+        <tr><td data-l="">@overlandexpo</td><td data-l="粉丝">1,861</td><td data-l="累计视频">7</td><td data-l="累计获赞">485</td><td data-l="采样频率"><b>已停更（末条 2022-06-03）</b></td><td data-l="平均播放">2,237</td><td data-l="中位播放">2,284</td><td data-l="平均赞">59</td></tr>
+        <tr><td data-l="">@kbbqbros</td><td data-l="粉丝">1,183</td><td data-l="累计视频">60</td><td data-l="累计获赞">7,172</td><td data-l="采样频率">0.72/周</td><td data-l="平均播放">579</td><td data-l="中位播放">566</td><td data-l="平均赞">23</td></tr>
+        <tr><td data-l="">@biolite</td><td data-l="粉丝">875</td><td data-l="累计视频">177</td><td data-l="累计获赞">5,584</td><td data-l="采样频率">0.38/周</td><td data-l="平均播放">513</td><td data-l="中位播放">296</td><td data-l="平均赞">4</td></tr>
+        <tr><td data-l="">@gathergrills</td><td data-l="粉丝">821</td><td data-l="累计视频">43</td><td data-l="累计获赞">2,386</td><td data-l="采样频率"><b>1.33/周</b></td><td data-l="平均播放">1,989</td><td data-l="中位播放">929</td><td data-l="平均赞">78</td></tr>
+        <tr><td data-l=""><b>@aroundfireoffical</b></td><td data-l="粉丝"><b>54</b></td><td data-l="累计视频">57</td><td data-l="累计获赞">797</td><td data-l="采样频率">0.87/周</td><td data-l="平均播放">453</td><td data-l="中位播放">374</td><td data-l="平均赞">13</td></tr>
+        <tr><td data-l="">Breeo</td><td data-l="粉丝">—</td><td data-l="累计视频">—</td><td data-l="累计获赞">—</td><td data-l="采样频率"><b>无官方 TikTok</b></td><td data-l="平均播放">—</td><td data-l="中位播放">—</td><td data-l="平均赞">—</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">※ Nomad 的平均播放被 2021 年那条 200 万播放的老爆款拉爆，近两年常态是 1,000–5,000。</p>
+    <div class="callout danger"><b>TikTok 的关键事实：整个品类在 TikTok 上都做得很差。</b>Solo Stove 69.8 万粉，近 18 条视频平均播放只有 <b>965</b>、平均点赞 <b>17</b>——这是典型的"粉丝是买流量攒的、但内容不进推荐池"。<b>全品类唯一在 TikTok 有真实自然量的是 Gather Grills</b>（821 粉却能跑出 12,000 和 10,500 播放两条）。</div>
+
+    <h3>YouTube（每个频道取最近 15 条长视频，不含 Shorts）</h3>
+    <table>
+      <thead><tr><th>频道</th><th>订阅</th><th>总视频</th><th>总播放</th><th>采样频率</th><th>平均播放</th><th>中位播放</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">Breeo</td><td data-l="订阅"><b>135,000</b></td><td data-l="总视频">443</td><td data-l="总播放">79.9M</td><td data-l="采样频率">0.72/月</td><td data-l="平均播放">28,453</td><td data-l="中位播放">4,391</td></tr>
+        <tr><td data-l="">Solo Stove</td><td data-l="订阅">28,300</td><td data-l="总视频">334</td><td data-l="总播放">36.7M</td><td data-l="采样频率"><b>2.32/月</b></td><td data-l="平均播放">4,228</td><td data-l="中位播放">2,063</td></tr>
+        <tr><td data-l="">Overland Expo</td><td data-l="订阅">18,900</td><td data-l="总视频">293</td><td data-l="总播放">2.9M</td><td data-l="采样频率">1.42/月</td><td data-l="平均播放">13,601</td><td data-l="中位播放">4,050</td></tr>
+        <tr><td data-l="">BioLite</td><td data-l="订阅">14,900</td><td data-l="总视频">195</td><td data-l="总播放">6.4M</td><td data-l="采样频率">0.52/月</td><td data-l="平均播放">4,352</td><td data-l="中位播放">3,625</td></tr>
+        <tr><td data-l="">NOMAD Grills</td><td data-l="订阅">5,560</td><td data-l="总视频">296</td><td data-l="总播放">2.1M</td><td data-l="采样频率">0.48/月</td><td data-l="平均播放">752</td><td data-l="中位播放">374</td></tr>
+        <tr><td data-l="">Gather Grills</td><td data-l="订阅">293</td><td data-l="总视频">34</td><td data-l="总播放">44K</td><td data-l="采样频率">0.55/月</td><td data-l="平均播放">501</td><td data-l="中位播放">355</td></tr>
+        <tr><td data-l="">KBBQBROS</td><td data-l="订阅">98</td><td data-l="总视频">25</td><td data-l="总播放">60K</td><td data-l="采样频率">0.19/月</td><td data-l="平均播放">4,002</td><td data-l="中位播放">4,784</td></tr>
+        <tr><td data-l=""><b>AroundFire</b></td><td data-l="订阅"><b>87</b></td><td data-l="总视频">56</td><td data-l="总播放">71,461</td><td data-l="采样频率">0.33/月</td><td data-l="平均播放">1,127</td><td data-l="中位播放">181</td></tr>
+        <tr><td data-l="">Snow Peak</td><td data-l="订阅">—</td><td data-l="总视频">—</td><td data-l="总播放">—</td><td data-l="采样频率"><b>无官方频道</b></td><td data-l="平均播放">—</td><td data-l="中位播放">—</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="types">
+    <div class="sec-head"><h2><span class="num">2</span>内容类型分布对比表（跨品牌，IG 最近 20 条）</h2></div>
+    <table>
+      <thead><tr><th>账号</th><th>产品展示</th><th>场景生活方式</th><th>食谱/教程</th><th>UGC/达人合作</th><th>促销/抽奖</th><th>幕后/品牌故事</th><th>活动/社群</th><th>节日节点</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>AroundFire</b></td><td data-l="产品展示">3</td><td data-l="场景生活方式">4</td><td data-l="食谱/教程">0</td><td data-l="UGC/达人合作"><b>12</b></td><td data-l="促销/抽奖">1</td><td data-l="幕后/品牌故事">0</td><td data-l="活动/社群">0</td><td data-l="节日节点">0</td></tr>
+        <tr><td data-l="">Solo Stove</td><td data-l="产品展示">3</td><td data-l="场景生活方式">6</td><td data-l="食谱/教程">2</td><td data-l="UGC/达人合作">3</td><td data-l="促销/抽奖"><b>4</b></td><td data-l="幕后/品牌故事">0</td><td data-l="活动/社群">2</td><td data-l="节日节点">2</td></tr>
+        <tr><td data-l="">Breeo</td><td data-l="产品展示">3</td><td data-l="场景生活方式">1</td><td data-l="食谱/教程">0</td><td data-l="UGC/达人合作"><b>6</b></td><td data-l="促销/抽奖">4</td><td data-l="幕后/品牌故事">3</td><td data-l="活动/社群">2</td><td data-l="节日节点">3</td></tr>
+        <tr><td data-l="">BioLite</td><td data-l="产品展示"><b>11</b></td><td data-l="场景生活方式">4</td><td data-l="食谱/教程">1</td><td data-l="UGC/达人合作">2</td><td data-l="促销/抽奖">2</td><td data-l="幕后/品牌故事">0</td><td data-l="活动/社群">0</td><td data-l="节日节点">0</td></tr>
+        <tr><td data-l="">Nomad Grills</td><td data-l="产品展示">3</td><td data-l="场景生活方式">3</td><td data-l="食谱/教程"><b>5</b></td><td data-l="UGC/达人合作">4</td><td data-l="促销/抽奖">1</td><td data-l="幕后/品牌故事">2</td><td data-l="活动/社群">1</td><td data-l="节日节点">1</td></tr>
+        <tr><td data-l="">Gather Grills</td><td data-l="产品展示"><b>6</b></td><td data-l="场景生活方式">4</td><td data-l="食谱/教程">1</td><td data-l="UGC/达人合作">4</td><td data-l="促销/抽奖">2</td><td data-l="幕后/品牌故事">0</td><td data-l="活动/社群">3</td><td data-l="节日节点">3</td></tr>
+        <tr><td data-l="">Snow Peak</td><td data-l="产品展示"><b>9</b></td><td data-l="场景生活方式">5</td><td data-l="食谱/教程">1</td><td data-l="UGC/达人合作">1</td><td data-l="促销/抽奖">2</td><td data-l="幕后/品牌故事">1</td><td data-l="活动/社群">3</td><td data-l="节日节点">0</td></tr>
+        <tr><td data-l="">KBBQ Bros</td><td data-l="产品展示">2</td><td data-l="场景生活方式"><b>9</b></td><td data-l="食谱/教程">2</td><td data-l="UGC/达人合作">5</td><td data-l="促销/抽奖">1</td><td data-l="幕后/品牌故事">1</td><td data-l="活动/社群">0</td><td data-l="节日节点">0</td></tr>
+        <tr><td data-l="">Overland Expo</td><td data-l="产品展示">3</td><td data-l="场景生活方式">2</td><td data-l="食谱/教程">0</td><td data-l="UGC/达人合作">1</td><td data-l="促销/抽奖">3</td><td data-l="幕后/品牌故事">1</td><td data-l="活动/社群"><b>10</b></td><td data-l="节日节点">1</td></tr>
+      </tbody>
+    </table>
+    <div class="callout danger">
+      <span class="ttl">读表结论</span>
+      <b>没有一个头部品牌靠"产品展示"打市场</b>——BioLite 是唯一以产品功能说明为主的（11/20），而它的 ER 也是全场最低（<b>0.07%</b>，13 万粉平均 86 赞）。<b>这是本品类最直接的反面教材：产品说明书式内容 = 死账号。</b><br><br>
+      三条主流路线：① <b>达人 / UGC 驱动</b>（Breeo、AroundFire、KBBQ Bros）——内容主力是别人拍的；② <b>场景大片 + 抽奖节点</b>（Solo Stove）——自己拍高质感短片，用抽奖冲评论；③ <b>食物本身当主角</b>（Nomad Grills）——拍菜不拍产品。<br><br>
+      <b>Overland Expo 是人群聚集地的样本</b>：10/20 是活动/社群内容，且它的高评论帖全是<b>提问互动</b>（"用 emoji 给你的车起名" 153 条评论）——这个人群极其吃"晒自己的装备/车/营地"。
+    </div>
+  </section>
+
+  <section id="brands">
+    <div class="sec-head"><h2><span class="num">3</span>逐账号拆解</h2></div>
+
+    <div class="card">
+      <h3>3.1 AroundFire（自己）— IG 1,656 粉 / TT 54 粉 / YT 87 订阅</h3>
+      <p><b>内容类型（近 20 帖）</b>：达人/UGC 转发 12｜场景生活方式 4｜产品展示 3｜促销抽奖 1｜食谱 0｜幕后 0</p>
+      <p><b>视觉风格</b>：全部实拍生活场景，<b>无一张白底产品图</b>。夜景火光 + 桌面美食俯拍 + 家庭/情侣出镜是主结构，<b>人物出镜比例约 14/20（70%），是全场最高之一</b>。画面质感参差——因为大部分素材是达人自己拍的，好的（@betweenus.aa 那条湖边慢生活）非常好，差的（自制"NEW FAVORITE OUTDOOR"黄字贴纸那条）明显是转化向剪辑，<b>两种调性混在同一个网格里</b>。</p>
+      <p><b>文案风格</b>：情绪叙事为主（"We don't have a favorite place. We have our favorite people"、"A slow life by the fire"），少量功能说明。<b>几乎每条达人帖都带折扣码</b>（JOYFOODLV / betweenus / 12% off），说明目前 IG 主要当<b>联盟带货渠道</b>在用，不是品牌资产在做。</p>
+      <table>
+        <thead><tr><th>排名</th><th>类型</th><th>播放</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td data-l="">1</td><td data-l="类型">达人 UGC＋折扣码</td><td data-l="播放"><b>216,289</b></td><td data-l="内容"><a href="https://www.instagram.com/p/DZIZfx9ubLr/" target="_blank" rel="noopener">@betweenus.aa "A slow life by the fire 🔥 Our favorite table"</a> — 情侣、夜色、无口播、纯氛围</td></tr>
+          <tr><td data-l="">2</td><td data-l="类型">达人 UGC 产品体验</td><td data-l="播放">45,487</td><td data-l="内容"><a href="https://www.instagram.com/p/DZKv3_9iSSg/" target="_blank" rel="noopener">Grande Table 露营，"great for a bigger groups"</a></td></tr>
+          <tr><td data-l="">3</td><td data-l="类型">达人 UGC 情绪叙事</td><td data-l="播放">31,829</td><td data-l="内容"><a href="https://www.instagram.com/p/DZLnM39hZVF/" target="_blank" rel="noopener">"We don't have a favorite place. We have our favorite people"</a></td></tr>
+          <tr><td data-l="">4</td><td data-l="类型">用户证言/痛点叙事</td><td data-l="播放">7,645</td><td data-l="内容"><a href="https://www.instagram.com/p/DYfHJLaBqXf/" target="_blank" rel="noopener">带娃露营"总有一个人在旁边单独做饭"</a></td></tr>
+          <tr><td data-l="">5</td><td data-l="类型">产品功能说明</td><td data-l="播放">5,426</td><td data-l="内容"><a href="https://www.instagram.com/p/DHYxi_ipLZ7/" target="_blank" rel="noopener">专利设计 / 30 秒搭建</a></td></tr>
+        </tbody>
+      </table>
+      <div class="figs g3">
+        <figure><div class="tall short"><img src="assets/social/aroundfire_ig_grid.jpg" alt="AroundFire Instagram 主页九宫格截图"></div><figcaption>IG 主页网格：全部实拍生活场景，无一张白底产品图<br><span style="font-size:11px">⬆ 长图，容器内可滚动</span></figcaption></figure>
+        <figure><img src="assets/social/aroundfire_tt_grid.png" alt="AroundFire TikTok 主页截图，显示 54 粉丝"><figcaption><b>截图实测</b>：27 Following / <b>54 Followers</b> / 797 Likes。TikTok 对未登录访问弹滑块验证码，视频缩略图未加载——粉丝数与简介为页面实测值</figcaption></figure>
+        <figure><img src="assets/social/aroundfire_yt_grid.png" alt="AroundFire YouTube 频道页截图"><figcaption>YouTube 87 订阅、56 条视频、7.1 万累计播放，但<b>最近一条是 2025-03-01，已停更 16 个月</b></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3.2 Solo Stove — IG 45.6 万 / TT 69.8 万 / YT 2.83 万（品类第一梯队）</h3>
+      <p><b>视觉风格</b>：<b>高制作水准的实拍生活场景</b>，每条 Reels 结尾都标注摄影师（<code>🎥: @haleyburrell</code>），说明是<b>长期签约创作者池在供片</b>而非一次性投放。注意 Solo Stove 的"围坐"是<b>围着火盆坐着聊天（椅子朝火）</b>，不是<b>围着桌子吃饭（人朝彼此）</b>——这个细微差别正是它和 Gather / KBBQ / AroundFire 的分野。</p>
+      <p><b>文案风格</b>：极短的情绪/俏皮句（"Drop it like it's hot 🍕"、"Built for the ones who aren't ready to call it a night"）。<b>平均 8–15 个词，几乎不解释产品。</b></p>
+      <table>
+        <thead><tr><th>排名</th><th>类型</th><th>赞 / 评</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td data-l="">1</td><td data-l="类型">达人 UGC＋跨品牌联名</td><td data-l="赞 / 评">5,499 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/Dank2a2kRdA/" target="_blank" rel="noopener">"This is how I Grill Girl Summer" ×@cheekiesswim</a></td></tr>
+          <tr><td data-l="">2</td><td data-l="类型">新品发布</td><td data-l="赞 / 评">1,407 赞 / 77K 播放</td><td data-l="内容"><a href="https://www.instagram.com/p/DKxgvAByrKK/" target="_blank" rel="noopener">Solo Steelfire 30 Griddle 上市</a></td></tr>
+          <tr><td data-l="">3</td><td data-l="类型">抽奖（国庆 250 周年）</td><td data-l="赞 / 评">842 赞 / <b>310 评</b></td><td data-l="内容"><a href="https://www.instagram.com/p/DaX6BuhuQ-3/" target="_blank" rel="noopener">限量 1-of-1 火盆抽奖</a></td></tr>
+          <tr><td data-l="">4</td><td data-l="类型">抽奖（Tag 好友）</td><td data-l="赞 / 评">483 赞 / <b>953 评</b></td><td data-l="内容"><a href="https://www.instagram.com/p/DZz8Z-ljsxI/" target="_blank" rel="noopener">独立日烟花躺椅抽奖</a></td></tr>
+          <tr><td data-l="">5</td><td data-l="类型">三方联名抽奖</td><td data-l="赞 / 评">462 赞 / <b>1,255 评</b></td><td data-l="内容"><a href="https://www.instagram.com/p/DaDghxXuFB-/" target="_blank" rel="noopener">×@orukayak ×@chubbies "Summer with Solo Brands"</a></td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><b>这是 Solo Stove 最值得抄的一招</b>：它的<b>点赞</b>其实并不高（中位 106 赞 / 45 万粉，ER 只有 0.12%），但<b>评论量靠抽奖被拉到 3 位数甚至 1,255</b>。它在用"关注三个账号 + tag 一个朋友"的联名抽奖，把评论量和跨品牌粉丝互导做成了固定节奏——<b>每个夏季节点（阵亡将士日/父亲节/独立日）必有一场</b>。</div>
+      <div class="figs g3">
+        <figure><div class="tall short"><img src="assets/social/solostove_ig_grid.jpg" alt="Solo Stove Instagram 主页九宫格截图"></div><figcaption>IG 主页网格<br><span style="font-size:11px">⬆ 长图，容器内可滚动</span></figcaption></figure>
+        <figure><img src="assets/social/solostove_tt_grid.png" alt="Solo Stove TikTok 主页截图"><figcaption>TikTok 69.8 万粉但近 18 条平均播放 965，<b>大号但流量已死</b>，内容是 IG 素材直搬</figcaption></figure>
+        <figure><div class="tall short"><img src="assets/social/solostove_yt_grid.jpg" alt="Solo Stove YouTube 频道页截图"></div><figcaption>YouTube 定位很清楚——"Tutorials. Recipes. Product education."，2.32 条/月</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3.3 Breeo — IG 21.2 万 / 无 TikTok / YT 13.5 万（YouTube 品类第一）</h3>
+      <div class="disclaimer">⚠️ <b>该账号 IG 主页网格截图未取得</b>：Instagram 对本机 IP 强限流，普通 Chromium 与 scrapling StealthyFetcher 各重试 4–5 次仍返回 "Something went wrong"。<b>本节所有数据来自 Apify 实抓，不受影响。</b></div>
+      <p><b>视觉风格</b>：夜景火光 + 大块肉 + 美式蓝领质感。有意识地做<b>幕后/人味内容</b>（"How we spend our lunch break at Breeo"），这在本品类里很少见。<b>文案风格</b>：品牌口号化标签 <code>#YourFireStartsHere</code> 高频复用；促销直给。</p>
+      <table>
+        <thead><tr><th>排名</th><th>类型</th><th>赞 / 播放</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td data-l="">1</td><td data-l="类型">达人合作（硬核大制作）</td><td data-l="赞 / 播放"><b>3,160 赞</b></td><td data-l="内容"><a href="https://www.instagram.com/p/DYjtmL8IUu2/" target="_blank" rel="noopener">×@thebeardedbutchers "EPIC WHOLE COW COOK"（整头牛）</a></td></tr>
+          <tr><td data-l="">2</td><td data-l="类型">达人证言（口播）</td><td data-l="赞 / 播放">2,413 赞 / 151K 播放</td><td data-l="内容"><a href="https://www.instagram.com/p/DYsa7CMtW3H/" target="_blank" rel="noopener">"总有人问我是不是真的在家用明火做饭…其实我天天用"</a></td></tr>
+          <tr><td data-l="">3</td><td data-l="类型">促销</td><td data-l="赞 / 播放">1,624 赞 / <b>551,918 播放</b></td><td data-l="内容"><a href="https://www.instagram.com/p/DYxjoC8vpkF/" target="_blank" rel="noopener">Memorial Day 15% off</a></td></tr>
+          <tr><td data-l="">4</td><td data-l="类型">达人 UGC 聚餐</td><td data-l="赞 / 播放">651 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/Da0OofORAZE/" target="_blank" rel="noopener">牛排＋松饼的周六早餐局</a></td></tr>
+          <tr><td data-l="">5</td><td data-l="类型">达人 UGC 聚餐</td><td data-l="赞 / 播放">469 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/DZ5F6TvRfrU/" target="_blank" rel="noopener">"Having the crew around my @breeo"</a></td></tr>
+        </tbody>
+      </table>
+      <figure><div class="tall"><img src="assets/social/breeo_yt_grid.jpg" alt="Breeo YouTube 频道页截图，封面统一为火焰实拍加白色粗体大写标题"></div><figcaption><b>YouTube 是 Breeo 的真正护城河</b>：13.5 万订阅 / 7,989 万累计播放。<b>从频道页能直接看出它的方法论（值得逐条抄）</b>：① <b>封面统一</b>——全部是"火焰实拍 + 全大写白色粗体标题"；② <b>每个新品发三条视频的固定套路</b>：<code>Spec Recap</code>（40s）→ <code>Everything You Need To Know</code>（1:31）→ <code>Effortless Live-Fire Cooking</code>（50s）；③ <b>视频普遍很短</b>，15 条里 11 条在 1 分半以内；④ <b>唯一的 25.8 万播放来自《How is a Breeo Fire Pit Smokeless?》</b>——一条 1:26 的原理科普，播放量是第二名的 3.3 倍<br><span style="font-size:11px">⬆ 长图，容器内可滚动</span></figcaption></figure>
+      <div class="callout ok"><b>"解释原理"在 YouTube 上比任何广告片都能打，这是 AroundFire 完全没做的事。</b></div>
+    </div>
+
+    <div class="card">
+      <h3>3.4 BioLite — IG 13 万 / TT 875 / YT 1.49 万（反面教材）</h3>
+      <p><b>内容类型</b>：产品展示 <b>11</b>｜场景 4｜UGC 2｜促销 2｜食谱 1。<b>视觉风格</b>：干净的产品图、参数图、单品静物，人物出镜比例最低。<b>文案风格</b>：纯功能说明（"8 minutes of charge = 1 hour of full-brightness light"），几乎没有情绪。</p>
+      <p><b>结果</b>：13 万粉，近 20 帖平均 86 赞、中位 53 赞，<b>ER 0.07%，全场最低</b>。TikTok 875 粉、平均 4 个赞。互动最高的 3 条：品牌合并公告（358 赞）＞ CampStove 产品说明（300 赞）＞ 跨品牌抽奖（197 赞 / <b>365 评</b>）——<b>它唯一评论量上 3 位数的还是抽奖</b>。</p>
+      <div class="figs g3">
+        <figure><div class="tall short"><img src="assets/social/biolite_ig_grid.jpg" alt="BioLite Instagram 主页九宫格截图，以产品静物图为主"></div><figcaption>IG 主页网格：产品图为主<br><span style="font-size:11px">⬆ 长图，容器内可滚动</span></figcaption></figure>
+        <figure><img src="assets/social/biolite_tt_grid.png" alt="BioLite TikTok 主页截图"><figcaption>TikTok 875 粉、平均 4 个赞</figcaption></figure>
+        <figure><div class="tall short"><img src="assets/social/biolite_yt_grid.jpg" alt="BioLite YouTube 频道页截图"></div><figcaption>YouTube 1.49 万订阅</figcaption></figure>
+      </div>
+      <p class="tnote">BioLite 的品类归属其实偏"户外能源"而非"围火聚餐"，但它证明了一件事：<b>在这个人群里，讲参数不涨互动。</b></p>
+    </div>
+
+    <div class="card">
+      <h3>3.5 Nomad Grills — IG 35 万 / TT 8,636 / YT 5,560</h3>
+      <div class="disclaimer">⚠️ <b>该账号 IG 主页网格截图未取得</b>（IG 强限流，重试 4–5 次失败）。本节数据来自 Apify 实抓。</div>
+      <p><b>视觉风格</b>：<b>食物特写占主导</b>，产品经常只是画面里的一个底座。人物出镜多为<b>专业厨师/BBQ 达人</b>，不是普通家庭。<b>文案风格</b>：非常有辨识度的<b>押韵俏皮体</b>——"Roll me up and smoke me when ribeye… 💨"、"Ringing in the New Sear with a little help from our grillfriends"。<b>这是全场文案个性最强的账号。</b></p>
+      <table>
+        <thead><tr><th>排名</th><th>类型</th><th>赞 / 评</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td data-l="">1</td><td data-l="类型">新品发布</td><td data-l="赞 / 评"><b>1,676 赞 / 158 评</b></td><td data-l="内容"><a href="https://www.instagram.com/p/DXKbVu7mpaX/" target="_blank" rel="noopener">全新 RODEO Grill &amp; Smoker，Made in USA，预售</a></td></tr>
+          <tr><td data-l="">2</td><td data-l="类型">跨品牌联名合影</td><td data-l="赞 / 评">794 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/DTQz4lyDotP/" target="_blank" rel="noopener">"Ringing in the New Sear with our grillfriends" ×6 个品牌</a></td></tr>
+          <tr><td data-l="">3</td><td data-l="类型">食物特写</td><td data-l="赞 / 评">648 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/DUJKT8Ljrdo/" target="_blank" rel="noopener">Ribeye 卷肉</a></td></tr>
+          <tr><td data-l="">4</td><td data-l="类型"><b>人物故事长文</b></td><td data-l="赞 / 评">441 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/DYDMxR2GiqL/" target="_blank" rel="noopener">苗族主厨 @YiaVang70：难民营出生、James Beard 得主</a></td></tr>
+          <tr><td data-l="">5</td><td data-l="类型"><b>人物故事长文</b></td><td data-l="赞 / 评">402 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/DYST8A7Doqz/" target="_blank" rel="noopener">@Jerms1977：海军陆战队老兵、飞钓、南极摄影师</a></td></tr>
+        </tbody>
+      </table>
+      <div class="figs g3">
+        <figure><img src="assets/social/nomadgrills_tt_grid.png" alt="NOMAD Grills TikTok 主页截图"><figcaption>TikTok 8,636 粉</figcaption></figure>
+        <figure><div class="tall short"><img src="assets/social/nomadgrills_yt_grid.jpg" alt="NOMAD Grills YouTube 频道页截图"></div><figcaption>YouTube 5,560 订阅</figcaption></figure>
+      </div>
+      <p class="tnote">Nomad 是唯一把<b>"人物志"当固定栏目</b>在做的品牌——用产品去认识一个有故事的人，而不是让人去展示产品。第 4、5 名两条都是这个套路，且都是长文案。</p>
+    </div>
+
+    <div class="card" style="border:2px solid var(--red)">
+      <h3>3.6 Gather Grills — IG 16,992 / TT 821 / YT 293（体量最接近 AroundFire，但打法完全不同）</h3>
+      <p><b>视觉风格</b>：<b>围坐俯拍是它的招牌镜头</b>——圆形烤盘中间是火、一圈人围坐、每人面前一个盘子。<b>这是全场唯一把"多人围坐"当作固定视觉母题在重复输出的品牌</b>。制作粗糙（手机直拍、无调色），但场景真实。<b>文案风格</b>：直白的社群号召——"Let's gather and grill"、"Change the way you gather"、"gather often and gather well"。<b>品牌名本身就是行动指令。</b></p>
+      <table>
+        <thead><tr><th>排名</th><th>类型</th><th>赞 / 播放</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td data-l="">1</td><td data-l="类型">达人合作＋折扣码</td><td data-l="赞 / 播放"><b>132,175 赞 / 2,872,298 播放</b></td><td data-l="内容"><a href="https://www.instagram.com/p/DSu16n1j-mi/" target="_blank" rel="noopener">"Fire up the flavor 🔥 把简单食材变成难忘时刻"（×@cookitwithtim）</a></td></tr>
+          <tr><td data-l="">2</td><td data-l="类型">新年情绪叙事</td><td data-l="赞 / 播放"><b>26,506 赞 / 1,271,562 播放</b></td><td data-l="内容"><a href="https://www.instagram.com/p/DTCCWsPkTC4/" target="_blank" rel="noopener">"把'常聚、好好聚'列进新年计划"</a></td></tr>
+          <tr><td data-l="">3</td><td data-l="类型">主厨教程</td><td data-l="赞 / 播放">853 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/C-xd0wxx8Q1/" target="_blank" rel="noopener">×@davidbancroft 半壳红鱼做法</a></td></tr>
+          <tr><td data-l="">4</td><td data-l="类型">场景（早餐局）</td><td data-l="赞 / 播放">351 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/DZFeykLP9kl/" target="_blank" rel="noopener">"周二早晨因为好食物和好朋友而不同"</a></td></tr>
+          <tr><td data-l="">5</td><td data-l="类型">UGC 转发</td><td data-l="赞 / 播放">236 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/DY3Pe7UkfZ3/" target="_blank" rel="noopener">粉丝海边烤虾</a></td></tr>
+        </tbody>
+      </table>
+      <div class="callout danger"><span class="ttl">本次调研最重要的单条发现</span>一个 <b>1.7 万粉</b>的账号跑出了 <b>287 万播放 / 13.2 万赞</b>。这条内容不是产品讲解、不是抽奖——是<b>一位美食达人在 Gather 桌上做饭 + 品牌口号"Fire up the flavor"</b>。它的第 2 名（127 万播放）同样不含任何产品参数，只讲"今年要多和人聚在一起"。<b>说明这个品类的流量天花板不在粉丝量，在内容母题选得对不对。</b></div>
+      <div class="figs g3">
+        <figure><div class="tall short"><img src="assets/social/gathergrills_ig_grid.jpg" alt="Gather Grills Instagram 主页九宫格截图，围坐俯拍是招牌镜头"></div><figcaption>IG 主页网格：围坐俯拍是固定视觉母题<br><span style="font-size:11px">⬆ 长图，容器内可滚动</span></figcaption></figure>
+        <figure><img src="assets/social/gathergrills_tt_grid.png" alt="Gather Grills TikTok 主页截图"><figcaption><b>全品类唯一还有自然流量的 TikTok 账号</b>：821 粉，18 条里有两条上万播放——<a href="https://www.tiktok.com/@gathergrills/video/7649590575125089566" target="_blank" rel="noopener">12,000 播放"几分钟装好 Tailgater，不用工具"</a> 和 <a href="https://www.tiktok.com/@gathergrills/video/7634752601258495263" target="_blank" rel="noopener">10,500 播放"四个尺寸对比"</a>。<b>注意这两条恰恰是产品讲解</b>——TikTok 上"装配演示/规格对比"能跑，IG 上"围坐氛围"能跑，<b>同素材不能两边直搬</b></figcaption></figure>
+        <figure><div class="tall short"><img src="assets/social/gathergrills_yt_grid.jpg" alt="Gather Grills YouTube 频道页截图"></div><figcaption>YouTube 仅 293 订阅</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3.7 Snow Peak USA — IG 17.9 万 / TT 3,422 / 无官方 YT</h3>
+      <div class="disclaimer">⚠️ <b>该账号 IG 主页网格截图未取得</b>（IG 强限流）。本节数据来自 Apify 实抓。</div>
+      <p><b>视觉风格</b>：全场调性最统一、最高级的账号——<b>杂志静物 + 自然光 + 冷白/米色调</b>，carousel 占 12/20（多图轮播是它的主形式，不是 Reels）。<b>文案风格</b>：克制的日式生活哲学（<code>#noasobi</code> 野游、"Ground yourself in the moment"），几乎不促销。<b>发帖频率 6.36 条/周，是全场最高之一</b>，靠高频＋高统一度堆品牌资产。</p>
+      <p><b>关键数据</b>：<b>ER 0.60%，是全场最高</b>（1,075 平均赞 / 17.9 万粉）——证明"高频＋美学统一"这条路在这个人群里同样成立，只是它卖的是露营美学不是烤肉。</p>
+      <table>
+        <thead><tr><th>排名</th><th>类型</th><th>赞 / 评</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td data-l="">1</td><td data-l="类型">达人探店/体验</td><td data-l="赞 / 评"><b>16,973 赞 / 159 评</b></td><td data-l="内容"><a href="https://www.instagram.com/p/Dade6AJBVBJ/" target="_blank" rel="noopener">@snowpeakcampfield 日式露营地体验</a></td></tr>
+          <tr><td data-l="">2</td><td data-l="类型">新零售店开业</td><td data-l="赞 / 评">633 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/DalKXXVE8Hs/" target="_blank" rel="noopener">Snow Peak Seattle 开在 evo 园区</a></td></tr>
+          <tr><td data-l="">3</td><td data-l="类型">产品系统讲解</td><td data-l="赞 / 评">388 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/Da5rU3rk5sk/" target="_blank" rel="noopener">"IGT-maxxing all summer long"：从 2 人到 10 人的模块化桌</a></td></tr>
+        </tbody>
+      </table>
+      <div class="figs g3">
+        <figure><img src="assets/social/snowpeakusa_tt_grid.png" alt="Snow Peak USA TikTok 主页截图"><figcaption>TikTok 3,422 粉</figcaption></figure>
+      </div>
+      <p class="tnote">第 3 名值得注意——<b>"从两人用到十人聚"的模块化叙事</b>（"A setup for two to a gathering space for ten"）拿到了 388 赞，这是 Snow Peak 里少见的把"人数扩展"直接写进文案的一条，<b>和 AroundFire 的 Grande Table 是同一个卖点</b>。</p>
+    </div>
+
+    <div class="card" style="border:2px solid var(--ember)">
+      <h3>3.8 KBBQ Bros — IG 32,841 / TT 1,183 / YT 98（最接近 AroundFire 的"围坐"心智）</h3>
+      <p><b>形式</b>：<b>20/20 全是 Reels 竖屏视频</b>，没有一张静态图。<b>视觉风格</b>：后院夜景、暖黄灯串、烟火气、家人和小孩入镜，<b>人物出镜比例最高（近 100%）</b>。刻意不做精致——车库里两张烤桌、孩子在旁边跑，就是内容本身。</p>
+      <p><b>主页网格里最抢眼的一点：大字幕封面。</b>它给几乎每条 Reels 都压了一句全大写/手写体的钩子文案当封面——<code>My wife Left…. So i did This 🤣</code>、<code>MY WIFE MADE ME DO THIS</code>、<code>Dinner plans made in 30 sec</code>、<code>POV: I host a dinner party at home BEFORE getting this VIRAL KBBQ TABLE</code>。<b>这些钩子全是"家庭关系梗"和"省钱/省事梗"，没有一句是产品参数。</b></p>
+      <table>
+        <thead><tr><th>排名</th><th>类型</th><th>赞 / 播放</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td data-l="">1</td><td data-l="类型">情绪梗（家庭）</td><td data-l="赞 / 播放"><b>69,507 赞 / 394,163 播放</b></td><td data-l="内容"><a href="https://www.instagram.com/p/DEi_X42uoeK/" target="_blank" rel="noopener">"he really said 'we have it at home'"（韩国老爸梗）</a></td></tr>
+          <tr><td data-l="">2</td><td data-l="类型">达人 UGC</td><td data-l="赞 / 播放"><b>30,098 赞 / 390,923 播放</b></td><td data-l="内容"><a href="https://www.instagram.com/p/DIzZiV-TQLX/" target="_blank" rel="noopener">@jjamee.kim approved ✔️＋"6 人桌已售罄"</a></td></tr>
+          <tr><td data-l="">3</td><td data-l="类型">达人 UGC 夏日场景</td><td data-l="赞 / 播放">4,804 赞 / 191,566 播放</td><td data-l="内容"><a href="https://www.instagram.com/p/DY1_HPcsefV/" target="_blank" rel="noopener">"整个夏天都在后院做 ssambap"</a></td></tr>
+          <tr><td data-l="">4</td><td data-l="类型">产品说服（清单式）</td><td data-l="赞 / 播放">4,038 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/DHmYrx-SuJY/" target="_blank" rel="noopener">"✅炭火燃气双用 ✅全球唯一 ✅次日发货"</a></td></tr>
+          <tr><td data-l="">5</td><td data-l="类型">情感慢句</td><td data-l="赞 / 播放">932 赞</td><td data-l="内容"><a href="https://www.instagram.com/p/DZP3Ml8hyVF/" target="_blank" rel="noopener">"The days are long. The years are short. 🤍"</a></td></tr>
+        </tbody>
+      </table>
+      <div class="callout danger"><b>KBBQ Bros 是 AroundFire 最该逐帧研究的对象</b>：同样是"一张桌子 + 一圈人 + 中间的火"，它用 148 条帖做到 3.28 万粉，且爆款<b>不靠达人靠文化梗</b>（"我们家里就有"是韩裔家庭的共同记忆）。<b>它把品类心智从"户外装备"搬到了"在家复刻一次外食体验"。</b></div>
+      <div class="figs g3">
+        <figure><div class="tall short"><img src="assets/social/kbbqbros_ig_grid.jpg" alt="KBBQ Bros Instagram 主页九宫格截图，每条 Reels 都有大字幕钩子封面"></div><figcaption>IG 主页网格：大字幕钩子封面是它的标志<br><span style="font-size:11px">⬆ 长图，容器内可滚动</span></figcaption></figure>
+        <figure><img src="assets/social/kbbqbros_tt_grid.png" alt="KBBQ Bros TikTok 主页截图"><figcaption>TikTok 1,183 粉</figcaption></figure>
+        <figure><img src="assets/social/kbbqbros_yt_grid.png" alt="KBBQ Bros YouTube 频道页截图"><figcaption>YouTube 仅 98 订阅但中位播放 4,784</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3.9 Overland Expo（人群聚集地参照）— IG 22.8 万 / YT 1.89 万 / TT 已停更</h3>
+      <p><b>视觉风格</b>：改装车/房车/营地实拍，carousel 为主（11/20）。人和车同框，<b>"你的装备"是主角，不是"我们的产品"</b>。<b>主页网格里最值得抄的一点：它把互动指令直接做成封面大字</b>——<code>HELP US CAPTION THESE MOUNTAIN WEST PHOTOS!</code>、<code>NAME YOUR RIG USING EMOJIS ONLY. WE'LL GUESS! 👀👇</code>。<b>互动 CTA 不是藏在文案末尾，而是封面第一屏就喊出来。</b></p>
+      <p><b>发帖频率 6.36 条/周</b>，围绕 5 场线下活动做全年内容日历：预热 → 现场直播感 → 收官感谢 → 明年招募。</p>
+      <h4>这个人群吃什么（对 AroundFire 最有价值的一段）</h4>
+      <ol>
+        <li><b>晒自己的装备/营地</b>，不是看品牌的产品图</li>
+        <li><b>狗</b>——<a href="https://www.instagram.com/p/DaRVujSlx2o/" target="_blank" rel="noopener">"610 只狗来了 Overland Expo PNW"</a> 187 赞 / 13 评，另一条狗内容 166 赞</li>
+        <li><b>"你的车/装备值得这趟旅程"</b> 这类身份认同话术（360 赞）</li>
+        <li>YouTube 上最高播放的三条<b>全是 30 秒活动预告片</b>（7.2 万 / 3.5 万 / 3.1 万播放）——说明这个人群在 YouTube 上是被<b>广告投放</b>触达的，不是自然搜索</li>
+      </ol>
+      <div class="figs g3">
+        <figure><div class="tall short"><img src="assets/social/overlandexpo_ig_grid.jpg" alt="Overland Expo Instagram 主页九宫格截图，封面直接印互动指令大字"></div><figcaption>IG 主页网格：互动指令做成封面大字<br><span style="font-size:11px">⬆ 长图，容器内可滚动</span></figcaption></figure>
+        <figure><div class="tall short"><img src="assets/social/overlandexpo_yt_grid.jpg" alt="Overland Expo YouTube 频道页截图"></div><figcaption>YouTube 1.89 万订阅，高播放全是 30 秒活动预告片</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="answers">
+    <div class="sec-head"><h2><span class="num">4</span>重点回答</h2></div>
+
+    <h3>4.1 这个品类的社媒内容套路是什么？（收敛成 6 条）</h3>
+    <h4>① 三平台分工完全不同，同素材直搬必死</h4>
+    <table>
+      <thead><tr><th>平台</th><th>这个品类实际在干什么</th><th>数据支撑</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>Instagram</b></td><td data-l="这个品类实际在干什么">主战场。氛围/情绪/达人 UGC，<b>Reels 为主</b>（9 个账号里 6 个 Reels 占比 ≥55%）</td><td data-l="数据支撑">所有品牌的爆款都在 IG</td></tr>
+        <tr><td data-l=""><b>TikTok</b></td><td data-l="这个品类实际在干什么"><b>全品类集体失守</b>。Solo Stove 69.8 万粉平均播放 965</td><td data-l="数据支撑">唯一还有量的是 Gather Grills（821 粉跑出 12,000 播放），且靠的是<b>产品装配演示</b>不是氛围片</td></tr>
+        <tr><td data-l=""><b>YouTube</b></td><td data-l="这个品类实际在干什么">分成两类：<b>原理科普/教程</b>（Breeo 那条"为什么无烟"25.8 万播放）和<b>活动/新品广告片</b>（Overland Expo 三条 30 秒预告 3–7 万播放）</td><td data-l="数据支撑">Breeo YT 13.5 万订阅 &gt; 它 IG 21.2 万粉的价值密度</td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li><b>② 产品图 = 死路，达人素材 = 主粮。</b>产品展示占比最高的 BioLite（11/20）ER 全场最低（0.07%）。反过来，UGC/达人占比最高的三家（AroundFire 12/20、Breeo 6/20、KBBQ Bros 5/20）都能跑出 10 万+ 播放的单条。</li>
+      <li><b>③ 抽奖是"评论量"的唯一杠杆，且必须联名。</b>Solo Stove 5 条评论量破百的帖里 <b>4 条是抽奖</b>（1,255 / 953 / 310 评），全部是"关注 N 个账号 + tag 一个朋友"的跨品牌形式。BioLite 唯一破百评论（365）也是抽奖。<b>这个动作在本品类是标准件，AroundFire 只做过 1 次</b>（独立日抽奖，126 赞 / 63 评，是它自有帖里最好的一条）。</li>
+      <li><b>④ 美国节日日历是内容骨架。</b>阵亡将士日 / 父亲节 / 独立日（2026 年是建国 250 周年，<code>#America250</code> 全品类刷屏）/ 黑五。7 个品牌在这三个节点都有帖，且<b>促销都挂在节日上</b>。</li>
+      <li><b>⑤ 文案越短越好，功能参数写在评论区/落地页。</b>Solo Stove 平均 8–15 词；Breeo 用一个标签 <code>#YourFireStartsHere</code> 复用全年；KBBQ Bros 用 POV 句式。<b>唯二写长文案还能赢的是 Nomad Grills 的人物志</b>（讲人不讲产品）。</li>
+      <li><b>⑥ 折扣码嵌进达人内容是本品类的标配转化路径。</b>AroundFire（JOYFOODLV / betweenus）、Gather Grills（CookitwithTim）、KBBQ Bros（SPRING）都在用。<b>这条 AroundFire 做得不比别人差。</b></li>
+    </ul>
+
+    <h3>4.2 爆款共性是什么？（38 条高互动内容合并看）</h3>
+    <div class="cards c2">
+      <div class="card"><h4 style="margin-top:0">共性一 · 画面里必须有"一群人"，而不是"一个产品"</h4>
+        <ul style="font-size:13.5px">
+          <li>Gather Grills 287 万播放：达人 + 一桌人 + 中间的火</li>
+          <li>KBBQ Bros 39 万播放：韩国老爸 + 全家 + 车库里的烤桌</li>
+          <li>AroundFire 21.6 万播放：一对情侣 + 湖边 + 火</li>
+          <li>Breeo 3,160 赞：整头牛 + 一群屠夫</li>
+          <li>Snow Peak 16,973 赞：露营地里的人</li>
+        </ul>
+        <p style="font-size:13.5px;margin-bottom:0"><b>38 条爆款里，找不到一条是"白底产品图"或"参数图"。</b></p>
+      </div>
+      <div class="card"><h4 style="margin-top:0">共性二 · 情绪句 &gt; 功能句，且情绪必须指向"人的关系"</h4>
+        <p style="font-size:13.5px">高频结构是「不是关于 X，是关于和谁在一起」：</p>
+        <ul style="font-size:13.5px">
+          <li>"We don't have a favorite place. <b>We have our favorite people</b>"（AroundFire 3.2 万播放）</li>
+          <li>"the best moments happen when <b>everyone is gathered around the fire</b>"</li>
+          <li>"Turn simple ingredients into <b>unforgettable moments</b>"（Gather 287 万播放）</li>
+          <li>"<b>The days are long. The years are short.</b>"（KBBQ Bros 932 赞）</li>
+          <li>"<b>gather often and gather well</b>"（Gather 127 万播放）</li>
+        </ul>
+      </div>
+      <div class="card"><h4 style="margin-top:0">共性三 · 新品发布是自有内容里唯一能打的类型</h4><p style="font-size:13.5px">不靠达人的自有帖中，跑得最好的全是<b>新品/上市公告</b>：Nomad RODEO（1,676 赞 / 158 评）、Solo Steelfire 30 Griddle（1,407 赞 / 7.7 万播放）、Solo Summit Series（449 赞）。<b>"我们出了个新东西"比"我们的东西很好"有效得多。</b></p></div>
+      <div class="card"><h4 style="margin-top:0">反共性（爆款里没有的东西）</h4><p style="font-size:13.5px">食谱教程虽然是 Nomad 的主力（5/20），但<b>没有一条食谱进过任何品牌的 Top 3</b>。幕后故事同理。</p></div>
+    </div>
+
+    <h3>4.3 有没有品牌在讲"多人围坐一起烤"？—— 有，而且这是本品类最大的一块空地</h3>
+    <table>
+      <thead><tr><th>品牌</th><th>讲法</th><th>证据</th><th>效果</th></tr></thead>
+      <tbody>
+        <tr><td data-l=""><b>Gather Grills</b></td><td data-l="讲法"><b>把它做成了品牌本身</b>。名字是动词 gather，slogan "Change the way you gather"，招牌镜头是圆桌俯拍一圈人</td><td data-l="证据">"gather often and <b>gather well</b>"（127 万播放）、"Great night cooking for <b>16 people</b>"</td><td data-l="效果">1.7 万粉跑出 287 万播放</td></tr>
+        <tr><td data-l=""><b>KBBQ Bros</b></td><td data-l="讲法"><b>围坐 = 韩式餐桌文化</b>，一桌人夹肉、中间炭火</td><td data-l="证据">"Backyard KBBQ dinner <b>for 10</b>… ready in under 2 minutes，<b>Seats up to 10</b>"（248 赞）</td><td data-l="效果">148 帖做到 3.28 万粉</td></tr>
+        <tr><td data-l=""><b>Snow Peak</b></td><td data-l="讲法"><b>模块化"从两人到十人"</b>，IGT 桌系统</td><td data-l="证据">"A setup for two to <b>a gathering space for ten</b>…"</td><td data-l="效果">388 赞，ER 全场第一的账号</td></tr>
+      </tbody>
+    </table>
+    <p><b>擦边但没讲透的（2 家）</b>：<b>Solo Stove</b> 口号是 <code>#MadeForMoments</code>，但画面主体始终是<b>火盆</b>不是<b>桌边的人</b>——它卖的是"火"，不是"围坐"；<b>Breeo</b> 靠达人内容自然带出聚会感，但<b>品牌自己的文案从不主打人数</b>。<br><b>完全不讲的（4 家）</b>：BioLite（能源）、Nomad Grills（讲厨师和肉）、Overland Expo（讲车和装备）、Snow Peak 的多数内容（讲美学）。</p>
+    <div class="callout danger" style="margin-bottom:0">
+      <b>结论</b>：这条赛道上真正在抢"围坐"心智的只有 <b>Gather Grills</b>（1.7 万粉、产品是固定式大桌）和 <b>KBBQ Bros</b>（3.3 万粉、产品是室内/后院韩式烤桌）。<b>两家都不便携、都不是户外露营定位。</b><br>
+      <b>「便携 + 户外 + 一圈人围坐同时烤」这个交叉点，目前没有一个有体量的品牌占住。</b>AroundFire 的产品形态天然就在这个交叉点上（30 秒展开、一张桌、一圈人），但它的内容目前<b>没有把这件事讲成一个母题</b>——它在讲"多功能"（grill/fire pit/table 三合一），而不是在讲"一圈人"。
+    </div>
+  </section>
+
+  <section id="gap">
+    <div class="sec-head"><h2><span class="num">5</span>AroundFire 自己的账号和头部差在哪？</h2></div>
+    <div class="callout ok"><span class="ttl">先说一句公道话</span>AroundFire 的<b>素材质量和内容方向并没有跑偏</b>——它的达人素材、情绪文案、折扣码路径，和 Breeo / Gather Grills 是同一套打法，而且它的单条最高播放 <b>21.6 万</b>（@betweenus.aa 那条），换算成"每粉丝播放量"是 <b>130 倍</b>，远高于 Solo Stove（0.17 倍）和 Snow Peak（0.97 倍）。<b>问题不在会不会做内容，在量、节奏和自有阵地。</b></div>
+    <table>
+      <thead><tr><th>#</th><th>差距</th><th>AroundFire 现状</th><th>头部对照</th><th>严重度</th></tr></thead>
+      <tbody>
+        <tr><td data-l="">1</td><td data-l="差距"><b>发帖频率</b></td><td data-l="AroundFire 现状">IG <b>0.29 条/周</b>（20 条帖横跨 487 天）</td><td data-l="头部对照">Snow Peak / Overland Expo <b>6.36 条/周（22 倍）</b>、Breeo 1.69 条/周</td><td data-l="严重度">🔴 最致命</td></tr>
+        <tr><td data-l="">2</td><td data-l="差距"><b>TikTok 等于没开</b></td><td data-l="AroundFire 现状"><b>54 粉</b>、57 条视频、累计 797 赞</td><td data-l="头部对照">Gather Grills 821 粉都能跑出 1.2 万播放</td><td data-l="严重度">🔴</td></tr>
+        <tr><td data-l="">3</td><td data-l="差距"><b>YouTube 停更 16 个月</b></td><td data-l="AroundFire 现状">87 订阅，最后一条 2025-03-01</td><td data-l="头部对照">Breeo 13.5 万订阅，一条"为什么无烟"25.8 万播放</td><td data-l="严重度">🔴</td></tr>
+        <tr><td data-l="">4</td><td data-l="差距"><b>没有自有内容资产，全靠达人喂</b></td><td data-l="AroundFire 现状">20 帖里 12 条是达人 collab，自有帖只有 3 条产品展示 + 1 条抽奖</td><td data-l="头部对照">Solo Stove 18/20 自有、Snow Peak 17/20 自有</td><td data-l="严重度">🟠</td></tr>
+        <tr><td data-l="">5</td><td data-l="差距"><b>没有品牌标签 / 没有可复用母题</b></td><td data-l="AroundFire 现状">无固定 hashtag、无固定视觉母题</td><td data-l="头部对照">Breeo <code>#YourFireStartsHere</code>、Solo <code>#MadeForMoments</code>、Gather "gather" 动词体系</td><td data-l="严重度">🟠</td></tr>
+        <tr><td data-l="">6</td><td data-l="差距"><b>抽奖只做过 1 次</b></td><td data-l="AroundFire 现状">独立日抽奖（126 赞 / 63 评，已是自有帖最佳）</td><td data-l="头部对照">Solo Stove 每个夏季节点必做联名抽奖，单条 1,255 评</td><td data-l="严重度">🟠</td></tr>
+        <tr><td data-l="">7</td><td data-l="差距">两套调性混在一个网格里</td><td data-l="AroundFire 现状">达人氛围片（高级）＋自制黄字贴纸转化片（低级）交替出现</td><td data-l="头部对照">Snow Peak / Solo Stove 全年调性统一</td><td data-l="严重度">🟡</td></tr>
+        <tr><td data-l="">8</td><td data-l="差距">TikTok 内容是 IG 直搬</td><td data-l="AroundFire 现状">同素材同文案跨平台复用</td><td data-l="头部对照">Gather Grills 在 TT 发装配演示、在 IG 发围坐氛围，分开做</td><td data-l="严重度">🟡</td></tr>
+        <tr><td data-l="">9</td><td data-l="差距">文案偏长的功能罗列（TT 尤其）</td><td data-l="AroundFire 现状">"✔ Grill table ✔ Fire pit ✔ Quick propane cooking ✔ Packs into one bag"</td><td data-l="头部对照">Solo Stove 平均 8–15 词</td><td data-l="严重度">🟡</td></tr>
+        <tr><td data-l="">10</td><td data-l="差距">没有跨品牌联名</td><td data-l="AroundFire 现状"><b>0 次</b></td><td data-l="头部对照">Solo×Oru×Chubbies、BioLite×HellyHansen×NEMO、Snow Peak×Portland Japanese Garden、Nomad×6 家</td><td data-l="严重度">🟡</td></tr>
+      </tbody>
+    </table>
+    <div class="callout danger" style="margin-bottom:0"><b>最关键的一句话</b>：AroundFire 每 3.4 天才发一条内容，而它的直接对标 Gather Grills 每 5 天发一条却能靠<b>一个想对了的母题</b>（gather）跑出 287 万播放。<b>AroundFire 缺的不是素材，是"每周稳定产出 + 一个反复讲的母题 + TikTok/YouTube 的第二第三阵地"。</b></div>
+  </section>
+
+  <section id="todo">
+    <div class="sec-head"><h2><span class="num">6</span>可直接执行的建议（基于以上实抓数据）</h2></div>
+    <ol>
+      <li><b>把"一圈人围坐"定为唯一视觉母题</b>，写死一个品牌标签（如 <code>#AroundFireTogether</code> / <code>#GatherAroundFire</code>），每条内容必须有 ≥3 人同框。这是本品类唯一没被有体量品牌占住的心智，且产品形态天然匹配。</li>
+      <li><b>IG 频率从 0.29 条/周提到 ≥3 条/周</b>——<b>这是 ROI 最高的一步</b>，不需要新素材，把现有达人素材重剪即可。</li>
+      <li><b>TikTok 单独做，内容是"装配演示 + 规格对比"</b>，不是氛围片。参照 Gather Grills 那两条上万播放。</li>
+      <li><b>YouTube 补一条原理科普长青视频</b>：《为什么一张桌子能同时烤肉、生火、吃饭？》，对标 Breeo 那条 25.8 万播放的 "How is a Breeo Fire Pit Smokeless?"。<b>这类视频是唯一能长期吃自然搜索流量的内容</b>（且 SEO 侧 97% 的关键词 SERP 里有视频位）。</li>
+      <li><b>每个美国节日节点做一场跨品牌联名抽奖</b>（找露营椅/冷藏箱/户外音箱品牌换粉），<b>KPI 定评论量不是点赞量</b>。</li>
+      <li><b>文案全面缩短</b>，功能参数从画面和 caption 里撤出去，放落地页；caption 只写"和谁、在哪、什么感觉"。</li>
+      <li><b>建立 3–5 人的固定创作者池</b>（学 Solo Stove 每条标注 <code>🎥: @xxx</code>），而不是一次性投放——这样调性才能统一。</li>
+    </ol>
+  </section>
+
+  <div class="pagenav">
+    <a href="ads.html"><div class="d">◂ 上一份</div><div class="t">广告情报 · 素材墙</div></a>
+    <a class="nx" href="trends.html"><div class="d">下一份 ▸</div><div class="t">市场趋势与渠道</div></a>
+  </div>
+
+</div>
+
+<div class="foot">AroundFire 全链路品牌调研 · 社媒生态 · 2026-07-21</div>
+</body>
+</html>

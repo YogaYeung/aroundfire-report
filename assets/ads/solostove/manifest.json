@@ -1,0 +1,666 @@
+{
+ "brand": "Solo Stove",
+ "page_id": "339253916108162",
+ "page_name": "Solo Stove",
+ "results_text": "~56 results",
+ "total_cards_scraped": 20,
+ "total_variants": 29,
+ "fetched_at": "2026-07-21",
+ "ads": [
+  {
+   "seq": 1,
+   "library_id": "1314370250626932",
+   "media_type": "video",
+   "page_name": "Solo Stove",
+   "start_date": "Apr 22, 2026",
+   "start_iso": "2026-04-22",
+   "days_running": 90,
+   "variants": 1,
+   "primary_text": "🔥 Turn your garden into THE place to gather with the world's most popular Smokeless Fire Pits. 🔥",
+   "headline": "Solo Stove Fire Pits",
+   "description": "222,000+ Five-Star Reviews",
+   "display_link": "WWW.SOLOSTOVE.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1314370250626932",
+   "files": [
+    {
+     "path": "01_1314370250626932.mp4",
+     "kind": "video",
+     "size_kb": 747
+    },
+    {
+     "path": "01_1314370250626932_poster.jpg",
+     "kind": "poster",
+     "size_kb": 134
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "聚会派对",
+     "烹饪特写"
+    ],
+    "people": [
+     "家庭带娃",
+     "朋友聚会"
+    ],
+    "hooks": [
+     "氛围感",
+     "社交聚会",
+     "一物多用"
+    ],
+    "n_people_on_screen": 3,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Yukon 27-inch smokeless fire pit",
+    "one_line": "展示了人们在后院围绕Solo Stove Yukon 27寸无烟火炉聚会、唱歌、烹饪、享受温馨氛围的场景。"
+   }
+  },
+  {
+   "seq": 2,
+   "library_id": "1761976941434103",
+   "media_type": "video",
+   "page_name": "Solo Stove",
+   "start_date": "Jun 5, 2026",
+   "start_iso": "2026-06-05",
+   "days_running": 46,
+   "variants": 1,
+   "primary_text": "🔥 Meet the All-new Summit 27\" Smokeless Fire Pit. Featuring our tallest, brightest, most mesmerizing flame. Seats 6+. 🔥",
+   "headline": "ALL-NEW Summit Series",
+   "description": "Available in 3 sizes",
+   "display_link": "WWW.SOLOSTOVE.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1761976941434103",
+   "files": [
+    {
+     "path": "02_1761976941434103.mp4",
+     "kind": "video",
+     "size_kb": 517
+    },
+    {
+     "path": "02_1761976941434103_poster.jpg",
+     "kind": "poster",
+     "size_kb": 99
+    }
+   ],
+   "tags": {
+    "scene": [
+     "海滩/湖边",
+     "聚会派对"
+    ],
+    "people": [
+     "朋友聚会"
+    ],
+    "hooks": [
+     "新品上市",
+     "氛围感",
+     "用户证言/UGC"
+    ],
+    "n_people_on_screen": 4,
+    "group_cooking": true,
+    "product_shown": "Summit 27 Smokeless Fire Pit",
+    "one_line": "朋友们在海滩上围着新品Summit 27无烟火炉聚会弹琴并烤棉花糖。"
+   }
+  },
+  {
+   "seq": 3,
+   "library_id": "3237907739930648",
+   "media_type": "image",
+   "page_name": "Solo Stove",
+   "start_date": "Jun 23, 2026",
+   "start_iso": "2026-06-23",
+   "days_running": 28,
+   "variants": 1,
+   "primary_text": "☀️ Summer Sale: Up to 32% off Pizza Ovens. Artisan-quality pies in as little as 90 seconds. Bon Appetit! 🍕",
+   "headline": "Solo Stove Summer Sale",
+   "description": "Up to 32% Off Pizza Ovens",
+   "display_link": "SOLOSTOVE.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=3237907739930648",
+   "files": [
+    {
+     "path": "03_3237907739930648.jpg",
+     "kind": "image",
+     "size_kb": 55
+    }
+   ],
+   "tags": {
+    "scene": [
+     "阳台/小空间",
+     "聚会派对"
+    ],
+    "people": [
+     "朋友聚会"
+    ],
+    "hooks": [
+     "价格促销",
+     "社交聚会"
+    ],
+    "n_people_on_screen": 5,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Pi Pizza Oven",
+    "one_line": "男子在户外露台聚会中切比萨，画面突出展示Solo Stove比萨烤炉及夏日促销折扣。"
+   }
+  },
+  {
+   "seq": 4,
+   "library_id": "1015166204330688",
+   "media_type": "image",
+   "page_name": "Solo Stove",
+   "start_date": "Jun 25, 2026",
+   "start_iso": "2026-06-25",
+   "days_running": 26,
+   "variants": 1,
+   "primary_text": "☀️ Summer Sale: $100 off Summit + Steelfire Bundle! Two bestselling innovations, now in one epic bundle. 🔥🍔",
+   "headline": "Solo Stove Summer Sale",
+   "description": "$100 Off Summit + Steelfire",
+   "display_link": "SOLOSTOVE.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1015166204330688",
+   "files": [
+    {
+     "path": "04_1015166204330688.jpg",
+     "kind": "image",
+     "size_kb": 53
+    }
+   ],
+   "tags": {
+    "scene": [
+     "纯产品展示"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "价格促销",
+     "新品上市",
+     "无烟技术"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Summit 27 fire pit and Steelfire 22 griddle bundle",
+    "one_line": "展示Solo Stove Summit无烟火盆与Steelfire不锈钢烤盘套装的促销渲染图"
+   }
+  },
+  {
+   "seq": 5,
+   "library_id": "1032724096372826",
+   "media_type": "video",
+   "page_name": "Solo Stove",
+   "start_date": "Jun 26, 2026",
+   "start_iso": "2026-06-26",
+   "days_running": 25,
+   "variants": 1,
+   "primary_text": "Tailgate setup ✅🔥 Take the Steelfire Stainless Griddle with your team to dish out the flavor. Zero to sear in just 7 minutes.",
+   "headline": "Solo Steelfire 22 Griddle",
+   "description": "Zero to Sear in 7 Minutes",
+   "display_link": "WWW.SOLOSTOVE.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1032724096372826",
+   "files": [
+    {
+     "path": "05_1032724096372826.mp4",
+     "kind": "video",
+     "size_kb": 711
+    },
+    {
+     "path": "05_1032724096372826_poster.jpg",
+     "kind": "poster",
+     "size_kb": 370
+    }
+   ],
+   "tags": {
+    "scene": [
+     "烹饪特写",
+     "聚会派对"
+    ],
+    "people": [
+     "单人男性",
+     "家庭带娃"
+    ],
+    "hooks": [
+     "便携",
+     "清洁便利",
+     "用户证言/UGC"
+    ],
+    "n_people_on_screen": 2,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Steelfire 22 Stainless Griddle",
+    "one_line": "视频展示了在卡车后挡板上使用Solo Stove便携烤盘制作美味汉堡塔可及轻松清洗的过程。"
+   }
+  },
+  {
+   "seq": 6,
+   "library_id": "1394025255924578",
+   "media_type": "video",
+   "page_name": "Solo Stove",
+   "start_date": "Jun 26, 2026",
+   "start_iso": "2026-06-26",
+   "days_running": 25,
+   "variants": 1,
+   "primary_text": "🔥 HOT, LIMITED-TIME DEALS: $260 off the Summit 27 + Torch X-Pack Bundle 🔥 Gear up for a great summer.",
+   "headline": "Solo Stove Summer Sale",
+   "description": "Deals on Summer Bundles",
+   "display_link": "WWW.SOLOSTOVE.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1394025255924578",
+   "files": [
+    {
+     "path": "06_1394025255924578.mp4",
+     "kind": "video",
+     "size_kb": 157
+    },
+    {
+     "path": "06_1394025255924578_poster.jpg",
+     "kind": "poster",
+     "size_kb": 263
+    }
+   ],
+   "tags": {
+    "scene": [
+     "纯产品展示"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "价格促销",
+     "限时紧迫"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Summit 27 fire pit and 4-pack torch bundle",
+    "one_line": "展示了Solo Stove Summit 27和火把套装的夏季促销优惠信息。"
+   }
+  },
+  {
+   "seq": 7,
+   "library_id": "1702436697573581",
+   "media_type": "image",
+   "page_name": "Solo Stove",
+   "start_date": "Jun 26, 2026",
+   "start_iso": "2026-06-26",
+   "days_running": 25,
+   "variants": 2,
+   "primary_text": "🔥 HOT, LIMITED-TIME DEALS: $260 off the Summit 27 + Torch X-Pack Bundle 🔥 Gear up for a great summer.",
+   "headline": "",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1702436697573581",
+   "files": [
+    {
+     "path": "07_1702436697573581.jpg",
+     "kind": "image",
+     "size_kb": 55
+    }
+   ],
+   "tags": {
+    "scene": [
+     "纯产品展示"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "价格促销",
+     "限时紧迫"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Summit 27 fire pit and 4-pack torches bundle",
+    "one_line": "一张宣传Solo Stove Summit 27无烟火盆与火把套装夏日促销优惠260美金的纯产品海报。"
+   }
+  },
+  {
+   "seq": 8,
+   "library_id": "2087585355157422",
+   "media_type": "video",
+   "page_name": "Solo Stove",
+   "start_date": "Jul 3, 2026",
+   "start_iso": "2026-07-03",
+   "days_running": 18,
+   "variants": 2,
+   "primary_text": "🔥 HOT, LIMITED-TIME DEALS: $260 off the Summit 27 + Torch X-Pack Bundle 🔥 Gear up for a great summer.",
+   "headline": "",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=2087585355157422",
+   "files": [
+    {
+     "path": "08_2087585355157422.mp4",
+     "kind": "video",
+     "size_kb": 159
+    },
+    {
+     "path": "08_2087585355157422_poster.jpg",
+     "kind": "poster",
+     "size_kb": 349
+    }
+   ],
+   "tags": {
+    "scene": [
+     "纯产品展示"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "价格促销",
+     "限时紧迫"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Summit 27 fire pit and 4-pack torches",
+    "one_line": "视频以带火焰特效的静态画面展示了Solo Stove篝火炉与火炬的夏季促销套装优惠信息。"
+   }
+  },
+  {
+   "seq": 9,
+   "library_id": "1029717626448340",
+   "media_type": "video",
+   "page_name": "Solo Stove",
+   "start_date": "Jul 8, 2026",
+   "start_iso": "2026-07-08",
+   "days_running": 13,
+   "variants": 1,
+   "primary_text": "Meet our First-Ever Propane Fire Pit. No sparks, ash, or cleanup. Just worry-free, ambient flame made for endless nights. 🔥",
+   "headline": "ALL-NEW Propane Fire Pit",
+   "description": "Mesmerizing Flame",
+   "display_link": "WWW.SOLOSTOVE.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1029717626448340",
+   "files": [
+    {
+     "path": "09_1029717626448340.mp4",
+     "kind": "video",
+     "size_kb": 601
+    },
+    {
+     "path": "09_1029717626448340_poster.jpg",
+     "kind": "poster",
+     "size_kb": 93
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "聚会派对"
+    ],
+    "people": [
+     "朋友聚会"
+    ],
+    "hooks": [
+     "新品上市",
+     "氛围感",
+     "社交聚会"
+    ],
+    "n_people_on_screen": 3,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Infinity Flame Propane Fire Pit",
+    "one_line": "展示Solo Stove首款丙烷篝火炉新品在后院聚会中营造的温馨氛围。"
+   }
+  },
+  {
+   "seq": 10,
+   "library_id": "2120844285509677",
+   "media_type": "video",
+   "page_name": "Solo Stove",
+   "start_date": "Jul 9, 2026",
+   "start_iso": "2026-07-09",
+   "days_running": 12,
+   "variants": 1,
+   "primary_text": "The ALL-NEW Summit Series 🔥 Our most advanced fire pit & our tallest, brightest, most mesmerizing flame 🔥 Lifetime warranty.",
+   "headline": "ALL-NEW Summit Series",
+   "description": "Available in 3 sizes",
+   "display_link": "WWW.SOLOSTOVE.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=2120844285509677",
+   "files": [
+    {
+     "path": "10_2120844285509677.mp4",
+     "kind": "video",
+     "size_kb": 481
+    },
+    {
+     "path": "10_2120844285509677_poster.jpg",
+     "kind": "poster",
+     "size_kb": 63
+    }
+   ],
+   "tags": {
+    "scene": [
+     "纯产品展示"
+    ],
+    "people": [
+     "无人纯产品"
+    ],
+    "hooks": [
+     "新品上市",
+     "无烟技术"
+    ],
+    "n_people_on_screen": 0,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Summit smokeless fire pit",
+    "one_line": "视频展示了Solo Stove全新发布的Summit系列无烟火炉的外观与不同尺寸。"
+   }
+  },
+  {
+   "seq": 11,
+   "library_id": "2881268988879912",
+   "media_type": "image",
+   "page_name": "Solo Stove",
+   "start_date": "Jul 9, 2026",
+   "start_iso": "2026-07-09",
+   "days_running": 12,
+   "variants": 4,
+   "primary_text": "🔥 Keep your summer fired up with 10% off the Summit 27 🔥 Our most advanced Smokeless Fire Pits yet 🔥",
+   "headline": "",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=2881268988879912",
+   "files": [
+    {
+     "path": "11_2881268988879912.jpg",
+     "kind": "image",
+     "size_kb": 47
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "聚会派对"
+    ],
+    "people": [
+     "朋友聚会"
+    ],
+    "hooks": [
+     "价格促销",
+     "社交聚会",
+     "限时紧迫"
+    ],
+    "n_people_on_screen": 4,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Summit 27 smokeless fire pit",
+    "one_line": "后院聚会场景下展示Solo Stove Summit 27无烟篝火炉，并配以醒目的10%限时折扣促销文案。"
+   }
+  },
+  {
+   "seq": 12,
+   "library_id": "3356583727846360",
+   "media_type": "video",
+   "page_name": "Solo Stove",
+   "start_date": "Jul 9, 2026",
+   "start_iso": "2026-07-09",
+   "days_running": 12,
+   "variants": 1,
+   "primary_text": "The ALL-NEW Summit Series 🔥 Our most advanced fire pit & our tallest, brightest, most mesmerizing flame 🔥 Lifetime warranty.\nALL-NEW Summit Series\nAvailable in 3 sizes",
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=3356583727846360",
+   "files": [
+    {
+     "path": "12_3356583727846360.mp4",
+     "kind": "video",
+     "size_kb": 687
+    },
+    {
+     "path": "12_3356583727846360_poster.jpg",
+     "kind": "poster",
+     "size_kb": 68
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院"
+    ],
+    "people": [
+     "家庭带娃"
+    ],
+    "hooks": [
+     "新品上市",
+     "用户证言/UGC",
+     "氛围感"
+    ],
+    "n_people_on_screen": 3,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Summit fire pit",
+    "one_line": "父亲分享Solo Stove Summit无烟火炉的简单易用性，并与孩子们在后院享受温馨的篝火时光。"
+   }
+  },
+  {
+   "seq": 13,
+   "library_id": "1032684119256870",
+   "media_type": "video",
+   "page_name": "Solo Stove",
+   "start_date": "Jul 11, 2026",
+   "start_iso": "2026-07-11",
+   "days_running": 10,
+   "variants": 1,
+   "primary_text": "Build your own at-home pizzeria with the Solo Stove Pizza Oven. Artisan-quality pies in as little as 90 seconds. Yes, chef! 👨‍🍳🍕�",
+   "headline": "Solo Stove Pizza Oven",
+   "description": "Lifetime Warranty",
+   "display_link": "WWW.SOLOSTOVE.COM",
+   "cta": "Shop now",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1032684119256870",
+   "files": [
+    {
+     "path": "13_1032684119256870.mp4",
+     "kind": "video",
+     "size_kb": 1398
+    },
+    {
+     "path": "13_1032684119256870_poster.jpg",
+     "kind": "poster",
+     "size_kb": 270
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "烹饪特写"
+    ],
+    "people": [
+     "单人男性"
+    ],
+    "hooks": [
+     "用户证言/UGC"
+    ],
+    "n_people_on_screen": 1,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Pi Prime Pizza Oven",
+    "one_line": "单人男性在后院使用Solo Stove披萨烤箱制作并享用法式面包热蜂蜜披萨。"
+   }
+  },
+  {
+   "seq": 14,
+   "library_id": "1520711306520819",
+   "media_type": "video",
+   "page_name": "Solo Stove",
+   "start_date": "Jul 11, 2026",
+   "start_iso": "2026-07-11",
+   "days_running": 10,
+   "variants": 1,
+   "primary_text": "🔥Summit Smokeless Fire Pits 🔥 Most advanced 🔥 Our tallest, brightest, most mesmerizing flame 🔥 Lifetime warranty 🔥\nALL-NEW Summit Series\nAvailable in 3 sizes",
+   "headline": "Shop Now",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1520711306520819",
+   "files": [
+    {
+     "path": "14_1520711306520819.mp4",
+     "kind": "video",
+     "size_kb": 1004
+    },
+    {
+     "path": "14_1520711306520819_poster.jpg",
+     "kind": "poster",
+     "size_kb": 209
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "聚会派对"
+    ],
+    "people": [
+     "朋友聚会"
+    ],
+    "hooks": [
+     "用户证言/UGC",
+     "新品上市",
+     "氛围感"
+    ],
+    "n_people_on_screen": 3,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Summit smokeless fire pit",
+    "one_line": "通过用户真实证言展示了全新Solo Stove Summit无烟火炉在后院聚会中的温暖氛围与高颜值设计。"
+   }
+  },
+  {
+   "seq": 15,
+   "library_id": "1339388711103741",
+   "media_type": "image",
+   "page_name": "Solo Stove",
+   "start_date": "Jul 14, 2026",
+   "start_iso": "2026-07-14",
+   "days_running": 7,
+   "variants": 3,
+   "primary_text": "🔥 Keep your summer fired up with 10% off the Summit 27 🔥 Our most advanced Smokeless Fire Pits yet 🔥",
+   "headline": "",
+   "description": "",
+   "display_link": "",
+   "cta": "",
+   "ad_library_url": "https://www.facebook.com/ads/library/?id=1339388711103741",
+   "files": [
+    {
+     "path": "15_1339388711103741.jpg",
+     "kind": "image",
+     "size_kb": 34
+    }
+   ],
+   "tags": {
+    "scene": [
+     "后院",
+     "聚会派对"
+    ],
+    "people": [
+     "朋友聚会"
+    ],
+    "hooks": [
+     "价格促销",
+     "限时紧迫",
+     "氛围感"
+    ],
+    "n_people_on_screen": 4,
+    "group_cooking": false,
+    "product_shown": "Solo Stove Summit 27 smokeless fire pit",
+    "one_line": "展示了人们围坐在后院的Solo Stove无烟火炉旁享受篝火，并配有10%限时折扣的促销信息。"
+   }
+  }
+ ]
+}
