@@ -57,6 +57,7 @@
         <tr><td data-l="">购买</td><td data-l="数量">457</td><td data-l="转化率"><b>33.1%</b></td></tr>
       </tbody>
     </table>
+    <figure><img src="assets/charts/meta_funnel.png" alt="Meta 账户转化漏斗：加购 2,641 人，发起结账 1,380 人（52.3%），购买 457 人（33.1%），结账到购买流失 67%"><figcaption><b>图 1 · 漏斗形状</b>：加购到结账掉一半是正常的，<b>结账到购买再掉 67%（923 人）不正常</b>——这 923 人已经填过表、看过价、点过「去结账」。这一段的漏损与广告素材、人群、出价都无关，只与结账页本身有关。</figcaption></figure>
     <div class="callout danger"><b>结账→购买流失 67%，是全链路最大瓶颈。</b>与 Kickstarter VOC 里 backer 集中投诉「运费二次收取 $45-50 未提前告知」「Stripe 付款报错」形成证据链——结账页的运费露出方式与支付方式需要单独排查。<br><b>本次已做结账全流程实勘</b>，结论：$24.90 在填完 9 个字段后的第 4 个区块才露出，全站零免邮门槛、零 BNPL、结账页零信任元素。<a href="optimization.html#checkout">→ 查看结账实勘全文与 23 张截图</a></div>
   </section>
 
@@ -77,6 +78,7 @@
         <tr><td data-l=""><b>65+</b></td><td data-l="性别"><b>female</b></td><td data-l="花费">$1,056</td><td data-l="单量">39</td><td data-l="ROAS"><b>4.76</b></td><td data-l="CPA"><b>$27</b></td></tr>
       </tbody>
     </table>
+    <figure><img src="assets/charts/meta_audience.png" alt="年龄×性别的 ROAS 与花费对照柱状图，55-64 岁女性 ROAS 7.35、CPA $30 为全账户最高效，但花费仅 $2,429"><figcaption><b>图 2 · 钱和效率长在两个地方</b>：左图是效率（柱顶 ROAS、柱内 CPA），右图是预算。<b>ROAS 最高的 55-64 女性（7.35 / CPA $30）和 CPA 最低的 65+ 女性（$27），恰好是右图里两根最矮的女性柱。</b>而拿走最多预算的 35-44 / 45-54 男性，ROAS 只有 4.88 / 4.20。<br><span style="font-size:11.5px">口径：预算占比以本表 10 个切片合计 $33,539 为分母（与报告 §3「35-54 占 63% 花费」同一口径）。</span></figcaption></figure>
     <div class="cards c2">
       <div class="card"><h4 style="margin-top:0">主力预算压在 35-54（63% 花费），效率中等</h4><p>35-44 male 单量最高（145 单）、CPA $44；45-54 male 花费第二但 ROAS 只有 4.20。</p></div>
       <div class="card" style="border:2px solid var(--green)"><h4 style="margin-top:0">55-64 女性是全账户效率最高的人群</h4><p><b>ROAS 7.35 / CPA $30，预算占比仅 10%</b>。65+ 女性 <b>CPA $27 为全账户最低</b>。<br><b>这两个人群对"多一次点击才能买"最不耐受</b>——移动端吸底条无加购按钮这条修复，最直接受益的就是她们。</p></div>
@@ -96,6 +98,7 @@
         <tr><td data-l="">家庭 / 后院</td><td data-l="花费">$211</td><td data-l="占比">1%</td><td data-l="单量">12</td><td data-l="ROAS">16.0</td><td data-l="CPA">$18</td></tr>
       </tbody>
     </table>
+    <figure><img src="assets/charts/meta_theme_budget.png" alt="五个素材主题的花费与 ROAS 对照条形图，UGC 主题 ROAS 8.0 但只占 12% 预算"><figcaption><b>图 3 · 主题层的预算错配</b>：左边花得最多的两个主题（汽车露营 38%、camping table 35%）ROAS 是 5.0 / 6.0；<b>右边效率最高的 UGC（ROAS 8.0 / CPA $41）只拿到 12%</b>。<br>「家庭/后院」那根 ROAS 16 的橙条<b>只花了 $211，是信号不是结论</b>，图内已就地标注。</figcaption></figure>
     <div class="callout danger">⚠️ <b>「家庭/后院」样本量极小（$211），ROAS 16 不可作为结论</b>，只能作为「<b>值得放量测试</b>」的信号。</div>
 
     <h3>单素材 TOP（花费 &gt; $400）</h3>
@@ -115,6 +118,7 @@
         <tr><td data-l="">功能型方向-camping kitchen</td><td data-l="花费">$1,005</td><td data-l="单量">9</td><td data-l="ROAS">2.89</td><td data-l="CPA">$112</td></tr>
       </tbody>
     </table>
+    <figure><img src="assets/charts/meta_creative_scatter.png" alt="单素材花费与 ROAS 散点图，绿色的达人 UGC 素材集中在左上高效区，红色自制混剪集中在右下烧钱区"><figcaption><b>图 4 · 一张图看完预算错配</b>：横轴花费、纵轴 ROAS、气泡大小是订单数。<b>绿色（达人/UGC 真人）几乎全在虚线上方或紧贴虚线，红色（自制混剪）三条全在右下角</b>——花得最多的「混剪-汽车露营」$5,577 落在最右下，ROAS 4.00；而 ROAS 7.00 的 <code>evcinshome</code> 只花了 $1,146。<b>把红色区的钱搬到绿色区，是这个账户当下确定性最高的一次调整。</b></figcaption></figure>
     <div class="callout danger"><b>规律</b>：<b>达人 / UGC 真人素材（evcinshome、cait、Paige、vanadvantures、betweenus）全面跑赢自制混剪。花费最高的「混剪-汽车露营」$5,577 ROAS 只有 4.00，是预算错配。</b><br><br>
     这条与社媒盘点、网站诊断三方共振：<b>38 条社媒爆款里找不到一条白底产品图</b>；PDP 首图却是一袋零件。<b>「广告用一群人围着桌子吃饭把人带进来，落地页第一眼给一袋零件」是投放与落地页之间最直接的断档。</b></div>
   </section>

@@ -82,6 +82,7 @@
       </tbody>
     </table>
     <p class="tnote"><b>INS 库内部重复收录的 13 人</b>（说明搜索时没有做去重）：<code>miss.rover</code>、<code>rtmadani</code>、<code>robbyclark_t4r</code>、<code>backcountry.mom</code>、<code>mcnutt_bbq</code>、<code>_aswewander</code>、<code>elnick.adventures</code>、<code>meat.therapy</code>、<code>lifebehindthe79</code>、<code>theflyinghens</code>、<code>nomad.nesters</code>、<code>the_renegade_ramblers</code>、<code>redwhiteandbbq</code>。另有 8 人同时出现在 2 个分类栏。</p>
+    <figure><img src="assets/charts/inf_search_vs_outreach.png" alt="搜索库与外联台账的重合度对比图，659 个搜索出的达人里只有 2 个进入过外联台账"><figcaption><b>图 1 · 两套系统是断开的</b>：上面一条是 18 个批次、7 个月搜出来的 659 个唯一 handle，<b>其中 657 个（99.7%）从来没被联系过</b>；下面一条是 33 条外联记录，<b>其中 31 条是台账端自己另外找的</b>。两条之间只有 2 个人重合。<b>库不是没建，是建完没进入流程。</b></figcaption></figure>
     <div class="callout danger">
       <span class="ttl">⚠️ 第一个关键发现：搜索库和外联流程是两套完全脱节的系统</span>
       <b>657 / 659 个 INS 搜索出来的达人（99.7%）从未进入外联台账。</b>反过来，33 条外联记录里<b>只有 2 条来自 INS 搜索库</b>，其余 31 个是台账端独立找的。<br><br>
@@ -102,6 +103,7 @@
     </table>
     <p class="tnote">纯单分类：Family 259 / Overlanding 229 / BBQ 163；跨分类 8 人。</p>
 
+    <figure><img src="assets/charts/inf_categories.png" alt="达人库分类分布环形图与按批次分类的柱状图，Family 264 人、Overlanding 237 人、BBQ 166 人，6-7 月批次 BBQ 仅 2 条"><figcaption><b>图 2 · 库是均衡的，执行不是</b>：左图说明「库过度偏年轻 overlanding 男」这个假设<b>不成立</b>——Family 反而最多（264 人 / 38%）。右图是时间上的漂移：<b>1 月三个方向基本平均，6–7 月重启后 BBQ 几乎停搜（5 个批次共 2 条）</b>，而这个时点正好和 Meta 端「KBBQ 零素材零广告组」重合——<b>同一条线在搜索端和投放端被同时放弃。</b></figcaption></figure>
     <h3>按批次 × 分类（672 条 INS 库条目）</h3>
     <table>
       <thead><tr><th>批次</th><th>BBQ</th><th>Family</th><th>Overland</th><th>合计</th></tr></thead>
@@ -146,6 +148,7 @@
         <tr><td data-l=""><b>重复合作</b></td><td data-l="人数"><b>0</b>（33 人「重复合作」字段全部为「否」）</td><td data-l="相对上一环">0%</td></tr>
       </tbody>
     </table>
+    <figure><img src="assets/charts/inf_funnel.png" alt="达人外联漏斗图：695 人库存，触达 33 人（4.7%），收到回复 5 人，寄样 1 人，完成合作 0 人"><figcaption><b>图 3 · 漏斗在第一层就断了</b>：真正的问题不是回复率（33 → 5，15.2% 其实不算差），而是<b>695 人的库只发出了 33 次建联（4.7%）</b>，以及<b>最终 0 条内容产出</b>。在触达量只有 33 的前提下，讨论「优化话术提高回复率」是次要的——<b>先把触达量做起来。</b></figcaption></figure>
     <p class="tnote"><b>触达渠道</b>（有重叠，按状态字面统计）：邮件触达 14 人 / IG 私信 8 人 / TikTok 站内 7 人。</p>
     <div class="disclaimer"><span class="ttl">⚠️ 数据缺陷</span>一旦达人回复，状态字段就被「收到回复，XXX」<b>覆盖</b>，<b>原触达渠道信息丢失，因此无法计算各渠道的回复率</b>。建议台账拆成「触达渠道」和「当前状态」两个独立字段。<br>另：台账「时间」字段只有 <code>2025.9</code>（20 人）和 <code>2025.1</code>（13 人）两个值，格式为「年.月」，与 INS 库的 2026 年批次日期口径不一致，<b>无法据此计算触达到回复的时间周期</b>。</div>
 
@@ -181,6 +184,7 @@
         <tr><td data-l=""><b>Macro（500k+）</b></td><td data-l="实际触达人数">5</td><td data-l="实际占比"><b>15%</b></td><td data-l="甲方《达人计划》投入占比"><b>10%</b></td><td data-l="偏差"><b>超配</b></td></tr>
       </tbody>
     </table>
+    <figure><img src="assets/charts/inf_tiers.png" alt="已触达 33 人的粉丝量级分布柱状图，以及 Nano/Micro/Mid/Macro 四层实际触达占比与达人计划投入占比的对比"><figcaption><b>图 4 · 触达结构与计划相反</b>：左图是 33 个已触达达人的量级分布（<b>这也是全库唯一有粉丝量级数据的 4.7%</b>）。右图对照甲方《达人计划》：<b>计划给 Nano 40%，实际只占 24%；计划给 Macro 10%，实际占了 15%</b>——而 5 个 Macro 里唯一回复的开价 $6,000–8,000，直接判死。<b>置换模式下，投入越往上层压，成功率越低。</b></figcaption></figure>
     <p><b>Macro 超配是失败的直接原因之一</b>——5 个 Macro 里唯一回复的 <code>beerving_america</code> 报价 $6,000-8,000，<b>直接判死</b>。</p>
     <p class="tnote">⚠️ <b><code>derickthecamper</code> 数据矛盾</b>：量级标 <code>50-100K</code> 但最高粉丝数只有 <code>9.3K</code>，两个字段对不上，<b>已在总库中原样保留，需甲方核对</b>。</p>
 

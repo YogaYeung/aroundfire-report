@@ -61,6 +61,16 @@
         <tr><td data-l="">移动端横向溢出</td><td data-l="判定"><b>不存在</b></td><td data-l="依据"><code>documentElement.scrollWidth &gt; innerWidth</code> = <code>false</code></td></tr>
       </tbody>
     </table>
+    <div class="figs">
+      <figure>
+        <div class="tall short"><img loading="lazy" src="assets/shots/home_loved_section.jpg" alt="AroundFire 首页「Loved By Our Customers」区块滚动进视口后的实拍截图：五张顾客实拍卡片与评价文字全部清晰可读。"></div>
+        <figcaption><b>这就是「已自我更正」的复测证据。</b>滚动进视口后 <code>class</code> 由 <code>lazyload</code> 变 <code>lazyloaded</code>、<code>naturalWidth</code> 变 300，五张顾客实拍与署名（Jeff Green / Eduardo Rubio Garcia / Vincent Chan / Andy Knox）全部清晰——首轮的「坏图」是取证假象，不作为问题上报。</figcaption>
+      </figure>
+      <figure>
+        <div class="tall short"><img loading="lazy" src="assets/shots/pdp_lite_compare.png" alt="aroundfire.co 页脚截图：Fast Shipping / 30-Day Money Back / 3-Year Warranty 三条承诺，以及底部支付图标条中出现的 UnionPay 银联图标。"></div>
+        <figcaption>UnionPay 那条的原图：页脚支付图标条里确实有<b>银联</b>，但它是 Shopify 按店铺已启用支付方式自动渲染的，<b>不是文案错误</b>。同一张图也是「买盒有三条承诺（Fast Shipping / 30-Day Money Back / 3-Year Warranty）」的出处。<br><i>（注：该文件名为 <code>pdp_lite_compare.png</code>，实际拍的是页脚，文件名有误导，内容以图为准。）</i></figcaption>
+      </figure>
+    </div>
   </section>
 
   <section id="good">
@@ -92,7 +102,15 @@
         <li>Hero 背景是视频，源分辨率 <code>882×480</code>（Shopify SD-480p-1.5Mbps），在 1440px 宽视口下拉伸铺满</li>
       </ul>
       <figure><img src="assets/shots/home_desktop_fold.png" alt="AroundFire 首页桌面端首屏截图：只有一个 Shop Now 按钮，无价格无星级无背书"><figcaption><b>证据</b>：首页桌面端首屏 —— 零信任信号</figcaption></figure>
+      <figure>
+        <div class="tall short"><img loading="lazy" src="assets/shots/home_mobile_fold.png" alt="AroundFire 首页移动端首屏截图：主标题换行为 Grill, Cook & Stay / Warm- / All-in-One Outdoor Table，Warm- 后的连字符悬在行尾。"></div>
+        <figcaption><b>移动端首屏，悬挂连字符在这里最刺眼</b>：<code>Warm-</code> 独占一行、连字符悬在行尾。同一屏同样没有价格、星级、评价数、媒体背书。<b>而移动端正是 Meta 流量的主要落点</b>。</figcaption>
+      </figure>
       <p><b>为什么是 P0</b>：竞品的信任资产密度是 Breeo <code>The Original / Since 2011 / American Made</code>、NOMAD <code>8,000+ Five Star Reviews</code> + 16 条媒体引语墙、Gather Grills <code>500+ grills / 50+ country clubs</code>、KBBQ Bros <code>5,000+ tables sold</code>。<b>AroundFire 首屏是 0。</b>而它手上有 <b>541 backers / $134,789 / 2696%</b> 这个和竞品同量级的数字，<b>一个字都没用</b>。</p>
+      <figure>
+        <div class="tall short"><img loading="lazy" src="assets/competitors/breeo_hero.jpg" alt="Breeo 官网首屏截图：主标 THE ORIGINAL SMOKELESS FIRE PIT，副标 Hand Crafted, American Made Fire Pits Built for the Backyard，顶部还挂着专家电话。"></div>
+        <figcaption><b>竞品首屏的信任密度长这样</b>（Breeo 官网实勘原件）：<code>THE ORIGINAL</code>（品类地位）+ <code>Hand Crafted, American Made</code>（产地与工艺）+ 顶栏一个真人可拨的 PA 办公室电话。<b>三条信任信号在首屏就给完</b>，而 AroundFire 首屏是 0——它手上的 541 backers / $134,789 一个字都没用。</figcaption>
+      </figure>
     </div>
 
     <div class="card" style="border-left:5px solid var(--red)">
@@ -140,6 +158,17 @@
         <tr><td data-l="">/pages/tech H1</td><td data-l="实测原文"><code>How the AroundFire 3 in 1 Versatility Works</code></td></tr>
         <tr><td data-l="">卖点图文件名</td><td data-l="实测原文"><code>4-in-1_vesality.webp</code>（且 versatility 拼成 <code>vesality</code>）</td></tr>
         </tbody></table>
+
+    <div class="figs">
+      <figure>
+        <div class="tall short"><img loading="lazy" src="assets/shots/_hs0.png" alt="AroundFire 首页截图：三个图标模块 Ultra Portable Design / 3-in-1 Functionality / Made to Gather，下方是 Less Hassle. More Fun. 与 Two Sizes of Tables 区块。"></div>
+        <figcaption>首页图标模块写的是 <b><code>3-in-1 Functionality</code></b>。同一张图也能看到标题层级问题：视觉上最大的 <code>Less Hassle. More Fun.</code> 实测是 <code>H3</code>、<code>Two Sizes of Tables</code> 是 <code>H4</code>，<b>全页 <code>h1</code> 数量 = 0</b>。</figcaption>
+      </figure>
+      <figure>
+        <div class="tall short"><img loading="lazy" src="assets/shots/_hs2.png" alt="AroundFire 首页 Patented 3-in-1 Technology 模块截图。"></div>
+        <figcaption>再往下滚，同一个首页又写成 <b><code>Patented 3-in-1 Technology</code></b>；而 meta description 写 <code>4-in-1</code>、PDP 折叠块也写 <code>4-in-1</code>。<b>同一件产品在同一个站上有两个核心数字</b>，SEO 关键词被劈成两半。</figcaption>
+      </figure>
+    </div>
         <p style="font-size:13.5px;margin-bottom:0"><b>同一件产品在同一个站上有两个不同的核心数字，SEO 关键词被劈成两半，用户认知也被劈成两半。</b></p>
       </div>
       <div class="card"><h4 style="margin-top:0">⚠️ P1-6 Gather Grande 的座位数自相矛盾（6-8 还是 8-10？）</h4>
@@ -153,6 +182,10 @@
       <div class="card"><h4 style="margin-top:0">⚠️ P1-7 品类第一差评源（耐久 / 稳定）在决策位置完全没有被正面回应</h4>
         <p style="font-size:13.5px"><b>VOC 事实</b>：<code>durability</code> 363 提及 / <b>228 条负面（63%）</b>；<code>stability</code> + <code>sturdiness</code> 合计 <b>860 提及 / 366 条负面</b>；而 <code>weight</code> 87 提及仅 <b>3 条</b>负面 → <b>"稳"比"轻"重要得多</b>。</p>
         <p style="font-size:13.5px"><b>站上现状（实测）</b>：买盒 above the fold <b>0 条规格</b>；<code>16 lbs</code>、<code>Folded Size</code>、<code>Unfolded Size</code>、<code>Grill Size</code>、<code>304 stainless steel</code> 全部埋在<b>默认收起的 Specifications 折叠块</b>；火网寿命 <code>guaranteed to last at least 50 uses or one year</code> 只出现在 <b>FAQ 第 7 条</b>（页面 y≈9,400px）；全站检索 <code>Dimension</code> = 0 次、<code>Seats</code> = 0 次、<code>kg</code> = 0 次；<b>承重（load capacity）全站未见</b>。</p>
+        <figure>
+          <div class="tall"><img loading="lazy" src="assets/shots/pdp_lite_y1400.png" alt="Gather Lite 产品页右栏描述区截图：Patented Fire Mesh Technology 一条写着 304 不锈钢、guaranteed to last at least 50 uses or one full year，以及 What's Included 清单。"></div>
+          <figcaption><b>火网寿命承诺长这样。</b><code>guaranteed to last at least 50 uses or one full year</code> 这句写在描述区里，而不是买盒旁边——用户要滚到这里才看得到。同一张图也能看到 <code>What's Included</code> 里的 <code>Table Foot Leveler × 4</code>（这正是 BA-04 建议前置的那条）。（aroundfire.co PDP 桌面端实勘 2026-07-21）</figcaption>
+        </figure>
         <p style="font-size:13.5px;margin-bottom:0"><b>品类最会写差评的两件事（耐不耐用、晃不晃），站上一个都没在决策位置正面回答。</b></p>
       </div>
       <div class="card"><h4 style="margin-top:0">⚠️ P1-8 「AS SEEN IN」媒体墙被调到 40% 透明度，10 条引语没有一条署名</h4>
@@ -188,14 +221,16 @@
         <tr><td data-l="">P2-13</td><td data-l="问题">缺货说明写进了商品标题</td><td data-l="实测事实">配件卡片标题 = <code>Cast Iron Griddle (Currently sold out, available again in approximately 30 days.)</code>，且该字符串同时是该图片的 <code>alt</code>。标题被撑成三行，卡片下方还另有一个灰色 <code>Sold out</code> 按钮，<b>信息重复两遍</b></td></tr>
         <tr><td data-l="">P2-14</td><td data-l="问题">产品卡评分重复渲染两套</td><td data-l="实测事实">首页产品卡第一行 <code>★★★★★ 57 reviews</code>，价格下方<b>再来一行</b> <code>★★★★★ 4.91</code>。PDP 买盒同理：标题下 <code>★★★★★ 57 reviews</code>，<code>Shipping calculated at checkout.</code> 下面又是一排<b>没有任何数字的裸星</b></td></tr>
         <tr><td data-l="">P2-15</td><td data-l="问题"><code>/pages/how-to-use</code> 近乎空页，且 meta description 是 emoji</td><td data-l="实测事实"><code>meta description</code> = <code>Instruction Manual PDF Download Here👈🏻 Tutorial Video Below👇🏻</code>；页面正文可读文本仅这一行 + 一个视频，<code>h2/h3</code> 只有一个空 <code>H3</code>。<b><code>30 秒展开</code> 这个全部 8 家竞品都没讲过的证据维度，本该由这个页面来证明，现在它是一个 PDF 下载链接</b></td></tr>
-        <tr><td data-l="">P2-16</td><td data-l="问题">购物车页无加购推荐、无免邮进度条</td><td data-l="实测事实">空车状态：<code>Your cart is empty</code> / <code>Continue shopping</code> + 一个 <code>Recently viewed products</code> 标题。<b>没有配件推荐、没有免邮进度条（因为不存在免邮门槛）、没有信任徽章。</b>而 <b>AOV $307 高于主产品单价说明配件加购是有效的</b>，但购物车这一步完全没有承接</td></tr>
+        <tr><td data-l="">P2-16</td><td data-l="问题">购物车页无免邮进度条、无信任徽章</td><td data-l="实测事实"><b>空车状态</b>：<code>Your cart is empty</code> / <code>Continue shopping</code> + 一个 <code>Recently viewed products</code> 标题，<b>无任何配件推荐</b>。<b>有货状态</b>（见下图，复测更正）：<code>You may also like</code> 推荐位<b>是存在的</b>，4 张配件卡（KBBQ 烤盘 $37 / Gather Grande / Light Stand $33 / Camping Stove $33）各带 Add to cart。<b>但两种状态下都没有免邮进度条（因为不存在免邮门槛）、没有信任徽章</b>，且推荐位副标题仍是 Shopify 默认占位文案 <code>Describe your featured collection here</code>。而 <b>AOV $307 高于主产品单价说明配件加购是有效的</b>，购物车这一步只承接了一半</td></tr>
       </tbody>
     </table>
     <div class="figs">
       <figure><img src="assets/shots/home_productcards.png" alt="AroundFire 首页产品卡截图，评分重复渲染两套，缺货说明写进标题"><figcaption><b>证据 P2-13 / P2-14</b>：评分重复两套 + 缺货说明撑成三行标题</figcaption></figure>
       <figure><img src="assets/shots/grande_desktop.png" alt="Gather Grande 产品页截图，变体标签出现双冒号"><figcaption><b>证据 P2-12</b>：Grande 变体标签 <code>Choose your bundle::</code></figcaption></figure>
       <figure><img src="assets/shots/howto_desktop.png" alt="how-to-use 页面截图，正文只有一行带 emoji 的下载链接"><figcaption><b>证据 P2-15</b>：<code>/pages/how-to-use</code> 近乎空页</figcaption></figure>
-      <figure><img src="assets/shots/cart_desktop.png" alt="AroundFire 购物车页面截图，无配件推荐无免邮进度条"><figcaption><b>证据 P2-16</b>：购物车无承接</figcaption></figure>
+      <figure><img src="assets/shots/cart_desktop.png" alt="AroundFire 空购物车页面截图：Your cart is empty 与 Continue shopping，无任何配件推荐。"><figcaption><b>证据 P2-16（空车态）</b>：<code>Your cart is empty</code>，无配件推荐、无免邮进度条、无信任徽章</figcaption></figure>
+      <figure><div class="tall"><img loading="lazy" src="assets/checkout/07_checkout_step1.png" alt="AroundFire 购物车页有货状态整页截图：Total $189.00 USD 与 Checkout / Shop Pay / PayPal / Google Pay 按钮，下方 You may also like 推荐 KBBQ Style Grill Grate $37、Gather Grande、Light Stand $33、Camping Stove $33 四张配件卡。"></div><figcaption><b>证据 P2-16（有货态 · 复测更正）</b>：<code>You may also like</code> 推荐位<b>是存在的</b>，4 张配件卡各带 Add to cart —— 所以「购物车无加购推荐」只对空车态成立，上表措辞已据此收窄。<b>仍然缺的是</b>：免邮进度条、信任徽章，以及推荐位那句没改的 Shopify 默认占位文案 <code>Describe your featured collection here</code>。<br><i>（该文件名为 <code>07_checkout_step1.png</code>，实际拍的是购物车页，文件名有误导，内容以图为准。）</i></figcaption></figure>
+      <figure><div class="tall short"><img loading="lazy" src="assets/checkout/15_mobile_cart.png" alt="AroundFire 移动端空购物车截图：Your cart is empty 与 Continue shopping。"></div><figcaption>移动端空车态同样：<code>Your cart is empty</code> / <code>Continue shopping</code>，没有任何承接</figcaption></figure>
       <figure><img src="assets/shots/coll_desktop.png" alt="Grill &amp; Fire Pit Tables 集合页截图，只有两个产品"><figcaption><b>证据 P2-11</b>：主集合页只有 2 个产品</figcaption></figure>
       <figure><img src="assets/shots/acc_desktop.png" alt="Accessories 配件集合页截图，KBBQ 烤盘与燃气炉都埋在这里"><figcaption><b>证据 P2-11</b>：KBBQ 烤盘（$37）与 Camping Stove（$33）都埋在配件页</figcaption></figure>
       <figure><div class="tall short"><img src="assets/shots/pdp_lite_y13900.png" alt="Gather Lite 产品页 Judge.me 评价区截图，4.91 分 57 条评价"></div><figcaption>已做对的事：Judge.me 评价区 <code>4.91 / 57 reviews</code>，带 Verified 徽章与买家图片视频</figcaption></figure>
@@ -242,6 +277,9 @@
       <figure><img src="assets/checkout/20_checkout_qty2_us.png" alt="购物车 2 台 Gather Lite，运费仍为 24.90"><figcaption><b>2 台 $378，运费仍 $24.90</b>（证明无免邮门槛）。<b>运费是平摊固定费，与件数无关</b>——这个对用户有利的事实，站上完全没说</figcaption></figure>
       <figure><img src="assets/checkout/11_checkout_payment_tip.png" alt="结账页 Payment 区块正下方的 Add tip 打赏模块"><figcaption><b>⚠️ P1</b>：Payment 区块<b>正下方</b>摆着 <code>Add tip</code>（10% $18.90 / 15% $28.35 / 20% $37.80，文案 "Show your support for the team at AroundFire"）。刚被加了 $24.90 的用户，紧接着被问要不要再给钱</figcaption></figure>
       <figure><img src="assets/checkout/03_pdp_gather_lite.png" alt="Gather Lite 产品页价格下方只写 Shipping calculated at checkout"><figcaption>PDP 价格正下方唯一的运费提示：<code>Shipping calculated at checkout.</code> —— 无金额、无门槛、无预估</figcaption></figure>
+      <figure><div class="tall short"><img loading="lazy" src="assets/checkout/05_atc_drawer.png" alt="AroundFire 桌面端加购抽屉截图：Total $189.00 USD，下方写 Taxes and shipping calculated at checkout，并推荐 KBBQ Style Grill Grate $37。"></div><figcaption><b>加购这一步（此前流程图缺这一环）</b>：抽屉里 Total 写死 <code>$189.00 USD</code>，运费仍然只是一句 <code>Taxes and shipping calculated at checkout</code> —— <b>$189 这个锚点从这里就开始被反复强化</b></figcaption></figure>
+      <figure><div class="tall short"><img loading="lazy" src="assets/checkout/14_mobile_after_atc.png" alt="AroundFire 移动端加购后的购物车抽屉截图，同样只显示 Taxes and shipping calculated at checkout。"></div><figcaption>移动端同一步：抽屉文案一致，<b>依旧没有任何运费金额</b></figcaption></figure>
+      <figure><div class="tall"><img loading="lazy" src="assets/checkout/13_mobile_pdp.jpg" alt="Gather Lite 移动端产品页整页长截图，主加购按钮位于首屏之下约 1.4 屏处。"></div><figcaption><b>「主 ATC 在 <code>top=1163px</code>、首屏之下 1.4 屏」是这个距离</b>（容器内滚动可看全）。配合移动端滚动后无吸底加购条，用户想买必须先往回滚</figcaption></figure>
       <figure><img src="assets/checkout/06_cart_page.png" alt="购物车页面，底部只写 Taxes and shipping calculated at checkout"><figcaption>购物车：<code>Taxes and shipping calculated at checkout</code>，<b>无免邮进度条、无支付图标、无安全标识、无退货保障徽章</b></figcaption></figure>
       <figure><div class="tall short"><img src="assets/checkout/04_shipping_policy.png" alt="运费政策页全表截图，含中国仓直发说明"></div><figcaption><b>全站唯一写着 $24.9 的地方</b>：埋在页脚的运费政策页表格。同页还写明 <b>"we pack and ship directly from the Chinese warehouse"</b>、"International Customs Duties: We cover all customs duties for all international orders."</figcaption></figure>
       <figure><img src="assets/checkout/16_mobile_scrolled_no_sticky_atc.png" alt="移动端产品页滚动后没有吸底加购条"><figcaption>移动端 PDP 滚动后<b>无吸底 Add to cart 悬浮条</b>（检查所有 fixed/sticky 元素，只有购物车侧栏 header）</figcaption></figure>
@@ -273,6 +311,10 @@
       <li><b>支付方式覆盖偏窄，且完全没有分期</b>：实际可用 Credit card（Shopify Payments）、PayPal、Google Pay、Shop Pay。<b>没有 Klarna / Affirm / Afterpay / Shop Pay Installments 中的任何一个</b>，PDP 也无 "as low as $X/mo"</li>
       <li>美国无税费行（Total 严格等于 189 + 24.9）</li>
     </ul>
+    <figure>
+      <div class="tall"><img loading="lazy" src="assets/checkout/12_checkout_mobile.png" alt="AroundFire 移动端结账页整页长截图：Contact、Delivery 九个必填字段含强制手机号、Shipping method $24.90、Payment 只有信用卡与 PayPal 无任何分期、Add tip 打赏模块、Add discount 折扣码框、Total $213.90。"></div>
+      <figcaption><b>一张图同时坐实上面五条：</b>9 个必填字段（含强制手机号）、<code>Standard (3-7 Business Days) $24.90</code>、支付区只有 Credit card / PayPal / Google Pay / Shop Pay —— <b>没有任何 Klarna / Affirm / Afterpay / Shop Pay Installments</b>、Payment 正下方的 <code>Add tip</code> 打赏、以及那个空的 <code>Add discount</code> 折扣码框。Total <code>$213.90</code>。（移动端实勘，未提交订单、未输入任何支付信息）</figcaption>
+    </figure>
 
     <h3>结账后仅 33.1% 转化，最可能的流失原因（按可归因强度排序）</h3>
     <ol>
