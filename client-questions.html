@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>甲方会议 · 待确认问题清单 · AroundFire</title>
+<meta name="description" content="AroundFire 甲方会议逐条提问清单：27 个待确认问题，每条标明「问题原话 / 为什么要问 / 希望甲方给什么」，服务网站优化、Meta 广告、社媒发帖三条线。开会可直接照念、可打印、可现场勾选记录。">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ——— 问题清单专用样式，全部派生自站内令牌 ——— */
+.howto{background:#F7FAFD;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;padding:14px 19px;margin:1rem 0 1.6rem;box-shadow:var(--sh);font-size:14px;color:var(--ink2)}
+.howto .ttl{display:block;font-weight:800;color:var(--ink);margin-bottom:.3rem;font-size:14px}
+.howto b{color:var(--ink)}
+
+/* 板块小标题条 */
+.board{display:flex;align-items:center;gap:11px;flex-wrap:wrap;border-radius:12px;padding:12px 18px;margin:2.2rem 0 .3rem;color:#fff;background:var(--ink)}
+.board.p0{background:var(--red)}
+.board h2{margin:0;color:#fff;font-size:18px;letter-spacing:-.01em}
+.board .cnt{font-size:11.5px;font-weight:700;background:rgba(255,255,255,.16);padding:3px 10px;border-radius:99px;color:#fff}
+.board .sc{font-size:12px;color:rgba(255,255,255,.82);font-weight:600;flex-basis:100%;line-height:1.6;margin-top:2px}
+
+/* 单个问题卡 */
+.q{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);padding:16px 20px 15px;margin:13px 0;border-left:5px solid var(--line)}
+.q.p0{border-left-color:var(--red)}
+.q.p1{border-left-color:var(--ember)}
+.q.p2{border-left-color:var(--ink3)}
+.q-top{display:flex;align-items:flex-start;gap:11px;flex-wrap:wrap}
+.q-ck{flex:0 0 auto;width:20px;height:20px;margin-top:3px;accent-color:var(--red);cursor:pointer}
+.q-no{flex:0 0 auto;font-size:13px;font-weight:800;color:#fff;background:var(--ink);border-radius:7px;padding:3px 9px;margin-top:1px;letter-spacing:.02em}
+.q-tag{flex:0 0 auto;font-size:10.5px;font-weight:800;padding:3px 10px;border-radius:99px;margin-top:2px;letter-spacing:.02em}
+.q-tag.p0{background:#FBE9E9;color:#9E1F1F}
+.q-tag.p1{background:#FDF2DF;color:#8A5D0B}
+.q-tag.p2{background:var(--sand2);color:var(--ink3)}
+.q-title{flex:1 1 260px;font-size:16px;font-weight:800;line-height:1.5;margin:0;color:var(--ink)}
+.q-body{margin:11px 0 0;padding-left:31px}
+.q-line{display:grid;grid-template-columns:auto 1fr;gap:0 11px;margin:7px 0;font-size:13.5px;line-height:1.72;color:var(--ink2);align-items:baseline}
+.q-lbl{font-size:11px;font-weight:800;padding:3px 9px;border-radius:6px;white-space:nowrap;letter-spacing:.02em;line-height:1.5}
+.q-lbl.ask{background:#E7F0F9;color:#22527D}
+.q-lbl.why{background:#FFF4E0;color:#8A5D0B}
+.q-lbl.give{background:#E6F4EC;color:#1F6741}
+.q-line b{color:var(--ink)}
+@media (max-width:560px){
+  .q-body{padding-left:0}
+  .q-line{grid-template-columns:1fr;gap:3px 0}
+  .q-lbl{justify-self:start}
+}
+
+/* 打包提醒块 */
+.prep{background:#FCFAF7;border:1px dashed #C9BCAA;border-radius:12px;padding:15px 19px;margin:1rem 0;font-size:13.5px;color:var(--ink2);line-height:1.8}
+.prep .ttl{display:block;font-weight:800;color:var(--ink);font-size:13px;letter-spacing:.04em;margin-bottom:.4rem}
+.prep ul{margin:.3rem 0 0 1.15rem}
+.prep li b{color:var(--ink)}
+
+/* 会议记录空白表 */
+.rec td,.rec th{min-height:34px}
+.rec td.blank{background:#FCFAF7}
+
+/* 打印优化 */
+@media print{
+  .topbar,.pagenav{display:none!important}
+  body{background:#fff;font-size:12px}
+  .hero{background:#fff;color:#000;padding:1rem 0 .6rem}
+  .hero::after{display:none}
+  .hero h1{color:#000}.hero .sub,.hero .eyebrow{color:#333}
+  .eyebrow{border-color:#999;color:#333}
+  .q,.board,.card,.howto,.prep{box-shadow:none;break-inside:avoid}
+  .board{background:#eee;color:#000}.board.p0{background:#f6dede}.board h2{color:#000}
+  .board .cnt,.board .sc{color:#333}
+  a[href]{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <a class="home" href="index.html">◂ AROUNDFIRE 报告中心</a><span class="sep">|</span>
+  <a href="summary.html">摘要</a><a href="category.html">品类</a><a href="competitors.html">竞争</a><a href="voc.html">VOC</a><a href="ads.html">广告</a><a href="social.html">社媒</a><a href="trends.html">趋势</a><a href="seo.html">SEO</a><a href="optimization.html">网站优化</a><a href="pricing.html">定价</a><a href="meta.html">投放</a><a href="influencers.html">达人</a>
+</div></div>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="eyebrow">Client Meeting · Open Questions</div>
+    <h1>甲方会议 · 待确认问题清单</h1>
+    <p class="sub">开会直接照着念的一份清单：27 个待甲方确认的问题，分 6 个板块。每条固定三段——① 直接能念的问题原话 ② 为什么要问 / 不确认卡住哪一步 ③ 希望甲方给的答案形式。全部来自本次调研的真实发现，服务后续<b>网站优化 / Meta 广告 / 社媒发帖</b>三条线。</p>
+    <div class="meta"><span>📅 2026-07-22</span><span>🗒️ 27 个问题 · 6 个板块</span><span>🖨️ 可打印 · 可现场勾选</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="howto">
+    <span class="ttl">怎么用这份清单</span>
+    <b>按板块问，🚨 最优先的先问。</b>板块 0 里的 3 个问题是地基——出厂成本、履约模式、量产版有没有修好，它们同时卡住网站、广告、定价好几条线，甲方一确认，后面很多问题就顺了。每个问题左边有方框，甲方现场答完就勾掉；答案先记在页面最底部的「会议记录区」表格里。看不懂的英文缩写点下面的「术语速查」。
+  </div>
+
+  <details class="termbox">
+    <summary>术语速查 · 看不懂的英文缩写点这里</summary>
+    <div class="tb-in"><dl>
+      <dt>FOB / 出厂价</dt><dd>工厂交货价，货在工厂装船那一刻的成本价，不含运费和关税。算毛利的起点。</dd>
+      <dt>SKU</dt><dd>一个独立的商品 / 规格（Lite、Grande、燃气版算三个不同 SKU）。</dd>
+      <dt>3PL / 美国仓</dt><dd>第三方海外仓 + 代发货，货先备到美国仓，客户下单就近发。</dd>
+      <dt>de minimis</dt><dd>美国原本 800 美元以下小额包裹免征关税的额度，现已取消，中国直发要按售价补缴关税。</dd>
+      <dt>load capacity / 承重</dt><dd>桌面能压多少重量而不塌不晃，通常标磅（lbs）或公斤。</dd>
+      <dt>3-in-1 / 4-in-1</dt><dd>「一物几用」的卖点说法，指这张桌子能当几种东西用（烧烤炉 / 火盆 / 桌子……）。</dd>
+      <dt>BTU</dt><dd>火力单位，数字越大火越猛、烤得越快。</dd>
+      <dt>KBBQ</dt><dd>韩式烤肉（Korean BBQ）。</dd>
+      <dt>less smoke / smokeless</dt><dd>少烟 / 无烟设计，靠双层壁二次燃烧把烟再点着，少冒烟。</dd>
+      <dt>ROAS</dt><dd>广告支出回报率。花 1 元广告费换回几元销售额，一般 3 以上算健康。</dd>
+      <dt>像素 / CAPI</dt><dd>Meta 追踪转化的两条数据回传通道，配全了广告才知道谁下了单、才能优化和放量。</dd>
+      <dt>UGC</dt><dd>用户 / 达人自己拍的真实使用内容，区别于品牌自制精修广告。</dd>
+      <dt>达人 / 素材授权</dt><dd>拿到达人拍的内容后，能不能继续投广告、能不能二次剪辑使用的书面许可。</dd>
+      <dt>落地页</dt><dd>广告点进去后到达的那一个售卖页面。</dd>
+      <dt>BNPL</dt><dd>先买后付 / 分期付款（如 Shop Pay Installments、Klarna），下单先拿货、分几期还。</dd>
+      <dt>handle</dt><dd>社媒账号的用户名，@ 后面那串（如 @aroundfireoffical）。</dd>
+      <dt>免邮门槛</dt><dd>订单金额满多少就免运费的那条线（如「满 $199 免邮」）。</dd>
+      <dt>lbs（磅）</dt><dd>重量单位，1 lbs ≈ 0.45 公斤。</dd>
+      <dt>$（美元）</dt><dd>本清单按 1 美元 ≈ 7.2 元人民币换算。</dd>
+    </dl></div>
+  </details>
+
+  <!-- ============ 板块 0 ============ -->
+  <div class="board p0">
+    <h2>🚨 板块 0 · 最优先：卡住多条线的地基问题</h2>
+    <span class="cnt">3 个问题</span>
+    <span class="sc">这 3 条一天不确认，网站毛利、广告能不能放量、燃气套装能不能上，全都只能用假设值推。开会先问这三个。</span>
+  </div>
+
+  <div class="q p0">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q1 已确认">
+      <span class="q-no">Q1</span><span class="q-tag p0">🚨 最优先</span>
+      <h3 class="q-title">每个 SKU 的出厂价 / FOB 成本（工厂交货价）是多少？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>Gather Lite、Gather Grande、燃气版这三款，工厂给你们的出厂价分别是多少？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>免邮门槛测算、关税测算、毛利核算<b>三件事全靠它</b>。现在定价模型里出厂价用的是假设值 $60，拿不到真实成本，所有钱的账都是虚的、结论不能落地。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>三款各一个数（每台出厂价）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p0">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q2 已确认">
+      <span class="q-no">Q2</span><span class="q-tag p0">🚨 最优先</span>
+      <h3 class="q-title">现在是中国仓直发，还是有美国仓（3PL）？有没有转美国仓的计划？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>目前订单是从中国仓直接发给美国客户，还是货已经备到了美国仓？未来有没有打算上美国仓？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>美国 <b>de minimis（$800 小额免税额）已取消</b>，中国直发要按售价补关税，每件多缴 $27–94，燃气套装直发是<b>卖一台亏一台</b>。是否转 3PL，直接决定后面免邮门槛、能不能上 Amazon、燃气套装能不能成立——好几条线都挂在这个答案上。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>当前履约模式（直发 / 美国仓）+ 是否愿意上美国仓（是 / 否 / 在评估）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p0">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q3 已确认">
+      <span class="q-no">Q3</span><span class="q-tag p0">🚨 最优先</span>
+      <h3 class="q-title">量产版有没有修掉众筹时暴露的 4 个问题？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>Kickstarter 众筹时用户反馈的这 4 个问题，量产版逐条改了没：<b>①桌子太矮（后来加了 70cm 加高腿）②火网寿命（官方说"至少 50 次"）③风屏要拧螺丝装 ④火网漏油（烤肉的油会漏到地上）</b>？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>这 4 个直接决定<b>网站卖点能不能写</b>——没修好还照写，会变成退货和差评。改没改、改到什么程度，得逐条落实才能定详情页怎么讲。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>4 条逐条回复：修了 / 没修 / 改善到什么程度。</span></p>
+    </div>
+  </div>
+
+  <!-- ============ 板块 1 ============ -->
+  <div class="board">
+    <h2>🌐 板块 1 · 网站优化相关</h2>
+    <span class="cnt">7 个问题</span>
+    <span class="sc">规格表里多处写着「待确认」，还有几处全站自相矛盾——这些不定下来，详情页没法上线、卖点没法写。</span>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q4 已确认">
+      <span class="q-no">Q4</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">桌面承重（load capacity，能压多少斤）到底是多少？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>这张桌子桌面能承受多少重量？给个官方数值。</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>规格表里现在写的是 <code>[to be confirmed]</code>（待确认）。用户评价里，<b>"稳、靠着切菜不晃"比"轻"更是买点</b>，可现在没数值就写不了这个卖点。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>一个数（磅或公斤）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p0">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q5 已确认">
+      <span class="q-no">Q5</span><span class="q-tag p0">🚨 最优先</span>
+      <h3 class="q-title">Gather Grande 到底能坐几个人？（全站现在自相矛盾）</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>Grande 官方标准的可坐人数是几人？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>这是<b>信息事故</b>：导航写「Seats 6-8」，产品页 FAQ 却写「8-10」，全站自己打自己。$239 的产品，"能坐几人"是用户下单的核心依据，两个数并存会让人当场不信任。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>一个准确区间（定死一个口径）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q6 已确认">
+      <span class="q-no">Q6</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">产品到底是 3-in-1 还是 4-in-1？（全站两个口径并存）</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>对外统一说 3-in-1 还是 4-in-1？定一个。</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>全站两种说法并存（<b>9 处</b>不一致，还有一张图的文件名把 versatility 拼错成 vesality）。这个数字是核心卖点关键词，一会儿 3 一会儿 4，SEO 关键词和用户认知都被劈成两半。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>定一个口径（3-in-1 或 4-in-1）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p0">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q7 已确认">
+      <span class="q-no">Q7</span><span class="q-tag p0">🚨 最优先</span>
+      <h3 class="q-title">对比表里的「69 lbs / 55 lbs / 90 lbs」分别是哪个竞品的哪个型号？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>产品页那张 "What makes us different" 对比表里，列的竞品重量 69 / 55 / 90 磅，各是哪个品牌、哪个型号、数据从哪来的？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>表里列了竞品重量却没标来源。<b>无来源的竞品对比 = 可被投诉的比较广告（有法律风险）</b>。我们要把它改成能读的 HTML 表之前，必须先核实每个数字的出处，否则不敢上。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>每个数字对应的品牌 + 型号 + 数据出处。</span></p>
+    </div>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q8 已确认">
+      <span class="q-no">Q8</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">火网 / 护盾 / 螺丝坏了，能不能提供免费补件？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>如果客户的火网、风屏护盾或螺丝坏了，我们能不能免费寄配件补给他？有没有这个政策？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>这是整个调研里<b>投入产出比最高的一条动作</b>：同结构竞品 Fireside 靠"次日免费补件"把一堆差评救成 5 星。能做的话就写进详情页，是个几乎免费的信任杠杆。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>是否能提供（是 / 否）+ 政策细节（保修期、免费范围）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q9 已确认">
+      <span class="q-no">Q9</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">"less smoke（少烟）"能不能给一段实测条件？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>宣传的"少烟"，是在什么条件下测的——多大火、用什么木柴 / 燃料、烧多久开始起效？能不能给一段实测说明，或者配合我们拍一条？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>竞品被骂得最狠的就是"无烟"名不副实（<b>226 条负评里 45% 是这一条</b>）。甲方的措辞（"less smoke"而非"smokeless"）比竞品安全，但要把条件前置说清楚，才不会重蹈覆辙挨骂。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>一段实测说明，或愿意配合拍摄（是 / 否）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q10 已确认">
+      <span class="q-no">Q10</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">其余规格能给一份完整真实数据吗？（现在全是「待确认」）</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>整机尺寸、收纳后尺寸、材质、BTU（火力单位）、有没有拿到认证——这些能给一份完整规格表吗？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>规格表和落地页里这些字段现在都是 <code>[to be confirmed]</code>（待确认）。<b>上线前必须填真实数据</b>，缺一项详情页就有一块开天窗。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>一份完整规格表（尺寸 / 收纳尺寸 / 材质 / BTU / 认证）。</span></p>
+    </div>
+  </div>
+
+  <!-- ============ 板块 2 ============ -->
+  <div class="board">
+    <h2>📡 板块 2 · Meta 广告投放相关</h2>
+    <span class="cnt">7 个问题</span>
+    <span class="sc">账户现在 ROAS 5.69 很健康，但预算规模、放量方向、数据回传、达人资产这几件不定，优化和放量都使不上劲。</span>
+  </div>
+
+  <div class="q p0">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q11 已确认">
+      <span class="q-no">Q11</span><span class="q-tag p0">🚨 最优先</span>
+      <h3 class="q-title">每月广告预算规模是多少？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>Meta 这边每月能投的预算大概是多少？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>预算规模<b>决定能同时跑几组、够不够跑出学习期</b>。数不定，后面所有投放结构都排不了。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>月预算数（一个金额 / 一个区间）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q12 已确认">
+      <span class="q-no">Q12</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">投放目标是"保效率"还是"要放量"？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>接下来的重心，是维持现在这个高回报率稳稳赚，还是加预算冲量、哪怕回报率降一点？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>现在账户 <b>ROAS 5.69（很健康）</b>。继续保效率 vs 加预算放量是<b>两套完全不同的打法</b>——出价、素材节奏、人群都不一样，得先定方向。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>一个方向（保效率 / 放量 / 两者的平衡点）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p0">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q13 已确认">
+      <span class="q-no">Q13</span><span class="q-tag p0">🚨 最优先</span>
+      <h3 class="q-title">Meta 像素 / CAPI（转化回传）有没有配全？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>网站的 Meta 像素和 CAPI 转化回传，现在是怎么配的？谁配的、配全了没？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>账户里<b>有 27% 的花费是"零归因结果"</b>（花了钱但系统不知道带来了什么），这很可能是回传断了链。回传不准，<b>优化和放量都会失真</b>——等于蒙着眼投。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>像素 + CAPI 的配置状态（谁负责 / 配了哪些事件 / 有没有验证过）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p0">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q14 已确认">
+      <span class="q-no">Q14</span><span class="q-tag p0">🚨 最优先</span>
+      <h3 class="q-title">跑赢的 5 个达人素材，联系方式和二次使用授权拿得到吗？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>这 5 位达人（evcinshome / cait / vanadvantures / Paige / betweenus）的联系方式还有没有？他们拍的素材，我们能不能继续投、能不能二次剪辑使用？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>这 5 条素材 <b>ROAS 均值 >5.5、合计已经花了 $7,021</b>，是已经验证过的确定性资产。但达人库里一条联系方式都没记，<b>拿不到人就没法复投、没法找他们复购新素材</b>——等于白白丢了已经跑通的钱。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>这 5 位的联系方式 + 素材是否可继续投放 / 二次使用（是 / 否）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q15 已确认">
+      <span class="q-no">Q15</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">要不要开 KBBQ（韩式烤肉）这个方向？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>KBBQ 这个方向，我们做不做？要做的话就单独铺素材和落地页。</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>KBBQ 有 <b>43,300 搜索量、目前零投放，配件（KBBQ 烤盘）产品线已经有了</b>——是账户里最大的未开发方向。但要甲方点头，我们才好投人力铺素材和落地页。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>做 / 不做。</span></p>
+    </div>
+  </div>
+
+  <div class="q p2">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q16 已确认">
+      <span class="q-no">Q16</span><span class="q-tag p2">⏳ 一般</span>
+      <h3 class="q-title">燃气版落地页做不做？做了广告能不能配合开？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>燃气版的独立落地页要不要上线？上线的话，广告端能不能配合开（做禁火州定向 + 6-8 月旺季投放）？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>燃气版落地页设计稿<b>已经做好了</b>（禁火令期间可合法用是它的核心卖点），但要甲方决定上不上；上了之后广告端才好配合开定向。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>是否上线（是 / 否）+ 广告配合意愿。</span></p>
+    </div>
+  </div>
+
+  <div class="q p2">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q17 已确认">
+      <span class="q-no">Q17</span><span class="q-tag p2">⏳ 一般</span>
+      <h3 class="q-title">现有素材的原始文件（视频源）能给吗？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>现在在投的这些广告视频，有没有原始源文件？能不能给我们素材库的访问权？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>账户现在 <b>100% 是视频、零静态图，钩子只有"多功能 / 便携"</b>两个角度。要做价格促销、对比、痛点、证言等新角度素材，<b>有源文件就能二次剪，效率高很多</b>。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>素材库访问权 / 视频源文件。</span></p>
+    </div>
+  </div>
+
+  <!-- ============ 板块 3 ============ -->
+  <div class="board">
+    <h2>📱 板块 3 · 社媒发帖相关</h2>
+    <span class="cnt">5 个问题</span>
+    <span class="sc">要发帖，先得拿到账号权限、有真实场景素材、定好谁来发。这几件不落实，社媒这条线动不起来。</span>
+  </div>
+
+  <div class="q p0">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q18 已确认">
+      <span class="q-no">Q18</span><span class="q-tag p0">🚨 最优先</span>
+      <h3 class="q-title">官方社媒账号谁在管、权限给谁？（TikTok / IG / YouTube）</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>TikTok、Instagram、YouTube 三个官方号现在谁在管？能不能把发帖权限给到我们？另外：TikTok 的账号名是 <code>@aroundfireoffical</code>（官网页脚拼错了，official 少个 i），YouTube 停更 16 个月了，这两个要不要处理？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>要发帖，<b>第一步就是拿到账号权限</b>，没权限一步都动不了。handle 拼错和长期停更也会影响品牌观感，顺便一起定了。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>三个平台的账号权限 + handle 要不要改（是 / 否）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q19 已确认">
+      <span class="q-no">Q19</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">有没有产品实拍 / 真人围坐场景素材库？UGC 授权拿得到吗？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>有没有产品实拍图、真人围坐一起用的生活场景素材库？用户自发拍的内容（UGC），能不能拿到授权用于官方发布？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>调研里 <b>38 条爆款帖没有一张白底产品图</b>，真正能打的都是"人的关系"场景。要持续发帖，<b>得有源源不断的真实场景素材</b>撑着。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>素材库访问权 + UGC 授权情况（有 / 没有 / 能不能拿到）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q20 已确认">
+      <span class="q-no">Q20</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">发帖谁执行、什么节奏？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>接下来社媒发帖由谁来执行？目标是每周发几条？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>现在 IG <b>只有 0.29 条/周，头部品牌是 6.36 条/周，差了 22 倍</b>——发帖量是最大短板。得先定谁来发、发多频，量才能提上来。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>执行人 + 目标发帖频率。</span></p>
+    </div>
+  </div>
+
+  <div class="q p2">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q21 已确认">
+      <span class="q-no">Q21</span><span class="q-tag p2">⏳ 一般</span>
+      <h3 class="q-title">抽奖联名能不能协调到其他品牌？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>做联名抽奖（要求参与者"关注 N 个账号"那种），甲方手上有没有能一起玩的合作品牌？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>调研发现<b>抽奖是这个品类涨评论、涨粉唯一有效的杠杆</b>，而且必须是"关注 N 个账号"的联名形式才有放大效果。这需要甲方去谈合作品牌，我们谈不了。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>有没有可联名的伙伴品牌（有 / 没有 / 去谈）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p2">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q22 已确认">
+      <span class="q-no">Q22</span><span class="q-tag p2">⏳ 一般</span>
+      <h3 class="q-title">KBBQ / 围炉共烤的内容方向，甲方认不认？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>社媒内容主打"KBBQ / 一群人围着炉子一起烤"这个方向，甲方认可吗？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>这是<b>甲方产品结构天然占住的差异点</b>（别家做不到围坐共烤）。但内容方向要甲方拍板认下来，我们才好持续产出，不然做一半又改方向。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>认可 / 不认可。</span></p>
+    </div>
+  </div>
+
+  <!-- ============ 板块 4 ============ -->
+  <div class="board">
+    <h2>💰 板块 4 · 定价 / 履约 / 成本（会影响以上所有）</h2>
+    <span class="cnt">5 个问题</span>
+    <span class="sc">这一块牵一发动全身：免邮、分期、补货、燃气套装、澳洲时效，任何一条定错都直接吃转化或踩合规。</span>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q23 已确认">
+      <span class="q-no">Q23</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">免邮门槛设多少能接受？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>免邮门槛你们能接受设到多少？（现在是运费 $24.90、没有免邮门槛；竞品普遍满 $199 / $200 免邮，或干脆全免。）</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>要设门槛得先有出厂成本才能算毛利（见 Q1），也需要甲方定策略。<b>现在无门槛收 $24.90 运费，是结账流失的一大原因</b>。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>能接受的门槛价；或者说"你们基于成本算完再来定"。</span></p>
+    </div>
+  </div>
+
+  <div class="q p2">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q24 已确认">
+      <span class="q-no">Q24</span><span class="q-tag p2">⏳ 一般</span>
+      <h3 class="q-title">要不要接 BNPL（先买后付分期）？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>要不要接分期付款（Shop Pay Installments / Klarna 这类）？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>$189–239 <b>正好是分期最能提转化的价格带</b>，现在全站零分期。接入只是 Shopify 后台配置，<b>不用开发</b>，几乎零成本。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>接 / 不接。</span></p>
+    </div>
+  </div>
+
+  <div class="q p2">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q25 已确认">
+      <span class="q-no">Q25</span><span class="q-tag p2">⏳ 一般</span>
+      <h3 class="q-title">Cast Iron Griddle（$69 铸铁煎盘配件）什么时候补货？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>$69 的铸铁煎盘配件现在缺货，什么时候能补上？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>这是<b>目录里最高价的配件</b>，缺货 = 0 转化，纯白白损失的机会成本。补上就能卖。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>补货时间。</span></p>
+    </div>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q26 已确认">
+      <span class="q-no">Q26</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">燃气套装（$259 / $349）现在直发是亏的，要不要单独定价或只走美国仓？</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>燃气套装这两个 SKU，要不要单独调价，或者规定只从美国仓发？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>在中国直发模式下，这个 SKU 因为关税<b>卖一台亏一台</b>（关税占售价一大半）。不定策略就会一直流血。（和 Q2 履约模式连在一起看。）</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>定价 / 履约策略（单独定价 / 只走美国仓 / 暂时下架）。</span></p>
+    </div>
+  </div>
+
+  <div class="q p1">
+    <div class="q-top">
+      <input type="checkbox" class="q-ck" aria-label="Q27 已确认">
+      <span class="q-no">Q27</span><span class="q-tag p1">⚠️ 重要</span>
+      <h3 class="q-title">澳洲发货到底几天？（政策页和结账页自相矛盾）</h3>
+    </div>
+    <div class="q-body">
+      <p class="q-line"><span class="q-lbl ask">① 问题</span><span>发到澳洲真实要几天？政策页写的是 8-10 天，但结账页实测显示 25-30 天，哪个是真的？</span></p>
+      <p class="q-line"><span class="q-lbl why">② 为什么问</span><span>两个口径打架，而且时效<b>虚假陈述有合规风险</b>——澳洲消费者法（ACL）有过罚 2500 万澳元的案例。必须统一成真实时效。</span></p>
+      <p class="q-line"><span class="q-lbl give">③ 希望甲方给</span><span>真实发货时效（一个数），并统一全站口径。</span></p>
+    </div>
+  </div>
+
+  <!-- ============ 板块 5 打包提醒 ============ -->
+  <div class="board">
+    <h2>📦 板块 5 · 素材 / 账号 / 授权（打包提醒）</h2>
+    <span class="cnt">一次性准备</span>
+    <span class="sc">上面散落在各板块里"要甲方给访问权 / 授权"的项，汇总成一句话清单，方便甲方开完会一次性备齐。</span>
+  </div>
+
+  <div class="prep">
+    <span class="ttl">请甲方开完会后，一次性把这 6 样准备给我们：</span>
+    <ul>
+      <li><b>Meta 素材源文件</b> —— 现有在投广告的视频原始文件 / 素材库访问权（对应 Q17）。</li>
+      <li><b>达人联系方式与授权</b> —— 跑赢的 5 位达人（evcinshome / cait / vanadvantures / Paige / betweenus）的联系方式，以及素材可否继续投放 / 二次使用（对应 Q14）。</li>
+      <li><b>社媒账号权限</b> —— TikTok / Instagram / YouTube 三个官方号的发帖权限（对应 Q18）。</li>
+      <li><b>UGC 授权</b> —— 用户自发内容能否授权官方使用（对应 Q19）。</li>
+      <li><b>产品规格文档</b> —— 承重、整机 / 收纳尺寸、材质、BTU、认证等一份完整真实规格表（对应 Q4、Q10）。</li>
+      <li><b>出厂成本表</b> —— 三款 SKU 的出厂价 / FOB 成本（对应 Q1，毛利与关税测算的地基）。</li>
+    </ul>
+  </div>
+
+  <!-- ============ 会议记录区 ============ -->
+  <div class="board">
+    <h2>📝 会议记录区 · 甲方现场答复</h2>
+    <span class="cnt">开会时填</span>
+    <span class="sc">按问题编号逐条记甲方当场的答复和后续动作，会后直接对着这张表跟进。</span>
+  </div>
+
+  <table class="rec">
+    <thead>
+      <tr><th style="width:12%">问题编号</th><th style="width:52%">甲方答复</th><th style="width:36%">后续动作 / 负责人</th></tr>
+    </thead>
+    <tbody>
+      <tr><td data-l="编号">Q1 出厂价</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q2 履约模式</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q3 量产版 4 问题</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q4 桌面承重</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q5 坐几人</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q6 3-in-1 / 4-in-1</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q7 对比表来源</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q8 免费补件</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q9 少烟实测</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q10 完整规格</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q11 广告预算</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q12 效率 vs 放量</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q13 像素 / CAPI</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q14 达人联系 / 授权</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q15 KBBQ 方向</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q16 燃气版落地页</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q17 素材源文件</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q18 社媒账号权限</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q19 素材库 / UGC</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q20 发帖执行节奏</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q21 抽奖联名</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q22 KBBQ 内容方向</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q23 免邮门槛</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q24 BNPL 分期</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q25 煎盘补货</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q26 燃气套装策略</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+      <tr><td data-l="编号">Q27 澳洲时效</td><td class="blank" data-l="甲方答复">　</td><td class="blank" data-l="后续动作">　</td></tr>
+    </tbody>
+  </table>
+  <p class="tnote">提示：这份清单可以直接用浏览器打印（Ctrl+P），顶栏和翻页条会自动隐藏，方框和这张记录表能打在纸上现场手写。</p>
+
+  <div class="pagenav">
+    <a href="index.html"><div class="d">◂ 返回</div><div class="t">报告中心</div></a>
+    <a class="nx" href="summary.html"><div class="d">相关 ▸</div><div class="t">执行摘要（含拍板清单）</div></a>
+  </div>
+
+</div>
+
+<div class="foot">AroundFire 全链路品牌调研 · 甲方会议待确认问题清单 · 2026-07-22</div>
+</body>
+</html>
