@@ -17,7 +17,7 @@
   <div class="hero-in">
     <div class="eyebrow">05 · Ad Intelligence</div>
     <h1>广告情报：Meta Ad Library 竞品素材墙</h1>
-    <p class="sub">6 家品牌 <b>77 条在投素材</b>全部本地化收录——图片直接内嵌，<b>40 条视频点击即播</b>。每条附投放天数、场景/人群/钩子标签、广告文案原文、Headline / CTA 与 Ad Library 原链。</p>
+    <p class="sub">6 家品牌 <b>77 条在投素材</b>全部本地化收录——图片直接内嵌，<b>40 条视频点击即播</b>。每条附投放天数、场景/人群/钩子标签、广告文案原文、Headline（广告标题）/ CTA（引导点击的按钮文案）与 Ad Library 原链。</p>
     <p class="fine">抓取方式：typeahead 定位广告主 <code>view_all_page_id</code> → 精确主页模式抓取 → DOM 直取素材直链下载。77 条素材逐条喂 Gemini 看真实图/视频画面 + 广告文案打标（场景 / 人群 / 钩子 / 是否多人共烤）。全部数字来自 2026-07-21 实际抓取的页面，<b>未做任何估算</b>。</p>
     <div class="meta"><span>📅 2026-07-21</span><span>🎬 40 条视频 + 77 张图</span><span>⚠️ 覆盖度已逐家声明</span></div>
   </div>
@@ -25,9 +25,28 @@
 
 <div class="wrap">
 
+  <details class="termbox">
+    <summary>术语速查 · 看不懂的英文缩写点这里</summary>
+    <div class="tb-in"><dl>
+      <dt>CTA</dt><dd>引导用户点击的按钮或文案（Call to Action），如「立即购买 / Shop now」。</dd>
+      <dt>UGC</dt><dd>用户 / 达人自己拍的真实使用内容（User-Generated Content），区别于品牌自制精修广告。</dd>
+      <dt>KBBQ</dt><dd>韩式烤肉（Korean BBQ）。</dd>
+      <dt>fire pit</dt><dd>火盆，装柴火 / 炭火的户外火盆容器。</dd>
+      <dt>grill / grill grate</dt><dd>grill＝烧烤炉；grill grate＝架在火上的烤网 / 烤架。</dd>
+      <dt>griddle</dt><dd>平底铁板煎盘（炒饭、煎蛋用），区别于格栅烤网。</dd>
+      <dt>smokeless</dt><dd>无烟设计，靠双层壁二次燃烧让烟被再次点燃，少冒烟。</dd>
+      <dt>charcoal</dt><dd>木炭。</dd>
+      <dt>propane</dt><dd>丙烷 / 液化石油气燃料。</dd>
+      <dt>pellet</dt><dd>颗粒燃料（压制木屑颗粒）。</dd>
+      <dt>overlanding</dt><dd>越野自驾露营，开改装车深入无人区。</dd>
+      <dt>car camping</dt><dd>把车停在营位旁的露营，不在乎装备重量。</dd>
+      <dt>tailgating</dt><dd>赛前停车场派对，在后备箱边支桌烤肉。</dd>
+    </dl></div>
+  </details>
+
   <section id="cover">
     <div class="sec-head"><h2><span class="num">0</span>采样覆盖度声明（先看这个）</h2></div>
-    <div class="disclaimer">Ad Library 的主页视图对渲染条数有上限，滚到底也不会再加载。下表说明每个品牌<b>抓到的比例</b>。「创意卡组」= Ad Library 把同一套创意+文案的多条广告折叠成一张卡；「变体」= 卡上标注的 <code>N ads use this creative and text</code> 之和。</div>
+    <div class="disclaimer">Ad Library 的主页视图对渲染条数有上限，滚到底也不会再加载。下表说明每个品牌<b>抓到的比例</b>。「创意卡组」= Ad Library 把同一套创意+文案的多条广告折叠成一张卡；「变体」= 卡上标注的 <code>N ads use this creative and text</code>（这套创意+文案被 N 条广告共用）之和。</div>
     <table>
       <thead><tr><th>品牌</th><th>页面显示在投数</th><th>实抓创意卡组</th><th>实抓广告变体</th><th>覆盖度</th><th>说明</th></tr></thead>
       <tbody>
@@ -35,7 +54,7 @@
         <tr><td data-l="">Solo Stove</td><td data-l="页面显示在投数">~56</td><td data-l="实抓创意卡组">20</td><td data-l="实抓广告变体">29</td><td data-l="覆盖度"><b>~52%</b></td><td data-l="说明"><b>页面渲染上限，代表性采样</b>，已用 media_type 分流补采</td></tr>
         <tr><td data-l="">Breeo</td><td data-l="页面显示在投数">~100</td><td data-l="实抓创意卡组">41</td><td data-l="实抓广告变体">49</td><td data-l="覆盖度"><b>~49%</b></td><td data-l="说明">同上，<b>代表性采样</b></td></tr>
         <tr><td data-l="">NOMAD Grills</td><td data-l="页面显示在投数">~11</td><td data-l="实抓创意卡组">11</td><td data-l="实抓广告变体">11</td><td data-l="覆盖度"><b>100%</b></td><td data-l="说明">完整</td></tr>
-        <tr><td data-l="">Gather Grills</td><td data-l="页面显示在投数"><b>0</b></td><td data-l="实抓创意卡组">0</td><td data-l="实抓广告变体">0</td><td data-l="覆盖度">—</td><td data-l="说明"><b>Ad Library 无在投记录</b>：页面返回 "No ads match your search criteria"</td></tr>
+        <tr><td data-l="">Gather Grills</td><td data-l="页面显示在投数"><b>0</b></td><td data-l="实抓创意卡组">0</td><td data-l="实抓广告变体">0</td><td data-l="覆盖度">—</td><td data-l="说明"><b>Ad Library 无在投记录</b>：页面返回 "No ads match your search criteria"（无符合条件的广告）</td></tr>
         <tr><td data-l="">BioLite</td><td data-l="页面显示在投数">~22</td><td data-l="实抓创意卡组">18</td><td data-l="实抓广告变体">22</td><td data-l="覆盖度"><b>100%</b></td><td data-l="说明">完整</td></tr>
         <tr><td data-l="">KBBQ Bros</td><td data-l="页面显示在投数">~12</td><td data-l="实抓创意卡组">10</td><td data-l="实抓广告变体">12</td><td data-l="覆盖度"><b>100%</b></td><td data-l="说明">完整</td></tr>
       </tbody>
@@ -61,7 +80,7 @@
     <div class="cards c2">
       <div class="card"><h4 style="margin-top:0">① AroundFire 是一个刚起步的广告账户</h4><p>11 条在投广告<b>全部在 5 天内起投</b>（最早 2026-07-16），<b>没有任何一条经过市场验证的长青广告</b>。而 Breeo 有 12 组跑过 90 天、最长 131 天。<b>现在拿 AroundFire 的素材表现和竞品比是不对等的</b>，它还没进入「哪条能跑」的验证阶段。</p></div>
       <div class="card" style="border:2px solid var(--red)"><h4 style="margin-top:0">② "多人一起烤"实质上只有 AroundFire 在讲</h4><p>AroundFire <b>8/11 = 73%</b>；Breeo 0/15、NOMAD 0/11、BioLite 0/15、Solo Stove 1/15、KBBQ Bros 2/10。竞品大量出现「围着火坐」，但真正<b>两人以上同时在同一台设备上动手烹饪</b>的镜头几乎为零。</p></div>
-      <div class="card"><h4 style="margin-top:0">③ KBBQ 赛道有人在投，而且是长青</h4><p>KBBQ Bros 12 条在投，<b>最长 159 天</b>（2026-02-12 起投）、次长 144 天，两条都是「把后院变成韩式烤肉店」的叙事。<b>这条赛道已被验证能跑</b>，且打法与 AroundFire 的「桌+烤+火」形态高度重叠。</p></div>
+      <div class="card"><h4 style="margin-top:0">③ KBBQ（韩式烤肉，Korean BBQ）赛道有人在投，而且是长青</h4><p>KBBQ Bros 12 条在投，<b>最长 159 天</b>（2026-02-12 起投）、次长 144 天，两条都是「把后院变成韩式烤肉店」的叙事。<b>这条赛道已被验证能跑</b>，且打法与 AroundFire 的「桌+烤+火」形态高度重叠。</p></div>
       <div class="card"><h4 style="margin-top:0">④ 主战场是后院，不是露营</h4><p>Breeo 87%、KBBQ Bros 80%、Solo Stove 47% 的素材在后院；<b>AroundFire 后院只占 27%，露营 100%</b>。竞品把预算压在后院场景，AroundFire 押在露营/越野。</p></div>
     </div>
   </section>
@@ -117,11 +136,11 @@
 
     <h3>Q1｜竞品在打哪个人群和场景？</h3>
     <ol>
-      <li><b>Breeo → 有院子的房主 · 后院升级</b>（后院 87%，最长 131 天，12 组 90 天+）。核心不是「买个火盆」，而是「把你的后院升级成一个值得待的地方」。Headline 长期挂着 <code>Bring Your Backyard Vision to Life</code>、<code>Smokeless Fire Pits, Handcrafted in the USA</code>。画面 67% 不出现人，只有火 + 石板露台 + 户外座椅。</li>
-      <li><b>Solo Stove → 后院社交 + 促销捡漏</b>（聚会 53%，价格促销 47%）。文案是清一色的美元数字：<code>$260 off the Summit 27 + Torch X-Pack Bundle</code>、<code>Up to 32% off Pizza Ovens</code>。人群是朋友聚会（47%），但<b>画面里通常只有一个人在做饭，其他人在旁边坐着</b>。</li>
-      <li><b>NOMAD Grills → 硬核烧烤玩家 · 便携+耐用</b>（纯产品 55%，便携 82%，耐用 82%）。参数密集叙事，<code>$399 · Made in USA · 500+ sq in · 26 lbs</code>，用 <code>Texas Monthly Top 50 pitmaster APPROVED</code> 做权威背书。73% 无人。</li>
-      <li><b>BioLite → 单人户外探险者</b>（露营 80%，单人男性 60%）。<code>Go farther, stay later</code>。注意：BioLite 本次在投的 22 条里<b>大量是头灯（Range Headlamps）和 EcoZoom 炉具，不是火桌</b>，与 AroundFire 的正面重叠度最低。</li>
-      <li><b>KBBQ Bros → 想在家复刻韩式烤肉店的人</b>（后院 80%，氛围感 80%）。<code>Turn Your Backyard into a KBBQ Restaurant</code>、<code>No wait times. No restaurant bills.</code>、<code>Turning our backyard into Seoul at night</code>。</li>
+      <li><b>Breeo → 有院子的房主 · 后院升级</b>（后院 87%，最长 131 天，12 组 90 天+）。核心不是「买个火盆」，而是「把你的后院升级成一个值得待的地方」。Headline 长期挂着 <code>Bring Your Backyard Vision to Life</code>（让你的后院愿景成真）、<code>Smokeless Fire Pits, Handcrafted in the USA</code>（无烟火盆，美国手工打造）。画面 67% 不出现人，只有火 + 石板露台 + 户外座椅。</li>
+      <li><b>Solo Stove → 后院社交 + 促销捡漏</b>（聚会 53%，价格促销 47%）。文案是清一色的美元数字：<code>$260 off the Summit 27 + Torch X-Pack Bundle</code>（套装立减 $260≈¥1,870，下同按 1 美元≈7.2 元）、<code>Up to 32% off Pizza Ovens</code>（披萨炉最高降 32%）。人群是朋友聚会（47%），但<b>画面里通常只有一个人在做饭，其他人在旁边坐着</b>。</li>
+      <li><b>NOMAD Grills → 硬核烧烤玩家 · 便携+耐用</b>（纯产品 55%，便携 82%，耐用 82%）。参数密集叙事，<code>$399 · Made in USA · 500+ sq in · 26 lbs</code>（$399≈¥2,870；500+ 平方英寸烤面≈3,200 平方厘米；26 lbs 磅≈12 公斤），用 <code>Texas Monthly Top 50 pitmaster APPROVED</code>（《德州月刊》评选的 50 强烧烤大师认证）做权威背书。73% 无人。</li>
+      <li><b>BioLite → 单人户外探险者</b>（露营 80%，单人男性 60%）。<code>Go farther, stay later</code>（走得更远、待得更久）。注意：BioLite 本次在投的 22 条里<b>大量是头灯（Range Headlamps）和 EcoZoom 炉具，不是火桌</b>，与 AroundFire 的正面重叠度最低。</li>
+      <li><b>KBBQ Bros → 想在家复刻韩式烤肉店的人</b>（后院 80%，氛围感 80%）。<code>Turn Your Backyard into a KBBQ Restaurant</code>（把你的后院变成韩式烤肉店）、<code>No wait times. No restaurant bills.</code>（不用排队、没有餐厅账单）、<code>Turning our backyard into Seoul at night</code>。</li>
     </ol>
     <div class="figs g3">
       <figure><img loading="lazy" src="assets/ads/breeo/01_2039664620098788.jpg" alt="Breeo 在投 131 天的广告素材：后院场景中一台装有导流罩、燃着旺火的 Breeo X24 无烟火盆，画面中无人。"><figcaption><b>Breeo · 在投 131 天</b>（全品牌图片素材最长青那条）。67% 素材不出现人，只有火 + 石板露台 + 户外座椅——「后院升级」四个字被画成了图。</figcaption></figure>
@@ -182,7 +201,7 @@
       <div class="card"><h4 style="margin-top:0">差距 3 · 主战场选在露营，避开了竞品重兵的后院</h4><p>AroundFire 露营 100% / 后院 27%，而 Breeo 后院 87%、KBBQ Bros 后院 80%。<b>后院用户是有院子的房主，客单价承受力和复购场景都更强，且不受季节性出行影响。</b>AroundFire 目前几乎放弃了这块。</p></div>
       <div class="card"><h4 style="margin-top:0">差距 4 · 场景铺得太散，没有形成记忆点</h4><p>11 条素材里露营 100%、海滩/湖边 55%、聚会派对 55%、越野 36%、后院 27%——<b>平均每条素材要覆盖 2.7 个场景</b>。对照 Breeo：87% 素材只讲一件事（后院）。<b>冷启动期同时讲太多场景，会稀释算法对受众的收敛。</b></p></div>
       <div class="card"><h4 style="margin-top:0">差距 5 · 广告结构性字段没管好</h4><p>素材 [1] 的 Headline 位填的是 <code>Joyfoodlv</code>（红人的折扣码名），不是卖点文案；11 条里 1 条 Headline 为空。对照 NOMAD 11 条 headline 全部规范且反复只用两句；Breeo 长期只轮换三句。<b>竞品在用 headline 做品牌记忆的重复灌输，AroundFire 还没有一句固定的品牌句。</b></p></div>
-      <div class="card"><h4 style="margin-top:0">差距 6 · 没有对手在攻击 AroundFire，但 AroundFire 也没攻击任何人</h4><p>Breeo 有 12 条素材（80%）的 primary text <b>直接点名 Solo Stove</b>：<i>"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since…"</i>、<i>"We almost bought a Solo Stove, but so glad we saw our neighbor's Breeo."</i><br>这套「老用户从 Solo Stove 换过来」的证言，Breeo 跑了 131 天、125 天、102 天……<b>是它最稳的长青结构，也是一个可以直接借鉴的框架</b>：用真实用户口吻，把品类第一名当参照物。</p></div>
+      <div class="card"><h4 style="margin-top:0">差距 6 · 没有对手在攻击 AroundFire，但 AroundFire 也没攻击任何人</h4><p>Breeo 有 12 条素材（80%）的 primary text（广告正文）<b>直接点名 Solo Stove</b>：<i>"We bought our X24 after having a Solo Stove Bonfire, and we have loved it ever since…"</i>、<i>"We almost bought a Solo Stove, but so glad we saw our neighbor's Breeo."</i><br>这套「老用户从 Solo Stove 换过来」的证言，Breeo 跑了 131 天、125 天、102 天……<b>是它最稳的长青结构，也是一个可以直接借鉴的框架</b>：用真实用户口吻，把品类第一名当参照物。</p></div>
     </div>
     <div class="figs g3">
       <figure><img loading="lazy" src="assets/ads/breeo/07_1968032327168943.jpg" alt="Breeo 广告素材：后院石砌火炉旁的无烟火盆，画面配有用户证言与竞品对比文案。"><figcaption><b>差距 6 的原件之一</b>：Breeo 把「老用户从 Solo Stove 换过来」的证言直接做进素材。这套结构它跑了 131 / 125 / 102 天。</figcaption></figure>

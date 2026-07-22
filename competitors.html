@@ -25,6 +25,30 @@
 
 <div class="wrap">
 
+  <details class="termbox">
+    <summary>术语速查 · 看不懂的英文缩写点这里</summary>
+    <div class="tb-in"><dl>
+      <dt>hero</dt><dd>网页首屏最上方的大图 / 主视觉区，通常放品牌主标语。</dd>
+      <dt>H1</dt><dd>网页正文的一级标题层级，影响 SEO；这里指官网首屏那句最大的主标题。</dd>
+      <dt>PDP</dt><dd>商品详情页（Product Detail Page），单个产品的售卖页面。</dd>
+      <dt>UGC</dt><dd>用户 / 达人自己拍的真实使用内容（User-Generated Content），区别于品牌自制精修广告。</dd>
+      <dt>Cloudflare</dt><dd>网站常用的防爬虫 / 防攻击拦截服务，会挡掉机器人访问。</dd>
+      <dt>Kickstarter</dt><dd>美国众筹平台，产品上市前先向公众募资。</dd>
+      <dt>backer / backers</dt><dd>众筹支持者，在 Kickstarter 上出钱预订的人。</dd>
+      <dt>fire pit</dt><dd>火盆，装柴火 / 炭火的户外火盆容器。</dd>
+      <dt>smokeless</dt><dd>无烟设计，靠双层壁二次燃烧让烟被再次点燃，少冒烟。</dd>
+      <dt>grill / grill grate</dt><dd>grill＝烧烤炉；grill grate＝架在火上的烤网 / 烤架。</dd>
+      <dt>griddle</dt><dd>平底铁板煎盘（炒饭煎蛋用），区别于格栅烤网。</dd>
+      <dt>live fire cooking</dt><dd>明火烹饪，直接用柴 / 炭火做饭，讲究烟熏风味。</dd>
+      <dt>charcoal</dt><dd>木炭。</dd>
+      <dt>propane</dt><dd>丙烷（液化石油气燃料）。</dd>
+      <dt>pellet</dt><dd>颗粒燃料（压制木屑颗粒）。</dd>
+      <dt>KBBQ</dt><dd>韩式烤肉（Korean BBQ）。</dd>
+      <dt>burn ban / fire ban</dt><dd>禁火令，政府禁止户外用火的行政令，分 Stage 1/2/3。</dd>
+      <dt>tailgating</dt><dd>赛前停车场派对，在后备箱边支桌烤肉。</dd>
+    </dl></div>
+  </details>
+
   <section id="quality">
     <div class="sec-head"><h2><span class="num">0</span>数据质量声明（必须先看）</h2></div>
     <div class="disclaimer">
@@ -33,7 +57,7 @@
         <li><b>Ignik FireCan 产品页无效</b>：文件第 1 行即 <code>404 Not Found</code>，产品占位符是 <code>Example product $29</code>。Ignik 的结论只能基于首页，而首页也<b>仅有骨架</b>——只有轮播标语碎片（<code>THE BURN BAN / PARTY PLAN</code>、<code>SUSTAINABLE CAMP</code>、<code>THE OVERLAND FIRE BEAST</code>），<b>没有完整 hero 主标题+副标题段落</b>。</li>
         <li><b>Solo Stove hero 被促销占位</b>：首屏全部是促销 banner 和 sale 文案，<b>文件中未见品牌型 hero 主标题</b>（无 "the world's best fire pit" 类 H1）。只能取 title 标签和促销/技术段落。建议非促销期重抓。</li>
         <li><b>BioLite 抓到的不是首页</b>：实际是 FirePit+ 的 <b>PDP 产品页</b>（title 为 <code>FirePit+ Smokeless Fire Pit &amp; FREE Carry Bag – BioLite</code>）。BioLite 品牌首页文案本次不可用。</li>
-        <li><b>重量数据缺口</b>：仅 BioLite（19.8 lbs）、NOMAD（22 lbs）、Snow Peak（32 lbs）、Gather（~210–650 lbs）在文件中有明确数字；Solo Stove / Breeo / KBBQ Bros / Ignik 的重量<b>文件中未见</b>，做重量对比图前需补齐。</li>
+        <li><b>重量数据缺口</b>：仅 BioLite（19.8 lbs，磅，约 9 公斤，下同 1 磅≈0.45 公斤）、NOMAD（22 lbs，约 10 公斤）、Snow Peak（32 lbs，约 14.5 公斤）、Gather（~210–650 lbs，约 95–295 公斤）在文件中有明确数字；Solo Stove / Breeo / KBBQ Bros / Ignik 的重量<b>文件中未见</b>，做重量对比图前需补齐。</li>
         <li>有效且信息最全的：<b>Gather Grills</b>（含完整定位叙事、产品线、评价、创始故事）、NOMAD（首页 + Rodeo PDP，文案量最大）、KBBQ Bros、Breeo、Snow Peak。</li>
       </ul>
     </div>
@@ -55,12 +79,12 @@
     <div class="card">
       <h3>2.1 Solo Stove —— 后院基建型功能派</h3>
       <dl class="kv">
-        <dt>Hero</dt><dd><b>文件中未见品牌主张型 hero。</b>title = <code>Solo Stove® | Fire Pits, Pizza Ovens &amp; Outdoor Gear</code>；首屏 banner = <code>Build your dream backyard this summer.</code></dd>
+        <dt>Hero</dt><dd><b>文件中未见品牌主张型 hero。</b>title = <code>Solo Stove® | Fire Pits, Pizza Ovens &amp; Outdoor Gear</code>；首屏 banner = <code>Build your dream backyard this summer.</code>（打造你梦想中的后院，就在今夏）</dd>
         <dt>定位类型</dt><dd>卖功能（无烟技术）+ 卖场景（后院）</dd>
-        <dt>价格带</dt><dd>火坑 $359.99–$899.99；Infinity Flame propane $649.99</dd>
+        <dt>价格带</dt><dd>火坑 $359.99–$899.99（约 ¥2,590–6,480，下同按 1 美元≈7.2 元）；Infinity Flame propane $649.99（约 ¥4,680）</dd>
         <dt>主打场景</dt><dd><b>backyard</b>（<code>Build your dream backyard</code>、<code>Backyard Fire Pits</code>）</dd>
       </dl>
-      <blockquote><code>Patented smokeless design with Signature 360° Airflow and Secondary Burn eliminates nearly all smoke. Burns 400° hotter than standard fires… No more dodging smoky clouds or smelling like a campfire.</code> / <code>World's #1 Smokeless Fire Pit</code></blockquote>
+      <blockquote><code>Patented smokeless design with Signature 360° Airflow and Secondary Burn eliminates nearly all smoke. Burns 400° hotter than standard fires… No more dodging smoky clouds or smelling like a campfire.</code> / <code>World's #1 Smokeless Fire Pit</code><span class="zhu">（专利无烟设计＋招牌 360° 进气＋二次燃烧，几乎消除所有烟；比普通火高出 400°F（约 220℃）；再不用躲烟、也不会满身篝火味。/ 全球销量第一的无烟火盆）</span></blockquote>
       <ul>
         <li>首屏被四条促销 banner 轮播占满（<code>America's 250th Summer Sale</code>、<code>FREE Shipping On Every Order Over $199</code>）。</li>
         <li>品牌叙事在中部模块：<code>Everything New for Everything Outside</code> → <code>…create a space made for every meal, hangout, and summer night.</code></li>
@@ -76,11 +100,11 @@
     <div class="card">
       <h3>2.2 Breeo —— 原创者叙事 + 美国手工</h3>
       <dl class="kv">
-        <dt>Hero</dt><dd><code>The Original Smokeless Fire Pit</code> / 副标 <code>Hand Crafted, American Made Fire Pits Built for the Backyard</code></dd>
+        <dt>Hero</dt><dd><code>The Original Smokeless Fire Pit</code>（初代无烟火盆，自称品类原创者） / 副标 <code>Hand Crafted, American Made Fire Pits Built for the Backyard</code>（手工打造·美国制造·专为后院而生）</dd>
         <dt>定位类型</dt><dd>卖身份认同（原创者 / 美国制造 / Firemaster）+ 卖功能</dd>
         <dt>价格带</dt><dd>火坑 $399–$1,899；家具 $199–$2,899；套装最高 $3,835</dd>
       </dl>
-      <blockquote><code>Since inventing the first smokeless fire pit back in 2011</code> · <code>Every Breeo fire pit is designed and built by craftsmen in Lancaster County, Pennsylvania, from American-sourced steel that is made to last generations.</code> · <code>Feed your friends, feed your soul, feed your fire.</code></blockquote>
+      <blockquote><code>Since inventing the first smokeless fire pit back in 2011</code> · <code>Every Breeo fire pit is designed and built by craftsmen in Lancaster County, Pennsylvania, from American-sourced steel that is made to last generations.</code> · <code>Feed your friends, feed your soul, feed your fire.</code><span class="zhu">（自 2011 年发明第一台无烟火盆以来 · 每一台 Breeo 都由宾州兰开斯特县的工匠手工设计打造，用的是能传几代人的美国本土钢材 · 喂饱你的朋友，喂饱你的灵魂，喂旺你的火——三个动词都是「我喂」）</span></blockquote>
       <ul>
         <li>全 8 家里最干净的一条定位句。<b>"Backyard" 写进 hero 副标，主动放弃便携。</b></li>
         <li>三支柱明写：<code>Smokeless Tech</code> / <code>American Made</code> / <code>More Than Just a Fire Pit</code>。</li>
@@ -100,11 +124,11 @@
     <div class="card">
       <h3>2.3 BioLite FirePit+ —— 参数与专利驱动<span class="pill t-gray">注意：抓的是 PDP</span></h3>
       <dl class="kv">
-        <dt>主标 / 副标</dt><dd><code>FirePit+ Smokeless Fire Pit &amp; FREE Carry Bag</code> / <code>Portable Fire Pit &amp; Grill</code></dd>
+        <dt>主标 / 副标</dt><dd><code>FirePit+ Smokeless Fire Pit &amp; FREE Carry Bag</code>（无烟火盆＋随机赠收纳袋） / <code>Portable Fire Pit &amp; Grill</code>（便携火盆兼烤炉）</dd>
         <dt>价格</dt><dd>$499.95（原价 $599.95）</dd>
         <dt>场景</dt><dd><b>camping + backyard 双写</b>：<code>Backyard? Easy. Beach? Got it. Backcountry? No problem.</code></dd>
       </dl>
-      <blockquote><code>TIME Best Invention of 2023.</code> · <code>Unlike traditional cylindrical fire pits, you'll get a full unobscured view of the flames through FirePit+'s patented X-Ray mesh body.</code> · <code>Highly portable at just under 20 lbs, folding legs, a packable footprint</code> · <code>The Ultimate Hack: Cookout-To-Hangout</code></blockquote>
+      <blockquote><code>TIME Best Invention of 2023.</code> · <code>Unlike traditional cylindrical fire pits, you'll get a full unobscured view of the flames through FirePit+'s patented X-Ray mesh body.</code> · <code>Highly portable at just under 20 lbs, folding legs, a packable footprint</code> · <code>The Ultimate Hack: Cookout-To-Hangout</code><span class="zhu">（《时代周刊》2023 年最佳发明 · 不同于传统圆筒火盆，透过 FirePit+ 专利的 X-Ray 网面能毫无遮挡地看到火焰全貌 · 极致便携，不到 20 lbs（约 9 公斤）、可折叠腿、收纳体积小 · 终极妙用：从「做饭」到「围坐闲聊」一站式）</span></blockquote>
       <ul>
         <li>唯一拿第三方奖项当第一句正文的品牌。便携表述明确量化：<code>Weight: 19.8 lbs (8.98 kg)</code>。</li>
         <li>唯一一家写"从做饭到聚会"动线的，<b>但依然是一个人烤、大家享受</b>。</li>
@@ -121,21 +145,21 @@
       <h3>2.4 NOMAD Grills —— 便携赛道的话语权占有者</h3>
       <dl class="kv">
         <dt>Hero</dt><dd><code>introducing the all-new / Rodeo Grill &amp; Smoker</code> + <code>Preorder NOW</code> + <code>Made in USA</code>，带稀缺性 <code>Drop #1 Sold Out — Reserve your RODEO for Drop #2</code></dd>
-        <dt>PDP 副标</dt><dd><code>Built for Serious Charcoal Cooking.</code></dd>
+        <dt>PDP 副标</dt><dd><code>Built for Serious Charcoal Cooking.</code>（为硬核炭火烹饪而生）</dd>
         <dt>价格</dt><dd>主机 $399；配件 $16–$168；工具 $148</dd>
         <dt>场景</dt><dd><code>truck beds, campsites, boat docks, tailgates</code></dd>
       </dl>
-      <blockquote><code>a full-size charcoal grill and smoker packed into a suitcase footprint. Sear steaks over screaming-hot coals. Smoke ribs low and slow for hours. No pellets, no propane, no outlet. Just charcoal, fire, and flavor.</code> · <code>This is the last portable grill you buy.</code></blockquote>
+      <blockquote><code>a full-size charcoal grill and smoker packed into a suitcase footprint. Sear steaks over screaming-hot coals. Smoke ribs low and slow for hours. No pellets, no propane, no outlet. Just charcoal, fire, and flavor.</code> · <code>This is the last portable grill you buy.</code><span class="zhu">（一台全尺寸炭火烤炉兼烟熏炉，塞进一个手提箱大小。在滚烫的炭火上煎牛排，低温慢熏几个小时的排骨。不用颗粒、不用丙烷、不用插电，只要炭、火和风味。/ 这是你会买的最后一台便携烤炉——全篇没一个字提「一起做饭」或「聚会」）</span></blockquote>
       <p><b>媒体引语墙是它最重的资产</b>，16 条里至少 5 条直接给"便携第一"背书：</p>
       <div class="quotes">
-        <blockquote>"The best portable grill on the market."</blockquote>
-        <blockquote>"Hands-down the best-built portable grill I've ever used."</blockquote>
-        <blockquote>"it is the most convenient portable grill we've ever used."</blockquote>
-        <blockquote>"NOMAD is uncommonly tough and durable while also incredibly compact."</blockquote>
-        <blockquote>"A bull's-eye in the center of the venn diagram of high-quality and portable grill."</blockquote>
-        <blockquote>"there is not a truly portable grill on the market that holds a candle to the Nomad."</blockquote>
+        <blockquote>"The best portable grill on the market."<span class="zhu">（市面上最好的便携烤炉）</span></blockquote>
+        <blockquote>"Hands-down the best-built portable grill I've ever used."<span class="zhu">（毫无疑问是我用过做工最好的便携烤炉）</span></blockquote>
+        <blockquote>"it is the most convenient portable grill we've ever used."<span class="zhu">（是我们用过最方便的便携烤炉）</span></blockquote>
+        <blockquote>"NOMAD is uncommonly tough and durable while also incredibly compact."<span class="zhu">（NOMAD 异常坚固耐用，同时又极其小巧）</span></blockquote>
+        <blockquote>"A bull's-eye in the center of the venn diagram of high-quality and portable grill."<span class="zhu">（在「高品质」和「便携烤炉」两个圈的交集正中央，正中靶心）</span></blockquote>
+        <blockquote>"there is not a truly portable grill on the market that holds a candle to the Nomad."<span class="zhu">（市面上没有一台真正便携的烤炉能跟 Nomad 相提并论）</span></blockquote>
       </div>
-      <p>社会证明层：<code>8,000+ Five Star Reviews</code>，单配件评价数就有 1229 / 746 / 724 条。规格话语：<code>22 lbs</code>、<code>500+ square inches</code>、<code>fits 36 burgers or 2 full racks of ribs</code>。情绪只有一句半。</p>
+      <p>社会证明层：<code>8,000+ Five Star Reviews</code>（8,000+ 条五星评价），单配件评价数就有 1229 / 746 / 724 条。规格话语：<code>22 lbs</code>、<code>500+ square inches</code>（500+ 平方英寸≈3,200 平方厘米烤面）、<code>fits 36 burgers or 2 full racks of ribs</code>（能放下 36 个汉堡饼或 2 整排肋排）。情绪只有一句半。</p>
       <figure>
         <img src="assets/competitors/nomad_hero.jpg" alt="NOMAD Grills 官网首屏，标题 INTRODUCING THE ALL-NEW / RODEO GRILL &amp; SMOKER，含 PREORDER NOW 与 Made in USA，顶部条为 DROP #1 SOLD OUT" loading="lazy">
         <figcaption><b>hero 三件套一屏齐全</b>：主标 <code>INTRODUCING THE ALL-NEW / RODEO GRILL &amp; SMOKER</code>、按钮 <code>PREORDER NOW</code>、信任词 <code>Made in USA</code>，最顶部公告条即稀缺性话术 <code>DROP #1 SOLD OUT — RESERVE YOUR RODEO FOR DROP #2</code>。<span class="pill t-gray">注：首访会弹出订阅弹窗，本图为关闭弹窗后拍摄</span></figcaption>
@@ -153,19 +177,19 @@
     <div class="card" style="border-left:5px solid var(--red)">
       <h3>2.5 Gather Grills —— 全场唯一把"一起做饭"当产品定义的品牌</h3>
       <dl class="kv">
-        <dt>Hero</dt><dd><code>More than a grill.</code> / <code>A place to gather.</code></dd>
+        <dt>Hero</dt><dd><code>More than a grill.</code>（不止是一台烤炉） / <code>A place to gather.</code>（而是一处让大家围聚之地）</dd>
         <dt>副标</dt><dd><code>A 360° rotating outdoor cooktop that grills, griddles, smokes, becomes a fire pit, and seats everyone at the same table. Built by hand in Ellaville, Georgia.</code></dd>
-        <dt>价格</dt><dd>$1,999.99 / $2,999.99 / $4,999.99 / $6,999.99</dd>
+        <dt>价格</dt><dd>$1,999.99 / $2,999.99 / $4,999.99 / $6,999.99（约 ¥1.44 万 / 2.16 万 / 3.6 万 / 5.04 万）</dd>
       </dl>
-      <p><b>它直接把竞品的痛点写成文案</b>（<code>The usual backyard stack</code>）——这是全场最强的说服模块：</p>
+      <p><b>它直接把竞品的痛点写成文案</b>（<code>The usual backyard stack</code>＝「后院常见的一堆装备」）——这是全场最强的说服模块：</p>
       <ul>
-        <li><code>Outdoor dining table — seats everyone — across the patio from the food</code></li>
-        <li><code>A grill — the cook stands alone, back to the party</code></li>
-        <li><code>A firepit — everyone's favorite seat — it just can't make dinner</code></li>
-        <li>结论句：<code>…or just one circle.</code> / <code>Five purchases. Or one circle.</code></li>
+        <li><code>Outdoor dining table — seats everyone — across the patio from the food</code><span class="zhu">（户外餐桌——能坐下所有人——却隔着院子远离食物）</span></li>
+        <li><code>A grill — the cook stands alone, back to the party</code><span class="zhu">（一台烤炉——做饭的人独自站着，背对着聚会）</span></li>
+        <li><code>A firepit — everyone's favorite seat — it just can't make dinner</code><span class="zhu">（一个火盆——大家最爱围的地方——可它做不了饭）</span></li>
+        <li>结论句：<code>…or just one circle.</code>（……或者，就围成一圈） / <code>Five purchases. Or one circle.</code>（买五样东西，还是一圈就够了）</li>
       </ul>
-      <blockquote><code>A Gather is not a grill plus a table. It is the grill, griddle, smoker, fire pit, and dining table in one piece of outdoor furniture. And unlike everything on that list, every seat is at the fire.</code> · <code>Spin the food. Stay in the conversation.</code></blockquote>
-      <p>信任资产：<code>500+ Grills built since 2020</code>、<code>50+ Country clubs cooking on Gather</code>、<code>5.0★ From 135 verified reviews</code>、<code>60-day guarantee</code>（<code>we'll refund it in full and pay the freight home</code>）。</p>
+      <blockquote><code>A Gather is not a grill plus a table. It is the grill, griddle, smoker, fire pit, and dining table in one piece of outdoor furniture. And unlike everything on that list, every seat is at the fire.</code> · <code>Spin the food. Stay in the conversation.</code><span class="zhu">（Gather 不是「烤炉加桌子」，而是把烤炉、铁板、烟熏炉、火盆、餐桌合成一件户外家具。而且不像上面那堆东西——这里每个座位都挨着火。/ 转一转食物，聊天不中断）</span></blockquote>
+      <p>信任资产：<code>500+ Grills built since 2020</code>（2020 年起已造 500+ 台）、<code>50+ Country clubs cooking on Gather</code>（50+ 家乡村俱乐部在用）、<code>5.0★ From 135 verified reviews</code>（135 条认证评价 5.0 星）、<code>60-day guarantee</code>（<code>we'll refund it in full and pay the freight home</code>＝60 天保证：全额退款并承担寄回运费）。</p>
       <figure>
         <img src="assets/competitors/gather_hero.jpg" alt="Gather Grills 官网首屏，主标 MORE THAN A GRILL. / A PLACE TO GATHER.，副标为 360 度旋转灶台描述" loading="lazy">
         <figcaption><b>全场唯一把「关系」写进 hero 的品牌</b>：主标 <code>MORE THAN A GRILL.</code> / <code>A PLACE TO GATHER.</code>，副标 <code>A 360° rotating outdoor cooktop that grills, griddles, smokes, becomes a fire pit, and seats everyone at the same table. Built by hand in Ellaville, Georgia.</code>。<b>请注意 <code>seats everyone at the same table</code> 出现在副标而不是详情页</b>——这是"一起吃"被当成产品定义、而不是当成卖点补充的写法。</figcaption>
@@ -177,14 +201,14 @@
       <div class="callout danger" style="margin-bottom:0"><b>致命软肋</b>：<code>~210 lbs</code>（最小款）到 <code>~650 lbs</code>，<code>4–8 Week build queue</code>，起价 $1,999.99。<b>完全不便携，且需要固定后院。</b></div>
       <figure>
         <img src="assets/competitors/gather_trust.jpg" alt="Gather Grills 官网信任数据条：500+ 台已交付、50+ 家乡村俱乐部、5.0 星 135 条评价、4-8 周排产" loading="lazy">
-        <figcaption><b>信任资产与致命软肋写在同一条上</b>：<code>500+ GRILLS BUILT SINCE 2020</code>、<code>50+ COUNTRY CLUBS COOKING ON GATHER</code>、<code>5.0★ FROM 135 VERIFIED REVIEWS</code>——但同一条的最后一格是 <code>4–8 WEEK BUILD QUEUE (VARIES)</code>。<b>它自己把"要等 4–8 周"当成信任背书（订制感）在展示</b>，而这恰恰是 $189–239 即买即走的 AroundFire 天然占便宜的地方。</figcaption>
+        <figcaption><b>信任资产与致命软肋写在同一条上</b>：<code>500+ GRILLS BUILT SINCE 2020</code>、<code>50+ COUNTRY CLUBS COOKING ON GATHER</code>、<code>5.0★ FROM 135 VERIFIED REVIEWS</code>——但同一条的最后一格是 <code>4–8 WEEK BUILD QUEUE (VARIES)</code>。<b>它自己把"要等 4–8 周"当成信任背书（订制感）在展示</b>，而这恰恰是 $189–239（约 ¥1,360–1,720）即买即走的 AroundFire 天然占便宜的地方。</figcaption>
       </figure>
     </div>
 
     <div class="card">
       <h3>2.6 KBBQ Bros —— 唯一直取韩烤品类，但文案是功能罗列</h3>
       <dl class="kv">
-        <dt>Hero</dt><dd><code>Korean BBQ Grill Table for Home</code>（品类词直给，SEO 型 hero）</dd>
+        <dt>Hero</dt><dd><code>Korean BBQ Grill Table for Home</code>（家用韩式烤肉桌；品类词直给，SEO 型 hero）</dd>
         <dt>信任条</dt><dd><code>Proudly made in Korea. 5,000+ tables sold.</code></dd>
         <dt>价格 / 运费</dt><dd>Duo V2 $399（原价 $599）；评价中出现 $359 charcoal 版；运费 <code>$99 Flat Rate Per table</code></dd>
         <dt>桌子属性</dt><dd><code>Table Diameter: 43"</code>、<code>Max Capacity: 6 adults + 2 kids</code></dd>
@@ -193,11 +217,11 @@
       <div class="callout"><b>关键观察</b>：它写的是"<b>好收纳</b>"（<code>foldable design for easy storage and transport</code>），<b>不是"带出门"——文件中未见 camping / travel 类场景词。</b></div>
       <p>情绪价值全靠 UGC 承担，而且<b>核心说服逻辑是经济账不是情绪</b>：</p>
       <div class="quotes">
-        <blockquote>"Can't afford to eat KBBQ every week so I purchased this table! Buy the meat from costco… now we can afford to eat KBBQ at home!"</blockquote>
-        <blockquote>"we are going to make our money back at least tenfold by doing it in our backyard instead of going out."</blockquote>
-        <blockquote>"it feels like we're dining at a high-end Korean BBQ restaurant."</blockquote>
+        <blockquote>"Can't afford to eat KBBQ every week so I purchased this table! Buy the meat from costco… now we can afford to eat KBBQ at home!"<span class="zhu">（每周下馆子吃韩烤吃不起，就买了这张桌！肉从 Costco 买……现在在家就能吃得起韩烤了）</span></blockquote>
+        <blockquote>"we are going to make our money back at least tenfold by doing it in our backyard instead of going out."<span class="zhu">（在自家后院吃、不出去吃，这钱至少能赚回十倍）</span></blockquote>
+        <blockquote>"it feels like we're dining at a high-end Korean BBQ restaurant."<span class="zhu">（感觉就像在高档韩烤餐厅吃饭）</span></blockquote>
       </div>
-      <p class="tnote"><b>差评也如实呈现</b>：<code>the table was cheap sloppy, you could see silicone all over holding the legs together</code>（61 条评价里 3% 一星、3% 二星）。</p>
+      <p class="tnote"><b>差评也如实呈现</b>：<code>the table was cheap sloppy, you could see silicone all over holding the legs together</code>（桌子做工廉价潦草，能看到到处是固定桌腿的硅胶；61 条评价里 3% 一星、3% 二星）。</p>
       <figure>
         <img src="assets/competitors/kbbqbros_hero.jpg" alt="KBBQ Bros 官网首屏，主标 KOREAN BBQ GRILL TABLE FOR HOME，上方红条为 Proudly made in Korea. 5,000+ tables sold." loading="lazy">
         <figcaption><b>SEO 型 hero 的样本</b>：主标就是品类词本身 <code>KOREAN BBQ GRILL TABLE FOR HOME</code>，没有一句品牌主张；红色信任条 <code>Proudly made in Korea. 5,000+ tables sold.</code> 紧贴导航。<b>整屏没有出现任何 camping / portable / travel 类词</b>，与正文"守着品类不出门"的判定一致。<br><b>⚠️ 口径提醒</b>：右上角显示 <code>Japan | CAD $</code> 是我方抓取出口 IP 所致，<b>本图不作价格证据</b>，价格以正文 07-20 记录为准。</figcaption>
@@ -215,7 +239,7 @@
     <div class="card">
       <h3>2.7 Ignik Outdoors —— 数据不足，只能给弱结论</h3>
       <ul>
-        <li>可确认：品牌 tagline <code>MORE HEAT. LESS WASTE.</code>；一级品类 <code>Sustainable Campfire</code>、<code>Refillable Fuel</code>、<code>Battery Powered Heat</code>。</li>
+        <li>可确认：品牌 tagline <code>MORE HEAT. LESS WASTE.</code>（更多热量，更少浪费）；一级品类 <code>Sustainable Campfire</code>、<code>Refillable Fuel</code>、<code>Battery Powered Heat</code>。</li>
         <li>可确认场景词：<code>SUSTAINABLE CAMP</code>、<code>THE OVERLAND FIRE BEAST</code>、<code>GOOD TIMIN' CAMP ESSENTIALS</code>、<b><code>THE BURN BAN PARTY PLAN</code>（"禁火令"场景是它独有的角度）</b>。</li>
         <li>价格：FireCan $199.95；FireCan Elite $299.95；Skullet $399.95；Gas Growler from $149.95。</li>
         <li><b>hero 副标题、产品主张、人群文案均缺失</b>（首页只有轮播碎片，FireCan 页 404）。<b>不做进一步推断。</b></li>
@@ -229,11 +253,11 @@
     <div class="card">
       <h3>2.8 Snow Peak —— 生活方式与"围炉"文化</h3>
       <dl class="kv">
-        <dt>Hero</dt><dd><code>Designed for Life Outside</code> + <code>…Japanese camping gear, perfected over 60 years to elevate your time outside.</code></dd>
+        <dt>Hero</dt><dd><code>Designed for Life Outside</code>（为户外生活而设计） + <code>…Japanese camping gear, perfected over 60 years to elevate your time outside.</code></dd>
         <dt>价格</dt><dd>Takibi Fire &amp; Grill $349.95；周边 $49.95–$599.95</dd>
       </dl>
       <p>Takibi 线把"围炉"做成文化词：导航 <code>Takibi for Cooking</code> / <code>Takibi for Gathering</code> / <code>Guide to Takibi Time</code>；品牌还开了同名餐厅。</p>
-      <blockquote><code>Packable, portable, and modular, use the Takibi Fire and Grill to create a gathering anywhere.</code><cite><b>"portable" 和 "gathering" 同句出现，是 8 家里除 AroundFire 意图外唯一的一处</b></cite></blockquote>
+      <blockquote><code>Packable, portable, and modular, use the Takibi Fire and Grill to create a gathering anywhere.</code><span class="zhu">（可收纳、可携带、可模块化组合，用 Takibi 火炉在任何地方办一场聚会）</span><cite><b>"portable" 和 "gathering" 同句出现，是 8 家里除 AroundFire 意图外唯一的一处</b></cite></blockquote>
       <p class="tnote"><b>但重量拆穿轻量叙事</b>：<code>Weight: 32 lbs (14.5 kg)</code>。属于"可搬运"不是"便携"。</p>
       <figure>
         <img src="assets/competitors/snowpeak_takibi_details.jpg" alt="Snow Peak Takibi Fire &amp; Grill 产品页 DETAILS 段落，含 Packable, portable, and modular, use the Takibi Fire and Grill to create a gathering anywhere" loading="lazy">
@@ -260,7 +284,7 @@
       <div class="card"><h4 style="margin-top:0">左上 · 后院 × 卖功能</h4><p><b>Solo Stove</b>（无烟专利 / 后院品类集合）<br><b>Breeo</b>（The Original / American Made）</p></div>
       <div class="card"><h4 style="margin-top:0">右上 · 后院 × 卖情绪关系</h4><p><b>Gather Grills</b>（More than a grill / A place to gather）<br><b>KBBQ Bros</b>（韩烤场景，但文案功能化，位置偏左中）</p></div>
       <div class="card"><h4 style="margin-top:0">左下 · 便携 × 卖功能</h4><p><b>BioLite</b>（19.8 lbs）<br><b>NOMAD</b>（22 lbs，便携话语权）<br><b>Ignik</b>（MORE HEAT. LESS WASTE.）</p></div>
-      <div class="card" style="border:2px solid var(--red);background:#FFF8F8"><h4 style="margin-top:0">右下 · 便携 × 关系 —— <span style="color:var(--red)">空的</span></h4><p><b>★ AroundFire 应站位</b>　16 lbs · $189–239 · 便携 × 一起做<br><span style="color:var(--ink3);font-size:13px">Snow Peak 是唯一擦边者（Takibi 讲围炉又讲 packable），但 32 lbs + $349.95 + 日式审美溢价，它卖的是"文化归属"不是"随手带走"</span></p></div>
+      <div class="card" style="border:2px solid var(--red);background:#FFF8F8"><h4 style="margin-top:0">右下 · 便携 × 关系 —— <span style="color:var(--red)">空的</span></h4><p><b>★ AroundFire 应站位</b>　16 lbs（约 7.3 公斤）· $189–239 · 便携 × 一起做<br><span style="color:var(--ink3);font-size:13px">Snow Peak 是唯一擦边者（Takibi 讲围炉又讲 packable），但 32 lbs + $349.95 + 日式审美溢价，它卖的是"文化归属"不是"随手带走"</span></p></div>
     </div>
     <ol>
       <li><b>右下象限（便携 × 情绪/关系）目前是空的。</b>便携阵营全部在左下打参数；关系阵营在右上，但被 210–650 lbs 和 $1,999+ 锁死在后院。</li>
@@ -349,7 +373,7 @@
       <tbody>
         <tr><td data-l="">重量</td><td data-l="现状">NOMAD 22 lbs / BioLite 19.8 lbs / Snow Peak 32 lbs / Gather 210 lbs 起</td><td data-l="AroundFire 的空位"><b>16 lbs — 全场最轻，且是唯一"桌"</b></td></tr>
         <tr><td data-l="">形态</td><td data-l="现状">便携阵营全是"炉"，桌类全是重家具</td><td data-l="AroundFire 的空位"><b>唯一"能带走的桌"</b></td></tr>
-        <tr><td data-l="">价格</td><td data-l="现状">KBBQ $399 / NOMAD $399 / BioLite $499.95 / Gather $1,999.99 起</td><td data-l="AroundFire 的空位"><b>$189–239，聚会桌品类唯一 200 美元档</b></td></tr>
+        <tr><td data-l="">价格</td><td data-l="现状">KBBQ $399 / NOMAD $399（约 ¥2,870）/ BioLite $499.95（约 ¥3,600）/ Gather $1,999.99 起</td><td data-l="AroundFire 的空位"><b>$189–239，聚会桌品类唯一 200 美元档</b></td></tr>
         <tr><td data-l="">叙事</td><td data-l="现状">只有 Gather 讲"一起做饭"，但它 $1,999.99 且不能动</td><td data-l="AroundFire 的空位"><b>把 Gather 的关系叙事搬进便携价位段</b></td></tr>
         <tr><td data-l="">品类</td><td data-l="现状">KBBQ 品类被 KBBQ Bros 守住但不出门</td><td data-l="AroundFire 的空位"><b>围桌共烤 + 可外带</b>，无人占据</td></tr>
         <tr><td data-l="">设置时间</td><td data-l="现状">8 家中<b>无一家把"多久搭好"写进文案</b>（全文未见 setup time 相关表述）</td><td data-l="AroundFire 的空位"><b>30 秒展开 = 一个完全空白的证据维度</b></td></tr>
@@ -361,7 +385,7 @@
       <li><b>不要正面打 "Most Portable Grill"。</b>NOMAD 有 16 条媒体引语和 8,000+ 评价守着这个词。把重心从 Portable 移到 <b>Table / Everyone</b>，把 16 lbs 当证据而不是当口号。</li>
       <li><b>抄 Gather 的对比结构，换到便携语境。</b>Gather 的 <code>The usual backyard stack</code>（列出 5 件家伙 → <code>…or just one circle.</code>）是全场最强的说服模块。AroundFire 可以做同款：一张野餐桌 + 一个便携炉 + 一个火盆 + 一个后备箱 → 或者一件 16 lbs 的东西。<span class="pill t-gray">⚠️ 执行前必须实测三件替代品的真实在售价，禁止先编数字</span></li>
       <li><b>补上 8 家全都没有的两个证据维度</b>：<b>30 秒展开</b>（无人讲设置时间）和 <b>一人可搬</b>（NOMAD 说 <code>Pick it up and go</code> 但 22 lbs + 手提箱形态，仍是"炉"）。</li>
-      <li><b>用 Kickstarter 数据补信任缺口。</b>对手的信任资产是：Breeo <code>Since 2011 / American Made</code>、NOMAD <code>8,000+ Five Star Reviews</code>、Gather <code>500+ grills / 50+ country clubs / 5.0★ 135 reviews</code>、KBBQ <code>5,000+ tables sold</code>、Snow Peak <code>Founded in 1958</code>。AroundFire 目前只有 104 条 4.91 分——<b><code>541 backers / $134,789 raised</code> 必须前置到首屏</b>，这是现阶段唯一可比的数量级证明。</li>
+      <li><b>用 Kickstarter 数据补信任缺口。</b>对手的信任资产是：Breeo <code>Since 2011 / American Made</code>、NOMAD <code>8,000+ Five Star Reviews</code>、Gather <code>500+ grills / 50+ country clubs / 5.0★ 135 reviews</code>、KBBQ <code>5,000+ tables sold</code>、Snow Peak <code>Founded in 1958</code>。AroundFire 目前只有 104 条 4.91 分——<b><code>541 backers / $134,789 raised</code>（541 名众筹支持者，共募资约 ¥97 万） 必须前置到首屏</b>，这是现阶段唯一可比的数量级证明。</li>
       <li><b>参考 Gather 的 60 天无理由</b>（<code>we'll refund it in full and pay the freight home</code>）——在 $189–239 价位做同等承诺，成本远低于 Gather，说服力却相当。</li>
     </ol>
 
@@ -369,21 +393,21 @@
     <div class="cards c2">
       <div class="card" style="border:2px solid var(--red)">
         <span class="pill t-red">候选 A · 推荐</span>
-        <h4 style="margin-top:.5rem;font-size:17px">"Everyone cooks. Nobody misses the party."</h4>
-        <p style="font-size:13.5px">正面回应 Gather 指出的痛点 <code>the cook stands alone, back to the party</code>，但把它从 $1,999.99 的固定家具搬到 16 lbs 的可带走产品上。<b>这是右下象限唯一没人说的一句话。</b></p>
-        <p style="font-size:13px;color:var(--ink3)"><b>副标建议：</b><i>The 16 lb grill table that turns any spot into the party. Grill, fire pit, and table in one — open in 30 seconds.</i></p>
+        <h4 style="margin-top:.5rem;font-size:17px">"Everyone cooks. Nobody misses the party."<span class="zhu" style="font-weight:600">（人人都能下厨，谁也不会被晾在聚会之外）</span></h4>
+        <p style="font-size:13.5px">正面回应 Gather 指出的痛点 <code>the cook stands alone, back to the party</code>（做饭的人独自站着、背对聚会），但把它从 $1,999.99 的固定家具搬到 16 lbs 的可带走产品上。<b>这是右下象限唯一没人说的一句话。</b></p>
+        <p style="font-size:13px;color:var(--ink3)"><b>副标建议：</b><i>The 16 lb grill table that turns any spot into the party. Grill, fire pit, and table in one — open in 30 seconds.</i>（一张 16 磅的烤桌，把任何地方都变成聚会现场。烤炉、火盆、餐桌三合一——30 秒展开）</p>
       </div>
       <div class="card">
         <span class="pill t-blue">候选 B · 形态角度</span>
-        <h4 style="margin-top:.5rem;font-size:17px">"The only gathering table you can carry with one hand."</h4>
-        <p style="font-size:13.5px">把竞争维度从 "portable grill"（NOMAD 的地盘）挪到 "gathering table"（Gather 的地盘但它 210 lbs 起），16 lbs 直接把 Gather 的优势变成劣势。</p>
-        <p style="font-size:13px;color:var(--ink3)"><b>副标建议：</b><i>16 lbs. 30 seconds. Grill, fire pit, and table for everyone — from the backyard to the beach.</i></p>
+        <h4 style="margin-top:.5rem;font-size:17px">"The only gathering table you can carry with one hand."<span class="zhu" style="font-weight:600">（唯一一张单手就能拎走的聚会桌）</span></h4>
+        <p style="font-size:13.5px">把竞争维度从 "portable grill"（便携烤炉，NOMAD 的地盘）挪到 "gathering table"（聚会桌，Gather 的地盘但它 210 lbs 起），16 lbs 直接把 Gather 的优势变成劣势。</p>
+        <p style="font-size:13px;color:var(--ink3)"><b>副标建议：</b><i>16 lbs. 30 seconds. Grill, fire pit, and table for everyone — from the backyard to the beach.</i>（16 磅，30 秒。烤炉、火盆、给所有人的餐桌——从后院到海滩）</p>
       </div>
       <div class="card">
         <span class="pill t-ember">候选 C · 场景角度</span>
-        <h4 style="margin-top:.5rem;font-size:17px">"Pull up a chair. Everybody grills."</h4>
-        <p style="font-size:13.5px">直取 KBBQ Bros 手握却没讲的"围桌共烤"，且不锁死韩烤单一品类（可覆盖 KBBQ / yakiniku / 火锅 / s'mores）。</p>
-        <p style="font-size:13px;color:var(--ink3)"><b>副标建议：</b><i>Korean BBQ, hot pot, or s'mores — a 16 lb grill table that seats the whole table around the fire, anywhere.</i></p>
+        <h4 style="margin-top:.5rem;font-size:17px">"Pull up a chair. Everybody grills."<span class="zhu" style="font-weight:600">（拉把椅子坐下，人人都来烤）</span></h4>
+        <p style="font-size:13.5px">直取 KBBQ Bros 手握却没讲的"围桌共烤"，且不锁死韩烤单一品类（可覆盖 KBBQ / yakiniku 日式烤肉 / 火锅 / s'mores 棉花糖夹心饼）。</p>
+        <p style="font-size:13px;color:var(--ink3)"><b>副标建议：</b><i>Korean BBQ, hot pot, or s'mores — a 16 lb grill table that seats the whole table around the fire, anywhere.</i>（韩式烤肉、火锅，还是烤棉花糖——一张 16 磅的烤桌，让一整桌人围着火坐下，随处可用）</p>
       </div>
     </div>
     <div class="callout"><b>三选一建议</b>：主推 <b>A</b>；<b>B</b> 作为 SEO / 品类页主标（保留 grill table 关键词）；<b>C</b> 作为 KBBQ / 亚裔家庭细分受众的广告落地页主标。<br><span style="font-size:13px;color:var(--ink3)">⚠️ 上线前建议用 A/B 测试验证首屏主张，本报告不预测转化提升幅度。</span></div>

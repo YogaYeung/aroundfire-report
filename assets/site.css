@@ -217,3 +217,20 @@ blockquote cite{display:block;font-style:normal;font-size:12px;color:var(--ink3)
 .pagenav .d{font-size:11px;color:var(--ink3);font-weight:700;letter-spacing:.06em}
 .pagenav .t{font-size:14.5px;font-weight:800;color:var(--ink);margin-top:2px}
 .pagenav .nx{text-align:right}
+
+/* ---------- 小白友好注释（术语速查 + 行内括注） ---------- */
+/* 长术语首次出现用 <abbr title="人话解释">：虚线下划线提示可查，鼠标悬停出解释 */
+abbr[title]{text-decoration:underline dotted var(--ember-dk);text-underline-offset:2px;-webkit-text-decoration:underline dotted var(--ember-dk);cursor:help}
+/* 行内中文括注（可选包裹，视觉更弱，不喧宾夺主） */
+.zhu{color:var(--ink3);font-weight:600;font-size:.94em}
+/* 每页顶部可折叠「术语速查」小块 —— 复用 callout/disclaimer 观感，蓝色左条 */
+details.termbox{background:#F7FAFD;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;margin:1rem 0;box-shadow:var(--sh);overflow:hidden}
+details.termbox>summary{cursor:pointer;padding:12px 18px;font-weight:800;color:var(--ink);font-size:13.5px;list-style:none;user-select:none}
+details.termbox>summary::-webkit-details-marker{display:none}
+details.termbox>summary::after{content:" ▾";color:var(--ink3);font-weight:800;float:right}
+details.termbox[open]>summary::after{content:" ▴"}
+details.termbox .tb-in{padding:0 18px 14px}
+details.termbox dl{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;margin:.2rem 0;font-size:13px}
+details.termbox dt{font-weight:800;color:var(--blue);line-height:1.6}
+details.termbox dd{margin:0;color:var(--ink2);line-height:1.65}
+@media (max-width:560px){details.termbox dl{grid-template-columns:1fr;gap:1px 0}details.termbox dd{margin:0 0 .55rem}}

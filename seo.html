@@ -25,6 +25,35 @@
 
 <div class="wrap">
 
+  <details class="termbox">
+    <summary>术语速查 · 看不懂的英文缩写点这里</summary>
+    <div class="tb-in"><dl>
+      <dt>SEO</dt><dd>搜索引擎优化，让网页在 Google 自然排名（非广告位）里尽量靠前。</dd>
+      <dt>KD / Keyword Difficulty</dt><dd>关键词难度，0–100 的分数，越低越容易排到 Google 首页；越高说明头部被大品牌占死、很难挤进去。</dd>
+      <dt>Volume / 搜索量</dt><dd>每月有多少人在 Google 搜这个词。</dd>
+      <dt>CPC</dt><dd>点一次广告要花的钱（Cost Per Click）。CPC 高通常说明这个词商业价值高、有人愿意为它出广告费。</dd>
+      <dt>Intent / 搜索意图</dt><dd>用户搜这个词想干嘛：Transactional=想买、Commercial=比价挑选、Informational=找信息学知识。</dd>
+      <dt>SERP</dt><dd>谷歌搜索结果页（Search Engine Results Page），就是你搜完看到的那一整页（含视频位、购物位、问答等）。</dd>
+      <dt>long-tail / 长尾词</dt><dd>更长更具体、搜的人少但竞争也小的词（如 korean bbq table for sale）。</dd>
+      <dt>快赢词</dt><dd>本报告口径：搜索量够大、难度（KD）又低，能较快排上去的词。</dd>
+      <dt>landing page / 落地页</dt><dd>用户点搜索结果进来第一眼看到的那个页面，通常是集合页或产品页。</dd>
+      <dt>backlink</dt><dd>外部网站指向你的链接，是 Google 判断网站权重高低的重要依据。</dd>
+      <dt>H1 / H2</dt><dd>网页标题层级。H1 是最大的主标题（一页一般只有一个，Google 判断这页讲什么最看它），H2 是次级小标题。</dd>
+      <dt>alt</dt><dd>图片的文字描述，写在代码里，给搜索引擎和读屏软件（视障用户）看。</dd>
+      <dt>Breakout / 飙升</dt><dd>Google Trends 的标记，指某个词增长超过 5000%。</dd>
+      <dt>KBBQ</dt><dd>韩式烤肉（Korean BBQ）。</dd>
+      <dt>PDP</dt><dd>商品详情页（Product Detail Page），单个产品的售卖页面。</dd>
+      <dt>hero</dt><dd>网页首屏最上方的大图 / 主视觉区。</dd>
+      <dt>SKU</dt><dd>一个独立在售的商品 / 规格（如同款不同颜色算不同 SKU）。</dd>
+      <dt>grill grate</dt><dd>架在火上的烤网 / 烤架。</dd>
+      <dt>griddle</dt><dd>平底铁板煎盘（炒饭煎蛋用），区别于格栅烤网。</dd>
+      <dt>fire pit</dt><dd>火盆，装柴火 / 炭火的户外火盆容器。</dd>
+      <dt>overlanding</dt><dd>越野自驾露营，开改装车深入无人区。</dd>
+      <dt>braai</dt><dd>南非式烧烤，指「聚会」本身。</dd>
+      <dt>Cloudflare</dt><dd>网站常用的防爬虫 / 防攻击拦截服务，会挡掉机器人访问。</dd>
+    </dl></div>
+  </details>
+
   <section id="disclaimer">
     <div class="sec-head"><h2><span class="num">0</span>取数纪律与口径声明（先看，涉及三处口径修正）</h2></div>
     <div class="disclaimer">
@@ -49,7 +78,7 @@
     <table>
       <thead><tr><th>topic 簇</th><th>词数</th><th>总搜索量/月</th><th>平均 KD</th><th>中位 KD</th><th>平均 CPC</th><th>最大单词量</th><th>主导意图</th></tr></thead>
       <tbody>
-        <tr><td data-l=""><b>fire pit table</b></td><td data-l="词数">32</td><td data-l="总搜索量/月"><b>48,220</b></td><td data-l="平均 KD">25.3</td><td data-l="中位 KD">26.5</td><td data-l="平均 CPC">$0.72</td><td data-l="最大单词量">9,900（<code>fire pit in a table</code>）</td><td data-l="主导意图">Transactional 91%</td></tr>
+        <tr><td data-l=""><b>fire pit table</b></td><td data-l="词数">32</td><td data-l="总搜索量/月"><b>48,220</b></td><td data-l="平均 KD">25.3</td><td data-l="中位 KD">26.5</td><td data-l="平均 CPC">$0.72（约 ¥5，下同按 1 美元≈7.2 元）</td><td data-l="最大单词量">9,900（<code>fire pit in a table</code>）</td><td data-l="主导意图">Transactional 91%</td></tr>
         <tr><td data-l=""><b>camping table</b></td><td data-l="词数">30</td><td data-l="总搜索量/月">32,450</td><td data-l="平均 KD">27.4</td><td data-l="中位 KD">29.5</td><td data-l="平均 CPC">$0.32</td><td data-l="最大单词量">3,600（<code>foldable camping table</code>）</td><td data-l="主导意图">Commercial 67%</td></tr>
         <tr><td data-l=""><b>camp kitchen</b></td><td data-l="词数">41</td><td data-l="总搜索量/月">27,200</td><td data-l="平均 KD">21.8</td><td data-l="中位 KD">21.0</td><td data-l="平均 CPC">$0.32</td><td data-l="最大单词量">4,400（<code>camp kitchen</code>）</td><td data-l="主导意图">Transactional 63%</td></tr>
         <tr><td data-l=""><b>grill table</b></td><td data-l="词数">30</td><td data-l="总搜索量/月">23,660</td><td data-l="平均 KD">25.1</td><td data-l="中位 KD">25.0</td><td data-l="平均 CPC">$0.50</td><td data-l="最大单词量">4,400（<code>outdoor grill table</code>）</td><td data-l="主导意图">Transactional 90%</td></tr>
@@ -86,7 +115,7 @@
     <div class="callout">
       <b>三条可执行推论</b>：<br>
       ① <b>97% 的词 SERP 里有视频位</b> → 每个要打的词都该配一条 YouTube 视频，<b>视频本身就是第二条入口</b>。<br>
-      ② <b>89% 的词有 Popular products 购物模块</b> → <b>Merchant Center feed 的优先级高于任何一篇博客</b>。产品 feed 没配好，等于放弃了首屏最大的一块位置。<br>
+      ② <b>89% 的词有 Popular products 购物模块</b> → <b>Merchant Center feed 的优先级高于任何一篇博客</b>（Merchant Center＝把商品目录上传给 Google 的后台，feed＝这份商品目录）。产品 feed 没配好，等于放弃了首屏最大的一块位置。<br>
       ③ <b>48% 的词带 Discussions and forums</b> → Reddit 在这个品类的 SERP 里是常驻。结合 VOC 报告记录的「reddit.com 对该出口 IP 全面 403」，这块只能靠人工运营，但值得单独立项。
     </div>
 
@@ -122,7 +151,7 @@
         <tr><td data-l=""><s>I. family summer camp</s></td><td data-l="覆盖词数">1</td><td data-l="合计搜索量">1,000</td><td data-l="平均 KD">14.0</td><td data-l="建议页面类型"><b>剔除</b></td></tr>
       </tbody>
     </table>
-    <div class="callout danger"><b>必须剔除的一个词</b>：<code>family summer camp</code>（1,000 vol / KD 14 / <b>CPC $1.37，全表最高</b>）。这是<b>「给孩子报名夏令营」</b>的意图，不是露营装备。它的 SERP 特征是 <code>Sitelinks, Image pack, Related searches</code>——没有 Popular products、没有 Reviews，是纯本地服务型 SERP。CPC 高正是因为夏令营机构在抢。<b>放进关键词表是误采，投它等于给夏令营行业送钱。</b></div>
+    <div class="callout danger"><b>必须剔除的一个词</b>：<code>family summer camp</code>（1,000 vol / KD 14 / <b>CPC $1.37（约 ¥10），全表最高</b>）。这是<b>「给孩子报名夏令营」</b>的意图，不是露营装备。它的 SERP 特征是 <code>Sitelinks, Image pack, Related searches</code>——没有 Popular products、没有 Reviews，是纯本地服务型 SERP。CPC 高正是因为夏令营机构在抢。<b>放进关键词表是误采，投它等于给夏令营行业送钱。</b></div>
 
     <h3>2.1 aroundfire.co 站点资产实勘结果</h3>
     <p class="tnote">2026-07-21，<code>curl</code> 实取 sitemap + 页面 DOM</p>
@@ -148,7 +177,7 @@
       </figure>
       <figure>
         <div class="tall short"><img loading="lazy" src="assets/shots/acc_desktop.png" alt="AroundFire 配件集合页截图：KBBQ Style Grill Grate $37 与 Camping Stove $33 都平铺在配件网格里。"></div>
-        <figcaption><b>「全站唯一 KBBQ 资产是 $37 配件页」</b>：它和加高腿、灯架、烤夹并排在配件网格里，title 不含 <code>table</code>，也没有任何一个 KBBQ 集合页承接（三个路径实测全部 404）。</figcaption>
+        <figcaption><b>「全站唯一 KBBQ 资产是 $37（约 ¥266）配件页」</b>：它和加高腿、灯架、烤夹并排在配件网格里，title 不含 <code>table</code>，也没有任何一个 KBBQ 集合页承接（三个路径实测全部 404）。</figcaption>
       </figure>
     </div>
 
@@ -194,7 +223,7 @@
       <thead><tr><th>别碰的词群</th><th>代表词（Vol / KD）</th><th>依据</th></tr></thead>
       <tbody>
         <tr><td data-l=""><b>fire pit table 主词群</b></td><td data-l="代表词（Vol / KD）"><code>table fire pit</code> 2,900/35、<code>outdoor table with fire pit</code> 1,000/36、<code>fire pit table for patio</code> 720/34、<code>small fire pit table</code> 480/32</td><td data-l="依据">这是 <b>patio 家具</b>赛道。Breeo hero 副标直接写 <code>Built for the Backyard</code>、Solo Stove 首屏写 <code>Build your dream backyard</code>——<b>两家都把 backyard 写进首页最高层级文案</b>，且价格带是 AroundFire 的 2–8 倍，页面权重与外链资产不在一个量级。更要命的是趋势实测：<code>fire pit table</code> 的 4 月指数 2022→2025 从 23 跌到 16（<b>-30%</b>）。<b>这是一个在缩、且被高客单品牌焊死的盘子。</b></td></tr>
-        <tr><td data-l=""><b>camping table 折叠词群</b></td><td data-l="代表词（Vol / KD）"><code>foldable camping table</code> 3,600/38、<code>folding camping table</code> 3,600/34、<code>camping folding table</code> 2,900/38</td><td data-l="依据">这批词平均 CPC 只有 <b>$0.32</b>，是全表最低档之一。<b>低 CPC + 高 KD = 典型的白牌红海</b>：Amazon 上一堆 $30–60 的铝合金折叠桌在打，$189–239 的产品进去是错配。VOC 记录的价格锚证据支持这个判断。<b>用这批词引来的流量，客单预期是错的。</b></td></tr>
+        <tr><td data-l=""><b>camping table 折叠词群</b></td><td data-l="代表词（Vol / KD）"><code>foldable camping table</code> 3,600/38、<code>folding camping table</code> 3,600/34、<code>camping folding table</code> 2,900/38</td><td data-l="依据">这批词平均 CPC 只有 <b>$0.32</b>，是全表最低档之一。<b>低 CPC + 高 KD = 典型的白牌红海</b>：Amazon 上一堆 $30–60（约 ¥216–430）的铝合金折叠桌在打，$189–239（约 ¥1,360–1,720）的产品进去是错配。VOC 记录的价格锚证据支持这个判断。<b>用这批词引来的流量，客单预期是错的。</b></td></tr>
         <tr><td data-l=""><b>grill table / camp kitchen 泛词</b></td><td data-l="代表词（Vol / KD）"><code>grill table</code> 3,600/39、<code>bbq grill on table</code> 1,300/45、<code>camping kitchen</code> 3,600/40、<code>camp kitchen stove</code> 320/43</td><td data-l="依据">KD 39–45，是全表最难的一档。<code>grill table</code> 这种两词泛词无法承载具体购买意图</td></tr>
       </tbody>
     </table>
@@ -223,7 +252,7 @@
       原因很简单——<b>空位之所以空，正是因为没人搜。</b>这与趋势报告的核心结论完全一致：<i>「这不是一个搜索需求可以被捕获的品类，是一个需求必须被创造的品类」</i>。<br><br>
       <b>所以「该抢」的正确打法不是抢 <code>portable xxx</code> 这几个词，而是：</b><br>
       ① <b>占住那 1 个能打的词</b> —— <code>portable grill table</code>（1,000 vol / KD 13 / CPC $0.32），做成集合页，这是便携叙事在 Google 上唯一的低成本落脚点。<br>
-      ② <b>把「便携」做成所有页面的差异化文案，而不是关键词目标</b> —— 在 <code>korean bbq table</code>、<code>camping grill table</code>、<code>fire pit and grill combination</code> 这些<b>有量又好打</b>的词上排名，然后用页面文案（16 lbs / 30 秒展开）去做转化端的差异化。<b>用别人的词进来，用自己的定位成交。</b><br>
+      ② <b>把「便携」做成所有页面的差异化文案，而不是关键词目标</b> —— 在 <code>korean bbq table</code>、<code>camping grill table</code>、<code>fire pit and grill combination</code> 这些<b>有量又好打</b>的词上排名，然后用页面文案（16 lbs〔磅，约 7.3 公斤〕/ 30 秒展开）去做转化端的差异化。<b>用别人的词进来，用自己的定位成交。</b><br>
       ③ <b>便携认知靠 YouTube 和达人内容建立</b>，不靠 Google 自然搜索（见第 5 节：YT 侧 <code>Portable</code> 主题有 30 个词，且 8 个是 review/best 类对比词）。
     </div>
 
@@ -265,7 +294,7 @@
       </tbody>
     </table>
     <div class="callout danger"><b>一眼可见的事实：这 29 个可攻 table 词里，16 个是 KBBQ 词。这不是巧合，这是本次分析最硬的一条结论。</b></div>
-    <p class="tnote"><b>附带发现</b>：<code>gather grill table</code>（260 vol / KD 16 / <b>CPC $0.94，全表第二高</b>）是竞品品牌词。Gather Grills 起价 $1,999，AroundFire $189–239——差 8–10 倍，<b>做 vs 页 / alternative 页承接并不合理</b>（人群不重叠，来的人买不起或看不上）。<b>不建议投</b>，此处仅作记录。</p>
+    <p class="tnote"><b>附带发现</b>：<code>gather grill table</code>（260 vol / KD 16 / <b>CPC $0.94，全表第二高</b>）是竞品品牌词。Gather Grills 起价 $1,999（约 ¥1.44 万），AroundFire $189–239——差 8–10 倍，<b>做 vs 页 / alternative 页承接并不合理</b>（人群不重叠，来的人买不起或看不上）。<b>不建议投</b>，此处仅作记录。</p>
 
     <h3 id="kbbq">3.3 【核心机会】KBBQ 词群完整可攻词表</h3>
     <figure><img src="assets/seo/03_kbbq_cluster.png" alt="KBBQ 32 个关键词的搜索量与难度分布放大图"><figcaption>KBBQ 32 词单独放大图</figcaption></figure>
@@ -406,7 +435,7 @@
     <ol>
       <li><b>先做「④产品装备 ∩ Google 快赢词」的交集视频——一鱼两吃。</b>16 个重合词里，<code>overland table</code>、<code>portable grill table</code>、<code>korean bbq grill table</code>、<code>fire pit grill combo</code>、<code>camping kitchen table</code> 这 5 个<b>同时是 Google 快赢词（KD≤15）和 YT 装备词</b>。97% 的 Google SERP 带视频位——<b>为这 5 个词各做一条视频，等于同时占住 YouTube 排名和 Google 首屏视频位。这是 ROI 最高的一批内容。</b></li>
       <li><b><code>Portable</code> 主题的 30 个 YT 词是便携定位的唯一流量出口。</b>Google 侧含 <code>portable</code> 的词只有 7 个 / 4,440 vol，撑不起定位。但 YT 侧 <code>Portable</code> 主题独立成组、30 个词、其中 8 个是 review/best 对比词。<b>便携认知在视频里建，不在搜索里建。达人 brief 应直接按这 30 个词写。</b></li>
-      <li><b><code>group cooking</code> / <code>family cooking</code> 14 个词是竞品盲区，必须自己做。</b>8 家竞品里<b>只有 Gather Grills 一家把「一起动手做饭」写成产品定义</b>，而它是 210–650 lbs、$1,999+ 的固定后院设备。YT 词表里 <code>family cooking together</code>、<code>group cooking table</code>、<code>group camping and cooking</code> 这些词<b>没有对应的品牌内容</b>。这正好是 AroundFire 的右下象限站位在内容侧的落点。</li>
+      <li><b><code>group cooking</code> / <code>family cooking</code> 14 个词是竞品盲区，必须自己做。</b>8 家竞品里<b>只有 Gather Grills 一家把「一起动手做饭」写成产品定义</b>，而它是 210–650 lbs（约 95–295 公斤）、$1,999+ 的固定后院设备。YT 词表里 <code>family cooking together</code>、<code>group cooking table</code>、<code>group camping and cooking</code> 这些词<b>没有对应的品牌内容</b>。这正好是 AroundFire 的右下象限站位在内容侧的落点。</li>
     </ol>
 
     <div class="disclaimer"><span class="ttl">必须提醒甲方的一条数据质量问题</span>YT 词表里存在<b>明显拼写错误未清洗</b>：<code>bbg grill</code>、<code>campig</code>、<code>chiken</code>、<code>coooking</code>、<code>firt pit</code>、<code>opren fire</code>、<code>oputdoor</code>、<code>outdoort</code>、<code>smkeless</code>、<code>volg</code>、<code>frinends</code>。<b>这些不是长尾词，是录入错误。</b>若这份表要拿去投 YouTube Ads 或做批量选题，<b>必须先清洗</b>，否则会产生零曝光的无效词组。</div>

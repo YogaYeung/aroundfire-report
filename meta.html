@@ -25,13 +25,30 @@
 
 <div class="wrap">
 
+  <details class="termbox">
+    <summary>术语速查 · 看不懂的英文缩写点这里</summary>
+    <div class="tb-in"><dl>
+      <dt>ROAS</dt><dd>广告支出回报率。花 1 元广告费换回几元销售额，行业普遍认为 3 以上算健康。</dd>
+      <dt>AOV</dt><dd>客单价。每笔订单的平均成交金额。</dd>
+      <dt>CPA</dt><dd>单次获取成本。带来一个订单/客户平均花多少广告费。</dd>
+      <dt>PDP</dt><dd>商品详情页（Product Detail Page），单个产品的售卖页面。</dd>
+      <dt>UGC</dt><dd>用户 / 达人自己拍的真实使用内容（User-Generated Content），区别于品牌自制精修广告。</dd>
+      <dt>BNPL</dt><dd>先买后付 / 分期付款（如 Afterpay、Klarna），下单时先拿货、分几期还。</dd>
+      <dt>Kickstarter</dt><dd>美国众筹平台，产品上市前先向公众募资。</dd>
+      <dt>backer / backers</dt><dd>众筹支持者，在 Kickstarter 上出钱预订的人。</dd>
+      <dt>overlanding</dt><dd>越野自驾露营，开改装车深入无人区，重装备、重自给。</dd>
+      <dt>fire pit</dt><dd>火盆，装柴火/炭火的户外火盆容器。</dd>
+      <dt>KBBQ</dt><dd>韩式烤肉（Korean BBQ）。</dd>
+    </dl></div>
+  </details>
+
   <section id="总盘">
     <div class="sec-head"><h2><span class="num">一</span>账户总盘</h2></div>
     <div class="stats">
-      <div class="stat"><div class="k g">5.69</div><div class="l">ROAS（Website purchases 有效口径）</div></div>
-      <div class="stat"><div class="k i">$24,657</div><div class="l">花费 → 收入 $140,198</div></div>
+      <div class="stat"><div class="k g">5.69</div><div class="l">ROAS（Website purchases 有效口径 · 广告花 1 元换回 5.69 元销售额，行业普遍认为 3 以上算健康）</div></div>
+      <div class="stat"><div class="k i">$24,657</div><div class="l">花费（约 ¥17.8 万，按 1 美元≈7.2 元，下同）→ 收入 $140,198</div></div>
       <div class="stat"><div class="k i">457</div><div class="l">订单数</div></div>
-      <div class="stat"><div class="k e">$307</div><div class="l">AOV（高于主产品单价 $189/$239）</div></div>
+      <div class="stat"><div class="k e">$307</div><div class="l">AOV（约 ¥2,210；高于主产品单价 $189/$239，约 ¥1,360/¥1,720）</div></div>
       <div class="stat"><div class="k">27%</div><div class="l">花费（$9,187）<b>无任何归因结果</b></div></div>
     </div>
     <table>
@@ -54,17 +71,17 @@
       <tbody>
         <tr><td data-l="">加购</td><td data-l="数量">2,641</td><td data-l="转化率">—</td></tr>
         <tr><td data-l="">发起结账</td><td data-l="数量">1,380</td><td data-l="转化率">52.3%</td></tr>
-        <tr><td data-l="">购买</td><td data-l="数量">457</td><td data-l="转化率"><b>33.1%</b></td></tr>
+        <tr><td data-l="">购买</td><td data-l="数量">457</td><td data-l="转化率"><b>33.1%</b>（每 100 个进结账页的人只约 33 个真正付款）</td></tr>
       </tbody>
     </table>
     <figure><img src="assets/charts/meta_funnel.png" alt="Meta 账户转化漏斗：加购 2,641 人，发起结账 1,380 人（52.3%），购买 457 人（33.1%），结账到购买流失 67%"><figcaption><b>图 1 · 漏斗形状</b>：加购到结账掉一半是正常的，<b>结账到购买再掉 67%（923 人）不正常</b>——这 923 人已经填过表、看过价、点过「去结账」。这一段的漏损与广告素材、人群、出价都无关，只与结账页本身有关。</figcaption></figure>
-    <div class="callout danger"><b>结账→购买流失 67%，是全链路最大瓶颈。</b>与 Kickstarter VOC 里 backer 集中投诉「运费二次收取 $45-50 未提前告知」「Stripe 付款报错」形成证据链——结账页的运费露出方式与支付方式需要单独排查。<br><b>本次已做结账全流程实勘</b>，结论：$24.90 在填完 9 个字段后的第 4 个区块才露出，全站零免邮门槛、零 BNPL、结账页零信任元素。<a href="optimization.html#checkout">→ 查看结账实勘全文与 23 张截图</a></div>
+    <div class="callout danger"><b>结账→购买流失 67%（每 100 个进结账的人有 67 个没付款就走），是全链路最大瓶颈。</b>与 Kickstarter VOC 里 backer 集中投诉「运费二次收取 $45-50 未提前告知」「Stripe 付款报错」形成证据链——结账页的运费露出方式与支付方式需要单独排查。<br><b>本次已做结账全流程实勘</b>，结论：$24.90（约 ¥180）在填完 9 个字段后的第 4 个区块才露出，全站零免邮门槛、零 BNPL、结账页零信任元素。<a href="optimization.html#checkout">→ 查看结账实勘全文与 23 张截图</a></div>
   </section>
 
   <section id="audience">
     <div class="sec-head"><h2><span class="num">三</span>人群（年龄 × 性别，纯购买口径）</h2></div>
     <table>
-      <thead><tr><th>年龄</th><th>性别</th><th>花费</th><th>单量</th><th>ROAS</th><th>CPA</th></tr></thead>
+      <thead><tr><th>年龄</th><th>性别</th><th>花费</th><th>单量</th><th>ROAS</th><th>CPA（单次获取成本）</th></tr></thead>
       <tbody>
         <tr><td data-l="">35-44</td><td data-l="性别">male</td><td data-l="花费">$6,384</td><td data-l="单量">145</td><td data-l="ROAS">4.88</td><td data-l="CPA">$44</td></tr>
         <tr><td data-l="">45-54</td><td data-l="性别">male</td><td data-l="花费">$6,209</td><td data-l="单量">108</td><td data-l="ROAS">4.20</td><td data-l="CPA">$57</td></tr>

@@ -17,13 +17,44 @@
   <div class="hero-in">
     <div class="eyebrow">10 · Pricing &amp; Unit Economics</div>
     <h1>定价与商业模型</h1>
-    <p class="sub">配件 attach 结构 · 价格带定位 · 跨过 $20–30 的心理锚 · 套装 SKU · <b>履约模式单位经济（本报告最重要的一节）</b> · 免邮门槛测算 · 毛利与定价策略复盘。</p>
+    <p class="sub">配件 attach 结构 · 价格带定位 · 跨过 $20–30（约 ¥145–216，下同按 1 美元≈7.2 元）的心理锚 · 套装 SKU · <b>履约模式单位经济（本报告最重要的一节）</b> · 免邮门槛测算 · 毛利与定价策略复盘。</p>
     <p class="fine"><b>不含</b>：法规与市场准入合规（甲方自行处理）。<b>本次新增一手取数（2026-07-21）</b>：<code>aroundfire.co</code> Shopify <code>products.json</code> / <code>product.js</code> 全量拉取 → 11 个 SKU、全部变体价、<code>compare_at_price</code>、库存状态；竞品免邮门槛全文检索；关税 de minimis 政策状态与 HTS 归类税率（USITC HTS API 实拉验证）。</p>
     <div class="meta"><span>📅 2026-07-21</span><span>🚨 关税结构性发现</span><span>⚠️ 假设项已逐条标注</span></div>
   </div>
 </div>
 
 <div class="wrap">
+
+  <details class="termbox">
+    <summary>术语速查 · 看不懂的英文缩写点这里</summary>
+    <div class="tb-in"><dl>
+      <dt>AOV</dt><dd>客单价。每笔订单的平均成交金额。</dd>
+      <dt>CPA</dt><dd>单次获取成本。带来一个订单/客户平均花多少广告费。</dd>
+      <dt>ROAS</dt><dd>广告支出回报率。花 1 元广告费换回几元销售额，行业普遍认为 3 以上算健康。</dd>
+      <dt>BNPL</dt><dd>先买后付 / 分期付款（如 Afterpay、Klarna、Affirm），下单时先拿货、分几期还。</dd>
+      <dt>DTC</dt><dd>品牌直接卖给消费者（Direct-to-Consumer），不经过中间商/经销商。</dd>
+      <dt>3PL</dt><dd>第三方海外仓 + 代发货服务，货先备到美国仓，下单就近发。</dd>
+      <dt>de minimis</dt><dd>美国原本 800 美元以下小额包裹免征关税的额度（现已取消）。</dd>
+      <dt>HTS</dt><dd>美国海关商品编码，决定一件货按多少税率征关税。</dd>
+      <dt>Section 301</dt><dd>美国对中国输美商品加征的一类关税（针对特定清单）。</dd>
+      <dt>Section 232</dt><dd>美国以「国家安全」名义对钢铝等加征的一类关税。</dd>
+      <dt>MFN</dt><dd>最惠国税率，海关商品编码对应的基础关税率。</dd>
+      <dt>FOB</dt><dd>离岸价 / 出厂价，货交到中国港口船上的价格，不含海运和目的国关税。</dd>
+      <dt>SKU</dt><dd>一个独立的商品 / 规格（如同款不同配置算不同 SKU）。</dd>
+      <dt>PDP</dt><dd>商品详情页（Product Detail Page），单个产品的售卖页面。</dd>
+      <dt>VOC</dt><dd>用户声音 / 用户评价洞察（Voice of Customer）。</dd>
+      <dt>attach rate</dt><dd>配件搭卖率，买主品时顺带加购配件的比例。</dd>
+      <dt>backer</dt><dd>众筹支持者，在 Kickstarter 上出钱预订的人。</dd>
+      <dt>Kickstarter</dt><dd>美国众筹平台，产品上市前先向公众募资（本页简称 KS）。</dd>
+      <dt>KBBQ</dt><dd>韩式烤肉（Korean BBQ）。</dd>
+      <dt>fire pit</dt><dd>火盆，装柴火/炭火的户外火盆容器。</dd>
+      <dt>grill grate</dt><dd>架在火上的烤网/烤架。</dd>
+      <dt>griddle</dt><dd>平底铁板煎盘（炒饭煎蛋用），区别于格栅烤网。</dd>
+      <dt>propane</dt><dd>丙烷，一种液化石油气燃料。</dd>
+      <dt>charcoal</dt><dd>木炭。</dd>
+      <dt>overlanding</dt><dd>越野自驾露营，开改装车深入无人区。</dd>
+    </dl></div>
+  </details>
 
   <div class="disclaimer">
     <span class="ttl">⚠️ 阅读纪律（先看）</span>
@@ -33,13 +64,13 @@
   <section id="exec">
     <div class="sec-head"><h2><span class="num">⚡</span>执行摘要（先看这 7 条）</h2></div>
     <ol>
-      <li><b>AOV $307 的钱不是配件合集页赚的，是 PDP 那个下拉框赚的。</b>AOV 已经贴近「所有人都买最高档变体」的理论值（$296–314），$93–103 的溢出中约 75–85% 来自变体阶梯（钛桌板 +$50 / 燃气炉 +$20 / 加高腿 +$10），独立配件只贡献 0.3–0.8 件/单。<b>→ 优化配件页几乎没用，把变体升格成独立套装 SKU 才有用。</b></li>
-      <li><b>🚨 最大的单点发现：中国仓直发 B2C 在当前税制下，关税按「消费者实付价」计税，不是出厂价。</b>$189 木柴款直发每件缴 $47.25，走美国 3PL 批量进口只缴 $15.00（出厂价 $60 假设）——<b>每件差 $32.25，比全部运费收入 $24.90 还多。</b>燃气套装更极端：$259 直发缴 $144.26（<b>占售价 55.7%</b>）。</li>
-      <li><b>燃气套装在中国直发模式下商业上不成立。</b>归类差异巨大：木柴款 7321.19 约 25%，燃气款 7321.11.1060 约 55.7%。把燃气炉打进套装，可能让整机适用 55.7%——$259 套装的关税从 $65.63（分开申报口径）变成 $144.26，<b>差 $78.63</b>。<b>先做美国 3PL，再推燃气套装。</b></li>
-      <li><b>AroundFire 是同组竞品里唯一标价最低、却是唯一另收运费的品牌。</b>实测：Breeo 全单免邮、Solo Stove $199 免邮、Snow Peak $200 免邮，AroundFire $24.90 无门槛。<b>$199/$200 是这个品类的免邮行业线，而 AroundFire 整个价格带都在线上。</b></li>
-      <li><b>免邮最优解是「全线涨 $20 + 永久全单免邮」</b>（Lite $209 / Grande $259）。直发模式下保本需结账转化 <b>+1.8pp</b>（33.1%→34.9%）；<b>转 3PL 后保本只需 +0.9pp</b>，因为 3PL 下涨价不增加关税。</li>
-      <li><b>$189 不是价格问题，是渠道问题。</b>众筹 $149 → 零售 $189 只涨 27%（行业常规 +60~100%），直接后果是没钱做免邮、没钱给经销商（招商页至今 0 家合作）、没钱进 Amazon。</li>
-      <li><b>立刻能做且零成本的三件</b>：Cast Iron Griddle $69 补货（目录最高价配件，现缺货 = 0 转化，机会成本约 $3,150）、开 BNPL 分期、购物车加免邮进度条。</li>
+      <li><b>AOV $307（客单价，约 ¥2,210）的钱不是配件合集页赚的，是 PDP 那个下拉框赚的。</b>AOV 已经贴近「所有人都买最高档变体」的理论值（$296–314），$93–103 的溢出中约 75–85% 来自变体阶梯（钛桌板 +$50 / 燃气炉 +$20 / 加高腿 +$10），独立配件只贡献 0.3–0.8 件/单。<b>→ 优化配件页几乎没用，把变体升格成独立套装 SKU 才有用。</b></li>
+      <li><b>🚨 最大的单点发现：中国仓直发 B2C 在当前税制下，关税按「消费者实付价」计税，不是出厂价。</b>$189（约 ¥1,360）木柴款直发每件缴 $47.25（约 ¥340），走美国 3PL 批量进口只缴 $15.00（出厂价 $60 假设）——<b>每件差 $32.25，比全部运费收入 $24.90（约 ¥180）还多。</b>燃气套装更极端：$259（约 ¥1,865）直发缴 $144.26（约 ¥1,040，<b>占售价 55.7%——关税就吃掉售价一半以上</b>）。</li>
+      <li><b>燃气套装在中国直发模式下商业上不成立。</b>归类差异巨大：木柴款 7321.19 约 25%，燃气款 7321.11.1060 约 55.7%。把燃气炉打进套装，可能让整机适用 55.7%——$259 套装的关税从 $65.63（约 ¥470，分开申报口径）变成 $144.26，<b>差 $78.63（约 ¥566/件）</b>。<b>先做美国 3PL，再推燃气套装。</b></li>
+      <li><b>AroundFire 是同组竞品里唯一标价最低、却是唯一另收运费的品牌。</b>实测：Breeo 全单免邮、Solo Stove $199 免邮、Snow Peak $200 免邮，AroundFire $24.90 无门槛。<b>$199/$200（约 ¥1,430/¥1,440）是这个品类的免邮行业线（买满这个金额就不收运费），而 AroundFire 整个价格带都在线上。</b></li>
+      <li><b>免邮最优解是「全线涨 $20 + 永久全单免邮」</b>（Lite $209 / Grande $259）。直发模式下保本需结账转化 <b>+1.8pp</b>（pp＝百分点；33.1%→34.9%，即每 100 个到结账页的人多约 2 个真正付款就回本）；<b>转 3PL 后保本只需 +0.9pp</b>，因为 3PL 下涨价不增加关税。</li>
+      <li><b>$189 不是价格问题，是渠道问题。</b>众筹 $149（约 ¥1,070）→ 零售 $189 只涨 27%（行业常规 +60~100%），直接后果是没钱做免邮、没钱给经销商（招商页至今 0 家合作）、没钱进 Amazon。</li>
+      <li><b>立刻能做且零成本的三件</b>：Cast Iron Griddle（铸铁煎盘）$69（约 ¥500）补货（目录最高价配件，现缺货 = 0 转化，机会成本约 $3,150，约 ¥2.3 万）、开 BNPL（先买后付分期）、购物车加免邮进度条。</li>
     </ol>
   </section>
 
@@ -59,7 +90,7 @@
         </tbody></table></div>
       <div class="card"><h4 style="margin-top:0">Gather Grande 六档变体</h4>
         <table style="margin-top:.5rem"><thead><tr><th>变体</th><th>售价</th><th>站上划线价</th><th>相对 Basic 加价</th></tr></thead><tbody>
-        <tr><td data-l="">Basic Set / 基础高度</td><td data-l="售价"><b>$239</b></td><td data-l="站上划线价">$239（<b>无划线</b>）</td><td data-l="相对 Basic 加价">—</td></tr>
+        <tr><td data-l="">Basic Set / 基础高度</td><td data-l="售价"><b>$239（约 ¥1,720）</b></td><td data-l="站上划线价">$239（<b>无划线</b>）</td><td data-l="相对 Basic 加价">—</td></tr>
         <tr><td data-l="">Basic Set / 加高腿</td><td data-l="售价">$249</td><td data-l="站上划线价">$258</td><td data-l="相对 Basic 加价">+$10</td></tr>
         <tr><td data-l="">+ Titanium Tabletop / 基础高度</td><td data-l="售价">$289</td><td data-l="站上划线价">$299</td><td data-l="相对 Basic 加价">+$50</td></tr>
         <tr><td data-l="">+ Titanium Tabletop / 加高腿</td><td data-l="售价">$299</td><td data-l="站上划线价">$309</td><td data-l="相对 Basic 加价">+$60</td></tr>
@@ -83,11 +114,11 @@
         <tr><td data-l="">BBQ Tong Set</td><td data-l="价格">$16</td><td data-l="库存">✅</td><td data-l="阶梯内加价">未进阶梯</td><td data-l="阶梯内折扣">—</td></tr>
       </tbody>
     </table>
-    <div class="callout danger"><span class="ttl">先纠正一个流传的说法</span>趋势报告写「燃气炉是 $33 配件，埋在配件区」——<b>实测后这只对了一半</b>。<b>燃气炉已经是 PDP 主商品的第三级变体</b>（Lite $259 / Grande $349），但它<b>没有独立 URL、独立标题、独立主图、独立评价、独立广告组</b>，用户必须点开下拉框才知道存在。<b>KBBQ 烤盘则连变体都没进，是纯配件。</b><br>
+    <div class="callout danger"><span class="ttl">先纠正一个流传的说法</span>趋势报告写「燃气炉是 $33 配件，埋在配件区」——<b>实测后这只对了一半</b>。<b>燃气炉已经是 PDP 主商品的第三级变体</b>（Lite $259 / Grande $349，约 ¥2,510），但它<b>没有独立 URL、独立标题、独立主图、独立评价、独立广告组</b>，用户必须点开下拉框才知道存在。<b>KBBQ 烤盘则连变体都没进，是纯配件。</b><br>
     所以问题不是「没做套装」，是「<b>套装做了但没被商品化</b>」。<b>这两件事的修法完全不同。</b></div>
 
     <h3>1.2 AOV $307 反推</h3>
-    <p><b>已知</b>：Meta 归因收入 $140,198 / 457 单 = <b>AOV $306.78</b></p>
+    <p><b>已知</b>：Meta 归因收入 $140,198（约 ¥101 万）/ 457 单 = <b>AOV $306.78</b></p>
     <div class="disclaimer">
       <span class="ttl">假设（结论完全依赖它们，必须先声明）</span>
       <b>A1</b>：$140,198 是<b>商品小计</b>，不含 $24.90 运费与税。依据是 Shopify 官方 Meta 像素 <code>Purchase</code> 事件默认取 subtotal。<b>未验证</b>（需查甲方 Shopify 后台像素配置）。<b>若实际含运费，真实商品 AOV = $281.88</b>，下方「溢出」各减 $24.90。<br>
@@ -147,7 +178,7 @@
         <tr><td data-l=""><b>$399</b></td><td data-l="品牌 / 产品"><b>NOMAD Rodeo</b>、<b>KBBQ Bros Duo V2</b>（原价 $599）</td><td data-l="形态">便携炭烤 / 韩烤桌</td></tr>
         <tr><td data-l="">$499.95</td><td data-l="品牌 / 产品">BioLite FirePit+（原价 $599.95）</td><td data-l="形态">便携火坑+烤</td></tr>
         <tr><td data-l="">$399–1,899</td><td data-l="品牌 / 产品">Breeo</td><td data-l="形态">后院火坑</td></tr>
-        <tr><td data-l="">$1,999.99–6,999.99</td><td data-l="品牌 / 产品">Gather Grills</td><td data-l="形态">后院烤桌家具</td></tr>
+        <tr><td data-l="">$1,999.99–6,999.99（约 ¥1.44 万–5 万）</td><td data-l="品牌 / 产品">Gather Grills</td><td data-l="形态">后院烤桌家具</td></tr>
       </tbody>
     </table>
 
@@ -162,9 +193,9 @@
       <table>
         <thead><tr><th>品牌</th><th>标价</th><th>美国运费</th><th>到手价</th><th>运费来源（本次实测）</th></tr></thead>
         <tbody>
-          <tr><td data-l=""><b>AroundFire Gather Lite</b></td><td data-l="标价">$189</td><td data-l="美国运费"><b>$24.90（无免邮）</b></td><td data-l="到手价"><b>$213.90</b></td><td data-l="运费来源（本次实测）">结账实勘</td></tr>
-          <tr><td data-l="">AroundFire Lite + KBBQ 烤盘</td><td data-l="标价">$226</td><td data-l="美国运费">$24.90</td><td data-l="到手价"><b>$250.90</b></td><td data-l="运费来源（本次实测）">同上</td></tr>
-          <tr><td data-l=""><b>KBBQ Bros Duo V2</b></td><td data-l="标价">$399</td><td data-l="美国运费"><b>$99 固定/张</b></td><td data-l="到手价"><b>$498</b></td><td data-l="运费来源（本次实测）">官网原文 <code>$99 Flat Rate Per table</code></td></tr>
+          <tr><td data-l=""><b>AroundFire Gather Lite</b></td><td data-l="标价">$189</td><td data-l="美国运费"><b>$24.90（无免邮）</b></td><td data-l="到手价"><b>$213.90（约 ¥1,540）</b></td><td data-l="运费来源（本次实测）">结账实勘</td></tr>
+          <tr><td data-l="">AroundFire Lite + KBBQ 烤盘</td><td data-l="标价">$226</td><td data-l="美国运费">$24.90</td><td data-l="到手价"><b>$250.90（约 ¥1,810）</b></td><td data-l="运费来源（本次实测）">同上</td></tr>
+          <tr><td data-l=""><b>KBBQ Bros Duo V2</b></td><td data-l="标价">$399</td><td data-l="美国运费"><b>$99 固定/张</b></td><td data-l="到手价"><b>$498（约 ¥3,590）</b></td><td data-l="运费来源（本次实测）">官网原文 <code>$99 Flat Rate Per table</code></td></tr>
           <tr><td data-l="">Solo Stove</td><td data-l="标价">$359.99 起</td><td data-l="美国运费"><b>$199+ 免邮</b></td><td data-l="到手价">$359.99</td><td data-l="运费来源（本次实测）">官网 <code>FREE Shipping On Every Order Over $199</code></td></tr>
           <tr><td data-l="">Snow Peak Takibi</td><td data-l="标价">$349.95</td><td data-l="美国运费"><b>$200+ 免邮</b></td><td data-l="到手价">$349.95</td><td data-l="运费来源（本次实测）">官网 <code>Free Shipping on Orders $200+</code></td></tr>
           <tr><td data-l="">Breeo</td><td data-l="标价">$399 起</td><td data-l="美国运费"><b>全单免邮</b></td><td data-l="到手价">$399</td><td data-l="运费来源（本次实测）">官网 <code>free ground shipping on all orders within the contiguous United States</code></td></tr>
@@ -192,7 +223,7 @@
 
     <h3>五个跨门槛动作（按投入产出比排序）</h3>
     <div class="cards c2">
-      <div class="card"><h4 style="margin-top:0">动作 1 · 换掉比较对象：不比火盆，比「三件套 + 后备箱空间」</h4><p>$25 的网状火盆没有桌、没有腿、没有烤面。Gather Grills 已经把这个说服模块写成全品类最强的一段（<code>The usual backyard stack</code> → <code>Five purchases. Or one circle.</code>），可直接搬到便携语境。<br><b>呈现</b>：PDP 第二屏放「替代成本表」——露营桌 + 便携火盆 + 便携烤炉 + 这三件的后备箱体积，对比 16 lbs / 登机箱尺寸 / 30 秒展开。</p><p style="margin-bottom:0">⚠️ <b>执行前必须实测这三件替代品的真实在售价，禁止先编数字。</b></p></div>
+      <div class="card"><h4 style="margin-top:0">动作 1 · 换掉比较对象：不比火盆，比「三件套 + 后备箱空间」</h4><p>$25 的网状火盆没有桌、没有腿、没有烤面。Gather Grills 已经把这个说服模块写成全品类最强的一段（<code>The usual backyard stack</code> → <code>Five purchases. Or one circle.</code>），可直接搬到便携语境。<br><b>呈现</b>：PDP 第二屏放「替代成本表」——露营桌 + 便携火盆 + 便携烤炉 + 这三件的后备箱体积，对比 16 lbs（磅，约 7.3 公斤，1 磅≈0.45 公斤）/ 登机箱尺寸 / 30 秒展开。</p><p style="margin-bottom:0">⚠️ <b>执行前必须实测这三件替代品的真实在售价，禁止先编数字。</b></p></div>
       <div class="card" style="border:2px solid var(--green)"><h4 style="margin-top:0">动作 2 · 上 BNPL 分期（成本最低、见效最快）</h4><p>结账实勘：全站 <b>Klarna / Affirm / Afterpay / Shop Pay Installments 一个都没有</b>，PDP 也无 "as low as $X/mo"。<br>$189 → <b>4 × $47.25</b>，$239 → 4 × $59.75。<b>直接把用户脑内的比较从「$189 vs $25」变成「$47 vs $25」。</b>$189–239 正是 BNPL 对转化提升最明显的价格带。<b>Shopify 后台开 Shop Pay Installments 是配置项，不需要开发。</b></p></div>
       <div class="card"><h4 style="margin-top:0">动作 3 · 给物理证据，不给形容词</h4><p>VOC 第三层默认「贵 = 营销费」。破解只能靠<b>可核验规格</b>：钢材牌号与厚度、焊点数、承重、火网克重（KS 已有 <code>300g</code> 和 <code>50+ 密度测试</code>）、桌面材质（钛）。</p></div>
       <div class="card"><h4 style="margin-top:0">动作 4 · 回答「一年能用几次」，而不是「值不值 $189」</h4><p>VOC 四大纠结点之首是 <i>"worried in the end how much i will end up using it"</i>。破解是<b>多场景实证</b>（后院 / 露营 / 尾门 / KBBQ 各一条），<b>不是降价</b>。<br>这同时是投放动作：账户里「家庭/后院」方向只花了 $211，KBBQ 方向零素材。</p></div>
@@ -219,7 +250,7 @@
     <div class="card">
       <h4 style="margin-top:0">套装 A · KBBQ / 围桌共烤套装</h4>
       <table>
-        <thead><tr><th>组成</th><th>à la carte</th></tr></thead>
+        <thead><tr><th>组成</th><th>à la carte（单件分开买的原价）</th></tr></thead>
         <tbody>
           <tr><td data-l="">Gather Lite Basic Set</td><td data-l="à la carte">$189</td></tr>
           <tr><td data-l="">KBBQ Style Grill Grate</td><td data-l="à la carte">$37</td></tr>
@@ -303,7 +334,7 @@
         <tr><td data-l="">$80</td><td data-l="直发关税">$59.75</td><td data-l="3PL 关税">$20.00</td><td data-l="每件节省"><b>$39.75</b></td></tr>
         </tbody></table></div>
     </div>
-    <div class="callout danger"><b>第一个结论</b>：<b>每件税负差 $27–47，而全部运费收入才 $24.90。中国直发的关税罚金比他们向客户收的运费还多。</b><br>457 单口径：木柴款 $189 每件差 $32.25 → <b>$14,738</b>；按 AOV $306.78 混合口径每件差 $61.69 → <b>$28,195</b>。</div>
+    <div class="callout danger"><b>第一个结论</b>：<b>每件税负差 $27–47（约 ¥195–340），而全部运费收入才 $24.90。中国直发的关税罚金比他们向客户收的运费还多。</b><br>457 单口径：木柴款 $189 每件差 $32.25 → <b>$14,738（约 ¥10.6 万）</b>；按 AOV $306.78 混合口径每件差 $61.69 → <b>$28,195（约 ¥20 万）</b>。</div>
 
     <h3>5.4 表二 · 燃气套装（HTS 7321.11.1060，55.7%）—— 这里是悬崖</h3>
     <div class="cards c2">
@@ -315,12 +346,12 @@
         </tbody></table></div>
       <div class="card"><h4 style="margin-top:0">Grande 燃气套装 $349</h4>
         <table style="margin-top:.4rem"><thead><tr><th>出厂价假设</th><th>直发关税</th><th>3PL 关税</th><th>每件节省</th></tr></thead><tbody>
-        <tr><td data-l="">$95</td><td data-l="直发关税"><b>$194.39</b></td><td data-l="3PL 关税">$52.92</td><td data-l="每件节省"><b>$141.48</b></td></tr>
+        <tr><td data-l="">$95</td><td data-l="直发关税"><b>$194.39（约 ¥1,400）</b></td><td data-l="3PL 关税">$52.92</td><td data-l="每件节省"><b>$141.48</b></td></tr>
         <tr><td data-l=""><b>$110（基准）</b></td><td data-l="直发关税"><b>$194.39</b></td><td data-l="3PL 关税"><b>$61.27</b></td><td data-l="每件节省"><b>$133.12</b></td></tr>
         <tr><td data-l="">$125</td><td data-l="直发关税"><b>$194.39</b></td><td data-l="3PL 关税">$69.62</td><td data-l="每件节省"><b>$124.77</b></td></tr>
         </tbody></table></div>
     </div>
-    <div class="callout danger"><b>第二个结论（最刺眼）</b>：<b>$259 的燃气套装，中国直发要缴 $144.26 关税——占售价 55.7%。加上出厂价 $90，成本已经 $234，售价 $259，毛利 $25，还没算运费。这个 SKU 在中国直发模式下商业上不成立。</b></div>
+    <div class="callout danger"><b>第二个结论（最刺眼）</b>：<b>$259 的燃气套装，中国直发要缴 $144.26 关税——占售价 55.7%。加上出厂价 $90，成本已经 $234（约 ¥1,685），售价 $259，毛利 $25（约 ¥180），还没算运费。这个 SKU 在中国直发模式下商业上不成立。</b></div>
     <table>
       <thead><tr><th>打包 vs 分开申报的差额（归类风险）</th><th>关税</th></tr></thead>
       <tbody>
@@ -329,7 +360,7 @@
         <tr><td data-l=""><b>差额</b></td><td data-l="关税"><b>$78.63/件</b></td></tr>
       </tbody>
     </table>
-    <div class="callout danger">⚠️ <b>混装套装的归类由报关规则（GRI 3 基本特征原则）决定，本报告不做归类判断。</b>但这个 $78.63 的差额说明：<b>在把燃气炉打进套装 SKU 之前，必须先拿到报关行/律师的归类意见。这不是文案问题，是几十美元/件的真金白银。</b></div>
+    <div class="callout danger">⚠️ <b>混装套装的归类由报关规则（GRI 3＝海关商品归类通则第 3 条，按「基本特征」定归类）决定，本报告不做归类判断。</b>但这个 $78.63 的差额说明：<b>在把燃气炉打进套装 SKU 之前，必须先拿到报关行/律师的归类意见。这不是文案问题，是几十美元/件的真金白银。</b></div>
 
     <figure><img src="assets/charts/pricing_tariff.png" alt="四个 SKU 在中国直发与美国 3PL 两种模式下的每件关税对比柱状图，直发关税全部高于向客户收取的 $24.90 运费"><figcaption><b>图 2 · 关税差比运费还大</b>：红柱是直发（税基＝消费者实付价），绿柱是 3PL（税基＝出厂价）。<b>四个 SKU 的每件差是 $32.25 / $44.75 / $94.13 / $133.12，全部超过向客户收的全部运费 $24.90（橙色虚线）。</b>燃气套装两根红柱占售价 55.7%，是整张图里最陡的悬崖。<br><span style="font-size:11.5px">⚠️ 出厂价（木柴 $60 / 燃气 $90、$110）为<b>假设值，未验证</b>；HTS 税率为 2026-07 时点，报价前须复核。</span></figcaption></figure>
     <h3>5.5 表三 · 完整成本堆栈对比（Lite $189，出厂价 $60）</h3>
@@ -345,7 +376,7 @@
         <tr><td data-l="">减：向客户收取的运费</td><td data-l="中国仓直发 B2C">−$24.90</td><td data-l="美国 3PL 批量进口">$0（走免邮）</td></tr>
         <tr><td data-l=""><b>净成本</b></td><td data-l="中国仓直发 B2C"><b>$107.35 – $122.35</b></td><td data-l="美国 3PL 批量进口"><b>$98.00</b></td></tr>
         <tr><td data-l=""><b>毛利（售价 $189）</b></td><td data-l="中国仓直发 B2C"><b>$66.65 – $81.65（35.3% – 43.2%）</b></td><td data-l="美国 3PL 批量进口"><b>$91.00（48.1%）</b></td></tr>
-        <tr><td data-l="">减 Meta CPA（账户实测 $44–77）</td><td data-l="中国仓直发 B2C"><b>−$11 ~ +$38</b></td><td data-l="美国 3PL 批量进口"><b>$14 ~ $47</b></td></tr>
+        <tr><td data-l="">减 Meta CPA（CPA＝获取一个订单的广告成本，账户实测 $44–77，约 ¥320–550）</td><td data-l="中国仓直发 B2C"><b>−$11 ~ +$38</b></td><td data-l="美国 3PL 批量进口"><b>$14 ~ $47</b></td></tr>
       </tbody>
     </table>
     <figure><img src="assets/charts/pricing_cost_stack.png" alt="Gather Lite $189 的成本堆栈对比条形图，3PL 模式毛利 $91，中国直发模式毛利 $66.65 至 $81.65"><figcaption><b>图 3 · $189 拆开看</b>：每条都加总到售价 $189，橙色是直发另外向客户收的 $24.90。<b>3PL 就算把头程、境内配送、仓储履约全算进去（$23/件），毛利仍是最厚的一条（$91 / 48.1%）。</b>最下面一条是直发的最坏情形——扣掉 Meta CPA 后基础款是负的。<br><span style="font-size:11.5px">⚠️ 出厂价 $60、3PL 追加成本 $23/件、直发空运 $25–40 均为<b>假设值，未验证</b>。</span></figcaption></figure>
@@ -393,7 +424,7 @@
         <tr><td data-l="">运费占比</td><td data-l="数值">Lite <b>13.2%</b> / Grande 10.4%</td></tr>
         <tr><td data-l="">露出时机</td><td data-l="数值">checkout <b>第 4 个区块</b>，须先填完 9 个字段（含强制手机号）</td></tr>
         <tr><td data-l="">移动端</td><td data-l="数值">顶部总价从 $189 <b>当场跳到 $213.90</b></td></tr>
-        <tr><td data-l="">结账→购买转化</td><td data-l="数值"><b>33.1%</b>（1,380 → 457），<b>流失 67%</b></td></tr>
+        <tr><td data-l="">结账→购买转化</td><td data-l="数值"><b>33.1%</b>（1,380 → 457），<b>流失 67%</b>（每 100 个走到结账页的人有 67 个没付款就离开）</td></tr>
         <tr><td data-l=""><b>行业基准</b></td><td data-l="数值"><b>Breeo 全单免邮 / Solo Stove $199 / Snow Peak $200</b>（本次实测）</td></tr>
       </tbody>
     </table>
@@ -460,7 +491,7 @@
       <thead><tr><th>价格点</th><th>数值</th></tr></thead>
       <tbody>
         <tr><td data-l="">众筹价</td><td data-l="数值">Lite <b>$149</b>（277 backers）/ $169（8 人）；Grande <b>$179</b>（224 人）/ $199（16 人）</td></tr>
-        <tr><td data-l="">众筹宣称 MSRP</td><td data-l="数值">Lite <b>$299</b>（<code>SAVE $150 from the MSRP of $299</code>）/ Grande <b>$358</b></td></tr>
+        <tr><td data-l="">众筹宣称 MSRP（厂商建议零售价）</td><td data-l="数值">Lite <b>$299（约 ¥2,150）</b>（<code>SAVE $150 from the MSRP of $299</code>）/ Grande <b>$358</b></td></tr>
         <tr><td data-l="">现售价</td><td data-l="数值">Lite <b>$189</b> / Grande <b>$239</b></td></tr>
         <tr><td data-l=""><b>现售价的划线价</b></td><td data-l="数值"><b>$189 / $239（等于售价，即无划线）</b>（本次 <code>compare_at_price</code> 实测）</td></tr>
       </tbody>
@@ -470,7 +501,7 @@
     <div class="card">
       <h4 style="margin-top:0">① $299 的 MSRP 锚，已经被自己废掉了</h4>
       <p>现价 $189 = 宣称 MSRP $299 的 <b>63%</b>，即<b>永久 37% 折扣</b>在卖。而站上 Basic 档 <code>compare_at_price</code> <b>等于售价</b>——<b>$299 这个锚从未在官网出现过</b>。结果：<b>既没吃到高锚的溢价，也没吃到「限时折扣」的紧迫感，两头落空。</b></p>
-      <p style="margin-bottom:0"><b>建议</b>：<b>不要</b>再用 $299（从未真实成交，属不可信锚，<b>美国 FTC 对虚构参考价有明确执法史</b>）。要么把<b>已经存在的真实高档位</b>（Grande 顶档 $359）推到首屏当锚，要么彻底放弃折扣叙事、走「透明定价 + 物理规格」路线——<b>后者恰好也是 VOC 第三层「我付的是产品还是营销费」的解药</b>。</p>
+      <p style="margin-bottom:0"><b>建议</b>：<b>不要</b>再用 $299（从未真实成交，属不可信锚，<b>美国 FTC（联邦贸易委员会，管虚假广告）对虚构参考价有明确执法史</b>）。要么把<b>已经存在的真实高档位</b>（Grande 顶档 $359）推到首屏当锚，要么彻底放弃折扣叙事、走「透明定价 + 物理规格」路线——<b>后者恰好也是 VOC 第三层「我付的是产品还是营销费」的解药</b>。</p>
     </div>
     <div class="card" style="border:2px solid var(--red)">
       <h4 style="margin-top:0">② 众筹 → 零售只涨 27%，这是全案最大的战略成本</h4>
@@ -478,7 +509,7 @@
       <ul>
         <li><b>没钱做免邮</b>——而 Breeo / Solo Stove / Snow Peak 都做得起</li>
         <li><b>没钱给经销商</b>——实勘：Dealers &amp; Distributors 页<b>只有招商表单，0 家已合作零售商</b>。$189 扣掉 40–50% 经销商折扣后不成立</li>
-        <li><b>没钱进 Amazon</b>——15% 类目佣金 = $28.35，再加 FBA 大件履约费（<b>未验证</b>），$189 上几乎没有空间；而趋势报告的结论是「Amazon 必须进」</li>
+        <li><b>没钱进 Amazon</b>——15% 类目佣金 = $28.35（约 ¥204），再加 FBA（亚马逊官方仓储代发货）大件履约费（<b>未验证</b>），$189 上几乎没有空间；而趋势报告的结论是「Amazon 必须进」</li>
       </ul>
       <p style="margin-bottom:0"><b>$189 不是一个价格问题，是一个渠道问题。它锁死了 AroundFire 只能做纯 DTC——而实测已证明，$119–350 价格带的九个品牌里，AroundFire 是唯一的纯 DTC 玩家。</b></p>
     </div>
