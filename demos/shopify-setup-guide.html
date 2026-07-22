@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>燃气版落地页 · Shopify 建站 + 广告配置操作手册 | AroundFire</title>
+<meta name="description" content="给 AroundFire 甲方的操作文档：在 Shopify 后台搭建 propane-fire-pit-table 落地页 + Google / Meta 广告配置 + 上线检查清单。所有关键词数据来自真实关键词表。">
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{
+  --red:#BC2B2B; --red-dk:#8E1F1F; --red-hv:#AC2020;
+  --ember:#E0A030; --ember-dk:#A8720F;
+  --green:#2E7D52; --blue:#2B5D8E; --plum:#6B4A7A;
+  --ink:#16130F; --ink2:#453D34; --ink3:#6B6055;
+  --paper:#FFFFFF; --sand:#F7F3EE; --sand2:#EFE8DF; --line:#E4DCD3;
+  --sh:0 2px 14px rgba(22,19,15,.07);
+  --shh:0 12px 38px rgba(22,19,15,.16);
+  --r:16px;
+  --font:'Poppins','Segoe UI',-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);font-size:15px;line-height:1.85;color:var(--ink);background:var(--sand);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--red)}
+
+/* ---- 顶栏 ---- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(22,19,15,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.1)}
+.topbar-in{max-width:1080px;margin:0 auto;padding:9px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.topbar a{color:rgba(255,255,255,.72);text-decoration:none;font-size:12.5px;font-weight:600;white-space:nowrap}
+.topbar a:hover{color:#fff}
+.topbar a.home{color:var(--ember);font-weight:800;letter-spacing:.04em}
+.topbar .sep{color:rgba(255,255,255,.22);font-size:12px}
+
+/* ---- Hero ---- */
+.hero{background:#16130F;color:#fff;padding:3rem 1.4rem 2.6rem;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 16% 8%,rgba(224,160,48,.24),transparent 44%),
+  radial-gradient(circle at 88% 92%,rgba(188,43,43,.28),transparent 46%)}
+.hero-in{position:relative;z-index:2;max-width:1000px;margin:0 auto}
+.eyebrow{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:2.4px;color:var(--ember);border:1.5px solid rgba(224,160,48,.42);padding:5px 16px;border-radius:99px;margin-bottom:1.1rem;text-transform:uppercase}
+.hero h1{font-size:clamp(24px,4.4vw,38px);font-weight:800;line-height:1.22;margin-bottom:.6rem;letter-spacing:-.01em}
+.hero .sub{color:rgba(255,255,255,.82);font-size:15px;max-width:780px}
+.hero .meta{margin-top:1.3rem;display:flex;gap:9px;flex-wrap:wrap}
+.hero .meta span{font-size:11.5px;font-weight:600;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);padding:5px 13px;border-radius:99px;color:rgba(255,255,255,.86)}
+
+/* ---- 布局 ---- */
+.wrap{max-width:1080px;margin:0 auto;padding:2rem 1.4rem 4rem}
+section{margin-bottom:2.6rem;scroll-margin-top:64px}
+h2{font-size:clamp(19px,2.6vw,26px);font-weight:800;line-height:1.35;margin:0 0 .4rem;letter-spacing:-.01em}
+h2 .num{color:var(--red);font-weight:800;margin-right:.4rem}
+h3{font-size:17.5px;font-weight:800;margin:1.7rem 0 .5rem;line-height:1.45}
+h4{font-size:14.5px;font-weight:800;margin:1.1rem 0 .35rem;color:var(--ink2)}
+p{margin:.55rem 0}
+.lead{color:var(--ink2);font-size:14.5px;margin-bottom:1rem}
+ul,ol{margin:.5rem 0 .8rem 1.15rem}
+li{margin:.3rem 0}
+strong,b{font-weight:700}
+code{font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:.88em;background:var(--sand2);padding:1px 6px;border-radius:5px;color:var(--red-dk);word-break:break-word;font-weight:600}
+hr{border:0;border-top:1px solid var(--line);margin:2rem 0}
+.sec-head{border-bottom:2px solid var(--line);padding-bottom:.55rem;margin-bottom:1.1rem}
+
+/* ---- 卡片 / 提示块 ---- */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);padding:20px 22px;margin:1rem 0}
+.card>*:first-child{margin-top:0}.card>*:last-child{margin-bottom:0}
+.callout{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--ember);border-radius:12px;padding:15px 19px;margin:1rem 0;box-shadow:var(--sh);font-size:14px;color:var(--ink2)}
+.callout b,.callout strong{color:var(--ink)}
+.callout>*:first-child{margin-top:0}.callout>*:last-child{margin-bottom:0}
+.callout.danger{border-left-color:var(--red);background:#FFF8F8}
+.callout.ok{border-left-color:var(--green);background:#F6FBF8}
+.callout.info{border-left-color:var(--blue);background:#F7FAFD}
+.callout .ttl{display:block;font-weight:800;color:var(--ink);margin-bottom:.25rem;font-size:14px}
+
+/* ---- 方式取舍表卡 ---- */
+.pickrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:1.1rem 0}
+.pick{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:17px 19px;box-shadow:var(--sh);position:relative}
+.pick.best{border:2px solid var(--green)}
+.pick .tag{display:inline-block;font-size:10.5px;font-weight:800;padding:3px 10px;border-radius:99px;letter-spacing:.03em;margin-bottom:8px}
+.pick.best .tag{background:#E6F4EC;color:#1F6741}
+.pick .tag.alt{background:var(--sand2);color:var(--ink3)}
+.pick h4{margin:.1rem 0 .4rem;font-size:16px;color:var(--ink)}
+.pick p{font-size:13px;color:var(--ink2);margin:.3rem 0}
+.pick .why{font-size:12.5px;color:var(--ink3);margin-top:.5rem;border-top:1px dashed var(--line);padding-top:.5rem}
+
+/* ---- 步骤 ---- */
+.steps{counter-reset:step;list-style:none;margin:1.2rem 0 0;padding:0}
+.steps>li{counter-increment:step;position:relative;padding:0 0 1.4rem 52px;margin:0}
+.steps>li::before{content:counter(step);position:absolute;left:0;top:0;width:34px;height:34px;background:var(--red);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;box-shadow:0 3px 10px rgba(188,43,43,.3)}
+.steps>li::after{content:"";position:absolute;left:16px;top:38px;bottom:2px;width:2px;background:var(--line)}
+.steps>li:last-child::after{display:none}
+.steps>li .st-h{font-weight:800;font-size:15.5px;color:var(--ink);margin-bottom:.2rem;padding-top:5px}
+.steps>li .st-b{font-size:14px;color:var(--ink2)}
+.steps>li .st-b p{margin:.4rem 0}
+.path{display:inline-block;background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:3px 10px;border-radius:6px;font-family:ui-monospace,Consolas,monospace;letter-spacing:.01em;line-height:1.9}
+.path b{color:var(--ember)}
+
+/* ---- 截图占位 ---- */
+.ph{background:repeating-linear-gradient(135deg,#F3EDE4,#F3EDE4 12px,#EEE7DC 12px,#EEE7DC 24px);border:1.5px dashed #C9BCAA;border-radius:12px;padding:16px 18px;margin:.7rem 0;font-size:12.5px;color:var(--ink3);line-height:1.7}
+.ph .pl{display:block;font-weight:800;color:var(--ember-dk);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem}
+
+/* ---- 表格 ---- */
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:.9rem 0;background:var(--paper);border-radius:12px;overflow:hidden;box-shadow:var(--sh)}
+thead th{background:var(--ink);color:#fff;font-weight:700;text-align:left;padding:9px 12px;font-size:12.5px;line-height:1.5;vertical-align:bottom}
+tbody td{padding:9px 12px;border-top:1px solid var(--line);vertical-align:top;line-height:1.6}
+tbody tr:nth-child(even){background:#FCFAF7}
+tbody th{padding:9px 12px;border-top:1px solid var(--line);text-align:left;font-weight:700;vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tnote{font-size:12px;color:var(--ink3);margin:-.2rem 0 1rem;line-height:1.7}
+.pill{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.p-hot{background:#E6F4EC;color:#1F6741}
+.p-mid{background:#FDF2DF;color:#8A5D0B}
+.p-no{background:#FBE9E9;color:#9E1F1F}
+@media (max-width:760px){
+  table,thead,tbody,tr,td,th{display:block;width:100%}
+  table{background:transparent;box-shadow:none;border-radius:0}
+  thead{display:none}
+  tbody tr{background:var(--paper)!important;border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh);margin-bottom:11px;padding:5px 2px;overflow:hidden}
+  tbody td,tbody th{border-top:1px solid var(--line);padding:8px 14px;text-align:left!important;display:flex;gap:12px;align-items:baseline}
+  tbody tr>*:first-child{border-top:0;font-weight:700}
+  tbody td::before,tbody th::before{content:attr(data-l);flex:0 0 40%;max-width:40%;font-size:11px;font-weight:700;color:var(--ink3);line-height:1.55}
+  tbody td[data-l=""]::before,tbody th[data-l=""]::before{display:none}
+  td.num,th.num{text-align:left;justify-content:flex-start}
+}
+
+/* ---- 检查清单 ---- */
+.chk{list-style:none;margin:1rem 0;padding:0}
+.chk li{background:var(--paper);border:1px solid var(--line);border-radius:11px;box-shadow:var(--sh);padding:12px 16px 12px 44px;margin:.5rem 0;position:relative;font-size:14px;color:var(--ink2)}
+.chk li::before{content:"";position:absolute;left:15px;top:14px;width:18px;height:18px;border:2px solid var(--red);border-radius:5px}
+.chk li b{color:var(--ink)}
+.chk .grp{background:none;border:0;box-shadow:none;padding:14px 0 2px;margin:0;font-weight:800;color:var(--ink);font-size:15px}
+.chk .grp::before{display:none}
+
+/* ---- 术语速查 ---- */
+details.termbox{background:#F7FAFD;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;margin:1.2rem 0;box-shadow:var(--sh);overflow:hidden}
+details.termbox>summary{cursor:pointer;padding:12px 18px;font-weight:800;color:var(--ink);font-size:13.5px;list-style:none;user-select:none}
+details.termbox>summary::-webkit-details-marker{display:none}
+details.termbox>summary::after{content:" ▾";color:var(--ink3);font-weight:800;float:right}
+details.termbox[open]>summary::after{content:" ▴"}
+details.termbox .tb-in{padding:0 18px 14px}
+details.termbox dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:.2rem 0;font-size:13px}
+details.termbox dt{font-weight:800;color:var(--blue);line-height:1.6}
+details.termbox dd{margin:0;color:var(--ink2);line-height:1.65}
+@media (max-width:560px){details.termbox dl{grid-template-columns:1fr;gap:1px 0}details.termbox dd{margin:0 0 .55rem}}
+
+/* ---- TOC ---- */
+.toc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;margin:0 0 1.6rem;box-shadow:var(--sh)}
+.toc .ttl{font-size:11.5px;font-weight:800;letter-spacing:.1em;color:var(--ink3);text-transform:uppercase;margin-bottom:8px}
+.toc ol{margin:0 0 0 1.1rem;font-size:14px}
+.toc a{color:var(--ink2);text-decoration:none;font-weight:600}
+.toc a:hover{color:var(--red)}
+.foot{text-align:center;color:var(--ink3);font-size:12.5px;padding:2rem 1.2rem;border-top:1px solid var(--line);background:var(--paper);line-height:1.8}
+</style>
+</head>
+<body>
+
+<header class="topbar"><div class="topbar-in">
+  <a class="home" href="index.html">← AROUNDFIRE 调研中心</a>
+  <span class="sep">/</span>
+  <a href="#part1">建页步骤</a>
+  <a href="#part2">广告配置</a>
+  <a href="#part3">上线清单</a>
+</div></header>
+
+<div class="hero"><div class="hero-in">
+  <span class="eyebrow">操作手册 · Setup Guide</span>
+  <h1>燃气版落地页：Shopify 建站 + 广告配置操作手册</h1>
+  <p class="sub">教你把已经设计好的「Propane Fire Pit Table（丙烷燃气版）」落地页搬进 Shopify 后台，并配好 Google / Meta 广告，抢下「禁火令期间也能烤」这个人群。给完全没建过独立落地页的人看，每一步都说清点哪里。</p>
+  <div class="meta">
+    <span>🛠️ 三大块：建页 · 投放 · 上线清单</span>
+    <span>📊 广告词全部来自真实关键词表</span>
+    <span>⚖️ 合规红线内嵌</span>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+  <div class="toc">
+    <div class="ttl">这份文档讲什么</div>
+    <ol>
+      <li><a href="#part1">一、在 Shopify 后台把这个页面建出来（8 步）</a></li>
+      <li><a href="#part2">二、广告怎么配（Google 搜索 + Meta 人群/地区）</a></li>
+      <li><a href="#part3">三、上线前逐条勾的检查清单</a></li>
+    </ol>
+  </div>
+
+  <div class="callout info">
+    <span class="ttl">先说清楚这份文档配套的东西</span>
+    落地页的<b>设计稿已经做好了</b>，就是 <code>gas_landing_page.html</code>（本目录内，即任务里说的 propane-fire-pit-table 页）。这份文档不是重新设计，而是教你<b>怎么把这个现成的设计搬进 Shopify 后台并让它能真正下单</b>。设计稿里凡是标 <code>[to be confirmed]</code> 的规格（重量 / 尺寸 / BTU / 认证），<b>上线前必须由你补上真实数据</b>——那些不是我能编的。
+  </div>
+
+  <details class="termbox">
+    <summary>术语速查 · 看不懂的词先点这里</summary>
+    <div class="tb-in"><dl>
+      <dt>落地页 (Landing Page)</dt><dd>为一个广告 / 一个人群单独做的独立页面，进来的人只看到一件事、一个下单按钮，不被首页的杂七杂八分心。</dd>
+      <dt>Page（页面）</dt><dd>Shopify 里的一种内容页，用来放「关于我们 / FAQ / 落地页」这类不是商品也不是博客的内容。后台在「在线商店 → 页面」。</dd>
+      <dt>handle（网址后缀）</dt><dd>一个页面 / 商品网址最后那一段。比如 <code>aroundfire.co/pages/<b>propane-fire-pit-table</b></code> 里加粗那段就是 handle，可自己指定，直接影响 SEO。</dd>
+      <dt>variant（变体 / 规格）</dt><dd>同一个商品下的不同规格。比如 Gather Lite 有「木柴版 / 燃气版」，燃气版就是一个 variant。每个 variant 有一串数字 ID，加购按钮要接的就是这串 ID。</dd>
+      <dt>variant ID</dt><dd>某个规格的唯一数字编号（一长串数字）。加购链接 <code>/cart/<b>variant_id</b>:1</code> 里填的就是它。下面第 4 步教你怎么找。</dd>
+      <dt>Custom Liquid（自定义 Liquid 区块）</dt><dd>Shopify 主题编辑器里的一个「万能积木」，能直接塞进一整段 HTML / CSS 代码。我们用它把设计稿贴进去，<b>不用装插件、不用改主题源码</b>。</dd>
+      <dt>模板 (template)</dt><dd>决定一个页面长什么骨架。给落地页单独指定一个「空白模板」，它就不会带上普通页面的边距和标题。</dd>
+      <dt>SEO</dt><dd>搜索引擎优化。让 Google 更容易找到并展示你的页面。</dd>
+      <dt>title / meta description</dt><dd>你的页面在 Google 搜索结果里显示的<b>标题</b>和<b>那句灰色描述</b>。Shopify 页面底部可以直接填。</dd>
+      <dt>canonical（规范网址）</dt><dd>告诉 Google「这个内容的官方正版网址是哪个」，防止多个相似网址被判成重复内容、互相抢排名。</dd>
+      <dt>Merchant Center / Feed</dt><dd>Google 购物的商品库。你的商品信息（图 / 价 / 标题）传上去，才能出现在搜索页顶部那排带图的购物位。</dd>
+      <dt>KD（关键词难度）</dt><dd>Keyword Difficulty，0–100。数字越低越好抢排名。本文里 KD≤15 都算「好打」。</dd>
+      <dt>CPC（单次点击成本）</dt><dd>Cost Per Click。投搜索广告时，别人点你一下大概花多少钱（美元）。</dd>
+      <dt>Volume（月搜索量）</dt><dd>这个词在美国每月被搜多少次。</dd>
+      <dt>ROAS</dt><dd>广告花 1 块换回几块销售额。3 以上算健康，你账户整体 5.69 很好。</dd>
+      <dt>否定词 (Negative Keyword)</dt><dd>告诉 Google「有这个词的搜索别给我展示广告」，用来挡掉不相关、白花钱的点击。</dd>
+      <dt>DSA（动态搜索广告）</dt><dd>不用你预先填词，Google 自动根据你落地页内容去匹配相关搜索。适合「知道有需求、但手上没有现成关键词」的场景——正好是这个燃气页的处境。</dd>
+      <dt>广泛匹配 / 搜索词报告</dt><dd>广泛匹配＝让一个词去覆盖它的各种说法；搜索词报告＝后台能看到「用户到底搜了什么词触发了你广告」，用来反向挖出真实关键词。</dd>
+    </dl></div>
+  </details>
+
+  <!-- ============ PART 1 ============ -->
+  <section id="part1">
+    <div class="sec-head"><h2><span class="num">一</span>在 Shopify 后台把这个页面建出来</h2></div>
+    <p class="lead">先定用哪种方式建，再一步步搭。下面所有「点哪里」都按当前 Shopify 后台的通用结构写；不同主题 / 插件版本菜单名可能略有差别，<b>遇到对不上的以你自己后台实际界面为准</b>。</p>
+
+    <h3>0. 先选建页方式（这步决定后面怎么做）</h3>
+    <p>你手上是一份<b>已经写好的整页 HTML 设计稿</b>，不是要从零拖拽。基于这个前提，三种方式的取舍：</p>
+
+    <div class="pickrow">
+      <div class="pick best">
+        <span class="tag">✅ 推荐</span>
+        <h4>方式 A：独立 Page + 自定义 Liquid 区块</h4>
+        <p>新建一个 Page，给它指定一个几乎空白的模板，在主题编辑器里加一个「Custom Liquid」区块，把设计稿 HTML 整段贴进去。</p>
+        <p class="why"><b>为什么推荐：</b>零月费、不装插件、不改主题核心文件、独立网址 + 独立 SEO 完全可控；设计稿已是成品，贴进去即用。缺点是图片要手动传上去换链接、加购按钮要手填 variant——但都是一次性的。</p>
+      </div>
+      <div class="pick">
+        <span class="tag alt">备选</span>
+        <h4>方式 B：落地页插件（PageFly / Shogun）</h4>
+        <p>装一个落地页 App，用可视化拖拽搭，商品块能直接绑定真实 variant、自带吸底加购。</p>
+        <p class="why"><b>什么时候才选它：</b>你以后要频繁自己改版、且不想碰任何代码。代价是每月订阅费 + 学习这个 App。已有现成 HTML 的情况下它并不省事，反而要重搭。</p>
+      </div>
+      <div class="pick">
+        <span class="tag alt">不推荐</span>
+        <h4>方式 C：直接用产品页</h4>
+        <p>把燃气版做成某个产品页去打广告。</p>
+        <p class="why"><b>为什么不推荐：</b>产品页被产品模板框死，很难放这套「禁火令痛点 + 合规 FAQ + 痛点叙事」的自由排版，网址也带 <code>/products/</code> 前缀不利于独立 SEO 叙事。这个页的价值就在「独立叙事」，用产品页等于废掉一半。</p>
+      </div>
+    </div>
+
+    <div class="callout"><b>下面的步骤按「方式 A」写。</b>如果你已经装了 PageFly / Shogun 且更习惯它，可跳过第 3 步的贴代码部分，改成在 App 里粘贴 / 重搭，但第 1 步（网址）、第 4 步（加购接 variant）、第 6 步（SEO）、第 7 步（吸底条）的逻辑完全通用。</p></div>
+
+    <ol class="steps">
+
+      <li>
+        <div class="st-h">新建一个 Page，把网址后缀设成 propane-fire-pit-table</div>
+        <div class="st-b">
+          <p>后台左侧 <span class="path">在线商店 <b>Online Store</b> → 页面 <b>Pages</b> → 添加页面 <b>Add page</b></span></p>
+          <p>标题（Title）先随便填个内部名，比如 <code>Propane Fire Pit Table LP</code>（这个标题只在后台看，不是给客户看的 SEO 标题，那个在第 6 步单独设）。</p>
+          <p>关键在页面底部的 <b>Search engine listing（搜索引擎预览）</b> 区，点 <b>Edit / 编辑</b>，把 <b>URL handle</b> 改成：</p>
+          <p><span class="path">propane-fire-pit-table</span></p>
+          <p>最终网址就是 <code>https://www.aroundfire.co/pages/propane-fire-pit-table</code>——这正是关键词意图和广告要指向的独立 URL。</p>
+          <div class="ph"><span class="pl">📷 截图位</span>Pages 列表页 + 新建页面时底部「Search engine listing → URL handle」输入框（上线时请你自己在后台截图存档，本文档不放假截图）。</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="st-h">给这个页面单独指定一个「空白 / 落地页」模板</div>
+        <div class="st-b">
+          <p>还在这个页面的编辑界面，右侧栏找到 <b>Theme template（主题模板）</b> 下拉框。默认是 <code>page</code>（会带上普通页面的标题栏和左右留白，不适合整页设计稿）。</p>
+          <p>选一个更干净的模板。多数主题自带 <code>page.contact</code> 之类；<b>最理想是新建一个专用模板</b>：<span class="path">在线商店 → 主题 <b>Themes</b> → 自定义 <b>Customize</b> → 顶部页面选择器切到这个 Page → 左上「Create template / 创建模板」→ 命名 <code>propane-lp</code></span>，把里面除了「Custom Liquid」以外的默认区块（页面标题、正文）都删掉或隐藏。</p>
+          <p>回到页面编辑，Theme template 选 <code>page.propane-lp</code>。这样这个页面就是一张干净画布，不会顶着一个多余的大标题。</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="st-h">把设计稿 HTML 贴进 Custom Liquid 区块（核心一步）</div>
+        <div class="st-b">
+          <p><span class="path">主题 → 自定义 → 切到 propane-lp 模板 → 添加区块 <b>Add section / Add block</b> → 选 <b>Custom Liquid（自定义 Liquid）</b></span></p>
+          <p>把 <code>gas_landing_page.html</code> 里 <code>&lt;body&gt;</code> 和 <code>&lt;/body&gt;</code> <b>之间</b>的所有内容，连同 <code>&lt;head&gt;</code> 里那段 <code>&lt;style&gt;...&lt;/style&gt;</code> 一起，粘贴进 Custom Liquid 框里。（把 <code>&lt;style&gt;</code> 也一并贴进去，页面样式才不会丢。）</p>
+          <p><b>三个上线前必须处理的地方：</b></p>
+          <ul>
+            <li><b>删掉顶部的 DEMO 标识条</b>：设计稿里那句「● DEMO · 方案设计稿 ●」是给你看的，别让客户看到，整行 <code>&lt;div class="demobar"&gt;...&lt;/div&gt;</code> 删掉。</li>
+            <li><b>图片链接要换成真图</b>：设计稿里写的是 <code>assets/gather_family.jpg</code> 这种本地路径，上线后打不开。先把要用的图上传：<span class="path">内容 <b>Content</b> → 文件 <b>Files</b> → 上传</span>，上传后每张图会得到一个 <code>https://cdn.shopify.com/...</code> 的 CDN 网址，把 HTML 里对应的 <code>assets/xxx.jpg</code> 逐个替换成这些真网址。（背景图是写在 <code>&lt;style&gt;</code> 里的 <code>url('assets/...')</code>，别漏了。）</li>
+            <li><b>顶栏 / 页脚可能和主题重复</b>：如果你的主题本身已经有网站导航和页脚，设计稿里自带的 <code>.topbar</code> 顶栏可以删掉，避免出现两条导航。页脚的合规声明那段 <b>务必保留</b>（合规红线，见文末）。</li>
+          </ul>
+          <div class="ph"><span class="pl">📷 截图位</span>主题编辑器里「添加区块 → Custom Liquid」的位置，以及粘贴后的实时预览。上线时自行截图。</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="st-h">把「Add to Cart」接到真实的燃气版 variant（$259 / $349）</div>
+        <div class="st-b">
+          <p>设计稿里的加购按钮现在是 <code>href="#" onclick="return false;"</code>（假的，点了不动）。要让它真能下单，得接到燃气版那个规格的 variant ID。</p>
+          <p><b>先确认燃气版规格存在。</b>调研发现：燃气能力目前是以一个 <b>$33 的 Camping Stove 配件</b>形式埋在配件区的，并没有一个独立命名、独立定价 $259/$349 的「燃气版」规格。<b>所以第一件事是在商品后台把燃气版作为一个 variant（或独立商品）建出来并定价 $259 / $349</b>：<span class="path">产品 <b>Products</b> → 打开 Gather Lite / Grande → Variants（变体）→ 新增一个 option（如 Fuel = Propane）→ 设价 $259 / $349</span>。这一步涉及你真实的产品与库存结构，<b>以你后台实际为准</b>。</p>
+          <p><b>再拿到这个 variant 的 ID：</b>两种办法任选——</p>
+          <ul>
+            <li>后台法：进到那个 variant 的编辑页，浏览器地址栏里会有 <code>.../variants/<b>1234567890</b></code> 这一长串数字，就是它。</li>
+            <li>前台法：浏览器打开 <code>https://www.aroundfire.co/products/{商品handle}.js</code>，页面里每个 variant 都列了 <code>"id": 1234567890</code>，找到燃气版那条。</li>
+          </ul>
+          <p><b>把按钮改成加购链接。</b>最省事的做法是用 Shopify 自带的购物车永久链接，把设计稿里两处（Lite / Grande）和吸底条里的按钮 <code>href</code> 改成：</p>
+          <p><span class="path">/cart/<b>{变体ID}</b>:1</span>&nbsp;（加一件直接进购物车）</p>
+          <p>想点了直接跳结账，用 <span class="path">/cart/<b>{变体ID}</b>:1?checkout</span>。同时把 <code>onclick="return false;"</code> 删掉。Lite 按钮填 Lite 的 ID，Grande 按钮填 Grande 的 ID，吸底条那个下拉可先简单指向 Lite。</p>
+          <div class="callout danger"><b>别用假 ID，也别乱猜。</b>variant ID 必须从你自己后台 / 前台取到真实值。取不到就先别上线加购，宁可按钮暂时指向现有产品页，也不要接一个会报错的链接。</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="st-h">让评价（Reviews）在这个页面显示出来</div>
+        <div class="st-b">
+          <p>设计稿里放了「4.91★ / 104 reviews」这种数字，但那是<b>写死的展示占位</b>，上线要接你真实在用的评价 App（如 Judge.me / Loox / Okendo——以你店铺实际装的为准）。两种做法：</p>
+          <ul>
+            <li><b>先共用主产品评价（推荐起步）：</b>燃气版和木柴版是同一张桌子平台，初期没有单独的燃气版评价很正常。可以先在页面里嵌入 Gather Lite / Grande 主产品的评价小组件——多数评价 App 提供一段可粘贴的代码 / Liquid 片段（在 App 后台找 "Embed / Widget code"），或用它的「按 product ID 显示评价」功能，填主产品的 ID。</li>
+            <li><b>以后再拆出燃气版专属评价：</b>等燃气版有了自己的订单和评价，再在 App 里按燃气版 variant / product 单独调取。</li>
+          </ul>
+          <p><b>上线前把写死的数字对齐真实值</b>：设计稿里那句「confirm exact figures at publish（上线时核对真实数字）」就是提醒你——4.91 / 104 / 541 backers / $134,789 这些要么接 App 动态显示，要么手动改成当下真实数字，不能挂一个和后台对不上的数。</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="st-h">填 SEO：title / meta description / canonical</div>
+        <div class="st-b">
+          <p>回到 <span class="path">在线商店 → 页面 → 这个页面 → 底部 Search engine listing → 编辑</span>，填两栏：</p>
+          <table>
+            <thead><tr><th>字段</th><th>填什么（可直接抄设计稿里已写好的）</th></tr></thead>
+            <tbody>
+              <tr><td data-l="字段"><b>Page title</b></td><td data-l="填什么">Propane Fire Pit Table — Grill &amp; Gather Even During a Fire Ban | AroundFire</td></tr>
+              <tr><td data-l="字段"><b>Meta description</b></td><td data-l="填什么">AroundFire's propane fire pit table lets you grill and gather when wood fires are banned. Portable, shut-off-valve propane — permitted under many Stage 1 &amp; Stage 2 fire restrictions. From $259.</td></tr>
+            </tbody>
+          </table>
+          <p><b>canonical（规范网址）：</b>Shopify 给每个页面会自动生成一个正确的 canonical 指向自己，<b>正常情况你不用手动填</b>。只有一种情况要留意——如果你为了投不同广告，复制出好几个内容几乎一样的落地页，那要把这些副本的 canonical 都指向这一个主版本，避免 Google 判重复。手动改需要在主题的 <code>theme.liquid</code> 或页面模板里加一行 <code>&lt;link rel="canonical"&gt;</code>，这属于改主题代码，<b>没把握就先别动，保持 Shopify 默认即可</b>。</p>
+          <p class="tnote">注意：设计稿的 <code>&lt;head&gt;</code> 里有 <code>noindex,nofollow</code>（不让 Google 收录），那是因为它是「设计稿」。真上线这个页面时，<b>不要</b>把 noindex 带上去——Shopify 页面默认就是允许收录的，你只要别去主题里手动加 noindex 就行。</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="st-h">移动端吸底加购条（Sticky Add to Cart）</div>
+        <div class="st-b">
+          <p>好消息：<b>设计稿里已经写好了吸底加购条</b>（就是手机上滚动时始终贴在屏幕底部的那条 "From $259 / Add to Cart"）——它是纯 HTML+CSS，随第 3 步贴进 Custom Liquid 时就一起带进来了，只要在第 4 步把它的按钮 <code>href</code> 也接上真实 variant 即可，<b>不需要额外装插件</b>。</p>
+          <p>只有两种情况需要用插件的吸底条来替代：① 你的主题本身已经有一个吸底条、和设计稿这条打架；② 你想让下拉框在 Lite / Grande 之间切换时按钮 ID 也跟着变（这需要一点 JS，或者干脆用支持 sticky ATC 的落地页 App / 主题原生功能）。否则设计稿自带的这条已经够用。</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="st-h">上线前，补齐所有 [to be confirmed] 真实规格 ⚠️</div>
+        <div class="st-b">
+          <div class="callout danger">
+            <span class="ttl">这一步不做完不能上线</span>
+            规格表里这些字段现在是占位符，<b>必须换成你产品的真实数据</b>，一个都不能留着 [to be confirmed] 发布：
+            <ul style="margin-top:.4rem">
+              <li>展开尺寸 / 折叠尺寸（L×W×H）</li>
+              <li>重量（Lite / Grande 各自）</li>
+              <li>BTU 火力输出</li>
+              <li>认证（如有 CSA/UL 等——注意：<b>认证不等于禁火令期间就合法</b>，见文末合规红线，认证只写事实、不作合规承诺）</li>
+            </ul>
+            这些数字我无法替你填，编一个假的比留空更糟。填之前这个页面只是设计稿，不是可上线页面。
+          </div>
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section id="part2">
+    <div class="sec-head"><h2><span class="num">二</span>广告怎么配（Google + Meta）</h2></div>
+
+    <div class="callout danger">
+      <span class="ttl">先讲一个必须诚实说清的数据事实</span>
+      这个落地页打的是「<b>propane / fire ban / burn ban（丙烷 / 禁火令）</b>」搜索意图。但你提供的关键词表（谷歌 sheet，218 个带 Volume/KD/CPC 的有效词）里，<b>propane、fire ban、burn ban、gas、smokeless 这些词一个都没有（0 命中）</b>。也就是说，落地页最核心的那层意图，<b>关键词表里没有可用来出价的真实数据</b>。这不是我漏筛，是原表就没采这批词。<br><br>
+      所以下面 Google 部分拆成两半：<b>① 能用真实数据打的词</b>（表里确实有量、且贴产品的 fire pit + grill / 便携 / 烤网词，全部给真实 Volume/KD/CPC）；<b>② propane/禁火令这层意图</b>——关键词表无数据，我<b>不编数字</b>，改用「动态搜索广告 + 广泛匹配探词」的打法，靠搜索词报告反挖真实词。趋势侧的旁证（如 <code>portable fire pit amazon</code> 12 个月 +110%、<code>smokeless fire pit</code> 5 年 +900%）来自 market_trends 报告的 Google Trends 实测，但那是<b>趋势指数、没有 Volume/KD/CPC</b>，只能当方向信号，不能当出价依据。
+    </div>
+
+    <h3>Google 搜索广告（打搜索意图）</h3>
+
+    <h4>广告组 1 · 火盆+烤炉二合一意图组（真实数据，最贴产品）</h4>
+    <p class="lead">这是关键词表里<b>既有搜索量、又最接近「一张桌子既能生火又能烤」</b>的一批词，也是燃气版落地页最合理的搜索承接面。全部为真实数据。</p>
+    <table>
+      <thead><tr><th>关键词</th><th class="num">月搜索量</th><th class="num">KD 难度</th><th class="num">CPC</th><th>意图</th></tr></thead>
+      <tbody>
+        <tr><td data-l="词">grill fire pit</td><td class="num" data-l="搜索量">1,900</td><td class="num" data-l="KD">10</td><td class="num" data-l="CPC">$0.58</td><td data-l="意图">Info+Trans</td></tr>
+        <tr><td data-l="词">fire pit grill combo</td><td class="num" data-l="搜索量">590</td><td class="num" data-l="KD">18</td><td class="num" data-l="CPC">$0.57</td><td data-l="意图">Transactional</td></tr>
+        <tr><td data-l="词">fire pit and grill combo</td><td class="num" data-l="搜索量">390</td><td class="num" data-l="KD">16</td><td class="num" data-l="CPC">$0.57</td><td data-l="意图">Transactional</td></tr>
+        <tr><td data-l="词">outdoor fire pit and grill</td><td class="num" data-l="搜索量">390</td><td class="num" data-l="KD">14</td><td class="num" data-l="CPC">$0.87</td><td data-l="意图">Transactional</td></tr>
+        <tr><td data-l="词">combination fire pit and grill</td><td class="num" data-l="搜索量">320</td><td class="num" data-l="KD">16</td><td class="num" data-l="CPC">$0.57</td><td data-l="意图">Info+Trans</td></tr>
+        <tr><td data-l="词">cowboy grill and fire pit</td><td class="num" data-l="搜索量">320</td><td class="num" data-l="KD">6</td><td class="num" data-l="CPC">$0.66</td><td data-l="意图">Commercial</td></tr>
+        <tr><td data-l="词">outdoor grill and fire pit</td><td class="num" data-l="搜索量">260</td><td class="num" data-l="KD">9</td><td class="num" data-l="CPC">$0.87</td><td data-l="意图">Info+Trans</td></tr>
+        <tr><td data-l="词">fire pit cooking grill</td><td class="num" data-l="搜索量">260</td><td class="num" data-l="KD">13</td><td class="num" data-l="CPC">$0.60</td><td data-l="意图">Transactional</td></tr>
+        <tr><td data-l="词">fire pit and grill combination</td><td class="num" data-l="搜索量">210</td><td class="num" data-l="KD">13</td><td class="num" data-l="CPC">$0.57</td><td data-l="意图">Transactional</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">合计约 4,640 次/月搜索。落地页对应：本燃气版落地页（<code>/pages/propane-fire-pit-table</code>）。这批词的用户要的正是「火 + 烤 一体」，燃气版是其中一个合法解法。用<b>词组匹配 (phrase)</b> 为主。</p>
+
+    <h4>广告组 2 · 便携烤桌组（便携定位唯一能打的词）</h4>
+    <p class="lead">关键词表里含「portable」的词只有 7 个，且大多 KD 偏高，<b>唯一又便携又好打的就是下面第一个</b>。这是「便携」叙事在搜索侧唯一的低成本落脚点。</p>
+    <table>
+      <thead><tr><th>关键词</th><th class="num">月搜索量</th><th class="num">KD 难度</th><th class="num">CPC</th><th>建议</th></tr></thead>
+      <tbody>
+        <tr><td data-l="词"><b>portable grill table</b></td><td class="num" data-l="搜索量">1,000</td><td class="num" data-l="KD">13</td><td class="num" data-l="CPC">$0.32</td><td data-l="建议"><span class="pill p-hot">优先</span> 好打+便宜</td></tr>
+        <tr><td data-l="词">portable camp kitchen</td><td class="num" data-l="搜索量">880</td><td class="num" data-l="KD">16</td><td class="num" data-l="CPC">$0.37</td><td data-l="建议"><span class="pill p-mid">次选</span></td></tr>
+        <tr><td data-l="词">portable bbq grill table</td><td class="num" data-l="搜索量">590</td><td class="num" data-l="KD">24</td><td class="num" data-l="CPC">$0.32</td><td data-l="建议"><span class="pill p-mid">观望</span></td></tr>
+        <tr><td data-l="词">portable outdoor grill table</td><td class="num" data-l="搜索量">390</td><td class="num" data-l="KD">22</td><td class="num" data-l="CPC">$0.32</td><td data-l="建议"><span class="pill p-mid">观望</span></td></tr>
+        <tr><td data-l="词">portable camping table</td><td class="num" data-l="搜索量">1,000</td><td class="num" data-l="KD">34</td><td class="num" data-l="CPC">$0.27</td><td data-l="建议"><span class="pill p-no">难，先放</span></td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">落地页对应：燃气版落地页（打便携+可携出门场景）。CPC 都很低（$0.27–0.37），点击便宜。</p>
+
+    <h4>广告组 3 · 烤网 / 炉排配件组（超低 KD，用来做追加销售 & 蓄流量）</h4>
+    <p class="lead">这批词 KD 极低（多为个位数）、CPC 便宜，虽然是配件意图，但引来的人正是「想在火上烤东西」的人群，可承接到燃气版或配件页，做追销。</p>
+    <table>
+      <thead><tr><th>关键词</th><th class="num">月搜索量</th><th class="num">KD 难度</th><th class="num">CPC</th></tr></thead>
+      <tbody>
+        <tr><td data-l="词">fire pit grill grate</td><td class="num" data-l="搜索量">1,600</td><td class="num" data-l="KD">4</td><td class="num" data-l="CPC">$0.42</td></tr>
+        <tr><td data-l="词">fire pit with grate for grilling</td><td class="num" data-l="搜索量">590</td><td class="num" data-l="KD">5</td><td class="num" data-l="CPC">$0.39</td></tr>
+        <tr><td data-l="词">grill grate for a fire pit</td><td class="num" data-l="搜索量">590</td><td class="num" data-l="KD">9</td><td class="num" data-l="CPC">$0.39</td></tr>
+        <tr><td data-l="词">grill grate for fire pit</td><td class="num" data-l="搜索量">390</td><td class="num" data-l="KD">1</td><td class="num" data-l="CPC">$0.39</td></tr>
+        <tr><td data-l="词">fire pit grill grates</td><td class="num" data-l="搜索量">390</td><td class="num" data-l="KD">9</td><td class="num" data-l="CPC">$0.39</td></tr>
+        <tr><td data-l="词">fire pit with grill rack</td><td class="num" data-l="搜索量">260</td><td class="num" data-l="KD">7</td><td class="num" data-l="CPC">$0.37</td></tr>
+        <tr><td data-l="词">fire pit with grilling grate</td><td class="num" data-l="搜索量">210</td><td class="num" data-l="KD">8</td><td class="num" data-l="CPC">$0.39</td></tr>
+        <tr><td data-l="词">adjustable fire pit grill grate</td><td class="num" data-l="搜索量">210</td><td class="num" data-l="KD">13</td><td class="num" data-l="CPC">$0.35</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">落地页对应：配件页 / 燃气版落地页的「grill surface」卖点段。这组更适合<b>做 SEO 集合页</b>（KD 太低了，自然排名容易拿），投搜索广告优先级低于组 1、2。</p>
+
+    <h4>广告组 4 · 越野火盆组（量小但精准，KD 极低）</h4>
+    <table>
+      <thead><tr><th>关键词</th><th class="num">月搜索量</th><th class="num">KD</th><th class="num">CPC</th></tr></thead>
+      <tbody>
+        <tr><td data-l="词">overland fire pit</td><td class="num" data-l="搜索量">140</td><td class="num" data-l="KD">8</td><td class="num" data-l="CPC">$0.73</td></tr>
+        <tr><td data-l="词">overlanding fire pit</td><td class="num" data-l="搜索量">40</td><td class="num" data-l="KD">8</td><td class="num" data-l="CPC">$0.73</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">量很小，但正对你账户里跑得好的 overland 人群。可作为组 1 的补充关键词，不必单开预算。</p>
+
+    <h4>广告组 5 · propane / 禁火令意图「探词组」（关键词表无数据，用 DSA + 广泛匹配挖）</h4>
+    <div class="callout info">
+      <span class="ttl">这组是这个落地页的「正主」，但没有现成关键词数据——所以打法不一样</span>
+      落地页文案通篇在讲 propane / burn ban，可是关键词表里这类词 <b>0 个</b>，我不能给你编 Volume/KD/CPC。正确做法不是硬凑词，而是让 Google 自己去匹配、你去反挖：
+      <ul style="margin-top:.5rem">
+        <li><b>开一条 DSA（动态搜索广告）</b>，投放目标就锁定这个落地页 URL（<code>/pages/propane-fire-pit-table</code>）。Google 会自动根据页面内容（propane fire pit、fire ban、Stage 1/2 restriction 等）去匹配相关搜索，不需要你预填词。</li>
+        <li><b>另加一个小的广泛匹配探词组</b>，放几个种子词让系统扩展：<code>propane fire pit</code>、<code>fire pit ban</code>、<code>burn ban fire pit</code>、<code>fire pit during fire ban</code>、<code>propane fire pit table</code>。<b>预算给小、每天盯搜索词报告</b>，把真正有转化的词捞成精确匹配单独出价，把不相关的加成否定词。</li>
+        <li>趋势旁证（仅方向、无投放数字）：market_trends 用 Google Trends 实测 <code>portable fire pit amazon</code> 过去 12 个月 +110%、<code>smokeless fire pit</code> 5 年 +900%、<code>foldable korean bbq table</code> +1,300%——说明「便携 / 无烟 / 可折叠」这层需求真实在涨，但这些是趋势指数，<b>不是月搜索量，不能拿来当出价目标</b>。</li>
+      </ul>
+    </div>
+
+    <h4>否定词建议（挡掉白花钱的点击）</h4>
+    <p>不管哪个组，都建议在广告系列层级加上这批否定词：</p>
+    <div class="card">
+      <p style="margin:.2rem 0"><b>意图不符 / 家具向：</b><code>coffee table</code>、<code>dining table</code>、<code>patio set</code>、<code>bar height</code>、<code>conversation set</code>、<code>cushions</code>（这些是买固定后院家具的人，不是买便携桌的——关键词表里 <code>fire pit coffee table</code> CPC $0.84 就是被家具品牌抬高的）</p>
+      <p style="margin:.2rem 0"><b>免费 / DIY / 低价：</b><code>free</code>、<code>diy</code>、<code>homemade</code>、<code>plans</code>、<code>cheap</code>、<code>used</code>（VOC 里大量 $19 / $8 的廉价替代提及，这些人不买 $259）</p>
+      <p style="margin:.2rem 0"><b>无关品类：</b><code>gas station</code>、<code>propane refill</code>、<code>propane tank</code>（只想灌气/找加气站的）、<code>indoor</code>、<code>fireplace</code>、<code>electric</code>、<code>rental</code>、<code>repair</code></p>
+      <p style="margin:.2rem 0"><b>误采意图：</b><code>summer camp</code>（关键词表里 <code>family summer camp</code> 是「给孩子报夏令营」意图，CPC 全表最高 $1.37，务必否掉）</p>
+    </div>
+
+    <h4>广告组 → 落地页 对应关系一览</h4>
+    <table>
+      <thead><tr><th>广告组</th><th>核心词</th><th>指向落地页</th></tr></thead>
+      <tbody>
+        <tr><td data-l="组">1 火盆+烤炉二合一</td><td data-l="核心词">grill fire pit 等</td><td data-l="落地页">/pages/propane-fire-pit-table</td></tr>
+        <tr><td data-l="组">2 便携烤桌</td><td data-l="核心词">portable grill table</td><td data-l="落地页">/pages/propane-fire-pit-table</td></tr>
+        <tr><td data-l="组">3 烤网配件</td><td data-l="核心词">fire pit grill grate 等</td><td data-l="落地页">配件页（SEO 优先，广告次之）</td></tr>
+        <tr><td data-l="组">4 越野火盆</td><td data-l="核心词">overland fire pit</td><td data-l="落地页">/pages/propane-fire-pit-table</td></tr>
+        <tr><td data-l="组">5 propane/禁火令探词 (DSA)</td><td data-l="核心词">系统自动匹配</td><td data-l="落地页">/pages/propane-fire-pit-table</td></tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Meta 广告（打人群 + 地区 + 季节）</h3>
+    <p class="lead">Meta 这边你已经有账户数据（整体 ROAS 5.69），下面全部基于你账户 2026 年 1–7 月的真实表现来配。</p>
+
+    <h4>① 地区定向：禁火州 + 时间轴</h4>
+    <p>把这批「对火盆最热情、且每年 6–8 月被禁火」的州单独建地区定向。这正是燃气版的核心地理人群——木柴违法、丙烷通常豁免：</p>
+    <table>
+      <thead><tr><th>州（英文名）</th><th>禁火令典型窗口</th><th>燃气版打法</th></tr></thead>
+      <tbody>
+        <tr><td data-l="州"><b>Wyoming</b> 怀俄明</td><td data-l="窗口">6–8 月</td><td data-l="打法">五州里火盆关注度全美第一，重点州</td></tr>
+        <tr><td data-l="州"><b>Oregon</b> 俄勒冈</td><td data-l="窗口">6 月中起</td><td data-l="打法">6 月中发令后开始加燃气预算</td></tr>
+        <tr><td data-l="州"><b>Washington</b> 华盛顿</td><td data-l="窗口">6 月底–7 月中</td><td data-l="打法">DNR 东华盛顿 7 月中禁火，卡点投</td></tr>
+        <tr><td data-l="州"><b>Utah</b> 犹他</td><td data-l="窗口">6 月底</td><td data-l="打法">6/28 前后全州 Stage 1，提前 2 周预热</td></tr>
+        <tr><td data-l="州"><b>Idaho</b> 爱达荷</td><td data-l="窗口">7 月底–8 月初</td><td data-l="打法">禁火来得最晚，8 月它还能吃流量</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">可扩展叠加：Colorado、Nevada、Montana、Arizona、New Mexico（禁火令由南向北推进，AZ/NM 5 月最早、ID/MT 8 月最晚）。<b>关键是把「禁火令发令时间」和「投放加预算时间」对齐</b>——每个州在它发禁火令的前 1–2 周开始给燃气版加预算最划算。</p>
+
+    <h4>② 人群：直接用你账户跑出来的效率数据</h4>
+    <table>
+      <thead><tr><th>人群</th><th>账户实测</th><th>燃气版怎么办</th></tr></thead>
+      <tbody>
+        <tr><td data-l="人群"><b>55–64 女性</b></td><td data-l="实测">ROAS 7.35 / CPA $30，全账户最高，却只占 10% 预算</td><td data-l="怎么办"><span class="pill p-hot">加预算</span> 这是你最赚钱的人群，燃气版优先喂它</td></tr>
+        <tr><td data-l="人群"><b>65+ 女性</b></td><td data-l="实测">CPA $27 全账户最低，ROAS 4.76</td><td data-l="怎么办"><span class="pill p-hot">加预算</span> 获客最便宜，一并放量</td></tr>
+        <tr><td data-l="人群">35–54 男/女</td><td data-l="实测">占 63% 预算，ROAS 4.2–4.9 中等</td><td data-l="怎么办"><span class="pill p-mid">维持</span> 主力盘，别砍但也别再加码</td></tr>
+        <tr><td data-l="人群"><b>25–34</b></td><td data-l="实测">ROAS 3.4–3.6，全账户最差</td><td data-l="怎么办"><span class="pill p-no">排除</span> 年轻人不是买家，燃气版直接排除掉</td></tr>
+      </tbody>
+    </table>
+
+    <h4>③ 素材方向：补上你现在缺的角度</h4>
+    <p>你账户里跑得最好的规律很清楚：<b>达人 / UGC 真人素材全面跑赢自制混剪</b>（evcinshome ROAS 7.0、cait 沙滩 6.3、INS 帖子/UGC 主题 ROAS 8.0；花费最高的「混剪-汽车露营」$5,577 却只有 ROAS 4.0）。燃气版素材沿用真人 UGC 路线，并补上你现在缺的三个角度：</p>
+    <ul>
+      <li><b>「禁火令也能烤」痛点钩子：</b>真人围坐，开头直接戳痛点——"Your county just banned wood fires. Your weekend isn't cancelled."（这正是落地页 Hero 的话术，广告和落地页要一致）。这是你现有素材完全没有的角度。</li>
+      <li><b>对比角度：</b>木柴版 vs 燃气版并排、或「邻居家被开罚单 / 你家还在烤」的对比叙事。你现有素材缺对比。</li>
+      <li><b>价格 / 促销角度：</b>你现有素材也缺明确的价格和促销露出，燃气版可测「From $259」直给。</li>
+    </ul>
+    <p>人群偏 55+ 女性，素材里的人物、场景（后院家庭聚会 > 硬核越野）要贴合她们，别一味用年轻越野风。</p>
+
+    <h4>④ 预算 / 时段：对齐季节曲线</h4>
+    <ul>
+      <li><b>3 月起量</b>（搜索热度环比 +40%）→ 提前建好燃气版广告组、开始小预算蓄再营销池。</li>
+      <li><b>5 月见顶</b>（全年峰值）→ 预算顶格，但燃气版的真正主场在 <b>6–8 月禁火窗口</b>：木柴款在西部这几个月最淡（合规受限），<b>燃气款正好接棒</b>，按上面的各州发令时间轴逐州加预算。</li>
+      <li>6 月中开始，西部木柴款预算往东部/中西部/南部切，燃气款在西部禁火州顶上。</li>
+      <li>你的再营销池（社媒互动 + 网站访问 + 视频 75%）ROAS 5.6 但只花了 $394，<b>严重投喂不足</b>——燃气版落地页的访客一定要回收进再营销。</li>
+    </ul>
+
+    <div class="callout danger">
+      <span class="ttl">⚠️ 为什么这次和你上次「禁火令通投」不一样</span>
+      你账户里现有的「US-通投-禁火令期间」广告组 ROAS 只有 <b>2.2</b>，是效率最低的方向之一。根因不是素材或受众没选对，而是——<b>之前是「没有专属落地页 + 通投盲打」</b>：把广告投给一群刚被官方通知「不许生火」的人，却让他们落到讲木柴桌的普通页面，等于向禁火的人卖火。<br>
+      这次不一样的地方有两个：<b>① 有了专门讲「丙烷合法、禁火令也能烤」的独立落地页</b>承接；<b>② 精准锁定禁火州 + 对齐发令时间</b>，不再通投。素材钩子、落地页承接、地区定向三者对齐，才是把这个 2.2 做起来的正确姿势。
+    </div>
+  </section>
+
+  <!-- ============ PART 3 ============ -->
+  <section id="part3">
+    <div class="sec-head"><h2><span class="num">三</span>上线前检查清单</h2></div>
+    <p class="lead">按顺序逐条勾，全部打钩再开广告。</p>
+
+    <ul class="chk">
+      <li class="grp">页面本身</li>
+      <li>网址后缀已设为 <code>propane-fire-pit-table</code>，访问 <b>/pages/propane-fire-pit-table 能正常打开</b></li>
+      <li>顶部的 <b>DEMO 标识条已删除</b>（别让客户看到「设计稿」字样）</li>
+      <li>所有图片已上传到 Files 并把 <code>assets/xxx.jpg</code> <b>换成真实 CDN 链接</b>，页面里<b>没有一张裂图</b>（含 &lt;style&gt; 里的背景图）</li>
+      <li>手机 + 电脑<b>两端都打开检查过</b>，排版不错乱、字看得清、表格在手机上是堆叠不是横向滚动</li>
+
+      <li class="grp">能不能真下单</li>
+      <li>燃气版规格（$259 / $349）<b>已在商品后台建好并定价</b></li>
+      <li>Lite / Grande 两个 Add to Cart 按钮都接了<b>真实 variant ID</b>，点击能进购物车 / 结账（<b>不是假 # 链接</b>）</li>
+      <li>手机吸底加购条的按钮也接了真实 variant</li>
+      <li>真机<b>完整走一遍下单</b>：加购 → 结账页 → 价格 / 运费正确（顺带确认运费是否提前露出，这是你账户结账流失 67% 的老问题）</li>
+
+      <li class="grp">评价 & 信任数字</li>
+      <li>评价小组件已嵌入（初期<b>共用主产品评价</b>即可），能正常显示星级</li>
+      <li>页面上写死的 4.91★ / 104 reviews / 541 backers / $134,789 <b>已对齐当下真实数字</b>（或已改为 App 动态显示）</li>
+
+      <li class="grp">SEO</li>
+      <li>Page title、Meta description 已填（可抄设计稿里已写好的）</li>
+      <li>页面<b>没有被 noindex</b>（Shopify 页面默认允许收录；别手动加 noindex）</li>
+      <li>canonical 保持 Shopify 默认；若做了内容重复的副本页，副本已指向本主版本</li>
+
+      <li class="grp">⚠️ 规格与合规（最容易漏、也最不能漏）</li>
+      <li>规格表里<b>所有 [to be confirmed] 已替换成真实数据</b>（重量 / 尺寸 / BTU / 认证），<b>一个占位符都不剩</b></li>
+      <li>页脚的<b>合规声明段完整保留</b>，含 "Always check your local fire restrictions before use."</li>
+      <li>全页文案<b>没有出现</b>「fire-ban proof」「legal everywhere」「哪里都能用 / 防禁火令」这类<b>绝对化违规说法</b></li>
+      <li>凡提认证的地方<b>只陈述事实</b>，没写「有认证 = 禁火令期间就合法」</li>
+
+      <li class="grp">广告</li>
+      <li>Google：广告组 1/2 用真实关键词建好，指向本落地页；否定词已加（含 <code>summer camp</code> / <code>coffee table</code> / <code>free</code> 等）</li>
+      <li>Google：propane/禁火令那层用 <b>DSA + 小预算广泛匹配探词</b>，已设好每日盯搜索词报告</li>
+      <li>Meta：禁火五州（WY/OR/WA/UT/ID）地区定向建好，与各州发令时间对齐</li>
+      <li>Meta：<b>55–64 女性 / 65+ 女性加预算，25–34 排除</b></li>
+      <li>Meta：素材用真人 UGC + 「禁火令也能烤」痛点钩子，落地页话术与广告一致</li>
+      <li>Meta：落地页访客<b>回收进再营销池</b>（Pixel / 转化 API 已在页面生效）</li>
+    </ul>
+  </section>
+
+  <!-- ============ 合规红线 ============ -->
+  <div class="callout danger" style="border-left-width:6px">
+    <span class="ttl">🚨 合规红线（页面文案 + 广告文案都要守，来自 market_trends 官方条文核查）</span>
+    <table style="margin-top:.6rem">
+      <thead><tr><th>✅ 可以说</th><th>❌ 绝对不能说</th></tr></thead>
+      <tbody>
+        <tr>
+          <td data-l="可以说">Propane-fueled, with shut-off valve — permitted under <b>many</b> Stage 1 &amp; Stage 2 fire restrictions when used 3 ft from flammable material.（对齐官方条文）</td>
+          <td data-l="不能说"><b>Fire-ban proof</b> / <b>legal everywhere</b> during burn bans（North Cascades 国家公园就明令禁丙烷火盆，一个反例即构成虚假宣传）</td>
+        </tr>
+        <tr>
+          <td data-l="可以说">结尾必带免责：<b>Always check your local fire restrictions before use.</b></td>
+          <td data-l="不能说"><b>CSA / UL certified = allowed under Stage 2</b>（美国无官方依据，认证≠许可）</td>
+        </tr>
+        <tr>
+          <td data-l="可以说">安全表述用 propane <b>stove / grill / heating device</b> with shut-off valve（部分 NPS 只放行「烹饪用途」）</td>
+          <td data-l="不能说">中文侧同理：别写「防禁火令」「哪里都合法」「随便烧」这类绝对化承诺</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="foot">
+  AroundFire · 燃气版落地页 Shopify 建站 + 广告配置操作手册 · 2026-07-22<br>
+  广告词 Volume/KD/CPC 全部来自甲方关键词表真实数据；关键词表无 propane/禁火令词已如实标注 · 合规口径来自 market_trends 官方条文核查<br>
+  后台菜单以你实际 Shopify 后台为准 · variant ID / 真实规格需甲方补齐后方可上线
+</div>
+
+</body>
+</html>

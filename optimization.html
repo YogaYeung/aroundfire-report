@@ -697,8 +697,34 @@
     </table>
   </section>
 
+  <section id="demos">
+    <div class="sec-head"><h2><span class="num">8</span>配套落地页设计稿：燃气版「禁火令可用」独立页</h2></div>
+    <p>排期第 7–8 周的「禁火令/燃气页」不是空话——已经做成可直接看的落地页设计稿。策略是：甲方<b>已有燃气版</b>（桌子+丙烷炉，$259/$349，禁火令期间可合法用），但埋在产品页下拉框里没有独立入口。这个页面把它<b>单独拎出来</b>，打「fire pit ban / propane fire pit」搜索意图 + 美西禁火州（WY/OR/WA/UT/ID）人群，专门接住旺季 6–8 月被禁火令挡住的需求。合规文案严守红线（只说「带关阀丙烷、许多一级/二级禁火令下可用，使用前查当地规定」，绝不说「防禁火令/哪里都合法」）。</p>
+    <div class="demo-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:1.2rem 0">
+      <a class="demo-card" href="demos/gas_landing_annotated.html" target="_blank" rel="noopener" style="display:block;background:#fff;border:1px solid var(--line);border-left:5px solid var(--ember);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);box-shadow:var(--sh)">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--ember-dk);text-transform:uppercase">推荐先看</div>
+        <h3 style="margin:.4rem 0 .5rem;color:var(--ink)">① 中文标注版</h3>
+        <p style="font-size:13.5px;color:var(--ink2);margin:0 0 .6rem">同一个页面，每个模块旁配中文批注卡，说明「这块干什么、对应哪个策略、为什么这么设计」。<b>看这个理解思路。</b></p>
+        <span style="color:var(--red);font-weight:800">打开页面 →</span>
+      </a>
+      <a class="demo-card" href="demos/propane-fire-pit-table.html" target="_blank" rel="noopener" style="display:block;background:#fff;border:1px solid var(--line);border-left:5px solid var(--red);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);box-shadow:var(--sh)">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--red-dk);text-transform:uppercase">英文上线版</div>
+        <h3 style="margin:.4rem 0 .5rem;color:var(--ink)">② 可直接上线的英文页</h3>
+        <p style="font-size:13.5px;color:var(--ink2);margin:0 0 .6rem">纯英文、无标注、含完整 SEO 结构 + Product JSON-LD，甲方可直接复制到 Shopify 用（<code>[to be confirmed]</code> 规格需先补真实数据）。</p>
+        <span style="color:var(--red);font-weight:800">打开页面 →</span>
+      </a>
+      <a class="demo-card" href="demos/shopify-setup-guide.html" target="_blank" rel="noopener" style="display:block;background:#fff;border:1px solid var(--line);border-left:5px solid var(--green);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);box-shadow:var(--sh)">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--green);text-transform:uppercase">给甲方的操作手册</div>
+        <h3 style="margin:.4rem 0 .5rem;color:var(--ink)">③ Shopify 建站 + 广告词配置指南</h3>
+        <p style="font-size:13.5px;color:var(--ink2);margin:0 0 .6rem">中文分步教程：后台怎么建页、加购怎么接真实 variant、SEO 怎么填；配套 Google/Meta 广告词（真实搜索量/难度/CPC）与禁火州定向、季节排期。</p>
+        <span style="color:var(--red);font-weight:800">打开页面 →</span>
+      </a>
+    </div>
+    <div class="disclaimer" style="margin-top:1rem"><b>诚实声明：</b>这是设计示意稿，不是终稿。落地页里 <code>[to be confirmed]</code> 的规格（重量/尺寸/BTU/认证）上线前必须甲方补真实数据；加购按钮的 href、canonical、og:image 绝对路径需甲方在 Shopify 后台接入真实 variant 与域名；广告词中 propane/burn ban 意图层在甲方现有关键词表中无数据，指南里已改用 DSA + 搜索词反挖打法、未编造搜索量。</div>
+  </section>
+
   <section id="bound">
-    <div class="sec-head"><h2><span class="num">8</span>本方案的边界与待甲方确认项（诚实声明）</h2></div>
+    <div class="sec-head"><h2><span class="num">9</span>本方案的边界与待甲方确认项（诚实声明）</h2></div>
     <div class="disclaimer">
       <ol>
         <li><b>未在目标站注入或测试任何 CSS / 选择器。</b>本次是只读实勘，所有"后台路径"是 Shopify 通用路径与主题设置层面的指引，<b>不含可直接粘贴的选择器</b>——静态 DOM 抓到的节点可能是模板节点而非线上渲染节点（历史教训）。<b>落地时需登录甲方后台逐条实测后再交付代码。</b></li>
