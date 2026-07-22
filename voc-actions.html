@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>评论怎么落地用（实操版）· AroundFire 调研报告</title>
+<meta name="description" content="把用户评论洞察翻译成甲方能直接照做的动作：谁是谁速查 + AroundFire 自己的负面 + 竞品负面 + 落地到页面/Meta广告文案/素材/关键词的动作表。">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* 本页专用：谁是谁速查 + 落地动作表微调，全部派生自站内令牌，不另起风格 */
+.whois{display:grid;gap:16px;margin:1.1rem 0}
+.who-blk{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.who-hd{padding:13px 20px;color:#fff;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.who-hd.us{background:var(--red)} .who-hd.cp{background:var(--blue)} .who-hd.tm{background:var(--ink)}
+.who-hd h3{margin:0;color:#fff;font-size:17px}
+.who-hd .cnt{font-size:11.5px;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:99px;font-weight:700}
+.who-bd{padding:16px 20px 18px}
+.who-bd>*:first-child{margin-top:0} .who-bd>*:last-child{margin-bottom:0}
+.cp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:11px}
+.cp-item{border:1px solid var(--line);border-radius:12px;padding:11px 14px;background:#FCFAF7}
+.cp-item .nm{font-weight:800;font-size:14px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:3px}
+.cp-item .ds{font-size:12.5px;color:var(--ink2);line-height:1.6}
+.cp-item.like{border-color:var(--red);background:#FFF6F6}
+.prod-line{display:flex;gap:9px;align-items:baseline;padding:6px 0;border-top:1px dashed var(--line)}
+.prod-line:first-of-type{border-top:0}
+.prod-line .pnm{font-weight:800;font-size:13.5px;min-width:118px}
+.prod-line .pds{font-size:12.5px;color:var(--ink2);line-height:1.6}
+/* 品牌标签 pill 微缩，行内不喧宾夺主 */
+.mk{display:inline-block;font-size:10px;font-weight:800;padding:1px 7px;border-radius:99px;vertical-align:middle;letter-spacing:.02em;white-space:nowrap}
+.mk.us{background:#FBE9E9;color:#9E1F1F} .mk.cp{background:#E7F0F9;color:#22527D} .mk.tm{background:var(--sand2);color:var(--ink3)}
+/* 落地动作表：把「洞察」列做成粗标题列 */
+table.act td.ins{font-weight:800;color:var(--ink);background:#FCF7F2;font-size:13px;line-height:1.5}
+table.act code{white-space:normal;display:inline-block;background:#F0F5FA;color:#22527D;border:1px solid #DCE7F1}
+table.act .en{color:#22527D;font-weight:700}
+.kwtag{display:inline-block;font-size:11.5px;background:var(--sand2);color:var(--ink2);padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;font-family:ui-monospace,Consolas,monospace}
+.wk{counter-reset:wk}
+.wk .wk-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line)}
+.wk .wk-item:first-child{border-top:0}
+.wk .wk-item .n{counter-increment:wk;flex:0 0 34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+.wk .wk-item .n::before{content:counter(wk)}
+.wk .wk-item .bd{flex:1}
+.wk .wk-item .bd b{font-size:14.5px}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <a class="home" href="index.html">◂ AROUNDFIRE 报告中心</a><span class="sep">|</span>
+  <a href="summary.html">摘要</a><a href="category.html">品类</a><a href="competitors.html">竞争</a><a href="voc.html">VOC</a><a href="ads.html">广告</a><a href="social.html">社媒</a><a href="trends.html">趋势</a><a href="seo.html">SEO</a><a href="optimization.html">网站优化</a><a href="pricing.html">定价</a><a href="meta.html">投放</a><a href="influencers.html">达人</a>
+</div></div>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="eyebrow">04 · 实操版 · From Reviews to Actions</div>
+    <h1>评论怎么落地用（实操版）</h1>
+    <p class="sub">这一页只干一件事：把成千上万条用户评论，翻译成甲方 <b>AroundFire</b> 能直接照着做的动作——先分清「谁是甲方、谁是竞品、哪些只是行话」，再把每一条洞察落到<b>页面优化 / Meta 广告文案 / 广告素材 / 关键词</b>四个动作上。</p>
+    <p class="fine">数据全部来自本报告的真实采集：Amazon 官方属性统计 · Reddit 1,271 条语料 · YouTube 2,273 条评论 · Trustpilot &amp; 竞品官网实抓负评 226 条 · AroundFire 众筹 541 backers 反馈。没有一条评论、数字、品牌是编的；抓不到的已如实声明。</p>
+    <div class="meta"><span>📅 2026-07-22</span><span>🎯 8 条洞察 → 32 个可执行动作</span><span>🟥 甲方 vs 🟦 竞品 全程标清</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="callout info">
+    <span class="ttl">怎么看这一页（30 秒说明）</span>
+    这页是「用户洞察 VOC」那份报告的<b>实操翻译版</b>。原始数据太密、品牌名和行话太多，容易分不清谁是谁。所以我把它拆成三步：<b>①</b> 顶部先记住「谁是谁」——哪个是我们要帮的品牌，哪些是对手，哪些只是这个行业的黑话；<b>②</b> 看清 AroundFire 自己会遇到什么差评、竞品又栽在哪；<b>③</b> 直接抄最后那张<b>落地动作表</b>去改页面、写广告、拍素材、布关键词。想看原始证据和完整数据，随时点回 <a href="voc.html">用户洞察 VOC</a>。
+  </div>
+
+  <details class="termbox" open>
+    <summary>术语速查 · 这个行业的黑话点这里（本页每个术语首次出现也有中文括注）</summary>
+    <div class="tb-in"><dl>
+      <dt>fire pit</dt><dd>火盆，装柴火/炭火的户外火盆容器。</dd>
+      <dt>fire mesh / 火网</dt><dd>桌子中间那层烧火的不锈钢网，AroundFire 的核心结构件，也是最容易被骂的地方。</dd>
+      <dt>grill grate</dt><dd>烤网，架在火上烤肉的那层网架。</dd>
+      <dt>smokeless / 无烟</dt><dd>无烟设计，靠特殊进气让柴火烧得更充分、少冒烟。这个词是竞品被骂最狠的重灾区。</dd>
+      <dt>durability / 耐久性</dt><dd>用久了坏不坏，本品类第一大差评源。</dd>
+      <dt>stability / 稳固性</dt><dd>桌子/桌腿晃不晃、稳不稳。</dd>
+      <dt>radiant heat / 辐射热</dt><dd>火盆往外散的那种暖意（烤在身上的热），开放式火网的结构弱点。</dd>
+      <dt>KBBQ</dt><dd>韩式烤肉（Korean BBQ），围桌一起烤的用餐场景。</dd>
+      <dt>burn ban / fire ban / 禁火令</dt><dd>干旱季政府禁止明火令。烧木/炭常被禁，带关阀的丙烷常获豁免。</dd>
+      <dt>Trustpilot</dt><dd>欧美第三方消费者点评网站，品牌控制不了内容，站外真实口碑。</dd>
+      <dt>Yotpo / Stamped</dt><dd>品牌自己装在官网上的评价插件，星级偏高（样本偏正面）。</dd>
+      <dt>ASIN</dt><dd>Amazon 给每个商品的唯一编号。</dd>
+      <dt>PDP / 详情页</dt><dd>单个产品的售卖页面（Product Detail Page）。</dd>
+      <dt>$（美元）/ lbs（磅）</dt><dd>本页按 1 美元≈7.2 元、1 磅≈0.45 公斤换算。</dd>
+    </dl></div>
+  </details>
+
+  <!-- ======================= 顶部：谁是谁 ======================= -->
+  <section id="whois">
+    <div class="sec-head"><h2>📖 第一步 · 「谁是谁」速查</h2></div>
+    <p class="lead">看后面任何内容之前，先花一分钟记住这三类角色。本页之后每次出现品牌名，都会带一个小标签：<span class="mk us">甲方</span>=我们要帮的品牌，<span class="mk cp">竞品</span>=对手，产品术语=行业黑话（不是品牌）。</p>
+
+    <div class="whois">
+
+      <!-- ① 甲方 -->
+      <div class="who-blk">
+        <div class="who-hd us"><h3>① 甲方 · 我们要帮的品牌</h3><span class="cnt">就它一个</span></div>
+        <div class="who-bd">
+          <p><b>AroundFire</b> <span class="mk us">甲方</span> —— 本尊，卖<b>便携烧烤火盆桌</b>（一张桌子，中间能烧火/烤肉，还能当聚会桌，16–20 lbs 一个包背走）。官网 aroundfire.co。它自己的产品线：</p>
+          <div class="prod-line"><span class="pnm">Gather Lite</span><span class="pds">主力桌，$189（约 ¥1,360），4–6 人。</span></div>
+          <div class="prod-line"><span class="pnm">Gather Grande</span><span class="pds">加大桌，$239（约 ¥1,720），8–10 人。</span></div>
+          <div class="prod-line"><span class="pnm">Fire Mesh（火网）</span><span class="pds">桌子中间那层烧火的不锈钢网——AroundFire 的核心结构件，也是最容易出耐久差评的地方。</span></div>
+          <div class="prod-line"><span class="pnm">Raised Legs（加高腿）</span><span class="pds">把桌子垫高的配件，众筹期因「桌子太矮」催生出来。</span></div>
+          <div class="prod-line"><span class="pnm">Camping Stove（燃气炉）</span><span class="pds">$33（约 ¥240）的丙烷炉配件。</span></div>
+        </div>
+      </div>
+
+      <!-- ② 竞品 -->
+      <div class="who-blk">
+        <div class="who-hd cp"><h3>② 竞品 · 对手品牌</h3><span class="cnt">8 家</span></div>
+        <div class="who-bd">
+          <p class="lead" style="margin-bottom:.8rem">每个一句话说清：是谁 + 卖什么 + 价位。其中 <b>Fireside</b> 和甲方结构最像（都是火网结构），最值得盯。</p>
+          <div class="cp-grid">
+            <div class="cp-item"><div class="nm">Solo Stove <span class="mk cp">竞品</span></div><div class="ds">火盆头部品牌，无烟火盆，$200–1000，主打后院氛围。</div></div>
+            <div class="cp-item"><div class="nm">Breeo <span class="mk cp">竞品</span></div><div class="ds">美国手工无烟火盆，$399–1899，主打耐用 / 美国制造。</div></div>
+            <div class="cp-item"><div class="nm">Nomad Grills <span class="mk cp">竞品</span></div><div class="ds">便携炭烤炉，$399–695，主打越野便携。</div></div>
+            <div class="cp-item like"><div class="nm">Fireside Outdoor <span class="mk cp">竞品</span></div><div class="ds"><b>和甲方结构最像的对手</b>：便携火网火盆，$99–119，也是火网结构。</div></div>
+            <div class="cp-item"><div class="nm">BioLite <span class="mk cp">竞品</span></div><div class="ds">带蓝牙电子调风的便携火盆，$499，靠电子件差异化。</div></div>
+            <div class="cp-item"><div class="nm">Outland Living <span class="mk cp">竞品</span></div><div class="ds">Amazon 便携丙烷火盆销冠，$149，1.7 万条评价。</div></div>
+            <div class="cp-item"><div class="nm">Blackstone <span class="mk cp">竞品</span></div><div class="ds">户外铁板烧品牌，$120 折叠桌架。</div></div>
+            <div class="cp-item"><div class="nm">Gather Grills <span class="mk cp">竞品</span></div><div class="ds">后院固定烧烤桌，$1999+ 起，210 lbs 搬不动（名字像但和甲方不是一家）。</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ③ 产品术语 -->
+      <div class="who-blk">
+        <div class="who-hd tm"><h3>③ 产品通用术语 · 这个品类的行话</h3><span class="cnt">不是品牌</span></div>
+        <div class="who-bd">
+          <p class="lead" style="margin-bottom:.7rem">下面这些不是谁家的牌子，是整个品类的通用词，看到别当成品牌名。</p>
+          <dl style="display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px;margin:0">
+            <dt style="font-weight:800;color:var(--ink2)">fire pit</dt><dd style="margin:0;color:var(--ink2)">火盆（装柴火/炭火的容器）</dd>
+            <dt style="font-weight:800;color:var(--ink2)">grill grate</dt><dd style="margin:0;color:var(--ink2)">烤网</dd>
+            <dt style="font-weight:800;color:var(--ink2)">smokeless</dt><dd style="margin:0;color:var(--ink2)">无烟（特殊进气让柴火烧得充分、少冒烟）</dd>
+            <dt style="font-weight:800;color:var(--ink2)">durability</dt><dd style="margin:0;color:var(--ink2)">耐久性</dd>
+            <dt style="font-weight:800;color:var(--ink2)">stability</dt><dd style="margin:0;color:var(--ink2)">稳固性 / 晃不晃</dd>
+            <dt style="font-weight:800;color:var(--ink2)">radiant heat</dt><dd style="margin:0;color:var(--ink2)">辐射热（火盆往外散的暖意）</dd>
+            <dt style="font-weight:800;color:var(--ink2)">KBBQ</dt><dd style="margin:0;color:var(--ink2)">韩式烤肉（围桌一起烤）</dd>
+            <dt style="font-weight:800;color:var(--ink2)">burn ban / fire ban</dt><dd style="margin:0;color:var(--ink2)">禁火令</dd>
+            <dt style="font-weight:800;color:var(--ink2)">Trustpilot</dt><dd style="margin:0;color:var(--ink2)">第三方消费者点评网站（站外真实口碑）</dd>
+            <dt style="font-weight:800;color:var(--ink2)">Yotpo / Stamped</dt><dd style="margin:0;color:var(--ink2)">品牌官网自装的评价插件（星级偏高）</dd>
+            <dt style="font-weight:800;color:var(--ink2)">ASIN</dt><dd style="margin:0;color:var(--ink2)">Amazon 商品编号</dd>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================= 第一部分：AroundFire 自己的负面 ======================= -->
+  <section id="self">
+    <div class="sec-head"><h2><span class="num">1.</span>AroundFire <span class="mk us">甲方</span> 自己主要的负面评论</h2></div>
+
+    <div class="callout">
+      <span class="ttl">先说清楚来源（很重要，别误会）</span>
+      AroundFire <span class="mk us">甲方</span> 官网 104 条评价是 <b>4.91 分（很高）</b>，所以它自己几乎没有公开差评。那它的负面从哪来？两个来源：<b>①</b> Kickstarter 众筹买家的反馈；<b>②</b> 和它<b>同结构的竞品 Fireside <span class="mk cp">竞品</span> 的差评</b>——两家都是火网（桌子中间烧火的不锈钢网）结构，Fireside 遇到的问题，甲方几乎一定也会遇到。所以下面每条都标清来源。
+    </div>
+
+    <div class="cards c2">
+      <div class="card">
+        <h3>🚨 火网寿命 —— 最大口碑地雷</h3>
+        <p>官方自己承认 Fire Mesh（火网）寿命<b>"至少 50 次"</b>；众筹买家 Ted 质疑后，官方回复 <span class="en">"we are actively exploring metal solutions to address durability concerns"</span>。同结构的 Fireside <span class="mk cp">竞品</span> 火网 durability（耐久性）差评率 <b>46%</b>（Amazon 官方统计），有买家原话 <span class="en">"the screen has a hole"</span>（网破了个洞）。</p>
+        <p class="tnote">来源：AroundFire 众筹官方回复 + Amazon 对 Fireside 的官方属性统计。</p>
+      </div>
+      <div class="card">
+        <h3>桌腿 / 加高腿晃</h3>
+        <p>众筹买家 Fabrizio 原话：<span class="en">"Mine seem to wobble and look flimsy..not sure I want to be playing around fire with those on."</span>（晃、看着单薄，不太敢在火边用加高腿。）</p>
+        <p class="tnote">来源：AroundFire 众筹买家反馈。对应 Amazon 品类 stability（稳固性）48% 负面。</p>
+      </div>
+      <div class="card">
+        <h3>桌子太矮</h3>
+        <p>众筹期就催生了 70cm 加高腿 SKU；同类产品 YouTube 有 355 赞评论 <span class="en">"看得我膝盖疼"</span>（坐地上做饭太低）。</p>
+        <p class="tnote">来源：AroundFire 众筹 + YouTube 同类产品评论。</p>
+      </div>
+      <div class="card">
+        <h3>缺件 / 无说明书</h3>
+        <p>众筹阶段发生 <b>3 起</b>：漏发螺丝、盒内无说明书、配件藏侧袋被误判漏发。在 Amazon 这种「差评即销量」的环境里，同样的失误会直接砸星级。</p>
+        <p class="tnote">来源：AroundFire 众筹阶段实际事件。属流程问题、可控。</p>
+      </div>
+      <div class="card">
+        <h3>"less smoke" 措辞要前置说明</h3>
+        <p>甲方用 <span class="en">"less smoke"</span>（少烟）比竞品的 <span class="en">"smokeless"</span>（无烟）安全，但需要在详情页前置说明「<b>要多大火 / 什么木柴 / 多久起效</b>」，否则用户会拿"无烟"标准来失望。</p>
+        <p class="tnote">来源：对照竞品「无烟」差评（45%）反推的预防动作。</p>
+      </div>
+      <div class="card">
+        <h3>火网漏油（KBBQ 场景）</h3>
+        <p>官方承认火网 <span class="en">"does not prevent liquid from passing through"</span>——韩式烤肉的油会顺着火网漏到地上。</p>
+        <p class="tnote">来源：AroundFire 众筹官方说明。</p>
+      </div>
+      <div class="card">
+        <h3>运费到结账才露</h3>
+        <p>$24.90（约 ¥180）运费<b>无免邮门槛</b>，要填完地址才在结账页冒出来——和众筹期的投诉同源。</p>
+        <p class="tnote">来源：AroundFire 结账实测 + 众筹投诉。详见「网站诊断与优化」。</p>
+      </div>
+    </div>
+
+    <div class="figs">
+      <figure>
+        <img loading="lazy" src="assets/evidence/amazon_fireside_mesh_durability_46pct_negative.png" alt="Amazon「Customers say」官方属性统计截图：同为火网结构的 Fireside，durability 属性 105 次提及、48 条负面，负面率 46%。">
+        <figcaption><b>火网寿命地雷的铁证：</b>同结构竞品 Fireside <span class="mk cp">竞品</span> 的 durability（耐久性）被 Amazon 官方统计为 <b>46% 负面</b>，全品类第二高。甲方火网大概率会踩同一个坑。</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="assets/evidence/reddit_firebans_wood_not_allowed.png" alt="Reddit 证据截图：禁火期木柴火盆一律不合规，要求火源必须带开关。">
+        <figcaption><b>季节性归零风险：</b>Reddit 55 赞高赞帖——禁火期（burn ban）「木柴火盆一律不合规，火源必须带开关」。甲方烧木/炭/颗粒，旺季在美西会被这条卡死。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================= 第二部分：竞品的负面 ======================= -->
+  <section id="rivals">
+    <div class="sec-head"><h2><span class="num">2.</span>竞品 <span class="mk cp">竞品</span> 的主要负面评论</h2></div>
+    <p class="lead">竞品栽在哪，就是甲方能补的缺口。先看合并后的跨品牌差评排行，再看各家代表性原话。</p>
+
+    <h3>跨品牌负评 TOP（226 条竞品负评合并）</h3>
+    <table>
+      <thead><tr><th>排名</th><th>差评是什么</th><th class="num">占 226 条</th><th>对甲方意味着什么</th></tr></thead>
+      <tbody>
+        <tr><td data-l="排名">1</td><td data-l="差评"><b>"无烟"名不副实</b>，依然呛烟</td><td data-l="占比" class="num">45%</td><td data-l="含义">别碰 smokeless 这个词，老实说 less smoke</td></tr>
+        <tr><td data-l="排名">2</td><td data-l="差评">客服联系不上 / 只有机器人</td><td data-l="占比" class="num">17%</td><td data-l="含义">真人客服是最便宜的差异化</td></tr>
+        <tr><td data-l="排名">3</td><td data-l="差评">价格贵 / 配件另收费</td><td data-l="占比" class="num">16%</td><td data-l="含义">该标配的别再拆开卖</td></tr>
+        <tr><td data-l="排名">4</td><td data-l="差评">生锈、变形</td><td data-l="占比" class="num">14%</td><td data-l="含义">用材质/工艺规格正面回应</td></tr>
+        <tr><td data-l="排名">5</td><td data-l="差评">发货延迟</td><td data-l="占比" class="num">9%</td><td data-l="含义">履约体验要写进承诺</td></tr>
+        <tr><td data-l="排名">—</td><td data-l="差评"><b>服务与履约类合计</b>（客服17%+物流9%+退款9%+破损8%）</td><td data-l="占比" class="num">43%</td><td data-l="含义"><b>这是竞品最大的缺口，也是甲方最好抢的地方</b></td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">口径：Solo Stove Trustpilot 56 条 + Breeo 站内 141 条 + Nomad 站内 29 条合并；一条可命中多主题，非互斥。</p>
+
+    <h3>各品牌代表性负面原话（每条都标清是哪个竞品）</h3>
+    <div class="cards c2">
+      <div class="card">
+        <h4>Solo Stove <span class="mk cp">竞品</span></h4>
+        <ul>
+          <li>Trustpilot（站外）只有 <b>3.1 分</b>，且被平台标注"从不回复负评"。</li>
+          <li>生锈但保修不认：<span class="en">"rust is unfortunately not covered under our warranty"</span>。</li>
+          <li>用 3 年底板烧穿变形 → 反而变呛烟：<span class="en">"Kind of expensive to buy one every 3 years"</span>。</li>
+          <li>客服只有机器人：<span class="en">"waited on hold for over 25 minutes"</span>。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Breeo <span class="mk cp">竞品</span></h4>
+        <ul>
+          <li>141 条负评里 <b>95 条（67%）</b>都是同一件事——<b>"不够无烟"</b>。</li>
+          <li>典型原话：<span class="en">"it is not remotely smokeless… we could barely sit near the fire"</span>。</li>
+          <li>机制缺陷被点破：<span class="en">"Requires a HUGE fire to work right"</span>（火不够大就不无烟）。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Nomad Grills <span class="mk cp">竞品</span></h4>
+        <ul>
+          <li>底部会烫坏桌面：<span class="en">"It got so hot it warps my plastic table"</span>。</li>
+          <li>收纳前凉得慢：<span class="en">"doesn't cool as quickly as they claim. Took almost 2 hours"</span>。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Fireside <span class="mk cp">竞品</span>（同结构，重点看）</h4>
+        <ul>
+          <li>火网破洞、护盾裂：<span class="en">"the screen has a hole"</span>。</li>
+          <li><b>但</b>——护盾破了发一封邮件，<b>次日 FedEx 补件 → 用户仍给 5 星</b>。这就是甲方要直接抄的服务动作。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>BioLite <span class="mk cp">竞品</span></h4>
+        <ul>
+          <li>差评根因是电子件：<b>"蓝牙配不上、电池坏了不能换"</b>。</li>
+          <li>原话：<span class="en">"The fan on my firepit will not pair via Bluetooth"</span>。</li>
+          <li>→ 甲方是纯机械结构，可正面主张 <span class="en">"nothing to charge, nothing to pair, nothing to break"</span>。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>一个战术空档：便携赛道评价是空的 <span class="mk cp">竞品</span></h4>
+        <ul>
+          <li>Fireside 官网全站只有 <b>3 条</b>评价、Trustpilot 无页面；Breeo 便携款只有 322 条（主力款的 7%）。</li>
+          <li>→ 便携火盆这个细分里，<b>早期把评价数堆起来本身就是护城河</b>。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="figs g3">
+      <figure>
+        <img loading="lazy" src="assets/evidence/trustpilot_solostove_rating_distribution.png" alt="Solo Stove Trustpilot 截图：3.1 分、933 条评价、1 星占 13%，平台标注 Hasn't replied to negative reviews。">
+        <figcaption><b>Solo Stove <span class="mk cp">竞品</span> 站外 3.1 分</b>：官网自装插件 4.6 分，第三方 Trustpilot 只有 3.1 分——落差就是服务履约的真实缺口。</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="assets/evidence/trustpilot_solostove_1star_customer_service.png" alt="Solo Stove 1 星评价截图：客服是黑洞，只有机器人、等了 25 分钟没人接。">
+        <figcaption><b>客服黑洞原话：</b>"live chat 只是没用的机器人，打电话等 25 分钟没人接"——这就是甲方要正面打的 43% 服务缺口。</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="assets/evidence/fireside_popup_pit_only3_reviews.png" alt="Fireside Outdoor Pop-Up Pit 截图：4.7 分，仅 3 条评价。">
+        <figcaption><b>便携赛道评价空白：</b>同结构对手 Fireside <span class="mk cp">竞品</span> 全站只有 3 条评价。评价数在这个细分里本身就是护城河。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================= 第三部分：落地动作表 ======================= -->
+  <section id="actions">
+    <div class="sec-head"><h2><span class="num">3.</span>怎么落地用 · 8 条洞察 → 4 类动作</h2></div>
+    <p class="lead">这是全页核心。每一行 = 一条评论洞察，横着读就是四个可执行动作：<b>①页面怎么改 ②Meta 广告文案怎么写（附英文范例）③素材怎么拍 ④关键词怎么布</b>。英文文案范例全部守住合规红线（尤其禁火令，只说 propane + 关阀 + 查当地规定，绝不说"legal everywhere"）。</p>
+
+    <table class="act">
+      <thead><tr><th style="width:15%">评论洞察</th><th>① 页面优化</th><th>② Meta 广告文案（英文范例）</th><th>③ 广告素材</th><th>④ 关键词布局</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="ins" data-l="洞察">1 · 耐久 / 火网寿命是最大地雷</td>
+          <td data-l="页面">把「<b>免费补件政策</b>」（火网/螺丝/护盾坏了免费寄）写进详情页；做<b>承重 + 钢材厚度实测规格表</b>。</td>
+          <td data-l="文案"><span class="en">"Mesh wears out? We ship you a new one — free."</span></td>
+          <td data-l="素材">火网特写 + 更换演示（几秒钟换好）。</td>
+          <td data-l="关键词"><span class="kwtag">durable fire pit</span><span class="kwtag">replaceable fire mesh</span></td>
+        </tr>
+        <tr>
+          <td class="ins" data-l="洞察">2 · 竞品服务差（43%）是最大缺口</td>
+          <td data-l="页面">详情页放<b>真人客服入口 + 24h 响应承诺 + 明确破损补发政策</b>。</td>
+          <td data-l="文案"><span class="en">"A real human answers. Broken in transit? New one ships same day."</span></td>
+          <td data-l="素材">客服真人出镜 / 开箱补件的真实画面。</td>
+          <td data-l="关键词">信任类不主投搜索，走<b>再营销</b>（对看过页面的人重复曝光）。</td>
+        </tr>
+        <tr>
+          <td class="ins" data-l="洞察">3 · "稳"比"轻"重要</td>
+          <td data-l="页面">首屏别只喊 16 lbs，加<b>"靠着切菜不晃"实测</b>。</td>
+          <td data-l="文案"><span class="en">"Lean on it. Chop on it. It won't wobble."</span></td>
+          <td data-l="素材">用力压桌面、在桌上切菜纹丝不动的镜头。</td>
+          <td data-l="关键词"><span class="kwtag">sturdy camping table</span></td>
+        </tr>
+        <tr>
+          <td class="ins" data-l="洞察">4 · "无烟"是竞品被骂最狠的点（45%）</td>
+          <td data-l="页面">老实用 <b>"less smoke" + 说明起效条件</b>，别学竞品吹 smokeless。</td>
+          <td data-l="文案"><span class="en">"Less smoke when you build it right — here's how."</span></td>
+          <td data-l="素材">对比火候演示（火够大 vs 火太小的冒烟差别）。</td>
+          <td data-l="关键词"><span class="kwtag">low smoke fire pit</span>（避开 smokeless 红海）</td>
+        </tr>
+        <tr>
+          <td class="ins" data-l="洞察">5 · 禁火令季节归零</td>
+          <td data-l="页面">把埋在下拉框的<b>燃气版拎成独立落地页</b>（已做，见 <a href="optimization.html#demos">燃气版落地页设计稿</a>）。</td>
+          <td data-l="文案"><span class="en">"Propane with a shut-off valve — permitted under many Stage 1 &amp; 2 fire restrictions. Check your local rules."</span><br><span class="tnote">合规红线：只说带关阀丙烷、许多一二级禁令下可用、查当地规定；<b>绝不</b>说 fire-ban proof / legal everywhere。</span></td>
+          <td data-l="素材">禁火令告示牌旁，丙烷炉正常点火使用的画面。</td>
+          <td data-l="关键词"><span class="kwtag">propane fire pit</span><span class="kwtag">fire pit for burn ban</span></td>
+        </tr>
+        <tr>
+          <td class="ins" data-l="洞察">6 · 价格锚是 $20–30 的 DIY</td>
+          <td data-l="页面"><b>不降价</b>，用"它替代了三件装备"的<b>收纳对比图</b>讲值。</td>
+          <td data-l="文案"><span class="en">"One bag replaces your grill, fire pit, and table."</span></td>
+          <td data-l="素材">三件装备一大堆 vs 一个包的对比镜头。</td>
+          <td data-l="关键词">打<b>功能词</b>，不打便宜词（别去抢 cheap fire pit）。</td>
+        </tr>
+        <tr>
+          <td class="ins" data-l="洞察">7 · 做饭+取暖是买点、氛围不是</td>
+          <td data-l="页面">页面把<b>做饭和取暖顶到最前</b>，氛围往后放。</td>
+          <td data-l="文案"><span class="en">"Cook a full meal. Stay warm after."</span></td>
+          <td data-l="素材">做一整桌饭 → 饭后围着取暖的完整场景。</td>
+          <td data-l="关键词"><span class="kwtag">portable grill fire pit</span><span class="kwtag">cooking fire pit table</span></td>
+        </tr>
+        <tr>
+          <td class="ins" data-l="洞察">8 · 同结构 Fireside 靠快速补件救回 5 星</td>
+          <td data-l="页面">直接<b>抄这个服务动作</b>：破损/缺件承诺"次日补发"，写进详情页 + 售后条款。</td>
+          <td data-l="文案"><span class="en">"Something arrived damaged? One email, new part ships next day."</span></td>
+          <td data-l="素材">真实补件邮件 → 次日到货的开箱见证。</td>
+          <td data-l="关键词">同洞察 2，走信任/再营销，不主投搜索。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="figs">
+      <figure>
+        <img loading="lazy" src="assets/evidence/breeo_1star_not_smokeless_api.png" alt="Breeo 1 星评价原始数据截图：核心抱怨是不够无烟。">
+        <figcaption><b>洞察 4 的证据：</b>Breeo <span class="mk cp">竞品</span> 141 条负评里 67% 都是"不够无烟"。甲方绝不能碰 smokeless 这个词。</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="assets/evidence/youtube_solostove_comment_no_radiant_heat.jpg" alt="YouTube 评论截图：No radiant heat = no deal，277 赞。">
+        <figcaption><b>洞察 7 的证据：</b>YouTube 全采样最高赞负评 <span class="en">"No radiant heat = no deal."</span>（277 赞）——取暖是第一购买焦虑，必须实测回应。</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="assets/evidence/reddit_cheap_diy_alternatives_price_anchor.png" alt="Reddit 证据截图：洗衣机滚筒、$25 网状火盆等 $20-30 的 DIY 替代方案。">
+        <figcaption><b>洞察 6 的证据：</b>用户拿 $20–30 的 DIY（洗衣机滚筒、$25 网状火盆）当价格锚。甲方要用"替代三件装备"算账，不是降价。</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="assets/evidence/amazon_blackstone_stand_stability_48pct_negative.png" alt="Amazon 官方属性统计截图：折叠桌架 stability 542 提及、262 负面，负面率 48%。">
+        <figcaption><b>洞察 3 的证据：</b>折叠桌架 stability（稳固性）被 Amazon 官方统计为 48% 负面——"稳不稳"比"轻不轻"更决定差评。</figcaption>
+      </figure>
+    </div>
+
+    <div class="callout info">
+      <span class="ttl">配套：燃气版「禁火令可用」落地页已做好</span>
+      洞察 5 提到的燃气版独立落地页，设计稿（中文标注版 + 英文上线版 + Shopify 建站与广告词配置指南）已经在<b><a href="optimization.html#demos">网站诊断与优化页第 8 节</a></b>，合规红线全程守住，可直接打开看。
+    </div>
+  </section>
+
+  <!-- ======================= 结尾：本周就能做 ======================= -->
+  <section id="thisweek">
+    <div class="sec-head"><h2>🚀 本周就能做的三条（最高性价比）</h2></div>
+    <div class="card">
+      <div class="wk">
+        <div class="wk-item"><div class="n"></div><div class="bd">
+          <b>把「免费补件政策」写进详情页。</b>火网/螺丝/护盾坏了免费寄、破损次日补发——一句话文案，几乎零成本，直接同时化解「耐久地雷（洞察 1）」和「43% 服务缺口（洞察 2/8）」两个最大问题。这是全报告 ROI 最高的一条动作。
+        </div></div>
+        <div class="wk-item"><div class="n"></div><div class="bd">
+          <b>详情页的「无烟」措辞立刻改成 "less smoke" + 起效条件说明。</b>竞品 45% 的差评都栽在"无烟"名不副实上，甲方只要老实说清"要多大火、什么木柴、多久起效"，就能把这个品类第一大雷区变成信任加分。
+        </div></div>
+        <div class="wk-item"><div class="n"></div><div class="bd">
+          <b>首屏卖点从"轻/氛围"换成"稳 + 做饭 + 取暖"。</b>数据说得很清楚：买家骂的是晃不晃（稳）、要的是能做饭能取暖，氛围从不是购买理由。文案级改动，不用改产品，投放素材也照这个顺序拍。
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pagenav">
+    <a href="voc.html"><div class="d">◂ 原始数据</div><div class="t">用户洞察 VOC（完整证据）</div></a>
+    <a class="nx" href="optimization.html"><div class="d">配套方案 ▸</div><div class="t">网站诊断与优化</div></a>
+  </div>
+
+</div>
+
+<div class="foot">AroundFire 全链路品牌调研 · 评论落地实操版 · 2026-07-22<br>所有评论、数字、品牌均来自真实采集（voc_analysis.md / competitor_reviews_voc.md），抓不到的已如实声明</div>
+</body>
+</html>
