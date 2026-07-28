@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AroundFire 产品速成课（交互）· 最快学懂全部产品</title>
+<meta name="description" content="AroundFire 全部产品的交互式速成课：一个核心心智模型贯穿始终，5 个 Level 从大局到细节递进，每 Level 配真实产品图 + 即时小测 + 费曼复述提示，最后 5 道配置挑战场景题 + 常见误解自检。为品类小白设计，边学边测，不是资料堆砌。">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ===== 速成课专用样式（全部派生自站内令牌） ===== */
+
+/* 顶部「怎么用这门课」 */
+.howto{background:#F7FAFD;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;padding:14px 19px;margin:1rem 0 1.4rem;box-shadow:var(--sh);font-size:14px;color:var(--ink2)}
+.howto .ttl{display:block;font-weight:800;color:var(--ink);margin-bottom:.3rem;font-size:14px}
+.howto b{color:var(--ink)}
+
+/* 学习路径导航 */
+.navmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:1.2rem 0}
+.navmap a{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;box-shadow:var(--sh);display:block;transition:box-shadow .2s,transform .2s;position:relative}
+.navmap a:hover{box-shadow:var(--shh);transform:translateY(-2px);border-color:var(--red)}
+.navmap .lv{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--red);text-transform:uppercase}
+.navmap .tt{font-size:13.5px;font-weight:800;color:var(--ink);margin-top:3px;line-height:1.4}
+.navmap .dn{position:absolute;top:11px;right:12px;font-size:14px;opacity:0;transition:opacity .2s}
+.navmap a.done .dn{opacity:1}
+
+/* 进度条 */
+.progress{position:sticky;top:41px;z-index:40;background:var(--sand);padding:9px 0 4px;margin:0 0 1rem}
+.progress .bar{height:9px;border-radius:99px;background:var(--sand2);overflow:hidden;border:1px solid var(--line)}
+.progress .fill{height:100%;width:0;background:linear-gradient(90deg,var(--ember),var(--red));border-radius:99px;transition:width .35s}
+.progress .txt{font-size:11.5px;font-weight:700;color:var(--ink3);margin-top:5px;text-align:right}
+.progress .txt b{color:var(--red)}
+
+/* 核心心智模型盒子 */
+.model{background:#16130F;color:#fff;border-radius:var(--r);padding:24px 24px 22px;margin:1.2rem 0 1.4rem;position:relative;overflow:hidden;box-shadow:var(--shh)}
+.model::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 0%,rgba(224,160,48,.26),transparent 46%),radial-gradient(circle at 92% 100%,rgba(188,43,43,.30),transparent 48%)}
+.model>*{position:relative;z-index:2}
+.model .lbl{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:2px;color:var(--ember);border:1.5px solid rgba(224,160,48,.42);padding:4px 13px;border-radius:99px;text-transform:uppercase;margin-bottom:.7rem}
+.model .big{font-size:clamp(18px,3vw,23px);font-weight:800;line-height:1.5;letter-spacing:-.01em}
+.model .big em{font-style:normal;color:var(--ember);text-decoration:underline;text-decoration-color:rgba(224,160,48,.5);text-underline-offset:3px}
+.model .big .hub{color:#fff;background:var(--red);border-radius:6px;padding:1px 8px}
+.model .note{color:rgba(255,255,255,.72);font-size:13px;margin-top:.8rem;line-height:1.7}
+
+/* 模型示意（文字积木图） */
+.blocks{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:1.1rem 0}
+.blk{flex:1 1 150px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 15px;box-shadow:var(--sh)}
+.blk .bt{font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.blk .bd{font-size:12.5px;color:var(--ink3);line-height:1.6}
+.blk.hub{border-color:var(--red);border-width:2px;background:#FFF8F8}
+.blk.hub .bt{color:var(--red)}
+.blkplus{align-self:center;font-size:22px;font-weight:800;color:var(--ink3)}
+@media (max-width:620px){.blkplus{display:none}}
+
+/* Level 区块 */
+.lvl{margin:2.6rem 0 0;scroll-margin-top:92px}
+.lvl-hd{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--ink);color:#fff;border-radius:12px;padding:13px 19px;margin-bottom:.2rem}
+.lvl-hd .n{font-size:12px;font-weight:800;letter-spacing:.1em;background:var(--red);color:#fff;padding:4px 11px;border-radius:7px;white-space:nowrap}
+.lvl-hd h2{margin:0;color:#fff;font-size:clamp(17px,2.4vw,21px)}
+.lvl-hd .chk{margin-left:auto;font-size:11.5px;font-weight:800;background:rgba(255,255,255,.14);color:rgba(255,255,255,.8);padding:4px 11px;border-radius:99px;white-space:nowrap}
+.lvl-hd .chk.done{background:var(--green);color:#fff}
+.goal{background:#F6FBF8;border:1px solid var(--line);border-left:5px solid var(--green);border-radius:0 12px 12px 0;padding:12px 18px;margin:.7rem 0 1.2rem;font-size:13.5px;color:var(--ink2);box-shadow:var(--sh)}
+.goal b{color:var(--ink)}
+.goal .g{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.06em;color:#1F6741;background:#E6F4EC;padding:2px 9px;border-radius:99px;margin-right:7px;text-transform:uppercase}
+
+/* 产品卡 */
+.pcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column}
+.pcard-img{background:#fff;aspect-ratio:4/3;overflow:hidden;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.pcard-img img{width:100%;height:100%;object-fit:contain;padding:6px}
+.pcard-body{padding:14px 17px 16px}
+.pcard-body h4{margin:0 0 3px;font-size:14.5px;font-weight:800;color:var(--ink);line-height:1.4;display:flex;align-items:baseline;flex-wrap:wrap;gap:6px}
+.pcard-body h4 .zh{color:var(--ink2);font-weight:700;font-size:13px}
+.pcard-price{margin-left:auto;font-size:13.5px;font-weight:800;color:var(--red);white-space:nowrap}
+.pcard .plain{font-size:13px;color:var(--ink);line-height:1.7;margin:.5rem 0 .4rem}
+.pcard .plain b{color:var(--red)}
+.pcard-meta{list-style:none;margin:.4rem 0 0;padding:0;font-size:12.5px;color:var(--ink3);line-height:1.6}
+.pcard-meta li{margin:.2rem 0;padding-left:15px;position:relative}
+.pcard-meta li::before{content:"›";position:absolute;left:2px;color:var(--ember-dk);font-weight:800}
+.pcard-meta li b{color:var(--ink2)}
+.tagline{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 9px;border-radius:99px;margin-bottom:6px}
+
+/* 分组条 */
+.grp{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:1.6rem 0 .3rem;border-radius:12px;padding:11px 17px;color:#fff}
+.grp.hub{background:var(--red)} .grp.struct{background:var(--blue)} .grp.cook{background:var(--ember-dk)} .grp.consum{background:var(--plum)}
+.grp h3{margin:0;color:#fff;font-size:15.5px}
+.grp .sc{font-size:12px;color:rgba(255,255,255,.85);font-weight:600;flex-basis:100%;margin-top:1px;line-height:1.55}
+
+/* 费曼提示 */
+.feynman{background:#FFFCF6;border:1px solid var(--line);border-left:5px solid var(--ember);border-radius:0 12px 12px 0;padding:12px 18px;margin:1.1rem 0;font-size:13.5px;color:var(--ink2);box-shadow:var(--sh)}
+.feynman .ttl{font-weight:800;color:var(--ink);display:block;margin-bottom:.2rem}
+
+/* 小测容器 */
+.quiz{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);padding:18px 20px 16px;margin:1.4rem 0}
+.quiz .qh{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--red);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:8px}
+.quiz .qh::before{content:"✍️";font-size:15px}
+.qitem{margin:.9rem 0;padding:14px 0 0;border-top:1px dashed var(--line)}
+.qitem:first-of-type{border-top:0;padding-top:0}
+.qitem .qq{font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.6;margin:0 0 .6rem}
+.qitem .qq .qn{color:var(--red);font-weight:800;margin-right:5px}
+.opt{display:block;width:100%;text-align:left;font-family:inherit;font-size:13.5px;line-height:1.55;color:var(--ink2);background:var(--sand);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;margin:7px 0;cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover:not(:disabled){border-color:var(--red);color:var(--ink)}
+.opt:disabled{cursor:default}
+.opt .k{font-weight:800;color:var(--ink3);margin-right:7px}
+.opt.right{border-color:var(--green);background:#E6F4EC;color:#16130F}
+.opt.right .k{color:#1F6741}
+.opt.right::after{content:" ✓ 正确";font-weight:800;color:#1F6741;font-size:12px}
+.opt.wrong{border-color:var(--red);background:#FBE9E9;color:#16130F}
+.opt.wrong::after{content:" ✗ 不对";font-weight:800;color:#9E1F1F;font-size:12px}
+.qfx{margin-top:9px;font-size:13px;line-height:1.7;color:var(--ink2);background:#F7FAFD;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:0 10px 10px 0;padding:10px 15px}
+.qfx b{color:var(--ink)}
+.qfx .verdict{font-weight:800}
+.qitem.ok .qfx .verdict{color:#1F6741}
+.qitem.no .qfx .verdict{color:#9E1F1F}
+
+/* 翻卡 */
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px;margin:1.1rem 0}
+.flip{text-align:left;font-family:inherit;background:#FFF8F8;border:1.5px solid var(--line);border-left:5px solid var(--red);border-radius:12px;padding:15px 17px;cursor:pointer;box-shadow:var(--sh);transition:transform .12s;min-height:96px;display:flex;flex-direction:column;justify-content:center;width:100%}
+.flip:hover{transform:translateY(-2px)}
+.flip.on{border-left-color:var(--green);background:#F6FBF8}
+.flip .fq{font-size:14px;font-weight:800;color:var(--ink);line-height:1.55}
+.flip .hint{display:block;font-size:11.5px;font-weight:700;color:var(--red);margin-top:8px}
+.flip.on .hint{display:none}
+.flip .fa{font-size:13px;color:var(--ink2);line-height:1.7;margin-top:9px}
+.flip .fa b{color:#1F6741}
+.flip .fa .no{color:#9E1F1F;font-weight:800}
+
+/* 场景挑战 */
+.scene{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);padding:17px 20px 16px;margin:1rem 0;border-left:5px solid var(--ember)}
+.scene .sn{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--ember-dk);padding:3px 10px;border-radius:99px;margin-bottom:8px}
+.scene .sq{font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.65;margin:0 0 .3rem}
+.scene .think{font-size:12.5px;color:var(--ink3);margin:.4rem 0 .7rem;line-height:1.6}
+.reveal{font-family:inherit;font-size:13px;font-weight:800;color:#fff;background:var(--red);border:0;border-radius:99px;padding:9px 20px;cursor:pointer;transition:background .15s}
+.reveal:hover{background:var(--red-hv)}
+.scene-a{margin-top:12px;background:#F6FBF8;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:0 12px 12px 0;padding:13px 17px}
+.scene-a .rec{font-size:14px;font-weight:800;color:#16130F;line-height:1.6;margin:0 0 .4rem}
+.scene-a .rec .pick{color:#1F6741}
+.scene-a .why{font-size:13px;color:var(--ink2);line-height:1.72;margin:0}
+.scene-a .why b{color:var(--ink)}
+
+/* 高度 / 燃料系统条 */
+.sys{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:1.1rem 0}
+.syscard{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:15px 16px;box-shadow:var(--sh)}
+.syscard .h{font-size:clamp(19px,3vw,24px);font-weight:800;color:var(--red);letter-spacing:-.01em;line-height:1.15}
+.syscard .m{font-size:13px;font-weight:800;color:var(--ink);margin:5px 0 3px}
+.syscard .d{font-size:12.5px;color:var(--ink3);line-height:1.6}
+.syscard.e .h{color:var(--ember-dk)} .syscard.b .h{color:var(--blue)} .syscard.g .h{color:var(--green)}
+
+.disclaimer .ttl{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <a class="home" href="index.html">◂ AROUNDFIRE 报告中心</a><span class="sep">|</span>
+  <a href="summary.html">摘要</a><a href="category.html">品类</a><a href="client-questions.html">问题清单</a><a href="competitors.html">竞争</a><a href="voc.html">VOC</a><a href="ads.html">广告</a><a href="optimization.html">网站优化</a><a href="pricing.html">定价</a>
+</div></div>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="eyebrow">Product Crash Course · 交互式速成课</div>
+    <h1>🎓 AroundFire 产品速成课</h1>
+    <p class="sub">给品类小白设计的一门<b>能边学边测</b>的课：用一个心智模型把全部产品串起来，5 个 Level 从大局到细节层层递进。每学完一段就动手答一道小测，最后用 5 道真实客户「配置挑战」检验你会不会给人推荐。学完，你能一口气说清 AroundFire 卖的是什么、每个配件解决什么问题、什么客户该配什么。</p>
+    <div class="meta"><span>🧠 1 个核心模型贯穿</span><span>🪜 5 个递进 Level</span><span>✍️ 12 道即时小测 + 6 张误区翻卡</span><span>🎯 5 道配置挑战</span></div>
+  </div>
+</div>
+
+<div class="wrap narrow">
+
+  <div class="howto">
+    <span class="ttl">怎么用这门课（很重要）</span>
+    这门课的效果<b>全靠你动手答题</b>——学习科学早就证明：看一遍很快忘，主动回想一次记得牢。所以每个 Level 学完都插了小测，<b>请先自己想答案再点</b>，点错了看解析比一路看下去更有用。看到「🧠 讲给朋友听」的地方，停下来用自己的话复述一遍，卡壳就说明那块还没懂。下面 5 个 Level 可以直接跳转，但第一次建议从头顺着走。
+  </div>
+
+  <nav class="navmap" id="navmap">
+    <a href="#lv1"><span class="lv">Level 1</span><span class="tt">大局观：这到底是个啥</span><span class="dn">✅</span></a>
+    <a href="#lv2"><span class="lv">Level 2</span><span class="tt">两张核心桌子 Lite vs Grande</span><span class="dn">✅</span></a>
+    <a href="#lv3"><span class="lv">Level 3</span><span class="tt">9 个配件生态 + 依赖关系</span><span class="dn">✅</span></a>
+    <a href="#lv4"><span class="lv">Level 4</span><span class="tt">高度系统 + 燃料系统</span><span class="dn">✅</span></a>
+    <a href="#lv5"><span class="lv">Level 5</span><span class="tt">场景应用：配置挑战</span><span class="dn">✅</span></a>
+  </nav>
+
+  <div class="progress">
+    <div class="bar"><div class="fill" id="pfill"></div></div>
+    <div class="txt" id="ptxt">小测进度：已答 <b>0</b> / 12 题 · 边学边答，别只看</div>
+  </div>
+
+  <!-- ============================ 核心心智模型 ============================ -->
+  <div class="model">
+    <span class="lbl">先记住这一句 · 全课都挂在它上面</span>
+    <p class="big">AroundFire = <em>一张能折叠的桌子</em> ＋ <em>一摞配件</em>，每个配件解锁一种新吃法；而<span class="hub">钛合金桌面板</span>是枢纽——<b style="color:#fff">装了它才能上燃气炉</b>。</p>
+    <p class="note">把这句话背下来。后面所有产品——两张桌子、九个配件、三档高度、四种吃法——都只是在给这句话加细节。只要记得「桌子是底座、配件解锁吃法、钛桌面板是那把总钥匙」，就不会乱。</p>
+  </div>
+
+  <div class="blocks">
+    <div class="blk"><div class="bt">① 一张桌子（底座）</div><div class="bd">30 秒展开的双折叠桌，中间是一张不锈钢火网，能直接生火。Lite 或 Grande 二选一。</div></div>
+    <div class="blkplus">＋</div>
+    <div class="blk hub"><div class="bt">② 钛桌面板（枢纽 / 总钥匙）</div><div class="bd">盖住火网变平桌 + 当挡风板 + <b>燃气炉的安装底座</b>。想上燃气炉，必须先有它。</div></div>
+    <div class="blkplus">＋</div>
+    <div class="blk"><div class="bt">③ 一摞配件（解锁吃法）</div><div class="bd">燃气炉、韩烤网、铁板、火锅锅、加高腿、灯架……每个配件解锁一种新玩法。</div></div>
+  </div>
+
+  <div class="feynman">
+    <span class="ttl">🧠 讲给朋友听</span>用一句话跟朋友解释「AroundFire 是什么」。如果你说得出「一张会生火的折叠桌，加不同配件就能烧烤 / 煮火锅 / 上燃气灶，其中有块钛桌面板是上燃气炉的前提」，就说明 Level 0 过关了。
+  </div>
+
+  <!-- ============================ LEVEL 1 ============================ -->
+  <section class="lvl" id="lv1">
+    <div class="lvl-hd"><span class="n">LEVEL 1</span><h2>大局观：这到底是个啥</h2><span class="chk" data-chk="lv1">小测 0/2</span></div>
+    <div class="goal"><span class="g">学完你会</span><b>一句话说清 AroundFire 卖的是什么</b>——知道它同时能当烧烤炉 / 火盆 / 聚会桌，核心是「能折叠 + 会生火 + 可加配件」，而不是一件单一功能的产品。</div>
+
+    <p>AroundFire 官方叫它 <b>3-in-1 便携户外桌</b>（一物三用：grill 烧烤炉 ＋ fire pit 火盆 ＋ 聚会桌）。它最大的特点是 <b>patented dual-fold design 专利双折叠结构</b> ＋ <b>ultralight fire mesh 超轻火网</b>，官方主张这是「最便携的一体式露营桌」，<b>30 秒就能展开</b>。一张桌子，既能围坐吃饭，中间那张火网又能直接烧炭火 / 柴火办烧烤和篝火，还能加配件切换成燃气灶或火锅。用在<b>露营</b>，也用在<b>自家后院</b>。</p>
+
+    <div class="callout info">
+      <span class="ttl">为什么它不是「一件普通烧烤炉」</span>
+      普通烧烤炉只能烤。AroundFire 卖的是<b>「一张底座 + 一套可换配件」的系统</b>：底座负责折叠、便携、生火；配件负责把它变成你当下想要的那种工具。理解这一点，你就抓住了整门课的骨架——后面所有内容都是在解释「有哪些底座」和「有哪些配件、各解锁什么」。
+    </div>
+
+    <div class="feynman"><span class="ttl">🧠 讲给朋友听</span>试着不看屏幕说出「3-in-1 指哪三样」。（答案：烧烤炉 grill、火盆 fire pit、聚会桌。）</div>
+
+    <div class="quiz">
+      <div class="qh">即时小测 · Level 1（先自己想再点）</div>
+      <div class="qitem" data-answer="C">
+        <p class="qq"><span class="qn">Q1.</span>下面哪句话最准确地概括了 AroundFire 是什么？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>一台只能烤肉的便携烧烤炉</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>一个固定在后院、不能搬动的大火盆</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>一张会生火的折叠桌（底座），加不同配件能解锁烧烤 / 火盆 / 燃气灶 / 火锅等多种吃法</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>一套厨房燃气灶具</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 C。抓住「底座 + 可换配件的系统」这个骨架，整门课就串起来了。A 太窄（不止能烤），B 错在便携（它 30 秒折叠可搬走）。</div>
+      </div>
+      <div class="qitem" data-answer="B">
+        <p class="qq"><span class="qn">Q2.</span>官方说的 3-in-1 指的是哪三样？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>烧烤炉 ＋ 冰箱 ＋ 帐篷</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>烧烤炉 grill ＋ 火盆 fire pit ＋ 聚会桌</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>燃气灶 ＋ 烤箱 ＋ 洗碗机</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>桌子 ＋ 椅子 ＋ 帐篷</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 B。烧烤炉 + 火盆 + 聚会桌，这就是「3-in-1」这个核心卖点关键词的三层含义。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ LEVEL 2 ============================ -->
+  <section class="lvl" id="lv2">
+    <div class="lvl-hd"><span class="n">LEVEL 2</span><h2>两张核心桌子：Gather Lite vs Gather Grande</h2><span class="chk" data-chk="lv2">小测 0/3</span></div>
+    <div class="goal"><span class="g">学完你会</span>分清 <b>Lite 和 Grande 的区别</b>，看懂每张桌子的 <b>6 个变体是怎么来的</b>（3 档套装 × 2 档高度），并知道「能上几个燃气炉」是两者最硬的分水岭。</div>
+
+    <p>底座只有两张桌子，先把它俩认全。它们外形结构一样，<b>区别在大小和能挂几个燃气炉</b>。</p>
+
+    <div class="cards c2">
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/course/gather_lite_basic_set.webp" alt="Gather Lite Basic Set 便携折叠烧烤火盆桌，展开状态，中间为不锈钢火网。"></div>
+        <div class="pcard-body">
+          <span class="tagline t-ember">入门底座 · 更小更便携</span>
+          <h4>Gather Lite <span class="zh">聚会桌 · 轻量版</span><span class="pcard-price">$189 起</span></h4>
+          <p class="plain"><b>大白话：</b>更小、更轻、更便宜的那张桌子。一切玩法它都能玩，唯一上限是<b>最多只能装 1 个燃气炉</b>。</p>
+          <ul class="pcard-meta">
+            <li><b>给谁</b>：预算有限、常搬去露营、人数不多的家庭 / 小团。</li>
+            <li><b>什么场景</b>：露营、后院小聚，一台够用。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/course/gather_grande_basic_set.webp" alt="Gather Grande Basic Set 便携折叠烧烤火盆桌，尺寸更大，中间为不锈钢火网。"></div>
+        <div class="pcard-body">
+          <span class="tagline t-red">加大底座 · 能上 2 个燃气炉</span>
+          <h4>Gather Grande <span class="zh">聚会桌 · 加大版</span><span class="pcard-price">$239 起</span></h4>
+          <p class="plain"><b>大白话：</b>更大的那张桌子，坐得下更多人，而且<b>能同时装 2 个燃气炉</b>（一边煮汤一边煎，两个灶头一起开）。</p>
+          <ul class="pcard-meta">
+            <li><b>给谁</b>：人多、爱聚会、想要两个灶头同时开火的。</li>
+            <li><b>什么场景</b>：大家庭、朋友聚会、边煮边烤的多人围炉。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <span class="ttl">⚠️ 一处如实标注：座位数「甲方口径不一致，待确认」</span>
+      关于 Lite / Grande 各能坐几人，本次调研的报告里数据<b>自相矛盾</b>：Lite 有的地方写约 4–6 人；Grande 有的地方写 6–8 人、有的地方写 8–10 人。官方也没给统一口径。所以<b>本课不写死具体座位数</b>——记住相对关系「Grande 比 Lite 大、坐得更多」即可，精确人数需向甲方确认后再对外说。
+    </div>
+
+    <h3>每张桌子为什么有 6 个变体？＝ 3 档套装 × 2 档高度</h3>
+    <p>同一张桌子在官网有 6 个价格，别被吓到。它其实是<b>两个轴交叉</b>出来的：</p>
+    <ul>
+      <li><b>套装轴（3 档）</b>：Basic 基础版 → ＋钛合金桌面板 → ＋燃气炉（配齐才能上燃气灶）。</li>
+      <li><b>高度轴（2 档）</b>：Basic Height 基础高度（38cm / 55cm 可调）→ ＋Extension Legs 加高腿（再解锁 70cm 餐桌高度）。</li>
+    </ul>
+    <p>3 × 2 = 6，就是这么来的。看价格表：</p>
+
+    <table>
+      <thead>
+        <tr><th>变体（配置）</th><th class="num">Gather Lite</th><th class="num">Gather Grande</th></tr>
+      </thead>
+      <tbody>
+        <tr><td data-l="配置">Basic 基础版</td><td class="num" data-l="Lite">$189</td><td class="num" data-l="Grande">$239</td></tr>
+        <tr><td data-l="配置">Basic ＋加高腿</td><td class="num" data-l="Lite">$199</td><td class="num" data-l="Grande">$249</td></tr>
+        <tr><td data-l="配置">＋钛合金桌面板</td><td class="num" data-l="Lite">$239</td><td class="num" data-l="Grande">$289</td></tr>
+        <tr><td data-l="配置">＋钛桌面板 ＋加高腿</td><td class="num" data-l="Lite">$249</td><td class="num" data-l="Grande">$299</td></tr>
+        <tr><td data-l="配置">＋钛桌面板 ＋燃气炉<br><span class="zhu">（Lite 1 个 / Grande 2 个）</span></td><td class="num" data-l="Lite">$259</td><td class="num" data-l="Grande">$349</td></tr>
+        <tr><td data-l="配置">全配<br><span class="zhu">（钛桌面板＋加高腿＋燃气炉）</span></td><td class="num" data-l="Lite">$269</td><td class="num" data-l="Grande">$359</td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">留意最后两行：套装顶配里，<b>Lite 只带 1 个燃气炉，Grande 带 2 个</b>——这就是 Grande 顶配比 Lite 贵一大截（$349 vs $259）的原因。这也是两张桌子最硬的分水岭。</p>
+
+    <div class="feynman"><span class="ttl">🧠 讲给朋友听</span>用「两个轴」解释为什么一张桌子有 6 个价格。说得出「套装 3 档 × 高度 2 档」，这一节就懂了。</div>
+
+    <div class="quiz">
+      <div class="qh">即时小测 · Level 2</div>
+      <div class="qitem" data-answer="C">
+        <p class="qq"><span class="qn">Q1.</span>Lite 和 Grande 最硬的区别是什么？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>颜色不一样</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>Lite 能生火，Grande 不能</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>Grande 更大、能同时上 2 个燃气炉；Lite 最多 1 个</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>Grande 是燃气的，Lite 是烧炭的</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 C。两张桌子结构玩法一样，分水岭是尺寸和「能上几个燃气炉」——Lite 1 个、Grande 2 个。</div>
+      </div>
+      <div class="qitem" data-answer="B">
+        <p class="qq"><span class="qn">Q2.</span>同一张桌子有 6 个变体，是哪两个轴交叉出来的？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>颜色轴 × 品牌轴</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>套装轴（Basic → ＋钛桌面板 → ＋燃气炉，3 档）× 高度轴（基础 → ＋加高腿，2 档）</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>重量轴 × 材质轴</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>露营版 × 后院版</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 B。3 档套装 × 2 档高度 = 6 个变体。记住这个乘法，价格表就不再吓人。</div>
+      </div>
+      <div class="qitem" data-answer="A">
+        <p class="qq"><span class="qn">Q3.</span>关于「Lite / Grande 各能坐几人」，本课的正确态度是？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>只记「Grande 比 Lite 大、坐更多」，精确人数因甲方口径不一致、待确认，不对外写死</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>Grande 一定坐 10 人，写死就行</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>Lite 坐 2 人，Grande 坐 4 人</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>两张都只能坐 1 人</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 A。报告里 Grande 有 6–8 与 8–10 两种自相矛盾的说法，官方无统一口径，所以座位数待甲方确认，不能凭空写死。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ LEVEL 3 ============================ -->
+  <section class="lvl" id="lv3">
+    <div class="lvl-hd"><span class="n">LEVEL 3</span><h2>配件生态：9 个配件 + 它们的依赖关系</h2><span class="chk" data-chk="lv3">小测 0/4</span></div>
+    <div class="goal"><span class="g">学完你会</span>按功能记住 <b>9 个配件各解决什么问题</b>，并牢牢记住最关键的依赖链：<b>钛桌面板是枢纽，燃气炉必须先有它才能用</b>。</div>
+
+    <p>配件一共 9 个。别一个个死记——<b>按功能分成 4 组</b>就好记多了。最重要的是第一组「枢纽配件」，它决定桌子能干什么。</p>
+
+    <!-- A 组 枢纽 -->
+    <div class="grp hub"><h3>A 组 · 枢纽配件（改变桌子「能干什么」的关键）</h3><span class="sc">这两个配件配合，把桌子从「烧烤炉」升级成「燃气灶」。钛桌面板是整个生态的总钥匙。</span></div>
+    <div class="cards c2">
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/course/titanium_multifunctional_tabletop.jpg" alt="Titanium Multifunctional Tabletop 钛合金多功能桌面板，可盖在火网上变成平整桌面并作为燃气炉安装底座。"></div>
+        <div class="pcard-body">
+          <span class="tagline t-red">枢纽 / 总钥匙 · 一块管三件事</span>
+          <h4>Titanium Multifunctional Tabletop <span class="zh">钛合金多功能桌面板</span><span class="pcard-price">$59 / $69</span></h4>
+          <p class="plain"><b>大白话：</b>一块盖板，但它<b>身兼三职</b>——①当挡风板（防火苗被风吹跑）②盖在火网上就变成平整桌面 ③<b>它是燃气炉的安装底座，装了它才能上燃气炉</b>。它是整个配件生态的枢纽。</p>
+          <ul class="pcard-meta">
+            <li><b>给谁</b>：想让桌子既能当平桌用、又打算上燃气炉的人。</li>
+            <li><b>价格</b>：配 Lite $59 / 配 Grande $69（Grande 面板更大所以更贵）。</li>
+            <li><b>关键</b>：<b>没有它就上不了燃气炉</b>——记死这条。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/course/camping_stove.jpg" alt="Camping Stove 燃气炉，插入钛桌面板预留孔，把桌子变成燃气灶。"></div>
+        <div class="pcard-body">
+          <span class="tagline t-red">解锁「燃气灶」吃法 · 依赖钛桌面板</span>
+          <h4>Camping Stove <span class="zh">燃气炉</span><span class="pcard-price">$33</span></h4>
+          <p class="plain"><b>大白话：</b>插进钛桌面板预留孔的一个炉头，把 AroundFire 变成<b>燃气灶</b>（煮咖啡、炖汤、煎蛋、炒菜都行）。配转换头能在丁烷小罐 / 丙烷大罐之间切换。</p>
+          <ul class="pcard-meta">
+            <li><b>给谁</b>：不只想烧烤、还想像家里一样开火做饭的人。</li>
+            <li><b>⚠️ 硬依赖</b>：<b>必须先有钛桌面板才能用</b>；Lite 最多 1 个、Grande 最多 2 个。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout danger">
+      <span class="ttl">🔑 全课最关键的一条依赖链，务必记死</span>
+      <b>燃气炉 ⟶ 必须先有 ⟶ 钛桌面板 ⟶ 装在 ⟶ 桌子上。</b>燃气炉不能单独买来用，因为它得插在钛桌面板的预留孔里。这就是「钛桌面板是枢纽 / 总钥匙」的含义。
+    </div>
+
+    <!-- B 组 结构 -->
+    <div class="grp struct"><h3>B 组 · 结构调整</h3><span class="sc">改变桌子的高度，不改变吃法。</span></div>
+    <div class="cards c2">
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/course/extension_table_legs.jpg" alt="Extension Table Legs 加高腿，把桌子加高到 70cm 普通餐桌高度。"></div>
+        <div class="pcard-body">
+          <span class="tagline t-blue">解锁 70cm 餐桌高度</span>
+          <h4>Extension Table Legs <span class="zh">加高腿</span><span class="pcard-price">$19</span></h4>
+          <p class="plain"><b>大白话：</b>一副加高的桌腿。桌子本来只能到 38cm（火盆取暖档）/ 55cm（露营椅档），装上加高腿就能升到 <b>70cm 普通餐桌高度</b>——配餐椅在后院用更舒服。</p>
+          <ul class="pcard-meta">
+            <li><b>给谁</b>：想在后院配普通餐椅、坐得舒服的人。</li>
+            <li><b>什么场景</b>：后院正经吃饭、当普通餐桌用。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- C 组 做饭升级 -->
+    <div class="grp cook"><h3>C 组 · 做饭升级（在桌面 / 火网上换不同「烹饪面」）</h3><span class="sc">同一张火网上，换不同的锅 / 盘 / 网，就切换成不同的做饭方式。</span></div>
+    <div class="cards c2">
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/course/kbbq_style_grill_grate.jpg" alt="KBBQ Style Grill Grate 韩式烤肉烤网，小格子烤网适合围坐韩式烤肉。"></div>
+        <div class="pcard-body">
+          <span class="tagline t-ember">解锁「韩式烤肉」吃法</span>
+          <h4>KBBQ Style Grill Grate <span class="zh">韩式烤肉烤网</span><span class="pcard-price">$37</span></h4>
+          <p class="plain"><b>大白话：</b>一张小格子烤网（KBBQ = Korean BBQ 韩式烤肉），适合烤小块肉、蔬菜、小海鲜，一群人围坐着边烤边吃。</p>
+          <ul class="pcard-meta">
+            <li><b>给谁</b>：爱吃韩式烤肉、喜欢围坐共烤的人。</li>
+            <li><b>什么场景</b>：多人围炉韩烤。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/course/cast_iron_griddle_currently_sold_out_ava.jpg" alt="Cast Iron Griddle 铸铁煎盘，5mm 厚双面，一面平铁板一面带凸纹烤条。"></div>
+        <div class="pcard-body">
+          <span class="tagline t-ember">解锁「铁板 / 煎烤」吃法 · 现售罄</span>
+          <h4>Cast Iron Griddle <span class="zh">铸铁煎盘</span><span class="pcard-price">$69</span></h4>
+          <p class="plain"><b>大白话：</b>5mm 厚的双面铸铁盘——一面是平铁板（煎早餐、煎饼、培根、tacos 塔可），一面带凸纹烤条（煎牛排、汉堡有烤痕），带导油槽。炭火 / 柴火 / 燃气都能用。</p>
+          <ul class="pcard-meta">
+            <li><b>给谁</b>：爱做铁板早餐、煎牛排的人。</li>
+            <li><b>⚠️ 状态</b>：<b>当前售罄，约 30 天后补货</b>（目录里最贵的配件）。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/course/aluminum_foil_hot_pot_cooking_pot_12_pac.jpg" alt="Aluminum Foil Hot Pot 铝箔火锅锅 12 个装，双格设计可同时两种锅底。"></div>
+        <div class="pcard-body">
+          <span class="tagline t-ember">解锁「火锅」吃法</span>
+          <h4>Aluminum Foil Hot Pot <span class="zh">铝箔火锅锅（12 个装）</span><span class="pcard-price">$37</span></h4>
+          <p class="plain"><b>大白话：</b>放桌子中间围炉吃火锅的一次性铝箔锅，<b>双格设计</b>能同时两种锅底（鸳鸯锅）。也能煮汤、炖菜、煮海鲜、下意面。一盒 12 个。</p>
+          <ul class="pcard-meta">
+            <li><b>给谁</b>：冬天爱围炉吃火锅、想省清洗的人。</li>
+            <li><b>什么场景</b>：多人围炉火锅、炖煮。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- D 组 耗材小件 -->
+    <div class="grp consum"><h3>D 组 · 耗材 / 小件</h3><span class="sc">用久了要换的、和锦上添花的小配件。</span></div>
+    <div class="cards c2">
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/course/replacement_fire_mesh.jpg" alt="Replacement Fire Mesh 替换火网，304 不锈钢丝，每张至少保证 50 次正常使用。"></div>
+        <div class="pcard-body">
+          <span class="tagline t-plum">耗材 · 用久要换</span>
+          <h4>Replacement Fire Mesh <span class="zh">替换火网</span><span class="pcard-price">$33 / $37</span></h4>
+          <p class="plain"><b>大白话：</b>桌子中间那张生火用的网是消耗品，烧久了要换。材质是 304 不锈钢丝、可变形；网眼密度既保证通风充分燃烧、少冒烟，又能挡住灰和火星掉落。<b>官方保证每张至少能正常用 50 次。</b></p>
+          <ul class="pcard-meta">
+            <li><b>价格</b>：配 Lite $33 / 配 Grande $37。</li>
+            <li><b>⚠️ 官方注明</b>：火网<b>不可用变色剂或液体燃料</b>。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/course/light_stand.jpg" alt="Light Stand 灯架，夹式设计可调高度，夜间氛围灯。"></div>
+        <div class="pcard-body">
+          <span class="tagline t-plum">小件 · 氛围</span>
+          <h4>Light Stand <span class="zh">灯架</span><span class="pcard-price">$33</span></h4>
+          <p class="plain"><b>大白话：</b>一个夹在桌边、可调高度的灯架，晚上给围炉聚会补个氛围灯。</p>
+          <ul class="pcard-meta">
+            <li><b>给谁</b>：常在夜间聚会、想要氛围感的人。</li>
+            <li><b>什么场景</b>：夜晚露营 / 后院聚会照明。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/course/bbq_tong_set.jpg" alt="BBQ Tong Set 烧烤夹 4 支装，304 不锈钢，带收纳袋。"></div>
+        <div class="pcard-body">
+          <span class="tagline t-plum">小件 · 工具</span>
+          <h4>BBQ Tong Set <span class="zh">烧烤夹（4 支装）</span><span class="pcard-price">$16</span></h4>
+          <p class="plain"><b>大白话：</b>4 支一套的烧烤夹，304 不锈钢，带收纳袋。人多一起烤时每人一把不用抢。</p>
+          <ul class="pcard-meta">
+            <li><b>给谁</b>：多人一起烤、需要好几把夹子的场合。</li>
+            <li><b>什么场景</b>：多人围烤配套工具。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="feynman"><span class="ttl">🧠 讲给朋友听</span>合上屏幕，试着说出 4 个配件分组各是干嘛的（枢纽 / 结构 / 做饭升级 / 耗材小件），再说清「为什么燃气炉不能单独买来用」。</div>
+
+    <div class="quiz">
+      <div class="qh">即时小测 · Level 3</div>
+      <div class="qitem" data-answer="B">
+        <p class="qq"><span class="qn">Q1.</span>客户想买燃气炉，把 AroundFire 当燃气灶煮咖啡。你必须提醒他先买什么？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>加高腿</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>钛合金桌面板（燃气炉的安装底座，没它上不了燃气炉）</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>烧烤夹</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>灯架</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 B。这是全课最关键的依赖链：燃气炉必须插在钛桌面板上，钛桌面板是枢纽。</div>
+      </div>
+      <div class="qitem" data-answer="D">
+        <p class="qq"><span class="qn">Q2.</span>钛合金桌面板身兼三职，下面哪个<b>不是</b>它的作用？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>当挡风板，防火苗被风吹跑</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>盖在火网上变成平整桌面</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>当燃气炉的安装底座</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>自动帮你把桌子加高到餐桌高度</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 D。加高是「加高腿」的活。钛桌面板的三职是：挡风板、平桌面、燃气炉底座。</div>
+      </div>
+      <div class="qitem" data-answer="C">
+        <p class="qq"><span class="qn">Q3.</span>官方对「替换火网」给出的明确承诺 / 限制，下面哪条对？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>能永久使用，永不更换</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>可以用液体燃料点火</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>每张至少保证 50 次正常使用；不可用变色剂或液体燃料</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>只能用 5 次</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 C。「至少 50 次」是官方承诺；「不可用液体燃料 / 变色剂」是官方安全限制，两条都得记。</div>
+      </div>
+      <div class="qitem" data-answer="B">
+        <p class="qq"><span class="qn">Q4.</span>下面哪个配件现在<b>买不到（售罄）</b>，要等约 30 天补货？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>韩式烤肉烤网</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>铸铁煎盘 Cast Iron Griddle（$69，目录里最贵的配件）</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>铝箔火锅锅</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>烧烤夹</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 B。铸铁煎盘当前售罄、约 30 天后补货，客户想要得先告知。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ LEVEL 4 ============================ -->
+  <section class="lvl" id="lv4">
+    <div class="lvl-hd"><span class="n">LEVEL 4</span><h2>两套系统：高度系统 ＋ 燃料 / 吃法系统</h2><span class="chk" data-chk="lv4">小测 0/3</span></div>
+    <div class="goal"><span class="g">学完你会</span>说清 <b>3 档高度各对应什么使用姿势</b>，以及 <b>4 种燃料 / 吃法怎么切换</b>，并记住那条安全红线：火网不可用液体燃料。</div>
+
+    <h3>🪜 高度系统：一张桌子 3 个高度，对应 3 种坐姿</h3>
+    <p>同一张桌子能调 3 个高度（最高那档要装加高腿）。高度不只是舒适度，它切换的是<b>这张桌子此刻的「身份」</b>：</p>
+    <div class="sys">
+      <div class="syscard"><div class="h">38cm</div><div class="m">15'' · 火盆模式</div><div class="d">最低档，<b>取暖效率最好</b>——大家围低桌烤火取暖。</div></div>
+      <div class="syscard e"><div class="h">55cm</div><div class="m">21.6'' · 露营椅高度</div><div class="d">中间档，配露营矮椅刚好，烧烤 / 聚会常用高度。</div></div>
+      <div class="syscard b"><div class="h">70cm</div><div class="m">27.5'' · 餐桌高度</div><div class="d"><b>需装加高腿</b>解锁。普通餐桌高度，配餐椅在后院正经吃饭更舒服。</div></div>
+    </div>
+    <p class="tnote">记法：<b>越低越像火盆（取暖），越高越像餐桌（吃饭）</b>。38 / 55 基础高度自带，70 要加高腿。</p>
+
+    <h3>🔥 燃料 / 吃法系统：一张火网，4 种玩法</h3>
+    <p>桌子中间那张火网是「万能底」，配不同东西就切换成不同吃法：</p>
+    <div class="cards c2">
+      <div class="card"><h4 style="color:var(--red)">① 火网上直接烧（明火）</h4><p style="font-size:13px;margin:.3rem 0 0;color:var(--ink2)">炭火 / 柴火 / 颗粒直接放火网上烧，用来<b>烧烤 ＋ 篝火取暖</b>。这是最原始的玩法，不用任何配件。</p></div>
+      <div class="card"><h4 style="color:var(--ember-dk)">② 换「烹饪面」（韩烤网 / 铁板煎盘）</h4><p style="font-size:13px;margin:.3rem 0 0;color:var(--ink2)">把韩式烤网或铸铁煎盘放到火网上，换一种做饭方式（围坐韩烤 / 铁板煎牛排早餐）。</p></div>
+      <div class="card"><h4 style="color:var(--blue)">③ 燃气灶（钛桌面板 ＋ 燃气炉）</h4><p style="font-size:13px;margin:.3rem 0 0;color:var(--ink2)">装上钛桌面板 ＋ 燃气炉，变成<b>燃气灶</b>（丁烷 / 丙烷可切换），煮咖啡炖汤炒菜。⚠️ 记得：<b>先有钛桌面板才行</b>。</p></div>
+      <div class="card"><h4 style="color:var(--plum)">④ 火锅（铝箔火锅锅）</h4><p style="font-size:13px;margin:.3rem 0 0;color:var(--ink2)">把铝箔火锅锅放桌子中间，围炉吃火锅（双格能鸳鸯锅）。</p></div>
+    </div>
+
+    <div class="callout danger">
+      <span class="ttl">🚫 安全红线（官方明确）</span>
+      <b>火网不可用液体燃料</b>（也不可用变色剂）。这是官方对火网的明确限制，对外讲解 / 写文案时不能违背。
+    </div>
+
+    <div class="feynman"><span class="ttl">🧠 讲给朋友听</span>把「38 / 55 / 70cm 分别像什么」和「4 种吃法怎么切换」各复述一遍。卡在哪档，就回头再看哪段。</div>
+
+    <div class="quiz">
+      <div class="qh">即时小测 · Level 4</div>
+      <div class="qitem" data-answer="C">
+        <p class="qq"><span class="qn">Q1.</span>客户想把桌子调到「普通餐桌高度」在后院配餐椅吃饭，对应哪档、还需要什么？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>38cm，不用加任何东西</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>55cm，不用加任何东西</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>70cm，需要装加高腿（Extension Legs）</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>随便哪档都行，高度不能调</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 C。70cm 才是餐桌高度，而它需要加装加高腿才能解锁（基础只有 38 / 55cm）。</div>
+      </div>
+      <div class="qitem" data-answer="A">
+        <p class="qq"><span class="qn">Q2.</span>3 个高度里，哪一档「取暖效率最好、最像火盆」？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>38cm（15''）火盆模式，最低档</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>55cm 露营椅高度</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>70cm 餐桌高度</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>高度越高取暖越好</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 A。越低越像火盆、取暖越好；越高越像餐桌、越适合吃饭。</div>
+      </div>
+      <div class="qitem" data-answer="C">
+        <p class="qq"><span class="qn">Q3.</span>关于火网的燃料，下面哪条是官方明确<b>禁止</b>的？</p>
+        <button class="opt" data-opt="A"><span class="k">A</span>用炭火</button>
+        <button class="opt" data-opt="B"><span class="k">B</span>用柴火 / 颗粒</button>
+        <button class="opt" data-opt="C"><span class="k">C</span>用液体燃料（以及变色剂）</button>
+        <button class="opt" data-opt="D"><span class="k">D</span>放铝箔火锅锅</button>
+        <div class="qfx" hidden><span class="verdict"></span> 正确答案 C。炭 / 柴 / 颗粒都可以，火锅锅也行，唯独液体燃料和变色剂被官方明确禁止。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ LEVEL 5 ============================ -->
+  <section class="lvl" id="lv5">
+    <div class="lvl-hd"><span class="n">LEVEL 5</span><h2>场景应用：配置挑战（会推荐才算真懂）</h2><span class="chk" data-chk="lv5">场景 0/5</span></div>
+    <div class="goal"><span class="g">学完你会</span>拿到一个真实客户场景，<b>自己配出「该推荐哪张桌子 + 哪些配件」并说清理由</b>——这是把前面所有知识迁移到实战的检验。</div>
+
+    <p>下面每道题给一个真实客户画像。<b>请先在心里配好方案（哪张桌子 + 哪些配件 + 为什么）</b>，再点「揭晓推荐配置」对答案。这一步做顺了，你才是真的学会了。</p>
+
+    <div class="scene">
+      <span class="sn">场景 1</span>
+      <p class="sq">一对小夫妻，预算有限，常开车去露营，就俩人偶尔带个朋友。主要想烧烤 + 晚上围着火取暖，不做复杂菜。</p>
+      <p class="think">想想：需要大桌吗？需要燃气炉吗？需要加高腿吗？</p>
+      <button class="reveal">揭晓推荐配置 ▾</button>
+      <div class="scene-a" hidden>
+        <p class="rec">推荐：<span class="pick">Gather Lite · Basic 基础版（$189）</span>，不加配件。</p>
+        <p class="why"><b>为什么</b>：人少、预算有限、常搬运 → 选更小更便宜的 <b>Lite</b>。只烧烤 + 取暖，用火网直接烧炭 / 柴即可，<b>不需要钛桌面板和燃气炉</b>。高度用自带的 38cm（取暖）/ 55cm（露营椅）就够，不必加高腿。一台基础版正中需求。</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <span class="sn">场景 2</span>
+      <p class="sq">一位露营咖啡爱好者，喜欢在营地慢慢煮咖啡、炖点汤、煎蛋，还想坐得舒服些（配自带的露营餐椅），就一个人到两个人用。</p>
+      <p class="think">想想：想「像家里一样开火做饭」＝ 需要什么枢纽配件？坐得舒服 ＝ 需要哪档高度？</p>
+      <button class="reveal">揭晓推荐配置 ▾</button>
+      <div class="scene-a" hidden>
+        <p class="rec">推荐：<span class="pick">Gather Lite · 全配（钛桌面板 ＋ 加高腿 ＋ 1 个燃气炉，$269）</span>。</p>
+        <p class="why"><b>为什么</b>：想煮咖啡 / 炖汤 / 煎蛋 = 要<b>燃气灶</b>能力 → 必须配<b>钛桌面板 ＋ 燃气炉</b>（燃气炉离不开钛桌面板这个枢纽）。人少选 <b>Lite</b>（1 个燃气炉够用）。想坐得舒服 → 加<b>加高腿</b>上 70cm 餐桌高度配餐椅。三件配齐正好是 Lite 全配。</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <span class="sn">场景 3</span>
+      <p class="sq">一群朋友（六七个人）特别爱吃韩式烤肉，喜欢围着炉子边烤边聊，经常在后院聚会。</p>
+      <p class="think">想想：人多选哪张桌子？「韩式烤肉」要哪个做饭升级配件？</p>
+      <button class="reveal">揭晓推荐配置 ▾</button>
+      <div class="scene-a" hidden>
+        <p class="rec">推荐：<span class="pick">Gather Grande ＋ KBBQ Style Grill Grate 韩式烤肉烤网（$37）</span>；人多可再加 BBQ 烧烤夹 4 支装（$16）。</p>
+        <p class="why"><b>为什么</b>：六七个人围坐 → 选更大的 <b>Grande</b>（座位数以甲方确认为准，但相对更大坐得下更多人）。爱吃韩烤 → 配 <b>KBBQ 烤网</b>（小格子网专为围坐韩烤设计）。人多每人一把夹子 → 顺带 4 支装烧烤夹。不需要燃气炉，因为需求是围坐炭烤而非燃气做饭。</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <span class="sn">场景 4</span>
+      <p class="sq">一个爱下厨的大家庭，聚会时想「两个灶头同时开」——一边煮一锅汤 / 咖啡，一边另一个炉子炒菜煎东西，效率要高。</p>
+      <p class="think">想想：「同时两个燃气炉」这个硬需求，只有哪张桌子做得到？前提配件是什么？</p>
+      <button class="reveal">揭晓推荐配置 ▾</button>
+      <div class="scene-a" hidden>
+        <p class="rec">推荐：<span class="pick">Gather Grande ＋ 钛桌面板 ＋ 2 个燃气炉（对应 $349 那档）</span>。</p>
+        <p class="why"><b>为什么</b>：「<b>同时 2 个燃气炉</b>」是硬门槛——<b>只有 Grande 能上 2 个，Lite 最多 1 个</b>，所以桌子只能选 Grande。要上燃气炉必先有<b>钛桌面板</b>（枢纽）。配齐就是 Grande 带 2 燃气炉那档（$349）。这题考的就是「Lite / Grande 燃气炉上限」这条分水岭。</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <span class="sn">场景 5</span>
+      <p class="sq">一家人冬天想在后院「围炉吃火锅」，最好还能有点夜晚氛围灯，鸳鸯锅同时两种锅底。已经有一张 Gather Lite 基础版了。</p>
+      <p class="think">想想：吃火锅要哪个配件？想两种锅底 ＝ 什么设计？氛围灯呢？已有桌子还要买新桌吗？</p>
+      <button class="reveal">揭晓推荐配置 ▾</button>
+      <div class="scene-a" hidden>
+        <p class="rec">推荐：<span class="pick">在已有的 Lite 上加 铝箔火锅锅 12 个装（$37）＋ 灯架（$33）</span>，无需换桌。</p>
+        <p class="why"><b>为什么</b>：已有桌子够用，<b>不必买新桌</b>——这正是「底座 + 配件」系统的好处，加配件就能解锁新吃法。围炉火锅 → <b>铝箔火锅锅</b>，它的<b>双格设计</b>刚好满足「鸳鸯锅两种锅底」。夜晚氛围 → 加<b>灯架</b>。火锅锅放火网中间即可，不需要钛桌面板 / 燃气炉。</p>
+      </div>
+    </div>
+
+    <!-- 常见误解 -->
+    <h3 style="margin-top:2rem">🚧 常见误解 check（点开翻卡自测）</h3>
+    <p class="lead">这几条是最容易讲错、也最容易被客户问倒的。先自己判断对错，再点开核对。</p>
+    <div class="flips" id="myths">
+      <button class="flip">
+        <span class="fq">燃气炉能单独买来直接用吗？</span>
+        <span class="hint">点击翻开答案</span>
+        <span class="fa" hidden><span class="no">不能。</span>必须先有<b>钛合金桌面板</b>——燃气炉要插在它的预留孔里，钛桌面板是燃气炉的安装底座（整个生态的枢纽）。</span>
+      </button>
+      <button class="flip">
+        <span class="fq">Gather Lite 能同时上 2 个燃气炉吗？</span>
+        <span class="hint">点击翻开答案</span>
+        <span class="fa" hidden><span class="no">不能。</span>Lite <b>最多 1 个</b>燃气炉；<b>只有 Grande 能同时上 2 个</b>。这是两张桌子最硬的分水岭。</span>
+      </button>
+      <button class="flip">
+        <span class="fq">火网能烧液体燃料 / 酒精吗？</span>
+        <span class="hint">点击翻开答案</span>
+        <span class="fa" hidden><span class="no">不能。</span>官方明确注明火网<b>不可用液体燃料，也不可用变色剂</b>。能用的是炭火 / 柴火 / 颗粒。</span>
+      </button>
+      <button class="flip">
+        <span class="fq">不加「加高腿」也能到 70cm 餐桌高度吗？</span>
+        <span class="hint">点击翻开答案</span>
+        <span class="fa" hidden><span class="no">不能。</span>基础高度只有 38cm / 55cm，<b>70cm 餐桌高度必须装加高腿才解锁</b>。</span>
+      </button>
+      <button class="flip">
+        <span class="fq">钛合金桌面板只是一块普通桌板？</span>
+        <span class="hint">点击翻开答案</span>
+        <span class="fa" hidden><span class="no">不只。</span>它身兼三职：<b>①挡风板 ②盖火网变平桌 ③燃气炉的安装底座</b>。它是整个配件生态的枢纽 / 总钥匙。</span>
+      </button>
+      <button class="flip">
+        <span class="fq">可以直接告诉客户「Grande 坐 8–10 人」吗？</span>
+        <span class="hint">点击翻开答案</span>
+        <span class="fa" hidden><span class="no">先别写死。</span>报告里 Grande 有 6–8 与 8–10 两种<b>自相矛盾</b>的说法，官方无统一口径——<b>座位数待甲方确认</b>，对外只说「比 Lite 大、坐更多」。</span>
+      </button>
+    </div>
+
+    <div class="callout ok">
+      <span class="ttl">🎉 全部学完</span>
+      如果这 5 道配置挑战你都能在揭晓前配得八九不离十，6 张误区翻卡也答对，那么恭喜——你已经能独立给客户讲清 AroundFire 的全部产品、并按需求推荐配置了。核心就一句话：<b>桌子是底座，配件解锁吃法，钛桌面板是上燃气炉的那把总钥匙。</b>
+    </div>
+  </section>
+
+  <div class="pagenav">
+    <a href="index.html"><div class="d">◂ 返回</div><div class="t">报告中心</div></a>
+    <a class="nx" href="category.html"><div class="d">相关 ▸</div><div class="t">品类认知速成（外部竞品视角）</div></a>
+  </div>
+
+</div>
+
+<div class="foot">
+  AroundFire 产品速成课 · 交互式学习页 · 产品数据实抓自 aroundfire.co/products.json（2026-07-22）<br>
+  座位数等口径不一致处已如实标注「待甲方确认」，全部产品名 / 价格 / 变体 / 依赖关系为实抓数据
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- 进度统计（所有 MCQ 题） ----------
+  var items = Array.prototype.slice.call(document.querySelectorAll('.qitem'));
+  var total = items.length;
+  var fill = document.getElementById('pfill');
+  var ptxt = document.getElementById('ptxt');
+
+  function answeredCount(){
+    return document.querySelectorAll('.qitem.done').length;
+  }
+  function updateProgress(){
+    var n = answeredCount();
+    var pct = total ? Math.round(n/total*100) : 0;
+    if(fill) fill.style.width = pct + '%';
+    if(ptxt) ptxt.innerHTML = '小测进度：已答 <b>' + n + '</b> / ' + total + ' 题 · ' + (n===total ? '全部答完，很棒 🎉' : '边学边答，别只看');
+    updateLevelChecks();
+  }
+
+  // ---------- 每个 Level 的小测完成标记 ----------
+  function updateLevelChecks(){
+    document.querySelectorAll('.lvl').forEach(function(sec){
+      var qs = sec.querySelectorAll('.qitem');
+      var chk = sec.querySelector('.chk[data-chk]');
+      if(!chk) return;
+      if(qs.length){
+        var done = sec.querySelectorAll('.qitem.done').length;
+        chk.textContent = '小测 ' + done + '/' + qs.length;
+        if(done === qs.length){ chk.classList.add('done'); chk.textContent = '小测 ✓ ' + qs.length + '/' + qs.length; }
+      }
+    });
+    // 导航地图打勾
+    document.querySelectorAll('#navmap a').forEach(function(a){
+      var id = a.getAttribute('href').slice(1);
+      var sec = document.getElementById(id);
+      if(!sec) return;
+      var qs = sec.querySelectorAll('.qitem');
+      if(qs.length && sec.querySelectorAll('.qitem.done').length === qs.length){
+        a.classList.add('done');
+      }
+      // Level 5 无 MCQ，用场景全揭晓来标记
+      if(id === 'lv5'){
+        var scenes = sec.querySelectorAll('.scene');
+        var opened = sec.querySelectorAll('.scene.opened').length;
+        var chk = sec.querySelector('.chk[data-chk]');
+        if(chk){ chk.textContent = '场景 ' + opened + '/' + scenes.length;
+          if(opened === scenes.length){ chk.classList.add('done'); chk.textContent = '场景 ✓ ' + scenes.length + '/' + scenes.length; a.classList.add('done'); }
+        }
+      }
+    });
+  }
+
+  // ---------- MCQ 判分 ----------
+  document.querySelectorAll('.qitem').forEach(function(q){
+    var opts = q.querySelectorAll('.opt');
+    opts.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(q.classList.contains('done')) return;
+        q.classList.add('done');
+        var correct = q.getAttribute('data-answer');
+        var chosen = btn.getAttribute('data-opt');
+        opts.forEach(function(o){
+          o.disabled = true;
+          if(o.getAttribute('data-opt') === correct) o.classList.add('right');
+          else if(o === btn) o.classList.add('wrong');
+        });
+        var fx = q.querySelector('.qfx');
+        if(fx){
+          fx.hidden = false;
+          var v = fx.querySelector('.verdict');
+          if(v) v.textContent = (chosen === correct) ? '✓ 答对了！' : '✗ 答错了。';
+        }
+        q.classList.add(chosen === correct ? 'ok' : 'no');
+        updateProgress();
+      });
+    });
+  });
+
+  // ---------- 场景揭晓 ----------
+  document.querySelectorAll('.scene').forEach(function(sc){
+    var btn = sc.querySelector('.reveal');
+    var ans = sc.querySelector('.scene-a');
+    if(!btn || !ans) return;
+    btn.addEventListener('click', function(){
+      var open = ans.hidden;
+      ans.hidden = !open;
+      btn.textContent = open ? '收起 ▴' : '揭晓推荐配置 ▾';
+      if(open){ sc.classList.add('opened'); updateLevelChecks(); }
+    });
+  });
+
+  // ---------- 误区翻卡 ----------
+  document.querySelectorAll('#myths .flip').forEach(function(card){
+    var fa = card.querySelector('.fa');
+    card.addEventListener('click', function(){
+      var on = card.classList.toggle('on');
+      if(fa) fa.hidden = !on;
+    });
+  });
+
+  updateProgress();
+})();
+</script>
+</body>
+</html>
