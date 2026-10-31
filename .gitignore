@@ -1,0 +1,4 @@
+
+# macOS migration safety
+.env*
+.DS_Store
